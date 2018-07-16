@@ -13,3 +13,11 @@ or
 php -S localhost:3333 -t public
 
 PORT 3333
+
+##
+
+Open new terminal
+
+cd to project
+
+npm run watch
