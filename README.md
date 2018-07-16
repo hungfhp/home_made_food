@@ -2,10 +2,10 @@
 
 ## Terminal 1
 
+config file .env
+
 <pre>
 clone
-
-config file env
 
 composer update
 
