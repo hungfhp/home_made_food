@@ -1,5 +1,5 @@
 <?php
-namespace App;
+namespace App\Model;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -7,7 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use Notifiable;
-
+    protected $table = 'users';
     /**
      * The attributes that are mass assignable.
      *
@@ -30,36 +30,36 @@ class User extends Authenticatable
 
     public function certificate()
     {
-        return $this->hasOne('App\Certificate');
+        return $this->hasOne('App\Model\Certificate');
     }
 
     public function transactions()
     {
-        return $this->hasMany('App\Transaction');
+        return $this->hasMany('App\Model\Transaction');
     }
 
     public function deals()
     {
-        return $this->hasMany('App\Deal');
+        return $this->hasMany('App\Model\Deal');
     }
 
     public function favorites()
     {
-        return $this->hasMany('App\Favorite');
+        return $this->hasMany('App\Model\Favorite');
     }
 
     public function votes()
     {
-        return $this->hasMany('App\Vote');
+        return $this->hasMany('App\Model\Vote');
     }
 
     public function comments()
     {
-        return $this->hasMany('App\Comment');
+        return $this->hasMany('App\Model\Comment');
     }
 
     public function foods()
     {
-        return $this->hasMany('App\Food');
+        return $this->hasMany('App\Model\Food');
     }
 }

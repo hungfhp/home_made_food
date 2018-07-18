@@ -1,9 +1,9 @@
 <?php
 namespace App\Providers;
 
-use App\User;
-use App\Vote;
-use App\Food;
+use App\Model\User;
+use App\Model\Vote;
+use App\Model\Food;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider

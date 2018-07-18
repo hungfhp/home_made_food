@@ -1,19 +1,22 @@
 <?php
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Certificate extends Model
 {
-    protected $table = 'my_certificates';
+    protected $table = 'certificates';
+    protected $fillable = [
+        'admin_id', 'user_id',
+    ];
 
     public function user()
     {
-        $this->belongsTo('App\User');
+        return $this->belongsTo('App\Model\User');
     }
 
     public function admin()
     {
-        $this->belongsTo('App\Admin');
+        return $this->belongsTo('App\Model\Admin');
     }
 }

@@ -1,19 +1,22 @@
 <?php
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    protected $table = 'my_categories';
+    protected $table = 'categories';
+    protected $fillable = [
+        'name', 'description',
+    ];
 
     public function foods()
     {
-        $this->hasMany('App\Food');
+        return $this->hasMany('App\Model\Food');
     }
 
     public function images()
     {
-        $this->hasMany('App\Category_image');
+        return $this->hasMany('App\Model\Category_image');
     }
 }
