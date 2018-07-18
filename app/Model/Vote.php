@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 class Vote extends Model
 {
     protected $table = 'votes';
+    protected $fillable = [
+        'food_id', 'user_id', 'like'
+    ];
 
     public function user()
     {

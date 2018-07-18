@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 class Certificate extends Model
 {
     protected $table = 'certificates';
+    protected $fillable = [
+        'admin_id', 'user_id',
+    ];
 
     public function user()
     {

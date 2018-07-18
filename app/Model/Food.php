@@ -7,6 +7,10 @@ class Food extends Model
 {
     protected $table = 'foods';
 
+    protected $fillable = [
+        'cooked_id', 'category_id', 'name', 'price', 'description', 'like', 'dislike', 'publish',
+    ];
+
     public function transaction()
     {
         return $this->hasOne('App\Model\Transaction');

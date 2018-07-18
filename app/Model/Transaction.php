@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 class Transaction extends Model
 {
     protected $table = 'transactions';
+    protected $fillable = [
+        'food_name', 'food_id', 'required_id', 'cooked_id', 'shipper_id', 'status', 'description', 'price'
+    ];
 
     public function Food()
     {
