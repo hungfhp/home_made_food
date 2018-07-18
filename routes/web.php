@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +13,24 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('test', 'UserController@getUser');
+
+//Login
+Auth::routes();
+
+Route::resource('admins', 'AdminController');
+Route::resource('categories', 'CategoryController');
+Route::resource('certificates', 'CertificateController');
+Route::resource('comments', 'CommentController');
+Route::resource('deals', 'DealController');
+Route::resource('favorites', 'FavoriteController');
+Route::resource('foods ', 'FoodController');
+Route::resource('food_images ', 'FoodImageController');
+Route::resource('category_images ', 'CategoryImageController');
+Route::resource('transactions ', 'TransactionController');
+Route::resource('users', 'UserController');
+Route::resource('votes', 'VoteController');
 
 Route::get('test', 'UserController@getUser');
 
