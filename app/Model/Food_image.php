@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Food_image extends Model
 {
-    protected $table = 'my_food_images';
+    protected $table = 'food_images';
 
     public function food()
     {

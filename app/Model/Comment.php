@@ -5,15 +5,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
-    protected $table = 'my_comments';
+    protected $table = 'comments';
 
     public function user()
     {
-        $this->belongsTo('App\Model\User');
+        return $this->belongsTo('App\Model\User');
     }
 
     public function food()
     {
-        $this->belongsTo('App\Model\Food');
+        return $this->belongsTo('App\Model\Food');
     }
 }

@@ -5,15 +5,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Deal extends Model
 {
-    protected $table = 'my_deals';
+    protected $table = 'deals';
 
     public function user()
     {
-        $this->belongsTo('App\Model\User');
+        return $this->belongsTo('App\Model\User');
     }
 
     public function transaction()
     {
-        $this->belongsTo('App\Model\Transaction');
+        return $this->belongsTo('App\Model\Transaction');
     }
 }

@@ -5,15 +5,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Favorite extends Model
 {
-    protected $table = 'my_favorites';
+    protected $table = 'favorites';
 
     public function user()
     {
-        $this->belongsTo('App\Model\User');
+        return $this->belongsTo('App\Model\User');
     }
 
     public function food()
     {
-        $this->belongsTo('App\Model\Food');
+        return $this->belongsTo('App\Model\Food');
     }
 }

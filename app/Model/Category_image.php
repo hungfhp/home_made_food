@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category_image extends Model
 {
-    protected $table = 'my_images';
+    protected $table = 'images';
 
     public function category()
     {

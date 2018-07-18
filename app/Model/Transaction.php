@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Transaction extends Model
 {
-    protected $table = 'my_transactions';
+    protected $table = 'transactions';
 
     public function Food()
     {

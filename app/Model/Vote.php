@@ -5,15 +5,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Vote extends Model
 {
-    protected $table = 'my_votes';
+    protected $table = 'votes';
 
     public function user()
     {
-        $this->belongsTo('App\Model\User');
+        return $this->belongsTo('App\Model\User');
     }
 
     public function food()
     {
-        $this->belongsTo('App\Model\Food');
+        return $this->belongsTo('App\Model\Food');
     }
 }
