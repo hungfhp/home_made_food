@@ -26,3 +26,10 @@ Route::resource('images ', 'ImageController');
 Route::resource('transactions ', 'TransactionController');
 Route::resource('users', 'UserController');
 Route::resource('votes', 'VoteController');
+
+Route::get('test', 'UserController@getUser');
+
+//Login
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

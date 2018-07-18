@@ -14,6 +14,6 @@ class Category extends Model
 
     public function images()
     {
-        $this->hasMany('App\Image');
+        $this->hasMany('App\Category_image');
     }
 }
