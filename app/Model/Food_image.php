@@ -3,9 +3,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Food_img extends Model
+class Food_image extends Model
 {
-    protected $table = 'my_food_imgs';
+    protected $table = 'my_food_images';
 
     public function food()
     {
