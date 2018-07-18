@@ -3,7 +3,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Image extends Model
+class Category_image extends Model
 {
     protected $table = 'my_images';
 

@@ -29,7 +29,7 @@ class Food extends Model
 
     public function food_imgs()
     {
-        return $this->hasMany('App\Food_img');
+        return $this->hasMany('App\Food_image');
     }
 
     public function user()
