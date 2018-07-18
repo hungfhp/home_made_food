@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
 namespace App\Model;
+=======
+namespace App\Model;;
+>>>>>>> 8c9cc2c076dc5fe5a51e7fa90e57da5ab1c069a2
 
 use Illuminate\Database\Eloquent\Model;
 
