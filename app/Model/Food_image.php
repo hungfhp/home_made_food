@@ -1,5 +1,5 @@
 <?php
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,6 +9,6 @@ class Food_image extends Model
 
     public function food()
     {
-        return $this->belongsTo('App\Food');
+        return $this->belongsTo('App\Model\Food');
     }
 }

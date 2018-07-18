@@ -1,5 +1,5 @@
 <?php
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,11 +9,11 @@ class Category extends Model
 
     public function foods()
     {
-        $this->hasMany('App\Food');
+        $this->hasMany('App\Model\Food');
     }
 
     public function images()
     {
-        $this->hasMany('App\Category_image');
+        $this->hasMany('App\Model\Category_image');
     }
 }

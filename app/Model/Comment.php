@@ -1,5 +1,5 @@
 <?php
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,11 +9,11 @@ class Comment extends Model
 
     public function user()
     {
-        $this->belongsTo('App\User');
+        $this->belongsTo('App\Model\User');
     }
 
     public function food()
     {
-        $this->belongsTo('App\Food');
+        $this->belongsTo('App\Model\Food');
     }
 }

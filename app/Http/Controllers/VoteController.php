@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -13,7 +12,7 @@ class VoteController extends Controller
      */
     public function index()
     {
-        //
+        return "index";
     }
 
     /**
@@ -23,7 +22,8 @@ class VoteController extends Controller
      */
     public function create()
     {
-        //
+        Log::info("ksdfksd");
+        return "create";
     }
 
     /**
@@ -34,7 +34,7 @@ class VoteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return "store";
     }
 
     /**
