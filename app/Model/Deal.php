@@ -1,5 +1,5 @@
 <?php
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,11 +9,11 @@ class Deal extends Model
 
     public function user()
     {
-        $this->belongsTo('App\User');
+        $this->belongsTo('App\Model\User');
     }
 
     public function transaction()
     {
-        $this->belongsTo('App\Transaction');
+        $this->belongsTo('App\Model\Transaction');
     }
 }

@@ -1,14 +1,14 @@
 <?php
-namespace App;
+namespace App\Model;;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Image extends Model
+class Category_image extends Model
 {
     protected $table = 'my_images';
 
     public function category()
     {
-        return $this->belongsTo('App\Category');
+        return $this->belongsTo('App\Model\Category');
     }
 }

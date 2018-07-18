@@ -1,5 +1,5 @@
 <?php
-namespace App;
+namespace App\Model;;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,6 +9,6 @@ class Admin extends Model
 
     public function certificate()
     {
-        $this->hasMany('App\Certificate');
+        $this->hasMany('App\Model\Certificate');
     }
 }
