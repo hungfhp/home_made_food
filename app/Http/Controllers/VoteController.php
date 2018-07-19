@@ -61,13 +61,10 @@ class VoteController extends Controller
     {
         $user = Auth::user();
 
-        $like = $request->like;
-        $food_id = $request->food_id;
-
         $new_vote = [
             'user_id' => $user->id,
-            'food_id' => $food_id,
-            'like' => $like
+            'food_id' => $request->food_id,
+            'like' => $request->like
         ];
 
         DB::table('votes')->insert($new_vote);
@@ -124,7 +121,7 @@ class VoteController extends Controller
             event(new VoteUpdating($old_vote, $new_vote));
         }
 
-        return response()->json(["updated" => $new_vote], 203);
+        return response()->json(["updated" => $new_vote], 202);
     }
 
     /**

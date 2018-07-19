@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Providers;
 
 use Illuminate\Support\Facades\Event;
@@ -13,9 +12,9 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'App\Events\Event' => [
-            'App\Listeners\EventListener',
-        ],
+        'App\Events\Event' => ['App\Listeners\EventListener'],
+        'App\Events\VoteCreated' => ['App\Listeners\UpdateFoodLikeCreated'],
+        'App\Events\VoteUpdating' => ['App\Listeners\UpdateFoodLikeUpdating']
     ];
 
     /**
