@@ -25,10 +25,10 @@ Route::resource('certificates', 'CertificateController');
 Route::resource('comments', 'CommentController');
 Route::resource('deals', 'DealController');
 Route::resource('favorites', 'FavoriteController');
-Route::resource('foods ', 'FoodController');
-Route::resource('food_images ', 'FoodImageController');
-Route::resource('category_images ', 'CategoryImageController');
-Route::resource('transactions ', 'TransactionController');
+Route::resource('foods', 'FoodController');
+Route::resource('food_images', 'FoodImageController');
+Route::resource('category_images', 'CategoryImageController');
+Route::resource('transactions', 'TransactionController');
 Route::resource('users', 'UserController');
 Route::resource('votes', 'VoteController');
 

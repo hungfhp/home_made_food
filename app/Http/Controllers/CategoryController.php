@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Model\Category;
+use App\Model\Category_image;
+
+use Log;
 
 class CategoryController extends Controller
 {
@@ -13,7 +17,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        Log::info('get category');
+        $category = Category::get();
+        return response()->json(['result'=>true, 'data'=>$category], 200);
     }
 
     /**
@@ -34,7 +40,9 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Log::info('post category');
+        $category = Category::create($request->all());
+        return response()->json(['result'=>true, 'data'=>$category], 201);
     }
 
     /**
@@ -45,7 +53,12 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        Log::info('show a category');
+        $category = Category::where('id', $id)
+            ->get();
+        $category['image'] = Category::find($id)->category_images->all();
+        $category['feature_image'] = Category::find($id)->category_images->first();
+        return response()->json(['result'=>true, 'data'=>$category], 200);
     }
 
     /**
@@ -68,7 +81,10 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Log::info('update category');
+        $category = Category::find($id)
+            ->update($request->all());
+        return response()->json(['result'=>true, 'data'=>$category], 202);
     }
 
     /**
@@ -79,6 +95,9 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Log::info('delete category');
+        $category = Category::find($id);
+        $category->delete();
+        return response()->json(['result'=>true, 'data'=>$category], 203);
     }
 }
