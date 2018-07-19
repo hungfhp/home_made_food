@@ -31,7 +31,7 @@ class Food extends Model
         return $this->hasMany('App\Model\Vote');
     }
 
-    public function food_imgs()
+    public function food_images()
     {
         return $this->hasMany('App\Model\Food_image');
     }

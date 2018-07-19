@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category_image extends Model
 {
-    protected $table = 'images';
+    protected $table = 'category_images';
     protected $fillable = [
         'category_id', 'link',
     ];
