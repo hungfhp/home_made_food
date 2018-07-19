@@ -20,7 +20,6 @@ class VoteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
     public function __contruct()
     {
         $this->middleware('auth');

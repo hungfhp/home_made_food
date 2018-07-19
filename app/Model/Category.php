@@ -15,7 +15,7 @@ class Category extends Model
         return $this->hasMany('App\Model\Food');
     }
 
-    public function images()
+    public function category_images()
     {
         return $this->hasMany('App\Model\Category_image');
     }
