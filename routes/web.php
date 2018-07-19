@@ -9,15 +9,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('test', 'UserController@getUser');
-
-//Login
-Auth::routes();
 
 Route::resource('admins', 'AdminController');
 Route::resource('categories', 'CategoryController');

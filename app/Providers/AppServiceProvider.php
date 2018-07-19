@@ -4,6 +4,7 @@ namespace App\Providers;
 use App\Model\User;
 use App\Model\Vote;
 use App\Model\Food;
+use Log;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,47 +20,49 @@ class AppServiceProvider extends ServiceProvider
             $user->posts()->delete();
         });
 
-        Vote::created(function ($vote) {
-            if ($vote->like > 0) {
-                $updatedLike = $food::find($vote->food_id)->like + 1;
-                $food::find($vote->food_id)->update(['like' => $updatedLike]);
-            } elseif ($vote->like < 0) {
-                $updatedDislike = $food::find($vote->food_id)->dislike + 1;
-                $food
-                    ::find($vote->food_id)
-                    ->update(['dislike' => $updatedDislike]);
-            }
-        });
+        // Vote::created(function ($vote) {
+        //     Log::info('created chay bt');
+        //     if ($vote->like > 0) {
+        //         $updatedLike = Food::find($vote->food_id)->like + 1;
+        //         Food::find($vote->food_id)->update(['like' => $updatedLike]);
+        //     } elseif ($vote->like < 0) {
+        //         $updatedDislike = Food::find($vote->food_id)->dislike + 1;
+        //         Food::find($vote->food_id)->update([
+        //             'dislike' => $updatedDislike
+        //         ]);
+        //     }
+        // });
 
-        Vote::updating(function ($vote) {
-            $lastVote = $vote->getOriginal('like');
-            $newVote = $vote->like;
+        // Vote::updating(function ($vote) {
+        //     Log::info("van chay bt");
+        //     $lastVote = $vote->getOriginal('like');
+        //     $newVote = $vote->like;
 
-            $lastLike = $food::find($vote->food_id)->like;
-            $lastDislike = $food::find($vote->food_id)->dislike;
-            $newLike;
-            $newDislike;
+        //     $lastLike = Food::find($vote->food_id)->like;
+        //     $lastDislike = Food::find($vote->food_id)->dislike;
+        //     $newLike;
+        //     $newDislike;
 
-            if ($lastVote < 0) {
-                // last is dislike
-                $newLike = $lastLike + $newVote;
-                $newDislike = $lastDislike - 1;
-            } elseif ($lastVote == 0) {
-                if ($newVote > 0) {
-                    $newLike = $lastLike + 1;
-                    $newDislike = $lastDislike;
-                } else {
-                    $newLike = $lastLike;
-                    $newDislike = $lastDislike + 1;
-                }
-            } else {
-                // last is like
-                $newLike = $lastLike - 1;
-                $newDislike = $lastDislike + (-1) * $newVote;
-            }
-            $food::find($vote->food_id)->update(['like' => $newLike]);
-            $food::find($vote->food_id)->update(['dislike' => $newDislike]);
-        });
+        //     if ($lastVote < 0) {
+        //         // last is dislike
+        //         $newLike = $lastLike + $newVote;
+        //         $newDislike = $lastDislike - 1;
+        //     } elseif ($lastVote == 0) {
+        //         if ($newVote > 0) {
+        //             $newLike = $lastLike + 1;
+        //             $newDislike = $lastDislike;
+        //         } else {
+        //             $newLike = $lastLike;
+        //             $newDislike = $lastDislike + 1;
+        //         }
+        //     } else {
+        //         // last is like
+        //         $newLike = $lastLike - 1;
+        //         $newDislike = $lastDislike + (-1) * $newVote;
+        //     }
+        //     Food::find($vote->food_id)->update(['like' => $newLike]);
+        //     Food::find($vote->food_id)->update(['dislike' => $newDislike]);
+        // });
     }
 
     /**
