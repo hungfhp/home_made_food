@@ -2,6 +2,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Log;
+use DB;
+use Auth;
+
+use App\Model\Vote;
+use App\Model\Food;
+use App\Model\Food_image;
+
+use App\Events\VoteCreated;
+use App\Events\VoteUpdating;
 
 class VoteController extends Controller
 {
@@ -10,9 +20,23 @@ class VoteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    public function __contruct()
     {
-        return "index";
+        $this->middleware('auth');
+    }
+
+    public function index(Request $request)
+    {
+        $user = Auth::user();
+
+        $votes = Vote::whereIn('user_id', $user)
+            ->with('user')
+            ->with('food.food_images')
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+
+        return response()->json(["votes" => $votes], 200);
     }
 
     /**
@@ -22,7 +46,8 @@ class VoteController extends Controller
      */
     public function create()
     {
-        Log::info("ksdfksd");
+        $user = Auth::user();
+
         return "create";
     }
 
@@ -34,7 +59,21 @@ class VoteController extends Controller
      */
     public function store(Request $request)
     {
-        return "store";
+        $user = Auth::user();
+
+        $like = $request->like;
+        $food_id = $request->food_id;
+
+        $new_vote = [
+            'user_id' => $user->id,
+            'food_id' => $food_id,
+            'like' => $like
+        ];
+
+        DB::table('votes')->insert($new_vote);
+        event(new VoteCreated($new_vote));
+
+        return response()->json(["created" => $new_vote], 201);
     }
 
     /**
@@ -68,7 +107,24 @@ class VoteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = Auth::user();
+        $like = $request->like;
+
+        $old_vote = Vote::find($id);
+        $food_id = $old_vote->food_id;
+
+        $new_vote = [
+            'user_id' => $user->id,
+            'food_id' => $food_id,
+            'like' => $like
+        ];
+
+        Vote::find($id)->update($new_vote);
+        if ($old_vote->like != $like) {
+            event(new VoteUpdating($old_vote, $new_vote));
+        }
+
+        return response()->json(["updated" => $new_vote], 203);
     }
 
     /**
