@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Model\Comment;
+
+use Log;
 
 class CommentController extends Controller
 {
@@ -13,7 +17,9 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+        Log::info('get index');
+        $comment = Comment::get();
+        return response()->json(['result'=>true, 'data'=>$comment]);
     }
 
     /**
