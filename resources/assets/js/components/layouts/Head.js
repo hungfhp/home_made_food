@@ -21,4 +21,4 @@ export default class Head extends Component {
     }
 }
 
-export default Head;
+// export default Head;

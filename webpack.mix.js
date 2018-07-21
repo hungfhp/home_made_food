@@ -1,4 +1,4 @@
-let mix = require("laravel-mix");
+let mix = require('laravel-mix');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,22 +11,5 @@ let mix = require("laravel-mix");
  |
  */
 
-module.exports = {
-    module: {
-        loaders: [
-            {
-                test: /jquery-mousewheel/,
-                loader: "imports?define=>false&this=>window"
-            },
-            {
-                test: /malihu-custom-scrollbar-plugin/,
-                loader: "imports?define=>false&this=>window"
-            }
-        ]
-    }
-};
-
-mix.react("resources/assets/js/app.js", "public/js").sass(
-    "resources/assets/sass/app.scss",
-    "public/css"
-);
+mix.react('resources/assets/js/app.js', 'public/js')
+   .sass('resources/assets/sass/app.scss', 'public/css');

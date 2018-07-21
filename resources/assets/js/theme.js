@@ -2,7 +2,7 @@ require("../theme/js/app.js");
 require("../theme/js/backstretch.js");
 require("../theme/js/bootstrap.min.js");
 require("../theme/js/dropzone.js");
-require("../theme/js/ie-emulation-modes-warning");
+require("../theme/js/ie-emulation-modes-warning.js");
 require("../theme/js/jquery-2.2.0.min.js");
 require("../theme/js/jquery.countdown.js");
 require("../theme/js/jquery.filterizr.js");
