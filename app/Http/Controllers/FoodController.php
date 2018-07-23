@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -22,17 +21,15 @@ class FoodController extends Controller
      */
     public function index(Request $request)
     {
-        if ($request->user()->email == 'admin@gmail.com')
-        {
+        Log::info("hale");
+        if ($request->user()->email == 'admin@gmail.com') {
             Log::info('admin: get food');
             $result = Food::get();
-            return response()->json(['result'=>true, 'data'=>$result]);
-        }
-        else
-        {
+            return response()->json(['result' => true, 'data' => $result]);
+        } else {
             Log::info('user: get food');
             $result = Food::where('publish', true)->get();
-            return response()->json(['result'=>true, 'data'=>$result]);
+            return response()->json(['result' => true, 'data' => $result]);
         }
     }
 
@@ -43,7 +40,7 @@ class FoodController extends Controller
      */
     public function create()
     {
-       //
+        //
     }
 
     /**
@@ -56,7 +53,7 @@ class FoodController extends Controller
     {
         Log::info('add food');
         $food = Food::create($request->all());
-        return response()->json(['result'=>true, 'data'=>$food], 201);
+        return response()->json(['result' => true, 'data' => $food], 201);
     }
 
     /**
@@ -68,11 +65,10 @@ class FoodController extends Controller
     public function show($id)
     {
         Log::info('show a food');
-        $food = Food::where('id', $id)
-            ->get();
+        $food = Food::where('id', $id)->get();
         $food['image'] = Food::find($id)->food_images->all();
         $food['feature_image'] = Food::find($id)->food_images->first();
-        return response()->json(['result'=>true, 'data'=>$food], 200);
+        return response()->json(['result' => true, 'data' => $food], 200);
     }
 
     /**
@@ -96,9 +92,8 @@ class FoodController extends Controller
     public function update(Request $request, $id)
     {
         Log::info('update food');
-        $food = Food::find($id)
-            ->update($request->all());
-        return response()->json(['result'=>true, 'data'=>$food], 202);
+        $food = Food::find($id)->update($request->all());
+        return response()->json(['result' => true, 'data' => $food], 202);
     }
 
     /**
@@ -112,6 +107,6 @@ class FoodController extends Controller
         Log::info('delete food');
         $food = Food::find($id);
         $food->delete();
-        return response()->json(['result'=>true, 'data'=>$food], 203);
+        return response()->json(['result' => true, 'data' => $food], 203);
     }
 }
