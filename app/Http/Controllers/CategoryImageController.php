@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Model\Category_image;
+
+use Log;
 
 class CategoryImageController extends Controller
 {
@@ -34,12 +37,14 @@ class CategoryImageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Log::info('post category_image');
+        $category_image = Category_image::create($request->all());
+        return response()->json(['result'=>true, 'data'=>$category_image], 20);
     }
 
     /**
      * Display the specified resource.
-     *
+     *1
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -79,6 +84,9 @@ class CategoryImageController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Log::info('delete category_image');
+        $category_image = Category_image::find($id);
+        $category_image->delete();
+        return response()->json(['result'=>true, 'data'=>$category_image], 203);
     }
 }
