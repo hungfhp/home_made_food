@@ -9,11 +9,6 @@ use Log;
 
 class FoodController extends Controller
 {
-    //    public function __construct()
-    //    {
-    //        $this->middleware('auth');
-    //    }
-
     /**
      * Display a listing of the resource.
      *
@@ -21,16 +16,11 @@ class FoodController extends Controller
      */
     public function index(Request $request)
     {
-        Log::info("hale");
-        if ($request->user()->email == 'admin@gmail.com') {
-            Log::info('admin: get food');
-            $result = Food::get();
-            return response()->json(['result' => true, 'data' => $result]);
-        } else {
-            Log::info('user: get food');
-            $result = Food::where('publish', true)->get();
-            return response()->json(['result' => true, 'data' => $result]);
-        }
+        Log::info('user: get food');
+        $result = Food::where('publish', true)
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+        return response()->json(['result' => true, 'data' => $result]);
     }
 
     /**
