@@ -64,42 +64,42 @@ export default class Main extends Component {
                         <Route exact path="/categories/create" component={CategoriesCreate} />
                         <Route exact path="/categories/:id/delete" component={CategoriesDelete} />
                         <Route exact path="/categories/:id/edit" component={CategoriesEdit} />
-                        <Route exact path="/categories/:id" component={CategoriesIndex} />
-                        <Route exact path="/categories" component={CategoriesShow} />
+                        <Route exact path="/categories" component={CategoriesIndex} />
+                        <Route exact path="/categories/:id" component={CategoriesShow} />
                         {/* error */}
                         <Route exact path="/error" component={ErrorShow} />
                         {/* favorites */}
                         <Route exact path="/favorites/create" component={FavoritesCreate} />
                         <Route exact path="/favorites/:id/delete" component={FavoritesDelete} />
                         <Route exact path="/favorites/:id/edit" component={FavoritesEdit} />
-                        <Route exact path="/favorites/:id" component={FavoritesIndex} />
-                        <Route exact path="/favorites" component={FavoritesShow} />
+                        <Route exact path="/favorites" component={FavoritesIndex} />
+                        <Route exact path="/favorites/:id" component={FavoritesShow} />
                         {/* foods */}
                         <Route exact path="/foods/create" component={FoodsCreate} />
                         <Route exact path="/foods/:id/delete" component={FoodsDelete} />
                         <Route exact path="/foods/:id/edit" component={FoodsEdit} />
-                        <Route exact path="/foods/:id" component={FoodsIndex} />
-                        <Route exact path="/foods" component={FoodsShow} />
+                        <Route exact path="/foods" component={FoodsIndex} />
+                        <Route exact path="/foods/:id" component={FoodsShow} />
                         {/* home */}
                         <Route exact path="/home" component={HomeIndex} />
                         {/* transactions */}
                         <Route exact path="/transactions/create" component={TransactionsCreate} />
                         <Route exact path="/transactions/:id/delete" component={TransactionsDelete} />
                         <Route exact path="/transactions/:id/edit" component={TransactionsEdit} />
-                        <Route exact path="/transactions/:id" component={TransactionsIndex} />
-                        <Route exact path="/transactions" component={TransactionsShow} />
+                        <Route exact path="/transactions" component={TransactionsIndex} />
+                        <Route exact path="/transactions/:id" component={TransactionsShow} />
                         {/* users */}
                         <Route exact path="/users/create" component={UsersCreate} />
                         <Route exact path="/users/:id/delete" component={UsersDelete} />
                         <Route exact path="/users/:id/edit" component={UsersEdit} />
-                        <Route exact path="/users/:id" component={UsersIndex} />
-                        <Route exact path="/users" component={UsersShow} />
+                        <Route exact path="/users" component={UsersIndex} />
+                        <Route exact path="/users/:id" component={UsersShow} />
                         {/* votes */}
                         <Route exact path="/votes/create" component={VotesCreate} />
                         <Route exact path="/votes/:id/delete" component={VotesDelete} />
-                        <Route exact path="/votes/:id/edit" component={VotesEdit} /> 
-                        <Route exact path="/votes/:id" component={VotesIndex} />
-                        <Route exact path="/votes" component={VotesShow} />
+                        <Route exact path="/votes/:id/edit" component={VotesEdit} />
+                        <Route exact path="/votes" component={VotesIndex} />
+                        <Route exact path="/votes/:id" component={VotesShow} />
                     </Switch>
                 </div>
             </Router>

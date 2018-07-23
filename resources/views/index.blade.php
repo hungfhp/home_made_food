@@ -33,8 +33,5 @@
 
 @section('content')
 
-<div class="container">
-<h1>Hi</h1>
-    <div id="root"></div>
-</div>
+<div id="root"></div>
 @endsection
