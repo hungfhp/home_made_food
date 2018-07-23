@@ -6,6 +6,7 @@ use App\Model\Vote;
 use App\Model\Food;
 use Log;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Http\Resources\Json\Resource;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -16,6 +17,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Resource::withoutWrapping();
+
         User::deleting(function ($user) {
             $user->posts()->delete();
         });
