@@ -34,7 +34,6 @@ class VoteController extends Controller
             ->with('food.food_images')
             ->orderBy('created_at', 'desc')
             ->paginate(10);
-
         return response()->json(['result'=>true,"data" => $votes], 200);
     }
 
@@ -68,7 +67,6 @@ class VoteController extends Controller
 
         DB::table('votes')->insert($new_vote);
         event(new VoteCreated($new_vote));
-
         return response()->json(['result'=>true,'data' => $new_vote], 201);
     }
 
@@ -119,7 +117,6 @@ class VoteController extends Controller
         if ($old_vote->like != $like) {
             event(new VoteUpdating($old_vote, $new_vote));
         }
-
         return response()->json(['result'=>true,'data' => $new_vote], 202);
     }
 
