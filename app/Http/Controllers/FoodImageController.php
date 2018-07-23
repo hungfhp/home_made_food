@@ -24,8 +24,7 @@ class FoodImageController extends Controller
         $food_images = Food_image::with('food')
             ->orderBy('created_at', 'desc')
             ->paginate(10);
-
-        return response()->json(["food_images" => $food_images], 200);
+        return response()->json(['result'=>true, 'data'=> $food_images], 200);
     }
 
     /**
@@ -54,8 +53,7 @@ class FoodImageController extends Controller
         ];
 
         DB::table('food_images')->insert($new_food_image);
-
-        return response()->json(["created" => $new_food_image], 201);
+        return response()->json(['result'=>true, 'data' => $new_food_image], 201);
     }
 
     /**
@@ -67,8 +65,7 @@ class FoodImageController extends Controller
     public function show($id)
     {
         $food_image = Food_image::find($id);
-
-        return response()->json(["updated" => $food_image], 200);
+        return response()->json(['result'=>true, 'data' => $food_image], 200);
     }
 
     /**
@@ -95,8 +92,8 @@ class FoodImageController extends Controller
         $food_image = Food_image::find($id);
         $food_image->link = $request->link;
         $food_image->save();
+        return response()->json(['result'=>true, 'data' => $food_image], 202);
 
-        return response()->json(["updated" => $food_image], 202);
     }
 
     /**
@@ -109,7 +106,6 @@ class FoodImageController extends Controller
     {
         $user = Auth::user();
         $food_image = Food_image::find($id)->delete();
-
-        return response()->json(["destroyed" => $food_image], 203);
+        return response()->json(['result'=>true, 'data' => $food_image], 203);
     }
 }
