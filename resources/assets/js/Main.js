@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+// import { LocalizeProvider } from "react-localize-redux";
+import { I18n } from "react-i18next";
 
 // auth
 import AuthForgotPassword from "./pages/auth/ForgotPassword";
@@ -48,6 +50,7 @@ import VotesEdit from "./pages/votes/Edit";
 import VotesIndex from "./pages/votes/Index";
 import VotesShow from "./pages/votes/Show";
 
+import Lang from "./components/Lang";
 export default class Main extends Component {
     render() {
         return (
@@ -145,6 +148,7 @@ export default class Main extends Component {
                         <Route exact path="/foods/:id" component={FoodsShow} />
                         <Route exact path="/foods" component={FoodsIndex} />
                         {/* home */}
+                        <Route exact path="/" component={HomeIndex} />
                         <Route exact path="/home" component={HomeIndex} />
                         {/* transactions */}
                         <Route
@@ -209,6 +213,8 @@ export default class Main extends Component {
                         <Route exact path="/votes/:id" component={VotesShow} />
                         <Route exact path="/votes" component={VotesIndex} />
                     </Switch>
+
+                    {/* <Lang /> */}
                 </div>
             </Router>
         );
