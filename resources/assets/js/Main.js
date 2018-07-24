@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { I18nextProvider } from "react-i18next";
 
 import i18n from './i18n';
+import { LocalizeProvider } from "react-localize-redux";
+import { I18n } from "react-i18next";
 
 // auth
 import AuthForgotPassword from "./pages/auth/ForgotPassword";
@@ -51,6 +53,7 @@ import VotesEdit from "./pages/votes/Edit";
 import VotesIndex from "./pages/votes/Index";
 import VotesShow from "./pages/votes/Show";
 
+import Lang from "./components/Lang";
 export default class Main extends Component {
     render() {
         return (
@@ -96,6 +99,7 @@ export default class Main extends Component {
                         <Route exact path="/foods" component={FoodsIndex} />
                         <Route exact path="/foods/:id" component={FoodsShow} />
                         {/* home */}
+                        <Route exact path="/" component={HomeIndex} />
                         <Route exact path="/home" component={HomeIndex} />
                         {/* transactions */}
                         <Route exact path="/transactions/create" component={TransactionsCreate} />
@@ -116,6 +120,8 @@ export default class Main extends Component {
                         <Route exact path="/votes" component={VotesIndex} />
                         <Route exact path="/votes/:id" component={VotesShow} />
                     </Switch>
+
+                    {/* <Lang /> */}
                 </div>
             </Router>
         );

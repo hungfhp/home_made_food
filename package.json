@@ -26,12 +26,15 @@
     },
     "dependencies": {
         "i18next-browser-languagedetector": "^2.2.2",
+        "dropzone": "^5.5.1",
         "imports-loader": "^0.8.0",
         "jquery-mousewheel": "^3.1.13",
         "malihu-custom-scrollbar-plugin": "^3.1.5",
-        "react-native-i18n": "^2.0.15",
+        "react-i18next": "^7.9.0",
         "react-router": "^4.3.1",
         "react-router-dom": "^4.3.1",
-        "wow": "0.0.6"
+        "react-localize-redux": "^3.2.4",
+        "wow": "0.0.6",
+        "wow.js": "^1.2.2"
     }
 }
