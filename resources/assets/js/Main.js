@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { I18nextProvider } from "react-i18next";
+
+import i18n from './i18n';
 
 // auth
 import AuthForgotPassword from "./pages/auth/ForgotPassword";
@@ -56,10 +59,22 @@ export default class Main extends Component {
                     {/* Pages */}
                     <Switch>
                         {/* auth */}
-                        <Route exact path="/auth/hihi1" component={AuthForgotPassword} />
+                        <Route
+                            exact
+                            path="/auth/hihi1"
+                            component={AuthForgotPassword}
+                        />
                         <Route exact path="/auth/hihi2" component={AuthLogin} />
-                        <Route exact path="/auth/hihi3" component={AuthRegister} />
-                        <Route exact path="/auth/hihi4" component={AuthResetPassword} />
+                        <Route
+                            exact
+                            path="/auth/hihi3"
+                            component={AuthRegister}
+                        />
+                        <Route
+                            exact
+                            path="/auth/hihi4"
+                            component={AuthResetPassword}
+                        />
                         {/* categories */}
                         <Route exact path="/categories/create" component={CategoriesCreate} />
                         <Route exact path="/categories/:id/delete" component={CategoriesDelete} />
@@ -108,5 +123,5 @@ export default class Main extends Component {
 }
 
 if (document.getElementById("root")) {
-    ReactDOM.render(<Main />, document.getElementById("root"));
+    ReactDOM.render(<I18nextProvider i18n={ i18n }><Main /></I18nextProvider>, document.getElementById("root"));
 }

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Footer from "../../components/layouts/Footer";
+import { translate, Trans } from 'react-i18next';
 
-export default class Index extends Component {
+class Index extends Component {
     render() {
         return (
             <div>
@@ -11,3 +12,4 @@ export default class Index extends Component {
         );
     }
 }
+export default translate('translations')(Index);

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 
 export default class Footer extends Component {
     render() {
@@ -72,7 +71,7 @@ export default class Footer extends Component {
                             <div className="footer-item clearfix">
                                 <h4>Theo dõi thông tin mới nhất của Homemade Food</h4>
                                 <div className="Subscribe-box">
-                                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
+                                    <p><a href="https://www.computerhope.com/"><img src="https://www.computerhope.com/logo.gif"/></a></p>
                                     <form action="#" method="GET">
                                         <p>
                                             <input type="text" className="form-contact" name="email" placeholder="Enter Address"/>

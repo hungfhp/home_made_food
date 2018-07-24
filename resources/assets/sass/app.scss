@@ -4,20 +4,19 @@
 // Variables
 @import "variables";
 
-// Bootstrap
-@import "~bootstrap/scss/bootstrap";
-
 // Theme
-@import "../theme/css/skins/default.css";
-@import "../theme/css/animate.min.css";
 @import "../theme/css/bootstrap.min.css";
-@import "../theme/css/dropzone.css";
-@import "../theme/css/jquery.mCustomScrollbar.css";
-@import "../theme/css/jquery.selectBox.css";
-@import "../theme/css/leaflet.css";
 @import "../theme/css/magnific-popup.css";
-@import "../theme/css/map.css";
+@import "../theme/css/jquery.selectBox.css";
+@import "../theme/css/dropzone.css";
 @import "../theme/css/rangeslider.css";
+@import "../theme/css/animate.min.css";
+@import "../theme/css/leaflet.css";
+@import "../theme/css/map.css";
+@import "../theme/css/jquery.mCustomScrollbar.css";
+@import "../theme/fonts/font-awesome/css/font-awesome.min.css";
+@import "../theme/fonts/flaticon/font/flaticon.css";
+@import "../theme/css/skins/default.css";
 @import "../theme/css/style.css";
 
 .navbar-laravel {

@@ -10,21 +10,26 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
+        "ajv": "^6.5.2",
         "axios": "^0.18",
         "babel-preset-react": "^6.23.0",
         "bootstrap": "^4.0.0",
+        "cross-env": "^5.2.0",
+        "i18next": "^11.4.0",
         "jquery": "^3.2",
         "laravel-mix": "^2.0",
         "lodash": "^4.17.4",
-        "cross-env": "^5.2.0",
         "popper.js": "^1.12",
         "react": "^16.2.0",
-        "react-dom": "^16.2.0"
+        "react-dom": "^16.2.0",
+        "react-i18next": "^7.9.0"
     },
     "dependencies": {
+        "i18next-browser-languagedetector": "^2.2.2",
         "imports-loader": "^0.8.0",
         "jquery-mousewheel": "^3.1.13",
         "malihu-custom-scrollbar-plugin": "^3.1.5",
+        "react-native-i18n": "^2.0.15",
         "react-router": "^4.3.1",
         "react-router-dom": "^4.3.1",
         "wow": "0.0.6"
