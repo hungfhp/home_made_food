@@ -145,6 +145,7 @@ export default class Main extends Component {
                         <Route exact path="/foods/:id" component={FoodsShow} />
                         <Route exact path="/foods" component={FoodsIndex} />
                         {/* home */}
+                        <Route exact path="/" component={HomeIndex} />
                         <Route exact path="/home" component={HomeIndex} />
                         {/* transactions */}
                         <Route
