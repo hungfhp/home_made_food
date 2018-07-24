@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Header from "../../components/layouts/Header";
+import Footer from "../../components/layouts/Footer";
 import Banner from "../../components/home/Banner";
 import Blog from "../../components/home/Blog";
 import CertificatedUsers from "../../components/home/CertificatedUsers";
@@ -17,7 +18,7 @@ export default class Index extends Component {
         this.state = { seconds: 0 };
     }
     componentDidMount() {
-        console.log(this.props);
+        // console.log(this.props);
     }
     render() {
         return (
@@ -33,6 +34,7 @@ export default class Index extends Component {
                 <CertificatedUsers />
                 <Intro />
                 <Blog />
+                <Footer />
             </div>
         );
     }
