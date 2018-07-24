@@ -18,6 +18,5 @@ require("../theme/js/leaflet-providers.js");
 require("../theme/js/leaflet.markercluster.js");
 require("../theme/js/maps.js");
 require("../theme/js/jquery.mCustomScrollbar.concat.min.js");
-require("https://maps.googleapis.com/maps/api/js?key=AIzaSyB0N5pbJN10Y1oYFRd0MJ_v2g8W2QT74JE");
 require("../theme/js/ie-emulation-modes-warning.js");
 require("../theme/js/app.js");
