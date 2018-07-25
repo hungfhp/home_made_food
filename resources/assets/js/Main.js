@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-// import { LocalizeProvider } from "react-localize-redux";
+import { I18nextProvider } from "react-i18next";
+
+import i18n from "./i18n";
 import { I18n } from "react-i18next";
 
 // auth
@@ -93,12 +95,12 @@ export default class Main extends Component {
                         />
                         <Route
                             exact
-                            path="/categories/:id"
+                            path="/categories"
                             component={CategoriesIndex}
                         />
                         <Route
                             exact
-                            path="/categories"
+                            path="/categories/:id"
                             component={CategoriesShow}
                         />
                         {/* error */}
@@ -121,13 +123,13 @@ export default class Main extends Component {
                         />
                         <Route
                             exact
-                            path="/favorites/:id"
-                            component={FavoritesShow}
+                            path="/favorites"
+                            component={FavoritesIndex}
                         />
                         <Route
                             exact
-                            path="/favorites"
-                            component={FavoritesIndex}
+                            path="/favorites/:id"
+                            component={FavoritesShow}
                         />
                         {/* foods */}
                         <Route
@@ -145,8 +147,8 @@ export default class Main extends Component {
                             path="/foods/:id/edit"
                             component={FoodsEdit}
                         />
-                        <Route exact path="/foods/:id" component={FoodsShow} />
                         <Route exact path="/foods" component={FoodsIndex} />
+                        <Route exact path="/foods/:id" component={FoodsShow} />
                         {/* home */}
                         <Route exact path="/" component={HomeIndex} />
                         <Route exact path="/home" component={HomeIndex} />
@@ -168,13 +170,13 @@ export default class Main extends Component {
                         />
                         <Route
                             exact
-                            path="/transactions/:id"
-                            component={TransactionsShow}
+                            path="/transactions"
+                            component={TransactionsIndex}
                         />
                         <Route
                             exact
-                            path="/transactions"
-                            component={TransactionsIndex}
+                            path="/transactions/:id"
+                            component={TransactionsShow}
                         />
                         {/* users */}
                         <Route
@@ -192,8 +194,8 @@ export default class Main extends Component {
                             path="/users/:id/edit"
                             component={UsersEdit}
                         />
-                        <Route exact path="/users/:id" component={UsersShow} />
                         <Route exact path="/users" component={UsersIndex} />
+                        <Route exact path="/users/:id" component={UsersShow} />
                         {/* votes */}
                         <Route
                             exact
@@ -210,8 +212,8 @@ export default class Main extends Component {
                             path="/votes/:id/edit"
                             component={VotesEdit}
                         />
-                        <Route exact path="/votes/:id" component={VotesShow} />
                         <Route exact path="/votes" component={VotesIndex} />
+                        <Route exact path="/votes/:id" component={VotesShow} />
                     </Switch>
 
                     {/* <Lang /> */}
@@ -222,5 +224,10 @@ export default class Main extends Component {
 }
 
 if (document.getElementById("root")) {
-    ReactDOM.render(<Main />, document.getElementById("root"));
+    ReactDOM.render(
+        <I18nextProvider i18n={i18n}>
+            <Main />
+        </I18nextProvider>,
+        document.getElementById("root")
+    );
 }
