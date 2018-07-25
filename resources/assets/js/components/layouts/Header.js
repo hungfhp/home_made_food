@@ -1,21 +1,25 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import {Link} from 'react-router'
 
 import HeaderTop from "./HeaderTop";
 
 export default class Header extends Component {
+    constructor(props) {
+        super(props);
+    }
     render() {
         return (
             <div>
+                <title>{this.props.title}</title>
                 <HeaderTop />
                 <header className="main-header do-sticky" id="main-header-2">
                     <div className="container">
                         <div className="row">
                             <div className="col-12">
                                 <nav className="navbar navbar-expand-lg navbar-light rounded">
-                                    <a
+                                    <a href="/home"
                                         className="navbar-brand logo"
-                                        href="/"
                                     >
                                         <img
                                             src="img/logos/black-logo.png"
