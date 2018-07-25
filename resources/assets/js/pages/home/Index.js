@@ -10,6 +10,7 @@ import PopularCategories from "../../components/home/PopularCategories";
 import RecentFoods from "../../components/home/RecentFoods";
 import SearchArea from "../../components/home/SearchArea";
 import Services from "../../components/home/Services";
+import Footer from "../../components/layouts/Footer";
 
 export default class Index extends Component {
     constructor(props) {
@@ -33,6 +34,7 @@ export default class Index extends Component {
                 <CertificatedUsers />
                 <Intro />
                 <Blog />
+                <Footer/>
             </div>
         );
     }
