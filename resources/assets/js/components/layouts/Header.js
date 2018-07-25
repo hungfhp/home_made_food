@@ -15,7 +15,7 @@ export default class Header extends Component {
                                 <nav className="navbar navbar-expand-lg navbar-light rounded">
                                     <a
                                         className="navbar-brand logo"
-                                        href="index.html"
+                                        href="/"
                                     >
                                         <img
                                             src="img/logos/black-logo.png"

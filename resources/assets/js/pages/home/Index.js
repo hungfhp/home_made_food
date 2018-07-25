@@ -23,6 +23,7 @@ export default class Index extends Component {
     render() {
         return (
             <div>
+                {/* index 6 */}
                 <Header />
                 <Banner />
                 <SearchArea />

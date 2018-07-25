@@ -11,8 +11,8 @@
 */
 Route::get('test', 'UserController@getUser');
 
-//Login
-Auth::routes();
+// Auth
+// Auth::routes();
 
 Route::get('/{any}', function () {
     return view('index');
