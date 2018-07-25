@@ -51,12 +51,12 @@ export default class HeaderTop extends Component {
                                     <a href="#">/</a>
                                 </li>
                                 <li>
-                                    <a href="login" className="sign-in">
+                                    <a href="/login" className="sign-in">
                                         <i className="fa fa-sign-in" /> Login{" "}
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="login" className="sign-in">
+                                    <a href="/register" className="sign-in">
                                         <i className="fa fa-user" /> Register
                                     </a>
                                 </li>

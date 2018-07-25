@@ -17,6 +17,12 @@ Route::get('/', function () {
     return 'Welcome to Food API!';
 });
 
+Route::post('login', 'AuthController@login');
+Route::post('register', 'AuthController@register');
+Route::group(['middleware' => 'auth:api'], function () {
+    Route::get('profile', 'AuthController@profile');
+});
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

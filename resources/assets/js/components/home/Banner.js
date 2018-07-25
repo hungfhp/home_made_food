@@ -1,10 +1,86 @@
 import React, { Component } from "react";
+import CarouselItem from "./banner/CarouselItem";
 
-export default class Index extends Component {
+export default class Banner extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            slides: [
+                {
+                    status: "active",
+                    img_src: "img/banner-3.jpg",
+                    contents: [
+                        {
+                            text: "We love make things <br />amazing and simple"
+                        },
+                        {
+                            text:
+                                "This is real estate website template based on Bootstrap 4 framework."
+                        }
+                    ],
+                    buttons: [
+                        {
+                            text: "Get Started Now",
+                            link_to: "/categories"
+                        },
+                        {
+                            text: "Free Download",
+                            link_to: "/categories"
+                        }
+                    ]
+                },
+                {
+                    status: "",
+                    img_src: "img/banner-3.jpg",
+                    contents: [
+                        {
+                            text: "We love make things <br />amazing and simple"
+                        },
+                        {
+                            text:
+                                "This is real estate website template based on Bootstrap 4 framework."
+                        }
+                    ],
+                    buttons: [
+                        {
+                            text: "Get Started Now",
+                            link_to: "/categories"
+                        },
+                        {
+                            text: "Free Download",
+                            link_to: "/categories"
+                        }
+                    ]
+                },
+                {
+                    status: "",
+                    img_src: "img/banner-3.jpg",
+                    contents: [
+                        {
+                            text: "We love make things <br />amazing and simple"
+                        },
+                        {
+                            text:
+                                "This is real estate website template based on Bootstrap 4 framework."
+                        }
+                    ],
+                    buttons: [
+                        {
+                            text: "Get Started Now",
+                            link_to: "/categories"
+                        },
+                        {
+                            text: "Free Download",
+                            link_to: "/categories"
+                        }
+                    ]
+                }
+            ]
+        };
+    }
     render() {
         return (
-            // viet luon lay tu file nao
-            // index 5 kha' dep.
+            // index 6
             <div className="banner" id="banner">
                 <div
                     id="carouselExampleIndicators"
@@ -12,112 +88,9 @@ export default class Index extends Component {
                     data-ride="carousel"
                 >
                     <div className="carousel-inner banner-max-height">
-                        <div className="carousel-item active">
-                            <img
-                                className="d-block w-100"
-                                src="img/banner-3.jpg"
-                                alt="banner-1"
-                            />
-                            <div className="carousel-caption banner-slider-inner d-flex h-100 text-center">
-                                <div className="carousel-content container">
-                                    <div className="text-center">
-                                        <h1 data-animation="animated fadeInDown delay-05s">
-                                            We love make things <br />amazing
-                                            and simple
-                                        </h1>
-                                        <p data-animation="animated fadeInUp delay-10s">
-                                            This is real estate website template
-                                            based on Bootstrap 4 framework.
-                                        </p>
-                                        <a
-                                            data-animation="animated fadeInUp delay-10s"
-                                            href="#"
-                                            className="btn btn-lg btn-round btn-theme"
-                                        >
-                                            Get Started Now
-                                        </a>
-                                        <a
-                                            data-animation="animated fadeInUp delay-12s"
-                                            href="#"
-                                            className="btn btn-lg btn-round btn-white-lg-outline"
-                                        >
-                                            Free Download
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="carousel-item">
-                            <img
-                                className="d-block w-100"
-                                src="img/banner-3.jpg"
-                                alt="banner-2"
-                            />
-                            <div className="carousel-caption banner-slider-inner d-flex h-100 text-center">
-                                <div className="carousel-content container">
-                                    <div className="text-center">
-                                        <h1 data-animation="animated fadeInDown delay-05s">
-                                            Find Your <br /> Dream Properties
-                                        </h1>
-                                        <p data-animation="animated fadeInUp delay-10s">
-                                            This is real estate website template
-                                            based on Bootstrap 4 framework.
-                                        </p>
-                                        <a
-                                            data-animation="animated fadeInUp delay-10s"
-                                            href="#"
-                                            className="btn btn-lg btn-round btn-theme"
-                                        >
-                                            Get Started Now
-                                        </a>
-                                        <a
-                                            data-animation="animated fadeInUp delay-12s"
-                                            href="#"
-                                            className="btn btn-lg btn-round btn-white-lg-outline"
-                                        >
-                                            Free Download
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="carousel-item">
-                            <img
-                                className="d-block w-100"
-                                src="img/banner-3.jpg"
-                                alt="banner-3"
-                            />
-                            <div className="carousel-caption banner-slider-inner d-flex h-100 text-center">
-                                <div className="carousel-content container">
-                                    <div className="text-center">
-                                        <h1 data-animation="animated fadeInUp delay-05s">
-                                            Best Place For <br /> Sell
-                                            Properties
-                                        </h1>
-                                        <p data-animation="animated fadeInUp delay-10s">
-                                            This is real estate website template
-                                            based on Bootstrap 4 framework.
-                                        </p>
-                                        <a
-                                            data-animation="animated fadeInUp delay-10s"
-                                            href="#"
-                                            className="btn btn-lg btn-round btn-theme"
-                                        >
-                                            Get Started Now
-                                        </a>
-                                        <a
-                                            data-animation="animated fadeInUp delay-12s"
-                                            href="#"
-                                            className="btn btn-lg btn-round btn-white-lg-outline"
-                                        >
-                                            Free Download
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <CarouselItem slide={this.state.slides[0]} />
+                        <CarouselItem slide={this.state.slides[1]} />
+                        <CarouselItem slide={this.state.slides[2]} />
                     </div>
                     <a
                         className="carousel-control-prev"

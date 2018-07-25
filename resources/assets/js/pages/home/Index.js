@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Header from "../../components/layouts/Header";
+import Footer from "../../components/layouts/Footer";
 import Banner from "../../components/home/Banner";
 import Blog from "../../components/home/Blog";
 import CertificatedUsers from "../../components/home/CertificatedUsers";
@@ -10,7 +11,6 @@ import PopularCategories from "../../components/home/PopularCategories";
 import RecentFoods from "../../components/home/RecentFoods";
 import SearchArea from "../../components/home/SearchArea";
 import Services from "../../components/home/Services";
-import Footer from "../../components/layouts/Footer";
 
 export default class Index extends Component {
     constructor(props) {
@@ -18,11 +18,12 @@ export default class Index extends Component {
         this.state = { seconds: 0 };
     }
     componentDidMount() {
-        console.log(this.props);
+        // console.log(this.props);
     }
     render() {
         return (
             <div>
+                {/* index 6 */}
                 <Header />
                 <Banner />
                 <SearchArea />
@@ -34,7 +35,7 @@ export default class Index extends Component {
                 <CertificatedUsers />
                 <Intro />
                 <Blog />
-                <Footer/>
+                <Footer />
             </div>
         );
     }
