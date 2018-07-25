@@ -9,14 +9,16 @@ import Product from "../../components/food/Product";
 class Index extends Component {
     render() {
         return (
+            //index 6
             <div>
                 <Header title="Homemade - Foods"/>
-                <Subheader/>
-                <h2>Index</h2>
-                <div className="container">
-                    <div className="row">
-                        <Product/>
-                        <Tool/>
+                <Subheader title="Foods"/>
+                <div className="user-page submit-property content-area-7">
+                    <div className="container">
+                        <div className="row">
+                            <Product/>
+                            <Tool/>
+                        </div>
                     </div>
                 </div>
                 <Footer/>
