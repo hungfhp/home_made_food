@@ -4,7 +4,7 @@ export default class Show extends Component {
     render() {
         return (
             <div>
-                <h2>Show</h2>
+               <h2>Show</h2>
             </div>
         );
     }

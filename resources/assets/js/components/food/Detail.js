@@ -650,7 +650,7 @@ export default class Detail extends Component {
                     <h3 className="heading">Leave a Comment</h3>
                     <div className="container">
                         <div className="row">
-                            <form action="#" method="GET" enctype="multipart/form-data">
+                            <form action="#" method="GET" encType="multipart/form-data">
                                 <div className="row">
                                     <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                         <div className="form-group name">
