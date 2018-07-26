@@ -10,6 +10,8 @@ clone
 composer update
 
 php artisan key:generate
+
+php artisan passport:install
 </pre>
 
 Linux: <pre>npm install</pre>

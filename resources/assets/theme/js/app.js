@@ -45,17 +45,17 @@ $(function() {
                 if ($(".do-sticky").length < 1) {
                     $(".logo img").attr(
                         "src",
-                        "assets/img/logos/black-logo.png"
+                        "img/logos/black-logo.png"
                     );
                 }
             } else {
                 $(".sticky-header").removeClass("header-shrink");
                 if ($(".do-sticky").length < 1) {
-                    $(".logo img").attr("src", "assets/img/logos/logo.png");
+                    $(".logo img").attr("src", "img/logos/logo.png");
                 }
             }
         } else {
-            $(".logo img").attr("src", "assets/img/logos/black-logo.png");
+            $(".logo img").attr("src", "img/logos/black-logo.png");
         }
     }
 
