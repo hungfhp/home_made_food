@@ -9,7 +9,7 @@ import ListFavourite from "../../components/favourite/ListFavourite";
 export default class Index extends Component {
     render() {
         return (
-            //favourited properties
+            //favourite properties
             <div>
                 <Header title="Homemade - Favourite foods"/>
                 <Subheader title="Favourite foods"/>
