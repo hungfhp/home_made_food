@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -14,7 +13,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function getUser()
+    public function index()
     {
         $data = User::get();
         Log::info('1');
@@ -29,15 +28,14 @@ class UserController extends Controller
     public function postRegister(Request $request)
     {
         $data = $request->only('password', 'email');
-        $check = User::where('email', $data['email'])
-            ->count();
-        if ($check == 0)
-        {
+        $check = User::where('email', $data['email'])->count();
+        if ($check == 0) {
             return response()->json(['result' => true, 'data' => $data], 200);
-        }
-        else
-        {
-            return response()->json(['result' => false, 'data' => 'error: register'], 401);
+        } else {
+            return response()->json(
+                ['result' => false, 'data' => 'error: register'],
+                401
+            );
         }
     }
 

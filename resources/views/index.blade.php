@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<div id="root"></div>
+    <div class="page_loader"></div>
+    <div id="root"></div>
 @endsection

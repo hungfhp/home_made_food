@@ -51,7 +51,10 @@ import VotesDelete from "./pages/votes/Delete";
 import VotesEdit from "./pages/votes/Edit";
 import VotesIndex from "./pages/votes/Index";
 import VotesShow from "./pages/votes/Show";
-
+// common
+import ModalCanvasSidebar from "./components/modal/CanvasSidebar";
+import ModalFood from "./components/modal/Food";
+import ModalFullPageSearch from "./components/modal/FullPageSearch";
 import Lang from "./components/Lang";
 export default class Main extends Component {
     render() {
@@ -61,22 +64,10 @@ export default class Main extends Component {
                     {/* Pages */}
                     <Switch>
                         {/* auth */}
-                        <Route
-                            exact
-                            path="/auth/hihi1"
-                            component={AuthForgotPassword}
-                        />
-                        <Route exact path="/auth/hihi2" component={AuthLogin} />
-                        <Route
-                            exact
-                            path="/auth/hihi3"
-                            component={AuthRegister}
-                        />
-                        <Route
-                            exact
-                            path="/auth/hihi4"
-                            component={AuthResetPassword}
-                        />
+                        <Route exact path="/forgot-password" component={AuthForgotPassword} />
+                        <Route exact path="/login" component={AuthLogin} />
+                        <Route exact path="/register" component={AuthRegister} />
+                        <Route exact path="/reset-password" component={AuthResetPassword} />
                         {/* categories */}
                         <Route exact path="/categories/create" component={CategoriesCreate} />
                         <Route exact path="/categories/:id/delete" component={CategoriesDelete} />
@@ -119,8 +110,10 @@ export default class Main extends Component {
                         <Route exact path="/votes" component={VotesIndex} />
                         <Route exact path="/votes/:id" component={VotesShow} />
                     </Switch>
-
-                    {/* <Lang /> */}
+                    {/* common */}
+                    <ModalCanvasSidebar/>
+                    <ModalFood/>
+                    <ModalFullPageSearch/>
                 </div>
             </Router>
         );
