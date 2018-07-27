@@ -41,6 +41,16 @@ class AuthController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function logout(Request $request) {
+        Auth::logout();
+        return response()->json(["success"=>true], 200);
+    }
+
+    /**
+     * Register api
+     *
+     * @return \Illuminate\Http\Response
+     */
 
     public function register(Request $request)
     {
@@ -71,5 +81,17 @@ class AuthController extends Controller
         Log::info('api/profile');
         $user = Auth::user();
         return response()->json(['success' => $user], $this->successStatus);
+    }
+
+    public function loggedInInfo()
+    {
+        Log::info('api/loggedInInfo');
+        if(Auth::check()){
+            $user = Auth::user();
+            return response()->json(['success' => $user], $this->successStatus);
+        }
+        else{
+            return response()->json(['success' => null], 401);
+        }
     }
 }
