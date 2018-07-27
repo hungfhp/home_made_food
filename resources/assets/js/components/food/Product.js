@@ -61,11 +61,11 @@ export default class Product extends Component {
                                         <i className="fa fa-video-camera"></i>
                                     </a>
                                     <div className="property-magnify-gallery">
-                                        <a href="assets/img/property-1.jpg" className="overlay-link">
+                                        <a href="/img/property-1.jpg" className="overlay-link">
                                             <i className="fa fa-expand"></i>
                                         </a>
-                                        <a href="assets/img/property-6.jpg" className="hidden"></a>
-                                        <a href="assets/img/property-4.jpg" className="hidden"></a>
+                                        <a href="/img/property-6.jpg" className="hidden"></a>
+                                        <a href="/img/property-4.jpg" className="hidden"></a>
                                     </div>
                                 </div>
                             </div>
@@ -131,11 +131,11 @@ export default class Product extends Component {
                                         <i className="fa fa-video-camera"></i>
                                     </a>
                                     <div className="property-magnify-gallery">
-                                        <a href="assets/img/property-2.jpg" className="overlay-link">
+                                        <a href="/img/property-2.jpg" className="overlay-link">
                                             <i className="fa fa-expand"></i>
                                         </a>
-                                        <a href="assets/img/property-6.jpg" className="hidden"></a>
-                                        <a href="assets/img/property-4.jpg" className="hidden"></a>
+                                        <a href="/img/property-6.jpg" className="hidden"></a>
+                                        <a href="/img/property-4.jpg" className="hidden"></a>
                                     </div>
                                 </div>
                             </div>
@@ -201,11 +201,11 @@ export default class Product extends Component {
                                         <i className="fa fa-video-camera"></i>
                                     </a>
                                     <div className="property-magnify-gallery">
-                                        <a href="assets/img/property-3.jpg" className="overlay-link">
+                                        <a href="/img/property-3.jpg" className="overlay-link">
                                             <i className="fa fa-expand"></i>
                                         </a>
-                                        <a href="assets/img/property-6.jpg" className="hidden"></a>
-                                        <a href="assets/img/property-4.jpg" className="hidden"></a>
+                                        <a href="/img/property-6.jpg" className="hidden"></a>
+                                        <a href="/img/property-4.jpg" className="hidden"></a>
                                     </div>
                                 </div>
                             </div>
@@ -271,11 +271,11 @@ export default class Product extends Component {
                                         <i className="fa fa-video-camera"></i>
                                     </a>
                                     <div className="property-magnify-gallery">
-                                        <a href="assets/img/property-4.jpg" className="overlay-link">
+                                        <a href="/img/property-4.jpg" className="overlay-link">
                                             <i className="fa fa-expand"></i>
                                         </a>
-                                        <a href="assets/img/property-6.jpg" className="hidden"></a>
-                                        <a href="assets/img/property-5.jpg" className="hidden"></a>
+                                        <a href="/img/property-6.jpg" className="hidden"></a>
+                                        <a href="/img/property-5.jpg" className="hidden"></a>
                                     </div>
                                 </div>
                             </div>
@@ -341,11 +341,11 @@ export default class Product extends Component {
                                         <i className="fa fa-video-camera"></i>
                                     </a>
                                     <div className="property-magnify-gallery">
-                                        <a href="assets/img/property-5.jpg" className="overlay-link">
+                                        <a href="/img/property-5.jpg" className="overlay-link">
                                             <i className="fa fa-expand"></i>
                                         </a>
-                                        <a href="assets/img/property-6.jpg" className="hidden"></a>
-                                        <a href="assets/img/property-4.jpg" className="hidden"></a>
+                                        <a href="/img/property-6.jpg" className="hidden"></a>
+                                        <a href="/img/property-4.jpg" className="hidden"></a>
                                     </div>
                                 </div>
                             </div>
@@ -411,11 +411,11 @@ export default class Product extends Component {
                                         <i className="fa fa-video-camera"></i>
                                     </a>
                                     <div className="property-magnify-gallery">
-                                        <a href="assets/img/property-6.jpg" className="overlay-link">
+                                        <a href="/img/property-6.jpg" className="overlay-link">
                                             <i className="fa fa-expand"></i>
                                         </a>
-                                        <a href="assets/img/property-9.jpg" className="hidden"></a>
-                                        <a href="assets/img/property-4.jpg" className="hidden"></a>
+                                        <a href="/img/property-9.jpg" className="hidden"></a>
+                                        <a href="/img/property-4.jpg" className="hidden"></a>
                                     </div>
                                 </div>
                             </div>
@@ -481,11 +481,11 @@ export default class Product extends Component {
                                         <i className="fa fa-video-camera"></i>
                                     </a>
                                     <div className="property-magnify-gallery">
-                                        <a href="assets/img/property-7.jpg" className="overlay-link">
+                                        <a href="/img/property-7.jpg" className="overlay-link">
                                             <i className="fa fa-expand"></i>
                                         </a>
-                                        <a href="assets/img/property-6.jpg" className="hidden"></a>
-                                        <a href="assets/img/property-4.jpg" className="hidden"></a>
+                                        <a href="/img/property-6.jpg" className="hidden"></a>
+                                        <a href="/img/property-4.jpg" className="hidden"></a>
                                     </div>
                                 </div>
                             </div>
@@ -551,11 +551,11 @@ export default class Product extends Component {
                                         <i className="fa fa-video-camera"></i>
                                     </a>
                                     <div className="property-magnify-gallery">
-                                        <a href="assets/img/property-8.jpg" className="overlay-link">
+                                        <a href="/img/property-8.jpg" className="overlay-link">
                                             <i className="fa fa-expand"></i>
                                         </a>
-                                        <a href="assets/img/property-6.jpg" className="hidden"></a>
-                                        <a href="assets/img/property-5.jpg" className="hidden"></a>
+                                        <a href="/img/property-6.jpg" className="hidden"></a>
+                                        <a href="/img/property-5.jpg" className="hidden"></a>
                                     </div>
                                 </div>
                             </div>
@@ -621,11 +621,11 @@ export default class Product extends Component {
                                         <i className="fa fa-video-camera"></i>
                                     </a>
                                     <div className="property-magnify-gallery">
-                                        <a href="assets/img/property-9.jpg" className="overlay-link">
+                                        <a href="/img/property-9.jpg" className="overlay-link">
                                             <i className="fa fa-expand"></i>
                                         </a>
-                                        <a href="assets/img/property-6.jpg" className="hidden"></a>
-                                        <a href="assets/img/property-5.jpg" className="hidden"></a>
+                                        <a href="/img/property-6.jpg" className="hidden"></a>
+                                        <a href="/img/property-5.jpg" className="hidden"></a>
                                     </div>
                                 </div>
                             </div>
@@ -691,11 +691,11 @@ export default class Product extends Component {
                                         <i className="fa fa-video-camera"></i>
                                     </a>
                                     <div className="property-magnify-gallery">
-                                        <a href="assets/img/property-3.jpg" className="overlay-link">
+                                        <a href="/img/property-3.jpg" className="overlay-link">
                                             <i className="fa fa-expand"></i>
                                         </a>
-                                        <a href="assets/img/property-6.jpg" className="hidden"></a>
-                                        <a href="assets/img/property-5.jpg" className="hidden"></a>
+                                        <a href="/img/property-6.jpg" className="hidden"></a>
+                                        <a href="/img/property-5.jpg" className="hidden"></a>
                                     </div>
                                 </div>
                             </div>

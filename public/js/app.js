@@ -11183,7 +11183,7 @@ var Header = function (_Component) {
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         "a",
                                         { href: "/", className: "navbar-brand logo" },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "img/logos/black-logo.png", alt: "logo" })
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "/img/logos/black-logo.png", alt: "logo" })
                                     ),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         "button",
@@ -56906,8 +56906,8 @@ var properties = {
         "balcony": 3,
         "lounge": 1,
         "garage": 1,
-        "image": "img/property-2.jpg",
-        "type_icon": "img/building.png",
+        "image": "/img/property-2.jpg",
+        "type_icon": "/img/building.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor"
     }, {
         "id": 2,
@@ -56926,8 +56926,8 @@ var properties = {
         "balcony": 3,
         "lounge": 1,
         "garage": 1,
-        "image": "img/property-1.jpg",
-        "type_icon": "img/building.png",
+        "image": "/img/property-1.jpg",
+        "type_icon": "/img/building.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor"
     }, {
         "id": 3,
@@ -56946,8 +56946,8 @@ var properties = {
         "balcony": 3,
         "lounge": 1,
         "garage": 1,
-        "image": "img/property-3.jpg",
-        "type_icon": "img/building.png",
+        "image": "/img/property-3.jpg",
+        "type_icon": "/img/building.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor"
     }, {
         "id": 4,
@@ -56966,8 +56966,8 @@ var properties = {
         "balcony": 3,
         "lounge": 1,
         "garage": 1,
-        "image": "img/property-4.jpg",
-        "type_icon": "img/building.png",
+        "image": "/img/property-4.jpg",
+        "type_icon": "/img/building.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor"
     }, {
         "id": 5,
@@ -56986,8 +56986,8 @@ var properties = {
         "balcony": 3,
         "lounge": 1,
         "garage": 1,
-        "image": "img/property-5.jpg",
-        "type_icon": "img/building.png",
+        "image": "/img/property-5.jpg",
+        "type_icon": "/img/building.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor"
     }, {
         "id": 6,
@@ -57006,8 +57006,8 @@ var properties = {
         "balcony": 3,
         "lounge": 1,
         "garage": 1,
-        "image": "img/property-6.jpg",
-        "type_icon": "img/building.png",
+        "image": "/img/property-6.jpg",
+        "type_icon": "/img/building.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor"
     }, {
         "id": 7,
@@ -57026,8 +57026,8 @@ var properties = {
         "balcony": 3,
         "lounge": 1,
         "garage": 1,
-        "image": "img/property-7.jpg",
-        "type_icon": "img/building.png",
+        "image": "/img/property-7.jpg",
+        "type_icon": "/img/building.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor"
     }, {
         "id": 8,
@@ -57046,8 +57046,8 @@ var properties = {
         "balcony": 3,
         "lounge": 1,
         "garage": 1,
-        "image": "img/property-8.jpg",
-        "type_icon": "img/building.png",
+        "image": "/img/property-8.jpg",
+        "type_icon": "/img/building.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor"
     }, {
         "id": 9,
@@ -57066,8 +57066,8 @@ var properties = {
         "balcony": 3,
         "lounge": 1,
         "garage": 1,
-        "image": "img/property-9.jpg",
-        "type_icon": "img/building.png",
+        "image": "/img/property-9.jpg",
+        "type_icon": "/img/building.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor"
     }, {
         "id": 10,
@@ -57086,8 +57086,8 @@ var properties = {
         "balcony": 3,
         "lounge": 1,
         "garage": 1,
-        "image": "img/property-10.jpg",
-        "type_icon": "img/building.png",
+        "image": "/img/property-10.jpg",
+        "type_icon": "/img/building.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor"
     }, {
         "id": 11,
@@ -57106,8 +57106,8 @@ var properties = {
         "balcony": 3,
         "lounge": 1,
         "garage": 1,
-        "image": "img/property-11.jpg",
-        "type_icon": "img/building.png",
+        "image": "/img/property-11.jpg",
+        "type_icon": "/img/building.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor"
     }, {
         "id": 12,
@@ -57126,8 +57126,8 @@ var properties = {
         "balcony": 3,
         "lounge": 1,
         "garage": 1,
-        "image": "img/property-12.jpg",
-        "type_icon": "img/building.png",
+        "image": "/img/property-12.jpg",
+        "type_icon": "/img/building.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor"
     }, {
         "id": 13,
@@ -57146,8 +57146,8 @@ var properties = {
         "balcony": 3,
         "lounge": 1,
         "garage": 1,
-        "image": "img/property-13.jpg",
-        "type_icon": "img/building.png",
+        "image": "/img/property-13.jpg",
+        "type_icon": "/img/building.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor"
     }, {
         "id": 14,
@@ -57166,8 +57166,8 @@ var properties = {
         "balcony": 3,
         "lounge": 1,
         "garage": 1,
-        "image": "img/property-14.jpg",
-        "type_icon": "img/building.png",
+        "image": "/img/property-14.jpg",
+        "type_icon": "/img/building.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor"
     }, {
         "id": 15,
@@ -57186,8 +57186,8 @@ var properties = {
         "balcony": 3,
         "lounge": 1,
         "garage": 1,
-        "image": "img/property-5.jpg",
-        "type_icon": "img/building.png",
+        "image": "/img/property-5.jpg",
+        "type_icon": "/img/building.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor"
     }]
 };
@@ -57322,9 +57322,9 @@ function insertPropertyToArray(property, layout) {
     var element = '';
 
     if (layout == 'grid_layout') {
-        element += '<div class="col-lg-6 col-md-6 col-sm-6">\n' + '                        <div class="property-box">\n' + '                            <div class="property-thumbnail">\n' + '                                <a href="properties-details.html" class="property-img">\n' + '                                    <div class="tag button alt featured">' + is_featured + '</div>\n' + '                                    <div class="price-ratings-box">\n' + '                                        <p class="price">$' + price + ' </p>\n' + '                                        <div class="ratings">\n' + '                                            <i class="fa fa-star"></i>\n' + '                                            <i class="fa fa-star"></i>\n' + '                                            <i class="fa fa-star"></i>\n' + '                                            <i class="fa fa-star"></i>\n' + '                                            <i class="fa fa-star-o"></i>\n' + '                                        </div>\n' + '                                    </div>\n' + '                                    <img src="' + image + '" alt="property-2" class="img-fluid">\n' + '                                </a>' + '                                   <div class="property-overlay">\n' + '                                    <a href="properties-details.html" class="overlay-link">\n' + '                                        <i class="fa fa-link"></i>\n' + '                                    </a>\n' + '                                    <a class="overlay-link property-video" title="Test Title">\n' + '                                        <i class="fa fa-video-camera"></i>\n' + '                                    </a>\n' + '                                    <div class="property-magnify-gallery">\n' + '                                        <a href="img/property-2.jpg" class="overlay-link">\n' + '                                            <i class="fa fa-expand"></i>\n' + '                                        </a>\n' + '                                        <a href="img/property-6.jpg" class="hidden"></a>\n' + '                                        <a href="img/property-4.jpg" class="hidden"></a>\n' + '                                    </div>\n' + '                                </div>\n' + '                            </div>\n' + '                            <div class="detail">\n' + '                                <h1 class="title">\n' + '                                    <a href="properties-details.html">' + title + '</a>\n' + '                                </h1>\n' + '                                <div class="location">\n' + '                                    <a href="properties-details.html">\n' + '                                        <i class="fa fa-map-marker"></i>' + address + ',\n' + '                                    </a>\n' + '                                </div>\n' + '                                <ul class="facilities-list clearfix">\n' + '                                    <li>\n' + '                                        <i class="flaticon-bed"></i> ' + Beds + ' Bedrooms\n' + '                                    </li>\n' + '                                    <li>\n' + '                                        <i class="flaticon-bath"></i> ' + bathroom + ' Bathrooms\n' + '                                    </li>\n' + '                                    <li>\n' + '                                        <i class="flaticon-square-layouting-with-black-square-in-east-area"></i> Sq Ft:' + area + '\n' + '                                    </li>\n' + '                                    <li>\n' + '                                        <i class="flaticon-car-repair"></i> ' + garage + ' Garage\n' + '                                    </li>\n' + '                                </ul>\n' + '                            </div>\n' + '                            <div class="footer">\n' + '                                <a href="#">\n' + '                                    <i class="fa fa-user"></i> ' + author + '\n' + '                                </a>\n' + '                                <span>\n' + '                                <i class="fa fa-calendar-o"></i> ' + date + '\n' + '                            </span>\n' + '                            </div>\n' + '                        </div>\n' + '                    </div>';
+        element += '<div class="col-lg-6 col-md-6 col-sm-6">\n' + '                        <div class="property-box">\n' + '                            <div class="property-thumbnail">\n' + '                                <a href="properties-details.html" class="property-img">\n' + '                                    <div class="tag button alt featured">' + is_featured + '</div>\n' + '                                    <div class="price-ratings-box">\n' + '                                        <p class="price">$' + price + ' </p>\n' + '                                        <div class="ratings">\n' + '                                            <i class="fa fa-star"></i>\n' + '                                            <i class="fa fa-star"></i>\n' + '                                            <i class="fa fa-star"></i>\n' + '                                            <i class="fa fa-star"></i>\n' + '                                            <i class="fa fa-star-o"></i>\n' + '                                        </div>\n' + '                                    </div>\n' + '                                    <img src="' + image + '" alt="property-2" class="img-fluid">\n' + '                                </a>' + '                                   <div class="property-overlay">\n' + '                                    <a href="properties-details.html" class="overlay-link">\n' + '                                        <i class="fa fa-link"></i>\n' + '                                    </a>\n' + '                                    <a class="overlay-link property-video" title="Test Title">\n' + '                                        <i class="fa fa-video-camera"></i>\n' + '                                    </a>\n' + '                                    <div class="property-magnify-gallery">\n' + '                                        <a href="/img/property-2.jpg" class="overlay-link">\n' + '                                            <i class="fa fa-expand"></i>\n' + '                                        </a>\n' + '                                        <a href="/img/property-6.jpg" class="hidden"></a>\n' + '                                        <a href="/img/property-4.jpg" class="hidden"></a>\n' + '                                    </div>\n' + '                                </div>\n' + '                            </div>\n' + '                            <div class="detail">\n' + '                                <h1 class="title">\n' + '                                    <a href="properties-details.html">' + title + '</a>\n' + '                                </h1>\n' + '                                <div class="location">\n' + '                                    <a href="properties-details.html">\n' + '                                        <i class="fa fa-map-marker"></i>' + address + ',\n' + '                                    </a>\n' + '                                </div>\n' + '                                <ul class="facilities-list clearfix">\n' + '                                    <li>\n' + '                                        <i class="flaticon-bed"></i> ' + Beds + ' Bedrooms\n' + '                                    </li>\n' + '                                    <li>\n' + '                                        <i class="flaticon-bath"></i> ' + bathroom + ' Bathrooms\n' + '                                    </li>\n' + '                                    <li>\n' + '                                        <i class="flaticon-square-layouting-with-black-square-in-east-area"></i> Sq Ft:' + area + '\n' + '                                    </li>\n' + '                                    <li>\n' + '                                        <i class="flaticon-car-repair"></i> ' + garage + ' Garage\n' + '                                    </li>\n' + '                                </ul>\n' + '                            </div>\n' + '                            <div class="footer">\n' + '                                <a href="#">\n' + '                                    <i class="fa fa-user"></i> ' + author + '\n' + '                                </a>\n' + '                                <span>\n' + '                                <i class="fa fa-calendar-o"></i> ' + date + '\n' + '                            </span>\n' + '                            </div>\n' + '                        </div>\n' + '                    </div>';
     } else {
-        element = '<div class="property-box-5">\n' + '                    <div class="row">\n' + '                        <div class="col-lg-5 col-md-5 col-pad">\n' + '                            <div class="property-thumbnail">\n' + '                                <a href="properties-details.html" class="property-img">\n' + '                                    <div class="tag button alt featured">' + is_featured + '</div>\n' + '                                    <div class="price-ratings-box">\n' + '                                        <p class="price">$' + price + '</p>\n' + '                                        <div class="ratings">\n' + '                                            <i class="fa fa-star"></i>\n' + '                                            <i class="fa fa-star"></i>\n' + '                                            <i class="fa fa-star"></i>\n' + '                                            <i class="fa fa-star"></i>\n' + '                                            <i class="fa fa-star-o"></i>\n' + '                                        </div>\n' + '                                    </div>\n' + '                                    <img src="' + image + '" alt="property-1" class="img-fluid">\n' + '                                </a><div class="property-overlay">\n' + '                                    <a href="properties-details.html" class="overlay-link">\n' + '                                        <i class="fa fa-link"></i>\n' + '                                    </a>\n' + '                                    <a class="overlay-link property-video" title="Test Title">\n' + '                                        <i class="fa fa-video-camera"></i>\n' + '                                    </a>\n' + '                                    <div class="property-magnify-gallery">\n' + '                                        <a href="img/property-2.jpg" class="overlay-link">\n' + '                                            <i class="fa fa-expand"></i>\n' + '                                        </a>\n' + '                                        <a href="img/property-6.jpg" class="hidden"></a>\n' + '                                        <a href="img/property-4.jpg" class="hidden"></a>\n' + '                                    </div>\n' + '                                </div>\n' + '                            </div>\n' + '                        </div>\n' + '                        <div class="col-lg-7 col-md-7 align-self-center col-pad">\n' + '                            <div class="detail">\n' + '                                <!-- title -->\n' + '                                <h1 class="title">\n' + '                                    <a href="properties-details.html">' + title + '</a>\n' + '                                </h1>\n' + '                                <!-- Location -->\n' + '                                <div class="location">\n' + '                                    <a href="properties-details.html">\n' + '                                        <i class="fa fa-map-marker"></i>' + address + ',\n' + '                                    </a>\n' + '                                </div>\n' + '                                <!-- Paragraph -->\n' + '                                <p>' + description + '</p>\n' + '                                <!--  Facilities list -->\n' + '                                <ul class="facilities-list clearfix">\n' + '                                    <li>\n' + '                                        <i class="flaticon-bed"></i> ' + Beds + ' Beds\n' + '                                    </li>\n' + '                                    <li>\n' + '                                        <i class="flaticon-bath"></i> ' + bathroom + ' Baths\n' + '                                    </li>\n' + '                                    <li>\n' + '                                        <i class="flaticon-square-layouting-with-black-square-in-east-area"></i> Sq Ft:' + area + '\n' + '                                    </li>\n' + '                                    <li>\n' + '                                        <i class="flaticon-car-repair"></i> ' + garage + ' Garage\n' + '                                    </li>\n' + '                                </ul>\n' + '                            </div>\n' + '                        </div>\n' + '                    </div>\n' + '                </div>';
+        element = '<div class="property-box-5">\n' + '                    <div class="row">\n' + '                        <div class="col-lg-5 col-md-5 col-pad">\n' + '                            <div class="property-thumbnail">\n' + '                                <a href="properties-details.html" class="property-img">\n' + '                                    <div class="tag button alt featured">' + is_featured + '</div>\n' + '                                    <div class="price-ratings-box">\n' + '                                        <p class="price">$' + price + '</p>\n' + '                                        <div class="ratings">\n' + '                                            <i class="fa fa-star"></i>\n' + '                                            <i class="fa fa-star"></i>\n' + '                                            <i class="fa fa-star"></i>\n' + '                                            <i class="fa fa-star"></i>\n' + '                                            <i class="fa fa-star-o"></i>\n' + '                                        </div>\n' + '                                    </div>\n' + '                                    <img src="' + image + '" alt="property-1" class="img-fluid">\n' + '                                </a><div class="property-overlay">\n' + '                                    <a href="properties-details.html" class="overlay-link">\n' + '                                        <i class="fa fa-link"></i>\n' + '                                    </a>\n' + '                                    <a class="overlay-link property-video" title="Test Title">\n' + '                                        <i class="fa fa-video-camera"></i>\n' + '                                    </a>\n' + '                                    <div class="property-magnify-gallery">\n' + '                                        <a href="/img/property-2.jpg" class="overlay-link">\n' + '                                            <i class="fa fa-expand"></i>\n' + '                                        </a>\n' + '                                        <a href="/img/property-6.jpg" class="hidden"></a>\n' + '                                        <a href="/img/property-4.jpg" class="hidden"></a>\n' + '                                    </div>\n' + '                                </div>\n' + '                            </div>\n' + '                        </div>\n' + '                        <div class="col-lg-7 col-md-7 align-self-center col-pad">\n' + '                            <div class="detail">\n' + '                                <!-- title -->\n' + '                                <h1 class="title">\n' + '                                    <a href="properties-details.html">' + title + '</a>\n' + '                                </h1>\n' + '                                <!-- Location -->\n' + '                                <div class="location">\n' + '                                    <a href="properties-details.html">\n' + '                                        <i class="fa fa-map-marker"></i>' + address + ',\n' + '                                    </a>\n' + '                                </div>\n' + '                                <!-- Paragraph -->\n' + '                                <p>' + description + '</p>\n' + '                                <!--  Facilities list -->\n' + '                                <ul class="facilities-list clearfix">\n' + '                                    <li>\n' + '                                        <i class="flaticon-bed"></i> ' + Beds + ' Beds\n' + '                                    </li>\n' + '                                    <li>\n' + '                                        <i class="flaticon-bath"></i> ' + bathroom + ' Baths\n' + '                                    </li>\n' + '                                    <li>\n' + '                                        <i class="flaticon-square-layouting-with-black-square-in-east-area"></i> Sq Ft:' + area + '\n' + '                                    </li>\n' + '                                    <li>\n' + '                                        <i class="flaticon-car-repair"></i> ' + garage + ' Garage\n' + '                                    </li>\n' + '                                </ul>\n' + '                            </div>\n' + '                        </div>\n' + '                    </div>\n' + '                </div>';
     }
     return element;
 }
@@ -58862,16 +58862,16 @@ $(function () {
                     $(".sticky-header").addClass("header-shrink");
                 }
                 if ($(".do-sticky").length < 1) {
-                    $(".logo img").attr("src", "img/logos/black-logo.png");
+                    $(".logo img").attr("src", "/img/logos/black-logo.png");
                 }
             } else {
                 $(".sticky-header").removeClass("header-shrink");
                 if ($(".do-sticky").length < 1) {
-                    $(".logo img").attr("src", "img/logos/logo.png");
+                    $(".logo img").attr("src", "/img/logos/logo.png");
                 }
             }
         } else {
-            $(".logo img").attr("src", "img/logos/black-logo.png");
+            $(".logo img").attr("src", "/img/logos/black-logo.png");
         }
     }
 
@@ -59332,7 +59332,7 @@ $(function () {
                         nb_sides: 2
                     },
                     image: {
-                        src: "img/github.svg",
+                        src: "/img/github.svg",
                         width: 100,
                         height: 100
                     }
@@ -92362,7 +92362,7 @@ var Login = function (_Component) {
             // login 2
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 "div",
-                { className: "login-page cnt-bg-photo overview-bgi", style: { backgroundImage: "url(img/banner-1.jpg)" } },
+                { className: "login-page cnt-bg-photo overview-bgi", style: { backgroundImage: "url(/img/banner-1.jpg)" } },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     "div",
                     { className: "container" },
@@ -92381,7 +92381,7 @@ var Login = function (_Component) {
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         "div",
                                         { className: "pull-left" },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "img/logos/black-logo.png", alt: "logo" })
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "/img/logos/black-logo.png", alt: "logo" })
                                     ),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         "div",
@@ -92580,13 +92580,13 @@ var Register = function (_Component) {
                             "div",
                             {
                                 className: "col-lg-7 col-md-7 cnt-bg-photo d-none d-xl-block d-lg-block d-md-block",
-                                style: { backgroundImage: "url(img/img-31.jpg)" }
+                                style: { backgroundImage: "url(/img/img-31.jpg)" }
                             },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 "div",
                                 { className: "register-info" },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-                                    src: "img/logos/black-logo.png",
+                                    src: "/img/logos/black-logo.png",
                                     alt: "logo"
                                 }),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -93833,11 +93833,11 @@ var Product = function (_Component) {
                                         { className: "property-magnify-gallery" },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             "a",
-                                            { href: "assets/img/property-1.jpg", className: "overlay-link" },
+                                            { href: "/img/property-1.jpg", className: "overlay-link" },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fa fa-expand" })
                                         ),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "assets/img/property-6.jpg", className: "hidden" }),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "assets/img/property-4.jpg", className: "hidden" })
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "/img/property-6.jpg", className: "hidden" }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "/img/property-4.jpg", className: "hidden" })
                                     )
                                 )
                             )
@@ -93962,11 +93962,11 @@ var Product = function (_Component) {
                                         { className: "property-magnify-gallery" },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             "a",
-                                            { href: "assets/img/property-2.jpg", className: "overlay-link" },
+                                            { href: "/img/property-2.jpg", className: "overlay-link" },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fa fa-expand" })
                                         ),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "assets/img/property-6.jpg", className: "hidden" }),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "assets/img/property-4.jpg", className: "hidden" })
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "/img/property-6.jpg", className: "hidden" }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "/img/property-4.jpg", className: "hidden" })
                                     )
                                 )
                             )
@@ -94091,11 +94091,11 @@ var Product = function (_Component) {
                                         { className: "property-magnify-gallery" },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             "a",
-                                            { href: "assets/img/property-3.jpg", className: "overlay-link" },
+                                            { href: "/img/property-3.jpg", className: "overlay-link" },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fa fa-expand" })
                                         ),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "assets/img/property-6.jpg", className: "hidden" }),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "assets/img/property-4.jpg", className: "hidden" })
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "/img/property-6.jpg", className: "hidden" }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "/img/property-4.jpg", className: "hidden" })
                                     )
                                 )
                             )
@@ -94220,11 +94220,11 @@ var Product = function (_Component) {
                                         { className: "property-magnify-gallery" },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             "a",
-                                            { href: "assets/img/property-4.jpg", className: "overlay-link" },
+                                            { href: "/img/property-4.jpg", className: "overlay-link" },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fa fa-expand" })
                                         ),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "assets/img/property-6.jpg", className: "hidden" }),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "assets/img/property-5.jpg", className: "hidden" })
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "/img/property-6.jpg", className: "hidden" }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "/img/property-5.jpg", className: "hidden" })
                                     )
                                 )
                             )
@@ -94349,11 +94349,11 @@ var Product = function (_Component) {
                                         { className: "property-magnify-gallery" },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             "a",
-                                            { href: "assets/img/property-5.jpg", className: "overlay-link" },
+                                            { href: "/img/property-5.jpg", className: "overlay-link" },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fa fa-expand" })
                                         ),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "assets/img/property-6.jpg", className: "hidden" }),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "assets/img/property-4.jpg", className: "hidden" })
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "/img/property-6.jpg", className: "hidden" }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "/img/property-4.jpg", className: "hidden" })
                                     )
                                 )
                             )
@@ -94478,11 +94478,11 @@ var Product = function (_Component) {
                                         { className: "property-magnify-gallery" },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             "a",
-                                            { href: "assets/img/property-6.jpg", className: "overlay-link" },
+                                            { href: "/img/property-6.jpg", className: "overlay-link" },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fa fa-expand" })
                                         ),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "assets/img/property-9.jpg", className: "hidden" }),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "assets/img/property-4.jpg", className: "hidden" })
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "/img/property-9.jpg", className: "hidden" }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "/img/property-4.jpg", className: "hidden" })
                                     )
                                 )
                             )
@@ -94607,11 +94607,11 @@ var Product = function (_Component) {
                                         { className: "property-magnify-gallery" },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             "a",
-                                            { href: "assets/img/property-7.jpg", className: "overlay-link" },
+                                            { href: "/img/property-7.jpg", className: "overlay-link" },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fa fa-expand" })
                                         ),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "assets/img/property-6.jpg", className: "hidden" }),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "assets/img/property-4.jpg", className: "hidden" })
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "/img/property-6.jpg", className: "hidden" }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "/img/property-4.jpg", className: "hidden" })
                                     )
                                 )
                             )
@@ -94736,11 +94736,11 @@ var Product = function (_Component) {
                                         { className: "property-magnify-gallery" },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             "a",
-                                            { href: "assets/img/property-8.jpg", className: "overlay-link" },
+                                            { href: "/img/property-8.jpg", className: "overlay-link" },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fa fa-expand" })
                                         ),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "assets/img/property-6.jpg", className: "hidden" }),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "assets/img/property-5.jpg", className: "hidden" })
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "/img/property-6.jpg", className: "hidden" }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "/img/property-5.jpg", className: "hidden" })
                                     )
                                 )
                             )
@@ -94865,11 +94865,11 @@ var Product = function (_Component) {
                                         { className: "property-magnify-gallery" },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             "a",
-                                            { href: "assets/img/property-9.jpg", className: "overlay-link" },
+                                            { href: "/img/property-9.jpg", className: "overlay-link" },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fa fa-expand" })
                                         ),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "assets/img/property-6.jpg", className: "hidden" }),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "assets/img/property-5.jpg", className: "hidden" })
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "/img/property-6.jpg", className: "hidden" }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "/img/property-5.jpg", className: "hidden" })
                                     )
                                 )
                             )
@@ -94994,11 +94994,11 @@ var Product = function (_Component) {
                                         { className: "property-magnify-gallery" },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             "a",
-                                            { href: "assets/img/property-3.jpg", className: "overlay-link" },
+                                            { href: "/img/property-3.jpg", className: "overlay-link" },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fa fa-expand" })
                                         ),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "assets/img/property-6.jpg", className: "hidden" }),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "assets/img/property-5.jpg", className: "hidden" })
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "/img/property-6.jpg", className: "hidden" }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "/img/property-5.jpg", className: "hidden" })
                                     )
                                 )
                             )
@@ -96132,11 +96132,11 @@ var Detail = function (_Component) {
                                                         { className: "property-magnify-gallery" },
                                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                             "a",
-                                                            { href: "assets/img/property-2.jpg", className: "overlay-link" },
+                                                            { href: "/img/property-2.jpg", className: "overlay-link" },
                                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fa fa-expand" })
                                                         ),
-                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "assets/img/property-6.jpg", className: "hidden" }),
-                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "assets/img/property-4.jpg", className: "hidden" })
+                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "/img/property-6.jpg", className: "hidden" }),
+                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "/img/property-4.jpg", className: "hidden" })
                                                     )
                                                 )
                                             ),
@@ -96264,11 +96264,11 @@ var Detail = function (_Component) {
                                                         { className: "property-magnify-gallery" },
                                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                             "a",
-                                                            { href: "assets/img/property-7.jpg", className: "overlay-link" },
+                                                            { href: "/img/property-7.jpg", className: "overlay-link" },
                                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fa fa-expand" })
                                                         ),
-                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "assets/img/property-6.jpg", className: "hidden" }),
-                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "assets/img/property-4.jpg", className: "hidden" })
+                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "/img/property-6.jpg", className: "hidden" }),
+                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "/img/property-4.jpg", className: "hidden" })
                                                     )
                                                 )
                                             ),
@@ -96993,7 +96993,7 @@ var Banner = function (_Component) {
         _this.state = {
             slides: [{
                 status: "active",
-                img_src: "img/banner-3.jpg",
+                img_src: "/img/banner-3.jpg",
                 contents: [{
                     text: "We love make things <br />amazing and simple"
                 }, {
@@ -97008,7 +97008,7 @@ var Banner = function (_Component) {
                 }]
             }, {
                 status: "",
-                img_src: "img/banner-3.jpg",
+                img_src: "/img/banner-3.jpg",
                 contents: [{
                     text: "We love make things <br />amazing and simple"
                 }, {
@@ -97023,7 +97023,7 @@ var Banner = function (_Component) {
                 }]
             }, {
                 status: "",
-                img_src: "img/banner-3.jpg",
+                img_src: "/img/banner-3.jpg",
                 contents: [{
                     text: "We love make things <br />amazing and simple"
                 }, {
@@ -97253,7 +97253,7 @@ var Blog = function (_Component) {
                                         "div",
                                         { className: "photo" },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-                                            src: "img/blog/blog-6.jpg",
+                                            src: "/img/blog/blog-6.jpg",
                                             alt: "blog-4",
                                             className: "img-fluid fit-cover h-100"
                                         }),
@@ -97334,7 +97334,7 @@ var Blog = function (_Component) {
                                         "div",
                                         { className: "photo" },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-                                            src: "img/blog/blog-5.jpg",
+                                            src: "/img/blog/blog-5.jpg",
                                             alt: "blog-5",
                                             className: "img-fluid fit-cover h-100"
                                         }),
@@ -97447,7 +97447,7 @@ var CertificatedUsers = function (_Component) {
                 {
                     className: "testimonial overview-bgi wow fadeInUp delay-04s",
                     style: {
-                        backgroundImage: "url(img/testimonial-property-2.jpg)"
+                        backgroundImage: "url(/img/testimonial-property-2.jpg)"
                     }
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -97505,7 +97505,7 @@ var CertificatedUsers = function (_Component) {
                                                 "div",
                                                 { className: "avatar" },
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-                                                    src: "img/avatar/avatar.jpg",
+                                                    src: "/img/avatar/avatar.jpg",
                                                     alt: "avatar",
                                                     className: "img-fluid rounded-circle"
                                                 })
@@ -97528,7 +97528,7 @@ var CertificatedUsers = function (_Component) {
                                                 "div",
                                                 { className: "avatar" },
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-                                                    src: "img/avatar/avatar-2.jpg",
+                                                    src: "/img/avatar/avatar-2.jpg",
                                                     alt: "avatar-2",
                                                     className: "img-fluid rounded-circle"
                                                 })
@@ -97551,7 +97551,7 @@ var CertificatedUsers = function (_Component) {
                                                 "div",
                                                 { className: "avatar" },
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-                                                    src: "img/avatar/avatar-3.jpg",
+                                                    src: "/img/avatar/avatar-3.jpg",
                                                     alt: "avatar-3",
                                                     className: "img-fluid rounded-circle"
                                                 })
@@ -97697,7 +97697,7 @@ var FeaturedCategories = function (_Component) {
                                                 )
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-                                                src: "img/property-7.jpg",
+                                                src: "/img/property-7.jpg",
                                                 alt: "property-7",
                                                 className: "img-fluid"
                                             })
@@ -97727,17 +97727,17 @@ var FeaturedCategories = function (_Component) {
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                     "a",
                                                     {
-                                                        href: "img/property-7.jpg",
+                                                        href: "/img/property-7.jpg",
                                                         className: "overlay-link"
                                                     },
                                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fa fa-expand" })
                                                 ),
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-                                                    href: "img/property-6.jpg",
+                                                    href: "/img/property-6.jpg",
                                                     className: "hidden"
                                                 }),
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-                                                    href: "img/property-3.jpg",
+                                                    href: "/img/property-3.jpg",
                                                     className: "hidden"
                                                 })
                                             )
@@ -97857,7 +97857,7 @@ var FeaturedCategories = function (_Component) {
                                                 )
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-                                                src: "img/property-2.jpg",
+                                                src: "/img/property-2.jpg",
                                                 alt: "property-2",
                                                 className: "img-fluid"
                                             })
@@ -97887,17 +97887,17 @@ var FeaturedCategories = function (_Component) {
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                     "a",
                                                     {
-                                                        href: "img/property-2.jpg",
+                                                        href: "/img/property-2.jpg",
                                                         className: "overlay-link"
                                                     },
                                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fa fa-expand" })
                                                 ),
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-                                                    href: "img/property-6.jpg",
+                                                    href: "/img/property-6.jpg",
                                                     className: "hidden"
                                                 }),
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-                                                    href: "img/property-3.jpg",
+                                                    href: "/img/property-3.jpg",
                                                     className: "hidden"
                                                 })
                                             )
@@ -98017,7 +98017,7 @@ var FeaturedCategories = function (_Component) {
                                                 )
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-                                                src: "img/property-3.jpg",
+                                                src: "/img/property-3.jpg",
                                                 alt: "property-3",
                                                 className: "img-fluid"
                                             })
@@ -98047,17 +98047,17 @@ var FeaturedCategories = function (_Component) {
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                     "a",
                                                     {
-                                                        href: "img/property-3.jpg",
+                                                        href: "/img/property-3.jpg",
                                                         className: "overlay-link"
                                                     },
                                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fa fa-expand" })
                                                 ),
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-                                                    href: "img/property-6.jpg",
+                                                    href: "/img/property-6.jpg",
                                                     className: "hidden"
                                                 }),
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-                                                    href: "img/property-1.jpg",
+                                                    href: "/img/property-1.jpg",
                                                     className: "hidden"
                                                 })
                                             )
@@ -98177,7 +98177,7 @@ var FeaturedCategories = function (_Component) {
                                                 )
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-                                                src: "img/property-5.jpg",
+                                                src: "/img/property-5.jpg",
                                                 alt: "property-5",
                                                 className: "img-fluid"
                                             })
@@ -98207,17 +98207,17 @@ var FeaturedCategories = function (_Component) {
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                     "a",
                                                     {
-                                                        href: "img/property-5.jpg",
+                                                        href: "/img/property-5.jpg",
                                                         className: "overlay-link"
                                                     },
                                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fa fa-expand" })
                                                 ),
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-                                                    href: "img/property-6.jpg",
+                                                    href: "/img/property-6.jpg",
                                                     className: "hidden"
                                                 }),
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-                                                    href: "img/property-3.jpg",
+                                                    href: "/img/property-3.jpg",
                                                     className: "hidden"
                                                 })
                                             )
@@ -98337,7 +98337,7 @@ var FeaturedCategories = function (_Component) {
                                                 )
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-                                                src: "img/property-6.jpg",
+                                                src: "/img/property-6.jpg",
                                                 alt: "property-6",
                                                 className: "img-fluid"
                                             })
@@ -98367,17 +98367,17 @@ var FeaturedCategories = function (_Component) {
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                     "a",
                                                     {
-                                                        href: "img/property-6.jpg",
+                                                        href: "/img/property-6.jpg",
                                                         className: "overlay-link"
                                                     },
                                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fa fa-expand" })
                                                 ),
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-                                                    href: "img/property-2.jpg",
+                                                    href: "/img/property-2.jpg",
                                                     className: "hidden"
                                                 }),
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-                                                    href: "img/property-3.jpg",
+                                                    href: "/img/property-3.jpg",
                                                     className: "hidden"
                                                 })
                                             )
@@ -98497,7 +98497,7 @@ var FeaturedCategories = function (_Component) {
                                                 )
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-                                                src: "img/property-1.jpg",
+                                                src: "/img/property-1.jpg",
                                                 alt: "property-1",
                                                 className: "img-fluid"
                                             })
@@ -98527,17 +98527,17 @@ var FeaturedCategories = function (_Component) {
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                     "a",
                                                     {
-                                                        href: "img/property-1.jpg",
+                                                        href: "/img/property-1.jpg",
                                                         className: "overlay-link"
                                                     },
                                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fa fa-expand" })
                                                 ),
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-                                                    href: "img/property-6.jpg",
+                                                    href: "/img/property-6.jpg",
                                                     className: "hidden"
                                                 }),
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-                                                    href: "img/property-3.jpg",
+                                                    href: "/img/property-3.jpg",
                                                     className: "hidden"
                                                 })
                                             )
@@ -98687,7 +98687,7 @@ var GoodCookers = function (_Component) {
                                         "a",
                                         { href: "agent-detail.html" },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-                                            src: "img/avatar/avatar-5.jpg",
+                                            src: "/img/avatar/avatar-5.jpg",
                                             alt: "avatar-5",
                                             className: "img-fluid"
                                         })
@@ -98766,7 +98766,7 @@ var GoodCookers = function (_Component) {
                                         "a",
                                         { href: "agent-detail.html" },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-                                            src: "img/avatar/avatar-6.jpg",
+                                            src: "/img/avatar/avatar-6.jpg",
                                             alt: "avatar-6",
                                             className: "img-fluid"
                                         })
@@ -98845,7 +98845,7 @@ var GoodCookers = function (_Component) {
                                         "a",
                                         { href: "agent-detail.html" },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-                                            src: "img/avatar/avatar-7.jpg",
+                                            src: "/img/avatar/avatar-7.jpg",
                                             alt: "avatar-7",
                                             className: "img-fluid"
                                         })
@@ -98924,7 +98924,7 @@ var GoodCookers = function (_Component) {
                                         "a",
                                         { href: "agent-detail.html" },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-                                            src: "img/avatar/avatar-11.jpg",
+                                            src: "/img/avatar/avatar-11.jpg",
                                             alt: "avatar-11",
                                             className: "img-fluid"
                                         })
@@ -99042,7 +99042,7 @@ var Intro = function (_Component) {
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             "div",
                             { className: "col-lg-3 col-md-2 col-sm-12" },
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "img/logos/logo-white.png", alt: "loo" })
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "/img/logos/logo-white.png", alt: "loo" })
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             "div",
@@ -99140,7 +99140,7 @@ var PopularCategories = function (_Component) {
                                             "div",
                                             { className: "overview overview-box" },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-                                                src: "img/popular-places/popular-places.jpg",
+                                                src: "/img/popular-places/popular-places.jpg",
                                                 alt: "popular-places"
                                             }),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -99174,7 +99174,7 @@ var PopularCategories = function (_Component) {
                                             "div",
                                             { className: "overview overview-box" },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-                                                src: "img/popular-places/popular-places-2.jpg",
+                                                src: "/img/popular-places/popular-places-2.jpg",
                                                 alt: "popular-places-2"
                                             }),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -99208,7 +99208,7 @@ var PopularCategories = function (_Component) {
                                             "div",
                                             { className: "overview overview-box" },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-                                                src: "img/popular-places/popular-places-4.jpg",
+                                                src: "/img/popular-places/popular-places-4.jpg",
                                                 alt: "popular-places-4"
                                             }),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -99244,7 +99244,7 @@ var PopularCategories = function (_Component) {
                                     "div",
                                     { className: "overview aa overview-box" },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-                                        src: "img/popular-places/popular-places-3.jpg",
+                                        src: "/img/popular-places/popular-places-3.jpg",
                                         alt: "popular-places-3",
                                         className: "big-img"
                                     }),
@@ -99347,7 +99347,7 @@ var RecentFoods = function (_Component) {
                                             className: "property-img"
                                         },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-                                            src: "img/property-3.jpg",
+                                            src: "/img/property-3.jpg",
                                             alt: "property-3",
                                             className: "img-fluid"
                                         })
@@ -99377,17 +99377,17 @@ var RecentFoods = function (_Component) {
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                 "a",
                                                 {
-                                                    href: "img/property-3.jpg",
+                                                    href: "/img/property-3.jpg",
                                                     className: "overlay-link"
                                                 },
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fa fa-expand" })
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-                                                href: "img/property-7.jpg",
+                                                href: "/img/property-7.jpg",
                                                 className: "hidden"
                                             }),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-                                                href: "img/property-6.jpg",
+                                                href: "/img/property-6.jpg",
                                                 className: "hidden"
                                             })
                                         )
@@ -99434,7 +99434,7 @@ var RecentFoods = function (_Component) {
                                             className: "property-img"
                                         },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-                                            src: "img/property-7.jpg",
+                                            src: "/img/property-7.jpg",
                                             alt: "property-7",
                                             className: "img-fluid"
                                         })
@@ -99464,17 +99464,17 @@ var RecentFoods = function (_Component) {
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                 "a",
                                                 {
-                                                    href: "img/property-7.jpg",
+                                                    href: "/img/property-7.jpg",
                                                     className: "overlay-link"
                                                 },
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fa fa-expand" })
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-                                                href: "img/property-4.jpg",
+                                                href: "/img/property-4.jpg",
                                                 className: "hidden"
                                             }),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-                                                href: "img/property-3.jpg",
+                                                href: "/img/property-3.jpg",
                                                 className: "hidden"
                                             })
                                         )
@@ -99521,7 +99521,7 @@ var RecentFoods = function (_Component) {
                                             className: "property-img"
                                         },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-                                            src: "img/property-5.jpg",
+                                            src: "/img/property-5.jpg",
                                             alt: "property-5",
                                             className: "img-fluid"
                                         })
@@ -99551,17 +99551,17 @@ var RecentFoods = function (_Component) {
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                 "a",
                                                 {
-                                                    href: "img/property-5.jpg",
+                                                    href: "/img/property-5.jpg",
                                                     className: "overlay-link"
                                                 },
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fa fa-expand" })
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-                                                href: "img/property-7.jpg",
+                                                href: "/img/property-7.jpg",
                                                 className: "hidden"
                                             }),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-                                                href: "img/property-6.jpg",
+                                                href: "/img/property-6.jpg",
                                                 className: "hidden"
                                             })
                                         )
@@ -99608,7 +99608,7 @@ var RecentFoods = function (_Component) {
                                             className: "property-img"
                                         },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-                                            src: "img/property-1.jpg",
+                                            src: "/img/property-1.jpg",
                                             alt: "property-1",
                                             className: "img-fluid"
                                         })
@@ -99638,17 +99638,17 @@ var RecentFoods = function (_Component) {
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                 "a",
                                                 {
-                                                    href: "img/property-1.jpg",
+                                                    href: "/img/property-1.jpg",
                                                     className: "overlay-link"
                                                 },
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fa fa-expand" })
                                             ),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-                                                href: "img/property-7.jpg",
+                                                href: "/img/property-7.jpg",
                                                 className: "hidden"
                                             }),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-                                                href: "img/property-3.jpg",
+                                                href: "/img/property-3.jpg",
                                                 className: "hidden"
                                             })
                                         )
@@ -101003,7 +101003,7 @@ var CanvasSidebar = function (_Component) {
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 "div",
                                 { className: "logo text-center" },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "img/logos/logo.png", alt: "logo" })
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "/img/logos/logo.png", alt: "logo" })
                             )
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -101267,7 +101267,7 @@ var Food = function (_Component) {
                                                     "div",
                                                     { className: "carousel-item" },
                                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-                                                        src: "img/property-1.jpg",
+                                                        src: "/img/property-1.jpg",
                                                         alt: "Test ALT"
                                                     })
                                                 ),
@@ -101275,7 +101275,7 @@ var Food = function (_Component) {
                                                     "div",
                                                     { className: "carousel-item" },
                                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-                                                        src: "img/property-1.jpg",
+                                                        src: "/img/property-1.jpg",
                                                         alt: "Test ALT"
                                                     })
                                                 )

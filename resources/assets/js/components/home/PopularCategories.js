@@ -15,7 +15,7 @@ export default class PopularCategories extends Component {
                                     <div className="col-md-12 col-pad wow fadeInLeft delay-04s">
                                         <div className="overview overview-box">
                                             <img
-                                                src="img/popular-places/popular-places.jpg"
+                                                src="/img/popular-places/popular-places.jpg"
                                                 alt="popular-places"
                                             />
                                             <div className="mask">
@@ -33,7 +33,7 @@ export default class PopularCategories extends Component {
                                     <div className="col-md-6 col-sm-6 col-pad wow fadeInUp delay-04s">
                                         <div className="overview overview-box">
                                             <img
-                                                src="img/popular-places/popular-places-2.jpg"
+                                                src="/img/popular-places/popular-places-2.jpg"
                                                 alt="popular-places-2"
                                             />
                                             <div className="mask">
@@ -51,7 +51,7 @@ export default class PopularCategories extends Component {
                                     <div className="col-md-6 col-sm-6 col-pad wow fadeInUp delay-04s">
                                         <div className="overview overview-box">
                                             <img
-                                                src="img/popular-places/popular-places-4.jpg"
+                                                src="/img/popular-places/popular-places-4.jpg"
                                                 alt="popular-places-4"
                                             />
                                             <div className="mask">
@@ -71,7 +71,7 @@ export default class PopularCategories extends Component {
                             <div className="col-lg-5 col-md-12 col-pad wow fadeInRight delay-04s">
                                 <div className="overview aa overview-box">
                                     <img
-                                        src="img/popular-places/popular-places-3.jpg"
+                                        src="/img/popular-places/popular-places-3.jpg"
                                         alt="popular-places-3"
                                         className="big-img"
                                     />

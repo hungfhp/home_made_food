@@ -8,7 +8,7 @@ export default class Banner extends Component {
             slides: [
                 {
                     status: "active",
-                    img_src: "img/banner-3.jpg",
+                    img_src: "/img/banner-3.jpg",
                     contents: [
                         {
                             text: "We love make things <br />amazing and simple"
@@ -31,7 +31,7 @@ export default class Banner extends Component {
                 },
                 {
                     status: "",
-                    img_src: "img/banner-3.jpg",
+                    img_src: "/img/banner-3.jpg",
                     contents: [
                         {
                             text: "We love make things <br />amazing and simple"
@@ -54,7 +54,7 @@ export default class Banner extends Component {
                 },
                 {
                     status: "",
-                    img_src: "img/banner-3.jpg",
+                    img_src: "/img/banner-3.jpg",
                     contents: [
                         {
                             text: "We love make things <br />amazing and simple"

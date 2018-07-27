@@ -19,7 +19,7 @@ export default class Header extends Component {
                 <div className="col-12">
                     <nav className="navbar navbar-expand-lg navbar-light rounded">
                         <a href="/" className="navbar-brand logo">
-                            <img src="img/logos/black-logo.png" alt="logo" />
+                            <img src="/img/logos/black-logo.png" alt="logo" />
                         </a>
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false"
                             aria-label="Toggle navigation">

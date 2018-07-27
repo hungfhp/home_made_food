@@ -39,14 +39,14 @@ export default class Login extends Component {
     render() {
         // login 2
         return (
-            <div className="login-page cnt-bg-photo overview-bgi" style={{ backgroundImage: "url(img/banner-1.jpg)" }}>
+            <div className="login-page cnt-bg-photo overview-bgi" style={{ backgroundImage: "url(/img/banner-1.jpg)" }}>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
                             <div className="content-form-box forgot-box clearfix">
                                 <div className="login-header clearfix">
                                     <div className="pull-left">
-                                        <img src="img/logos/black-logo.png" alt="logo" />
+                                        <img src="/img/logos/black-logo.png" alt="logo" />
                                     </div>
                                     <div className="pull-right">
                                         <h4>Login</h4>

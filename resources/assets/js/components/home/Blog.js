@@ -14,7 +14,7 @@ export default class Blog extends Component {
                                 <div className="col-lg-5 col-md-12 col-pad ">
                                     <div className="photo">
                                         <img
-                                            src="img/blog/blog-6.jpg"
+                                            src="/img/blog/blog-6.jpg"
                                             alt="blog-4"
                                             className="img-fluid fit-cover h-100"
                                         />
@@ -62,7 +62,7 @@ export default class Blog extends Component {
                                 <div className="col-lg-5 col-md-12 col-pad ">
                                     <div className="photo">
                                         <img
-                                            src="img/blog/blog-5.jpg"
+                                            src="/img/blog/blog-5.jpg"
                                             alt="blog-5"
                                             className="img-fluid fit-cover h-100"
                                         />
