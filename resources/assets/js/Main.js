@@ -64,13 +64,6 @@ import ModalFood from "./components/modal/Food";
 import ModalFullPageSearch from "./components/modal/FullPageSearch";
 import Lang from "./components/Lang";
 export default class Main extends Component {
-    requireAuth() {
-        console.log('sdfsdfsd');
-        if (!localStorage.getItem("loggedIn")) {
-            console.log('sdfsjkldf;');
-        }
-    }
-    
     render() {
         function todos(state = [], action) {
             switch (action.type) {

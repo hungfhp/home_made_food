@@ -25,7 +25,9 @@ export default class FormLogin extends Component {
                 password: this.state.password
             })
             .then(function (res) {
+                localStorage.setItem("userId", res.data.success.user_id);
                 localStorage.setItem("token", res.data.success.token);
+                localStorage.setItem("username", res.data.success.username);
                 localStorage.setItem("loggedIn", true);
                 history.back();
                 seft.setState({
@@ -68,6 +70,9 @@ export default class FormLogin extends Component {
                             </label>
                         </div>
                     </div>
+                    <button className="btn btn-warning btn-md pull-left">
+                        <a href="/">Home</a>
+                    </button>
                     <button onClick={this.submitLogin} className="btn btn-color btn-md pull-right">
                         Login
                     </button>

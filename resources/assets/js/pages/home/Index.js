@@ -16,10 +16,6 @@ export default class Index extends Component {
     constructor(props) {
         super(props);
     }
-    componentDidMount() {
-        console.log(history);
-        console.log(this);
-    }
     render() {
         return (
             <div>
