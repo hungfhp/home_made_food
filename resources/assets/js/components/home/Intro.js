@@ -7,7 +7,7 @@ export default class Intro extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-3 col-md-2 col-sm-12">
-                            <img src="img/logos/logo-white.png" alt="loo" />
+                            <img src="/img/logos/logo-white.png" alt="loo" />
                         </div>
                         <div className="col-lg-7 col-md-7 col-sm-12">
                             <div className="intro-text">

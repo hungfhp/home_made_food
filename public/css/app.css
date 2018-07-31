@@ -26460,6 +26460,18 @@ li.active.btn.filtr-button.filtr {
         border: solid 2px #274cbf;
     }
 }
+.margin-right-15 {
+  margin-right: 15px;
+}
+
+.margin-left-15 {
+  margin-left: 15px;
+}
+
+.color-default {
+  color: #37404d !important;
+}
+
 .navbar-laravel {
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);

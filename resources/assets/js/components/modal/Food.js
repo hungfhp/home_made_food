@@ -71,13 +71,13 @@ export default class Food extends Component {
                                                 </div>
                                                 <div className="carousel-item">
                                                     <img
-                                                        src="img/property-1.jpg"
+                                                        src="/img/property-1.jpg"
                                                         alt="Test ALT"
                                                     />
                                                 </div>
                                                 <div className="carousel-item">
                                                     <img
-                                                        src="img/property-1.jpg"
+                                                        src="/img/property-1.jpg"
                                                         alt="Test ALT"
                                                     />
                                                 </div>

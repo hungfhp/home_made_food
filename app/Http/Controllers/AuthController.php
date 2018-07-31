@@ -28,6 +28,8 @@ class AuthController extends Controller
         ) {
             $user = Auth::user();
             $success['token'] = $user->createToken('MyApp')->accessToken;
+            $success['username'] = $user->name;
+            $success['user_id'] = $user->id;
             return response()->json(
                 ['success' => $success],
                 $this->successStatus
@@ -36,6 +38,16 @@ class AuthController extends Controller
             return response()->json(['error' => 'Unauthorised'], 401);
         }
     }
+    /**
+     * Register api
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function logout(Request $request) {
+        Auth::logout();
+        return response()->json(["success"=>true], 200);
+    }
+
     /**
      * Register api
      *
@@ -71,5 +83,17 @@ class AuthController extends Controller
         Log::info('api/profile');
         $user = Auth::user();
         return response()->json(['success' => $user], $this->successStatus);
+    }
+
+    public function loggedInInfo()
+    {
+        Log::info('api/loggedInInfo');
+        if(Auth::check()){
+            $user = Auth::user();
+            return response()->json(['success' => $user], $this->successStatus);
+        }
+        else{
+            return response()->json(['success' => null], 401);
+        }
     }
 }

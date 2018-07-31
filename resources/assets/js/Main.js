@@ -1,7 +1,14 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+var browserHistory = require("react-router").browserHistory;
 import { I18nextProvider } from "react-i18next";
+import { Provider } from 'react-redux';
+import { Redirect } from 'react-router';
+import { createStore } from 'redux';
+
+
+import axios from "axios";
 
 import i18n from './i18n';
 import { I18n } from "react-i18next";
@@ -58,8 +65,19 @@ import ModalFullPageSearch from "./components/modal/FullPageSearch";
 import Lang from "./components/Lang";
 export default class Main extends Component {
     render() {
+        function todos(state = [], action) {
+            switch (action.type) {
+              case 'ADD_TODO':
+                return state.concat([action.text])
+              default:
+                return state
+            }
+          }
+        const store = createStore(todos, ['Use Redux'])
+        const { dispatch, quote, isAuthenticated, errorMessage, isSecretQuote } = this.props;
         return (
-            <Router>
+            <Provider store={store}>
+            <Router history={browserHistory}>
                 <div>
                     {/* Pages */}
                     <Switch>
@@ -85,7 +103,14 @@ export default class Main extends Component {
                         {/* foods */}
                         <Route exact path="/foods/create" component={FoodsCreate} />
                         <Route exact path="/foods/:id/delete" component={FoodsDelete} />
-                        <Route exact path="/foods/:id/edit" component={FoodsEdit} />
+                        {/* <Route exact path="/foods/:id/edit" component={FoodsEdit} onEnter={this.requireAuth} /> */}
+                        < Route exact path = "/foods/:id/edit"
+                        render = {
+                            () => (
+                                localStorage.getItem("loggedIn") ? (<Redirect to = "/foods/:id/edit" />) : (<Redirect to = "/login" />)
+                            )
+                        }
+                        />
                         <Route exact path="/foods" component={FoodsIndex} />
                         <Route exact path="/foods/:id" component={FoodsShow} />
                         {/* home */}
@@ -116,9 +141,11 @@ export default class Main extends Component {
                     <ModalFullPageSearch/>
                 </div>
             </Router>
+            </Provider>
         );
     }
 }
+
 
 if (document.getElementById("root")) {
     ReactDOM.render(<I18nextProvider i18n={ i18n }><Main /></I18nextProvider>, document.getElementById("root"));

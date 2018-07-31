@@ -15,10 +15,6 @@ import Services from "../../components/home/Services";
 export default class Index extends Component {
     constructor(props) {
         super(props);
-        this.state = { seconds: 0 };
-    }
-    componentDidMount() {
-        // console.log(this.props);
     }
     render() {
         return (
