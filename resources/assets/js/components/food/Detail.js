@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 
 export default class Detail extends Component {
+    constructor(props) {
+        super(props);
+        console.log(window.location.href);
+    }
     render() {
         return(
             <div className="col-lg-8 col-md-12 col-xs-12 slider">
@@ -315,11 +319,11 @@ export default class Detail extends Component {
                                                         <i className="fa fa-video-camera"></i>
                                                     </a>
                                                     <div className="property-magnify-gallery">
-                                                        <a href="assets/img/property-2.jpg" className="overlay-link">
+                                                        <a href="/img/property-2.jpg" className="overlay-link">
                                                             <i className="fa fa-expand"></i>
                                                         </a>
-                                                        <a href="assets/img/property-6.jpg" className="hidden"></a>
-                                                        <a href="assets/img/property-4.jpg" className="hidden"></a>
+                                                        <a href="/img/property-6.jpg" className="hidden"></a>
+                                                        <a href="/img/property-4.jpg" className="hidden"></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -384,11 +388,11 @@ export default class Detail extends Component {
                                                         <i className="fa fa-video-camera"></i>
                                                     </a>
                                                     <div className="property-magnify-gallery">
-                                                        <a href="assets/img/property-7.jpg" className="overlay-link">
+                                                        <a href="/img/property-7.jpg" className="overlay-link">
                                                             <i className="fa fa-expand"></i>
                                                         </a>
-                                                        <a href="assets/img/property-6.jpg" className="hidden"></a>
-                                                        <a href="assets/img/property-4.jpg" className="hidden"></a>
+                                                        <a href="/img/property-6.jpg" className="hidden"></a>
+                                                        <a href="/img/property-4.jpg" className="hidden"></a>
                                                     </div>
                                                 </div>
                                             </div>

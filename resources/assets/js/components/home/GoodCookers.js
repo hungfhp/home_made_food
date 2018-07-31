@@ -14,7 +14,7 @@ export default class GoodCookers extends Component {
                                 <div className="agent-photo">
                                     <a href="agent-detail.html">
                                         <img
-                                            src="img/avatar/avatar-5.jpg"
+                                            src="/img/avatar/avatar-5.jpg"
                                             alt="avatar-5"
                                             className="img-fluid"
                                         />
@@ -57,7 +57,7 @@ export default class GoodCookers extends Component {
                                 <div className="agent-photo">
                                     <a href="agent-detail.html">
                                         <img
-                                            src="img/avatar/avatar-6.jpg"
+                                            src="/img/avatar/avatar-6.jpg"
                                             alt="avatar-6"
                                             className="img-fluid"
                                         />
@@ -100,7 +100,7 @@ export default class GoodCookers extends Component {
                                 <div className="agent-photo">
                                     <a href="agent-detail.html">
                                         <img
-                                            src="img/avatar/avatar-7.jpg"
+                                            src="/img/avatar/avatar-7.jpg"
                                             alt="avatar-7"
                                             className="img-fluid"
                                         />
@@ -143,7 +143,7 @@ export default class GoodCookers extends Component {
                                 <div className="agent-photo">
                                     <a href="agent-detail.html">
                                         <img
-                                            src="img/avatar/avatar-11.jpg"
+                                            src="/img/avatar/avatar-11.jpg"
                                             alt="avatar-11"
                                             className="img-fluid"
                                         />

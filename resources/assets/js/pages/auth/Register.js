@@ -9,11 +9,11 @@ export default class Register extends Component {
                     <div className="row">
                         <div
                             className="col-lg-7 col-md-7 cnt-bg-photo d-none d-xl-block d-lg-block d-md-block"
-                            style={{ backgroundImage: "url(img/img-31.jpg)" }}
+                            style={{ backgroundImage: "url(/img/img-31.jpg)" }}
                         >
                             <div className="register-info">
                                 <img
-                                    src="img/logos/black-logo.png"
+                                    src="/img/logos/black-logo.png"
                                     alt="logo"
                                 />
                                 <p>

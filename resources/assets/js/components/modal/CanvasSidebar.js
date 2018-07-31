@@ -13,7 +13,7 @@ export default class CanvasSidebar extends Component {
                     <div className="off-canvas-content">
                         <aside className="canvas-widget">
                             <div className="logo text-center">
-                                <img src="img/logos/logo.png" alt="logo" />
+                                <img src="/img/logos/logo.png" alt="logo" />
                             </div>
                         </aside>
                         <aside className="canvas-widget">

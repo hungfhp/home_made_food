@@ -6,7 +6,7 @@ export default class CertificatedUsers extends Component {
             <div
                 className="testimonial overview-bgi wow fadeInUp delay-04s"
                 style={{
-                    backgroundImage: "url(img/testimonial-property-2.jpg)"
+                    backgroundImage: "url(/img/testimonial-property-2.jpg)"
                 }}
             >
                 <div className="container">
@@ -40,7 +40,7 @@ export default class CertificatedUsers extends Component {
                                         <div className="carousel-item active">
                                             <div className="avatar">
                                                 <img
-                                                    src="img/avatar/avatar.jpg"
+                                                    src="/img/avatar/avatar.jpg"
                                                     alt="avatar"
                                                     className="img-fluid rounded-circle"
                                                 />
@@ -62,7 +62,7 @@ export default class CertificatedUsers extends Component {
                                         <div className="carousel-item">
                                             <div className="avatar">
                                                 <img
-                                                    src="img/avatar/avatar-2.jpg"
+                                                    src="/img/avatar/avatar-2.jpg"
                                                     alt="avatar-2"
                                                     className="img-fluid rounded-circle"
                                                 />
@@ -84,7 +84,7 @@ export default class CertificatedUsers extends Component {
                                         <div className="carousel-item">
                                             <div className="avatar">
                                                 <img
-                                                    src="img/avatar/avatar-3.jpg"
+                                                    src="/img/avatar/avatar-3.jpg"
                                                     alt="avatar-3"
                                                     className="img-fluid rounded-circle"
                                                 />

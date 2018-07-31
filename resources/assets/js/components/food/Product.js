@@ -36,8 +36,8 @@ export default class Product extends Component {
                                         <a href="assets/img/property-1.jpg" className="overlay-link">
                                             <i className="material-icons" style={{marginTop: '4px'}}>zoom_in</i>
                                         </a>
-                                        <a href="assets/img/property-6.jpg" className="hidden"></a>
-                                        <a href="assets/img/property-4.jpg" className="hidden"></a>
+                                        <a href="/img/property-6.jpg" className="hidden"></a>
+                                        <a href="/img/property-4.jpg" className="hidden"></a>
                                     </div>
                                 </div>
                             </div>
@@ -106,7 +106,7 @@ export default class Product extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="subtitle">
+   <div className="subtitle">
                     20 Result Found
                 </div>
 

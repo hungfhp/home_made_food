@@ -56,7 +56,7 @@ export default class FeaturedCategories extends Component {
                                                 </div>
                                             </div>
                                             <img
-                                                src="img/property-7.jpg"
+                                                src="/img/property-7.jpg"
                                                 alt="property-7"
                                                 className="img-fluid"
                                             />
@@ -76,17 +76,17 @@ export default class FeaturedCategories extends Component {
                                             </a>
                                             <div className="property-magnify-gallery">
                                                 <a
-                                                    href="img/property-7.jpg"
+                                                    href="/img/property-7.jpg"
                                                     className="overlay-link"
                                                 >
                                                     <i className="fa fa-expand" />
                                                 </a>
                                                 <a
-                                                    href="img/property-6.jpg"
+                                                    href="/img/property-6.jpg"
                                                     className="hidden"
                                                 />
                                                 <a
-                                                    href="img/property-3.jpg"
+                                                    href="/img/property-3.jpg"
                                                     className="hidden"
                                                 />
                                             </div>
@@ -161,7 +161,7 @@ export default class FeaturedCategories extends Component {
                                                 </div>
                                             </div>
                                             <img
-                                                src="img/property-2.jpg"
+                                                src="/img/property-2.jpg"
                                                 alt="property-2"
                                                 className="img-fluid"
                                             />
@@ -181,17 +181,17 @@ export default class FeaturedCategories extends Component {
                                             </a>
                                             <div className="property-magnify-gallery">
                                                 <a
-                                                    href="img/property-2.jpg"
+                                                    href="/img/property-2.jpg"
                                                     className="overlay-link"
                                                 >
                                                     <i className="fa fa-expand" />
                                                 </a>
                                                 <a
-                                                    href="img/property-6.jpg"
+                                                    href="/img/property-6.jpg"
                                                     className="hidden"
                                                 />
                                                 <a
-                                                    href="img/property-3.jpg"
+                                                    href="/img/property-3.jpg"
                                                     className="hidden"
                                                 />
                                             </div>
@@ -266,7 +266,7 @@ export default class FeaturedCategories extends Component {
                                                 </div>
                                             </div>
                                             <img
-                                                src="img/property-3.jpg"
+                                                src="/img/property-3.jpg"
                                                 alt="property-3"
                                                 className="img-fluid"
                                             />
@@ -286,17 +286,17 @@ export default class FeaturedCategories extends Component {
                                             </a>
                                             <div className="property-magnify-gallery">
                                                 <a
-                                                    href="img/property-3.jpg"
+                                                    href="/img/property-3.jpg"
                                                     className="overlay-link"
                                                 >
                                                     <i className="fa fa-expand" />
                                                 </a>
                                                 <a
-                                                    href="img/property-6.jpg"
+                                                    href="/img/property-6.jpg"
                                                     className="hidden"
                                                 />
                                                 <a
-                                                    href="img/property-1.jpg"
+                                                    href="/img/property-1.jpg"
                                                     className="hidden"
                                                 />
                                             </div>
@@ -371,7 +371,7 @@ export default class FeaturedCategories extends Component {
                                                 </div>
                                             </div>
                                             <img
-                                                src="img/property-5.jpg"
+                                                src="/img/property-5.jpg"
                                                 alt="property-5"
                                                 className="img-fluid"
                                             />
@@ -391,17 +391,17 @@ export default class FeaturedCategories extends Component {
                                             </a>
                                             <div className="property-magnify-gallery">
                                                 <a
-                                                    href="img/property-5.jpg"
+                                                    href="/img/property-5.jpg"
                                                     className="overlay-link"
                                                 >
                                                     <i className="fa fa-expand" />
                                                 </a>
                                                 <a
-                                                    href="img/property-6.jpg"
+                                                    href="/img/property-6.jpg"
                                                     className="hidden"
                                                 />
                                                 <a
-                                                    href="img/property-3.jpg"
+                                                    href="/img/property-3.jpg"
                                                     className="hidden"
                                                 />
                                             </div>
@@ -476,7 +476,7 @@ export default class FeaturedCategories extends Component {
                                                 </div>
                                             </div>
                                             <img
-                                                src="img/property-6.jpg"
+                                                src="/img/property-6.jpg"
                                                 alt="property-6"
                                                 className="img-fluid"
                                             />
@@ -496,17 +496,17 @@ export default class FeaturedCategories extends Component {
                                             </a>
                                             <div className="property-magnify-gallery">
                                                 <a
-                                                    href="img/property-6.jpg"
+                                                    href="/img/property-6.jpg"
                                                     className="overlay-link"
                                                 >
                                                     <i className="fa fa-expand" />
                                                 </a>
                                                 <a
-                                                    href="img/property-2.jpg"
+                                                    href="/img/property-2.jpg"
                                                     className="hidden"
                                                 />
                                                 <a
-                                                    href="img/property-3.jpg"
+                                                    href="/img/property-3.jpg"
                                                     className="hidden"
                                                 />
                                             </div>
@@ -581,7 +581,7 @@ export default class FeaturedCategories extends Component {
                                                 </div>
                                             </div>
                                             <img
-                                                src="img/property-1.jpg"
+                                                src="/img/property-1.jpg"
                                                 alt="property-1"
                                                 className="img-fluid"
                                             />
@@ -601,17 +601,17 @@ export default class FeaturedCategories extends Component {
                                             </a>
                                             <div className="property-magnify-gallery">
                                                 <a
-                                                    href="img/property-1.jpg"
+                                                    href="/img/property-1.jpg"
                                                     className="overlay-link"
                                                 >
                                                     <i className="fa fa-expand" />
                                                 </a>
                                                 <a
-                                                    href="img/property-6.jpg"
+                                                    href="/img/property-6.jpg"
                                                     className="hidden"
                                                 />
                                                 <a
-                                                    href="img/property-3.jpg"
+                                                    href="/img/property-3.jpg"
                                                     className="hidden"
                                                 />
                                             </div>

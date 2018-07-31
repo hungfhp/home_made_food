@@ -17,8 +17,8 @@ var properties = {
             "balcony": 3,
             "lounge": 1,
             "garage": 1,
-            "image": "img/property-2.jpg",
-            "type_icon": "img/building.png",
+            "image": "/img/property-2.jpg",
+            "type_icon": "/img/building.png",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor"
         },
         {
@@ -38,8 +38,8 @@ var properties = {
             "balcony": 3,
             "lounge": 1,
             "garage": 1,
-            "image": "img/property-1.jpg",
-            "type_icon": "img/building.png",
+            "image": "/img/property-1.jpg",
+            "type_icon": "/img/building.png",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor"
         },
         {
@@ -59,8 +59,8 @@ var properties = {
             "balcony": 3,
             "lounge": 1,
             "garage": 1,
-            "image": "img/property-3.jpg",
-            "type_icon": "img/building.png",
+            "image": "/img/property-3.jpg",
+            "type_icon": "/img/building.png",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor"
         },
         {
@@ -80,8 +80,8 @@ var properties = {
             "balcony": 3,
             "lounge": 1,
             "garage": 1,
-            "image": "img/property-4.jpg",
-            "type_icon": "img/building.png",
+            "image": "/img/property-4.jpg",
+            "type_icon": "/img/building.png",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor"
         },
         {
@@ -101,8 +101,8 @@ var properties = {
             "balcony": 3,
             "lounge": 1,
             "garage": 1,
-            "image": "img/property-5.jpg",
-            "type_icon": "img/building.png",
+            "image": "/img/property-5.jpg",
+            "type_icon": "/img/building.png",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor"
         },
         {
@@ -122,8 +122,8 @@ var properties = {
             "balcony": 3,
             "lounge": 1,
             "garage": 1,
-            "image": "img/property-6.jpg",
-            "type_icon": "img/building.png",
+            "image": "/img/property-6.jpg",
+            "type_icon": "/img/building.png",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor"
         },
         {
@@ -143,8 +143,8 @@ var properties = {
             "balcony": 3,
             "lounge": 1,
             "garage": 1,
-            "image": "img/property-7.jpg",
-            "type_icon": "img/building.png",
+            "image": "/img/property-7.jpg",
+            "type_icon": "/img/building.png",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor"
         },
         {
@@ -164,8 +164,8 @@ var properties = {
             "balcony": 3,
             "lounge": 1,
             "garage": 1,
-            "image": "img/property-8.jpg",
-            "type_icon": "img/building.png",
+            "image": "/img/property-8.jpg",
+            "type_icon": "/img/building.png",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor"
         },
         {
@@ -185,8 +185,8 @@ var properties = {
             "balcony": 3,
             "lounge": 1,
             "garage": 1,
-            "image": "img/property-9.jpg",
-            "type_icon": "img/building.png",
+            "image": "/img/property-9.jpg",
+            "type_icon": "/img/building.png",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor"
         },
         {
@@ -206,8 +206,8 @@ var properties = {
             "balcony": 3,
             "lounge": 1,
             "garage": 1,
-            "image": "img/property-10.jpg",
-            "type_icon": "img/building.png",
+            "image": "/img/property-10.jpg",
+            "type_icon": "/img/building.png",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor"
         },
         {
@@ -227,8 +227,8 @@ var properties = {
             "balcony": 3,
             "lounge": 1,
             "garage": 1,
-            "image": "img/property-11.jpg",
-            "type_icon": "img/building.png",
+            "image": "/img/property-11.jpg",
+            "type_icon": "/img/building.png",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor"
         },
         {
@@ -248,8 +248,8 @@ var properties = {
             "balcony": 3,
             "lounge": 1,
             "garage": 1,
-            "image": "img/property-12.jpg",
-            "type_icon": "img/building.png",
+            "image": "/img/property-12.jpg",
+            "type_icon": "/img/building.png",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor"
         },
         {
@@ -269,8 +269,8 @@ var properties = {
             "balcony": 3,
             "lounge": 1,
             "garage": 1,
-            "image": "img/property-13.jpg",
-            "type_icon": "img/building.png",
+            "image": "/img/property-13.jpg",
+            "type_icon": "/img/building.png",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor"
         },
         {
@@ -290,8 +290,8 @@ var properties = {
             "balcony": 3,
             "lounge": 1,
             "garage": 1,
-            "image": "img/property-14.jpg",
-            "type_icon": "img/building.png",
+            "image": "/img/property-14.jpg",
+            "type_icon": "/img/building.png",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor"
         },
         {
@@ -311,8 +311,8 @@ var properties = {
             "balcony": 3,
             "lounge": 1,
             "garage": 1,
-            "image": "img/property-5.jpg",
-            "type_icon": "img/building.png",
+            "image": "/img/property-5.jpg",
+            "type_icon": "/img/building.png",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor Lorem ipsum dolor"
         }
 
@@ -495,11 +495,11 @@ function insertPropertyToArray(property, layout) {
             '                                        <i class="fa fa-video-camera"></i>\n' +
             '                                    </a>\n' +
             '                                    <div class="property-magnify-gallery">\n' +
-            '                                        <a href="img/property-2.jpg" class="overlay-link">\n' +
+            '                                        <a href="/img/property-2.jpg" class="overlay-link">\n' +
             '                                            <i class="fa fa-expand"></i>\n' +
             '                                        </a>\n' +
-            '                                        <a href="img/property-6.jpg" class="hidden"></a>\n' +
-            '                                        <a href="img/property-4.jpg" class="hidden"></a>\n' +
+            '                                        <a href="/img/property-6.jpg" class="hidden"></a>\n' +
+            '                                        <a href="/img/property-4.jpg" class="hidden"></a>\n' +
             '                                    </div>\n' +
             '                                </div>\n' +
             '                            </div>\n' +
@@ -564,11 +564,11 @@ function insertPropertyToArray(property, layout) {
             '                                        <i class="fa fa-video-camera"></i>\n' +
             '                                    </a>\n' +
             '                                    <div class="property-magnify-gallery">\n' +
-            '                                        <a href="img/property-2.jpg" class="overlay-link">\n' +
+            '                                        <a href="/img/property-2.jpg" class="overlay-link">\n' +
             '                                            <i class="fa fa-expand"></i>\n' +
             '                                        </a>\n' +
-            '                                        <a href="img/property-6.jpg" class="hidden"></a>\n' +
-            '                                        <a href="img/property-4.jpg" class="hidden"></a>\n' +
+            '                                        <a href="/img/property-6.jpg" class="hidden"></a>\n' +
+            '                                        <a href="/img/property-4.jpg" class="hidden"></a>\n' +
             '                                    </div>\n' +
             '                                </div>\n' +
             '                            </div>\n' +

@@ -6,7 +6,6 @@ export default class CarouselItem extends Component {
         this.state = {
             // image_url: this.props.image_url
         };
-        console.log(this.props.slide);
     }
     render() {
         return (
