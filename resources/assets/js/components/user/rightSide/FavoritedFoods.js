@@ -8,7 +8,7 @@ export default class FavoritedFoods extends Component {
                     <table className="table">
                         <thead>
                             <tr>
-                                <th>Favorited Foods</th>
+                                <th>Favorited</th>
                                 <th></th>
                                 <th>Date Added</th>
                                 <th>Views</th>

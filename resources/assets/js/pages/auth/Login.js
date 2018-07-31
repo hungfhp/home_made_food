@@ -10,11 +10,11 @@ export default class Login extends Component {
         this.state = {
             email: "",
             password: "",
-            alertError: "",
+            alert_error: "",
             form: "",
-            loggedIn: localStorage.getItem("loggedIn")
+            logged_in: localStorage.getItem("logged_in")
         }
-        if (this.state.loggedIn) {
+        if (this.state.logged_in) {
             this.state.form = <FormLoggedIn />;
         } else {
             this.state.form = <FormLogin renderFrom={this.renderForm}/>;
@@ -25,8 +25,8 @@ export default class Login extends Component {
         this.renderForm();
     }
     renderForm() {
-        this.state.loggedIn = localStorage.getItem("loggedIn");
-        if (this.state.loggedIn) {
+        this.state.logged_in = localStorage.getItem("logged_in");
+        if (this.state.logged_in) {
             this.setState({
                 form: <FormLoggedIn />
             });
@@ -52,8 +52,6 @@ export default class Login extends Component {
                                         <h4>Login</h4>
                                     </div>
                                 </div>
-                                {/* {this.state.formLogin}
-                                */}
                                 {this.state.form}
                             </div>
                         </div>

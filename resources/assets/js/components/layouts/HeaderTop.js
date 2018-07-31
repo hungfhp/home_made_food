@@ -11,11 +11,11 @@ export default class HeaderTop extends Component {
     }
     
     componentWillMount() {
-        if (localStorage.getItem("loggedIn")) {
+        if (localStorage.getItem("logged_in")) {
             this.setState({
                 userForm: (
                     <li>
-                        <a href={"/users/" + localStorage.userId} className="sign-in">
+                        <a href={"/users/" + localStorage.user_id} className="sign-in">
                             <i className="fa fa-user" /> {localStorage.getItem("username")}
                         </a>
                     </li>

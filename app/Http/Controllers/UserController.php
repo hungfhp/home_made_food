@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Model\User;
 use Log;
+use Auth;
 
 class UserController extends Controller
 {
@@ -81,8 +82,13 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+    {   
+        Log::info($request->all());
+        $user = Auth::user();
+        $updated = User::find($user->id)->update($request->all());
+        // $name = $request->name;
+
+        return response()->json(['data' => $updated], 200);
     }
 
     /**
