@@ -59,9 +59,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = User::find($id);
+        return response()->json(['result' => true, 'data' => $data], 200);
     }
-
     /**
      * Show the form for editing the specified resource.
      *

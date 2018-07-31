@@ -106,7 +106,7 @@ export default class Product extends Component {
                         </div>
                     </div>
                 </div>
-   <div className="subtitle">
+                <div className="subtitle">
                     20 Result Found
                 </div>
 

@@ -3,13 +3,8 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 var browserHistory = require("react-router").browserHistory;
 import { I18nextProvider } from "react-i18next";
-import { Provider } from 'react-redux';
 import { Redirect } from 'react-router';
-import { createStore } from 'redux';
-
-
 import axios from "axios";
-
 import i18n from './i18n';
 import { I18n } from "react-i18next";
 
@@ -64,26 +59,8 @@ import ModalFood from "./components/modal/Food";
 import ModalFullPageSearch from "./components/modal/FullPageSearch";
 import Lang from "./components/Lang";
 export default class Main extends Component {
-    requireAuth() {
-        console.log('sdfsdfsd');
-        if (!localStorage.getItem("loggedIn")) {
-            console.log('sdfsjkldf;');
-        }
-    }
-    
     render() {
-        function todos(state = [], action) {
-            switch (action.type) {
-              case 'ADD_TODO':
-                return state.concat([action.text])
-              default:
-                return state
-            }
-          }
-        const store = createStore(todos, ['Use Redux'])
-        const { dispatch, quote, isAuthenticated, errorMessage, isSecretQuote } = this.props;
         return (
-            <Provider store={store}>
             <Router history={browserHistory}>
                 <div>
                     {/* Pages */}
@@ -148,7 +125,6 @@ export default class Main extends Component {
                     <ModalFullPageSearch/>
                 </div>
             </Router>
-            </Provider>
         );
     }
 }

@@ -1,7 +1,42 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import jwt_decode from 'jwt-decode';
 
 export default class HeaderTop extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            userForm: ""
+        }
+    }
+    
+    componentWillMount() {
+        if (localStorage.getItem("loggedIn")) {
+            this.setState({
+                userForm: (
+                    <li>
+                        <a href={"/users/" + localStorage.userId} className="sign-in">
+                            <i className="fa fa-user" /> {localStorage.getItem("username")}
+                        </a>
+                    </li>
+                )
+            });
+        } else {
+            this.setState({
+                userForm: (
+                    <li>
+                        <a href="/login" className="sign-in">
+                            <i className="fa fa-sign-in" /> Login{" "}
+                        </a>
+                        <a href="/register" className="sign-in">
+                            <i className="fa fa-user" /> Register
+                        </a>
+                    </li>
+                )
+            });
+        }
+    }
+    
     render() {
         return (
             <header
@@ -50,16 +85,7 @@ export default class HeaderTop extends Component {
                                 <li>
                                     <a href="#">/</a>
                                 </li>
-                                <li>
-                                    <a href="/login" className="sign-in">
-                                        <i className="fa fa-sign-in" /> Login{" "}
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/register" className="sign-in">
-                                        <i className="fa fa-user" /> Register
-                                    </a>
-                                </li>
+                                {this.state.userForm}
                             </ul>
                         </div>
                     </div>
