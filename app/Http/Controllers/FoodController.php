@@ -20,7 +20,10 @@ class FoodController extends Controller
         $result = Food::where('publish', true)
             ->orderBy('created_at', 'desc')
             ->paginate(10);
-        return response()->json(['result' => true, 'data' => $result]);
+        foreach ($result as $item) {
+            $item['images'] = Food::find($item['id'])->food_images->all();
+        }
+        return response()->json(['result' => true, 'data' => $result], 200);
     }
 
     /**

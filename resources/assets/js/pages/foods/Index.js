@@ -5,8 +5,25 @@ import Header from "../../components/layouts/Header";
 import Subheader from "../../components/food/Subheader";
 import Tool from "../../components/food/Tool";
 import Product from "../../components/food/Product";
+import axios from "axios";
 
 class Index extends Component {
+    constructor(props) {
+        super (props);
+        this.state = {
+            foods: []
+        };
+    }
+    componentDidMount() {
+        axios.get("http://127.0.0.1:8000/api/foods")
+            .then(
+                response =>{
+                    this.setState({foods: response.data.data.data});
+                }
+            ).catch(
+            error => console.log("foods error!")
+        );
+    }
     render() {
         return (
             //index 6
@@ -16,7 +33,7 @@ class Index extends Component {
                 <div className="user-page submit-property content-area-7">
                     <div className="container">
                         <div className="row">
-                            <Product/>
+                            <Product foods={this.state.foods}/>
                             <Tool/>
                         </div>
                     </div>

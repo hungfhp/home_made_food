@@ -6,7 +6,7 @@ export default class Food extends Component {
             <div
                 className="modal property-modal fade"
                 id="propertyModal"
-                tabindex="-1"
+                tabIndex="-1"
                 role="dialog"
                 aria-labelledby="propertyModalLabel"
                 aria-hidden="true"
@@ -66,7 +66,7 @@ export default class Food extends Component {
                                                     <iframe
                                                         className="modalIframe"
                                                         src="https://www.youtube.com/embed/5e0LxrLSzok"
-                                                        allowfullscreen
+                                                        allowFullScreen
                                                     />
                                                 </div>
                                                 <div className="carousel-item">
