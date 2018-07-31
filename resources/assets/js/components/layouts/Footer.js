@@ -70,14 +70,13 @@ export default class Footer extends Component {
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            <i className="fa fa-angle-right" />Service
+                                        <a href="/home">
+                                            <i className="fa fa-angle-right" />Trang chủ
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            <i className="fa fa-angle-right" />Properties
-                                            Listing
+                                        <a href="/foods">
+                                            <i className="fa fa-angle-right" />Foods
                                         </a>
                                     </li>
                                     <li>
@@ -107,7 +106,7 @@ export default class Footer extends Component {
                             </div>
                         </div>
                         <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                            <h1>put logo page here</h1>
+                            <img style={{width: 200 + 'px'}} src="/img/logos/old_logo-white.png"/>
                         </div>
                         <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                             <div className="footer-item clearfix">

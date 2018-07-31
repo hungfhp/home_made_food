@@ -1,7 +1,84 @@
 import React, { Component } from "react";
 
 export default class Product extends Component {
+    constructor(props){
+        super(props);
+    }
+
     render() {
+        const list = this.props.foods;
+        const food_list = list.map((food)=> {
+            const image = food.images;
+            console.log(2);
+            console.log(image[0].link);
+            return (
+                <div className="property-box-5" key={food.id}>
+                    <div className="row">
+                        <div className="col-lg-5 col-md-5 col-pad">
+                            <div className="property-thumbnail">
+                                <a href={"/foods/" + food.id} className="property-img">
+                                    <div className="tag button alt featured">Featured</div>
+                                    <div className="price-ratings-box">
+                                    </div>
+                                    <img src={food.images[0].link} alt="property-1" className="img-fluid"/>
+                                </a>
+                                <div className="property-overlay">
+                                    <a href={"/foods/"+food.id} className="overlay-link" title="Like">
+                                        <i className="material-icons" style={{marginTop: '4px'}}>thumb_up</i>
+                                    </a>
+                                    <a href={"/foods/"+food.id} className="overlay-link" title="Dislike">
+                                        <i className="material-icons" style={{marginTop: '4px'}}>thumb_down</i>
+                                    </a>
+                                    <a className="overlay-link property-video" title="Test Title">
+                                        <i className="material-icons" style={{marginTop: '4px'}}>videocam</i>
+                                    </a>
+                                    <div className="property-magnify-gallery">
+                                        <a href="assets/img/property-1.jpg" className="overlay-link">
+                                            <i className="material-icons" style={{marginTop: '4px'}}>zoom_in</i>
+                                        </a>
+                                        <a href="/img/property-6.jpg" className="hidden"></a>
+                                        <a href="/img/property-4.jpg" className="hidden"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-lg-7 col-md-7 align-self-center col-pad">
+                            <div className="detail">
+                                <div className="row">
+                                    <h1 className="title col s11" style={{textTransform: 'uppercase'}}>
+                                        <a href={"/foods/"+food.id}>{food.name}</a>
+                                    </h1>
+                                    <div className="col s1" style={{position: 'absolute', right: '-350px'}}>
+                                        <i className="material-icons favourite" style={{color: 'red', cursor: 'pointer'}} title="Favourite">favorite_border</i>
+                                    </div>
+                                </div>
+                                <div className="location">
+                                    <a href="/foods/id">
+                                        <i className="fa fa-map-marker"></i>123 Kathal St. Tampa City,
+                                    </a>
+                                </div>
+
+                                <p>{food.description}</p>
+
+                                <ul className="facilities-list clearfix">
+                                    <li>
+                                        <i className="material-icons">thumb_up</i>{food.like}
+                                    </li>
+                                    <li>
+                                        <i className="material-icons">thumb_down</i>{food.dislike}
+                                    </li>
+                                    <li>
+                                        <i className="material-icons">favorite</i> 10
+                                    </li>
+                                </ul>
+                                <br/>
+                                <h5 style={{color: 'grey', boxAlign: 'right'}}><i className="material-icons" style={{marginTop: '4px'}}>attach_money</i>{food.price}VND</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        });
         return (
             <div className="col-lg-8 col-md-12">
                 <div className="option-bar d-none d-xl-block d-lg-block d-md-block d-sm-block">
@@ -33,702 +110,7 @@ export default class Product extends Component {
                     20 Result Found
                 </div>
 
-                <div className="property-box-5">
-                    <div className="row">
-                        <div className="col-lg-5 col-md-5 col-pad">
-                            <div className="property-thumbnail">
-                                <a href="/foods/id" className="property-img">
-                                    <div className="tag button alt featured">Featured</div>
-                                    <div className="price-ratings-box">
-                                        <p className="price">
-                                            $178,000
-                                        </p>
-                                        <div className="ratings">
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star-o"></i>
-                                        </div>
-                                    </div>
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwqz5zchFqgkS5CDzmtyHMz9BBi8EyF68S_NsijMk7lP4E97Lr" alt="property-1" className="img-fluid"/>
-                                </a>
-                                <div className="property-overlay">
-                                    <a href="/foods/id" className="overlay-link">
-                                        <i className="fa fa-link"></i>
-                                    </a>
-                                    <a className="overlay-link property-video" title="Test Title">
-                                        <i className="fa fa-video-camera"></i>
-                                    </a>
-                                    <div className="property-magnify-gallery">
-                                        <a href="/img/property-1.jpg" className="overlay-link">
-                                            <i className="fa fa-expand"></i>
-                                        </a>
-                                        <a href="/img/property-6.jpg" className="hidden"></a>
-                                        <a href="/img/property-4.jpg" className="hidden"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-7 col-md-7 align-self-center col-pad">
-                            <div className="detail">
-
-                                <h1 className="title">
-                                    <a href="/foods/id">Modern Family Home</a>
-                                </h1>
-
-                                <div className="location">
-                                    <a href="/foods/id">
-                                        <i className="fa fa-map-marker"></i>123 Kathal St. Tampa City,
-                                    </a>
-                                </div>
-
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt…</p>
-
-                                <ul className="facilities-list clearfix">
-                                    <li>
-                                        <i className="flaticon-bed"></i> 3 Beds
-                                    </li>
-                                    <li>
-                                        <i className="flaticon-bath"></i> 2 Baths
-                                    </li>
-                                    <li>
-                                        <i className="flaticon-square-layouting-with-black-square-in-east-area"></i> Sq Ft:3400
-                                    </li>
-                                    <li>
-                                        <i className="flaticon-car-repair"></i> 1 Garage
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="property-box-5">
-                    <div className="row">
-                        <div className="col-lg-5 col-md-5 col-pad">
-                            <div className="property-thumbnail">
-                                <a href="/foods/id" className="property-img">
-                                    <div className="tag button alt featured">Featured</div>
-                                    <div className="price-ratings-box">
-                                        <p className="price">
-                                            $178,000
-                                        </p>
-                                        <div className="ratings">
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star-o"></i>
-                                        </div>
-                                    </div>
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwqz5zchFqgkS5CDzmtyHMz9BBi8EyF68S_NsijMk7lP4E97Lr" alt="property-2" className="img-fluid"/>
-                                </a>
-                                <div className="property-overlay">
-                                    <a href="/foods/id" className="overlay-link">
-                                        <i className="fa fa-link"></i>
-                                    </a>
-                                    <a className="overlay-link property-video" title="Test Title">
-                                        <i className="fa fa-video-camera"></i>
-                                    </a>
-                                    <div className="property-magnify-gallery">
-                                        <a href="/img/property-2.jpg" className="overlay-link">
-                                            <i className="fa fa-expand"></i>
-                                        </a>
-                                        <a href="/img/property-6.jpg" className="hidden"></a>
-                                        <a href="/img/property-4.jpg" className="hidden"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-7 col-md-7 align-self-center col-pad">
-                            <div className="detail">
-
-                                <h1 className="title">
-                                    <a href="/foods/id">Relaxing Apartment</a>
-                                </h1>
-
-                                <div className="location">
-                                    <a href="/foods/id">
-                                        <i className="fa fa-map-marker"></i>123 Kathal St. Tampa City,
-                                    </a>
-                                </div>
-
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt…</p>
-
-                                <ul className="facilities-list clearfix">
-                                    <li>
-                                        <i className="flaticon-bed"></i> 3 Beds
-                                    </li>
-                                    <li>
-                                        <i className="flaticon-bath"></i> 2 Baths
-                                    </li>
-                                    <li>
-                                        <i className="flaticon-square-layouting-with-black-square-in-east-area"></i> Sq Ft:3400
-                                    </li>
-                                    <li>
-                                        <i className="flaticon-car-repair"></i> 1 Garage
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="property-box-5">
-                    <div className="row">
-                        <div className="col-lg-5 col-md-5 col-pad">
-                            <div className="property-thumbnail">
-                                <a href="/foods/id" className="property-img">
-                                    <div className="tag button alt featured">Featured</div>
-                                    <div className="price-ratings-box">
-                                        <p className="price">
-                                            $178,000
-                                        </p>
-                                        <div className="ratings">
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star-o"></i>
-                                        </div>
-                                    </div>
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwqz5zchFqgkS5CDzmtyHMz9BBi8EyF68S_NsijMk7lP4E97Lr" alt="property-3" className="img-fluid"/>
-                                </a>
-                                <div className="property-overlay">
-                                    <a href="/foods/id" className="overlay-link">
-                                        <i className="fa fa-link"></i>
-                                    </a>
-                                    <a className="overlay-link property-video" title="Test Title">
-                                        <i className="fa fa-video-camera"></i>
-                                    </a>
-                                    <div className="property-magnify-gallery">
-                                        <a href="/img/property-3.jpg" className="overlay-link">
-                                            <i className="fa fa-expand"></i>
-                                        </a>
-                                        <a href="/img/property-6.jpg" className="hidden"></a>
-                                        <a href="/img/property-4.jpg" className="hidden"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-7 col-md-7 align-self-center col-pad">
-                            <div className="detail">
-
-                                <h1 className="title">
-                                    <a href="/foods/id">Beautiful Single Home</a>
-                                </h1>
-
-                                <div className="location">
-                                    <a href="/foods/id">
-                                        <i className="fa fa-map-marker"></i>123 Kathal St. Tampa City,
-                                    </a>
-                                </div>
-
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt…</p>
-
-                                <ul className="facilities-list clearfix">
-                                    <li>
-                                        <i className="flaticon-bed"></i> 3 Beds
-                                    </li>
-                                    <li>
-                                        <i className="flaticon-bath"></i> 2 Baths
-                                    </li>
-                                    <li>
-                                        <i className="flaticon-square-layouting-with-black-square-in-east-area"></i> Sq Ft:3400
-                                    </li>
-                                    <li>
-                                        <i className="flaticon-car-repair"></i> 1 Garage
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="property-box-5">
-                    <div className="row">
-                        <div className="col-lg-5 col-md-5 col-pad">
-                            <div className="property-thumbnail">
-                                <a href="/foods/id" className="property-img">
-                                    <div className="tag button alt featured">Featured</div>
-                                    <div className="price-ratings-box">
-                                        <p className="price">
-                                            $178,000
-                                        </p>
-                                        <div className="ratings">
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star-o"></i>
-                                        </div>
-                                    </div>
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwqz5zchFqgkS5CDzmtyHMz9BBi8EyF68S_NsijMk7lP4E97Lr" alt="property-4" className="img-fluid"/>
-                                </a>
-                                <div className="property-overlay">
-                                    <a href="/foods/id" className="overlay-link">
-                                        <i className="fa fa-link"></i>
-                                    </a>
-                                    <a className="overlay-link property-video" title="Test Title">
-                                        <i className="fa fa-video-camera"></i>
-                                    </a>
-                                    <div className="property-magnify-gallery">
-                                        <a href="/img/property-4.jpg" className="overlay-link">
-                                            <i className="fa fa-expand"></i>
-                                        </a>
-                                        <a href="/img/property-6.jpg" className="hidden"></a>
-                                        <a href="/img/property-5.jpg" className="hidden"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-7 col-md-7 align-self-center col-pad">
-                            <div className="detail">
-
-                                <h1 className="title">
-                                    <a href="/foods/id">Real Luxury Villa</a>
-                                </h1>
-
-                                <div className="location">
-                                    <a href="/foods/id">
-                                        <i className="fa fa-map-marker"></i>123 Kathal St. Tampa City,
-                                    </a>
-                                </div>
-
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt…</p>
-
-                                <ul className="facilities-list clearfix">
-                                    <li>
-                                        <i className="flaticon-bed"></i> 3 Beds
-                                    </li>
-                                    <li>
-                                        <i className="flaticon-bath"></i> 2 Baths
-                                    </li>
-                                    <li>
-                                        <i className="flaticon-square-layouting-with-black-square-in-east-area"></i> Sq Ft:3400
-                                    </li>
-                                    <li>
-                                        <i className="flaticon-car-repair"></i> 1 Garage
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="property-box-5">
-                    <div className="row">
-                        <div className="col-lg-5 col-md-5 col-pad">
-                            <div className="property-thumbnail">
-                                <a href="/foods/id" className="property-img">
-                                    <div className="tag button alt featured">Featured</div>
-                                    <div className="price-ratings-box">
-                                        <p className="price">
-                                            $178,000
-                                        </p>
-                                        <div className="ratings">
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star-o"></i>
-                                        </div>
-                                    </div>
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwqz5zchFqgkS5CDzmtyHMz9BBi8EyF68S_NsijMk7lP4E97Lr" alt="property-5" className="img-fluid"/>
-                                </a>
-                                <div className="property-overlay">
-                                    <a href="/foods/id" className="overlay-link">
-                                        <i className="fa fa-link"></i>
-                                    </a>
-                                    <a className="overlay-link property-video" title="Test Title">
-                                        <i className="fa fa-video-camera"></i>
-                                    </a>
-                                    <div className="property-magnify-gallery">
-                                        <a href="/img/property-5.jpg" className="overlay-link">
-                                            <i className="fa fa-expand"></i>
-                                        </a>
-                                        <a href="/img/property-6.jpg" className="hidden"></a>
-                                        <a href="/img/property-4.jpg" className="hidden"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-7 col-md-7 align-self-center col-pad">
-                            <div className="detail">
-
-                                <h1 className="title">
-                                    <a href="/foods/id">Masons Villas</a>
-                                </h1>
-
-                                <div className="location">
-                                    <a href="/foods/id">
-                                        <i className="fa fa-map-marker"></i>123 Kathal St. Tampa City,
-                                    </a>
-                                </div>
-
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt…</p>
-
-                                <ul className="facilities-list clearfix">
-                                    <li>
-                                        <i className="flaticon-bed"></i> 3 Beds
-                                    </li>
-                                    <li>
-                                        <i className="flaticon-bath"></i> 2 Baths
-                                    </li>
-                                    <li>
-                                        <i className="flaticon-square-layouting-with-black-square-in-east-area"></i> Sq Ft:3400
-                                    </li>
-                                    <li>
-                                        <i className="flaticon-car-repair"></i> 1 Garage
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="property-box-5">
-                    <div className="row">
-                        <div className="col-lg-5 col-md-5 col-pad">
-                            <div className="property-thumbnail">
-                                <a href="/foods/id" className="property-img">
-                                    <div className="tag button alt featured">Featured</div>
-                                    <div className="price-ratings-box">
-                                        <p className="price">
-                                            $178,000
-                                        </p>
-                                        <div className="ratings">
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star-o"></i>
-                                        </div>
-                                    </div>
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwqz5zchFqgkS5CDzmtyHMz9BBi8EyF68S_NsijMk7lP4E97Lr" alt="property-6" className="img-fluid"/>
-                                </a>
-                                <div className="property-overlay">
-                                    <a href="/foods/id" className="overlay-link">
-                                        <i className="fa fa-link"></i>
-                                    </a>
-                                    <a className="overlay-link property-video" title="Test Title">
-                                        <i className="fa fa-video-camera"></i>
-                                    </a>
-                                    <div className="property-magnify-gallery">
-                                        <a href="/img/property-6.jpg" className="overlay-link">
-                                            <i className="fa fa-expand"></i>
-                                        </a>
-                                        <a href="/img/property-9.jpg" className="hidden"></a>
-                                        <a href="/img/property-4.jpg" className="hidden"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-7 col-md-7 align-self-center col-pad">
-                            <div className="detail">
-
-                                <h1 className="title">
-                                    <a href="/foods/id">Sweet Family Home</a>
-                                </h1>
-
-                                <div className="location">
-                                    <a href="/foods/id">
-                                        <i className="fa fa-map-marker"></i>123 Kathal St. Tampa City,
-                                    </a>
-                                </div>
-
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt…</p>
-
-                                <ul className="facilities-list clearfix">
-                                    <li>
-                                        <i className="flaticon-bed"></i> 3 Beds
-                                    </li>
-                                    <li>
-                                        <i className="flaticon-bath"></i> 2 Baths
-                                    </li>
-                                    <li>
-                                        <i className="flaticon-square-layouting-with-black-square-in-east-area"></i> Sq Ft:3400
-                                    </li>
-                                    <li>
-                                        <i className="flaticon-car-repair"></i> 1 Garage
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="property-box-5">
-                    <div className="row">
-                        <div className="col-lg-5 col-md-5 col-pad">
-                            <div className="property-thumbnail">
-                                <a href="/foods/id" className="property-img">
-                                    <div className="tag button alt featured">Featured</div>
-                                    <div className="price-ratings-box">
-                                        <p className="price">
-                                            $178,000
-                                        </p>
-                                        <div className="ratings">
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star-o"></i>
-                                        </div>
-                                    </div>
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwqz5zchFqgkS5CDzmtyHMz9BBi8EyF68S_NsijMk7lP4E97Lr" alt="property-7" className="img-fluid"/>
-                                </a>
-                                <div className="property-overlay">
-                                    <a href="/foods/id" className="overlay-link">
-                                        <i className="fa fa-link"></i>
-                                    </a>
-                                    <a className="overlay-link property-video" title="Test Title">
-                                        <i className="fa fa-video-camera"></i>
-                                    </a>
-                                    <div className="property-magnify-gallery">
-                                        <a href="/img/property-7.jpg" className="overlay-link">
-                                            <i className="fa fa-expand"></i>
-                                        </a>
-                                        <a href="/img/property-6.jpg" className="hidden"></a>
-                                        <a href="/img/property-4.jpg" className="hidden"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-7 col-md-7 align-self-center col-pad">
-                            <div className="detail">
-
-                                <h1 className="title">
-                                    <a href="/foods/id">Masons Villas</a>
-                                </h1>
-
-                                <div className="location">
-                                    <a href="/foods/id">
-                                        <i className="fa fa-map-marker"></i>123 Kathal St. Tampa City,
-                                    </a>
-                                </div>
-
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt…</p>
-
-                                <ul className="facilities-list clearfix">
-                                    <li>
-                                        <i className="flaticon-bed"></i> 3 Beds
-                                    </li>
-                                    <li>
-                                        <i className="flaticon-bath"></i> 2 Baths
-                                    </li>
-                                    <li>
-                                        <i className="flaticon-square-layouting-with-black-square-in-east-area"></i> Sq Ft:3400
-                                    </li>
-                                    <li>
-                                        <i className="flaticon-car-repair"></i> 1 Garage
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="property-box-5">
-                    <div className="row">
-                        <div className="col-lg-5 col-md-5 col-pad">
-                            <div className="property-thumbnail">
-                                <a href="/foods/id" className="property-img">
-                                    <div className="tag button alt featured">Featured</div>
-                                    <div className="price-ratings-box">
-                                        <p className="price">
-                                            $178,000
-                                        </p>
-                                        <div className="ratings">
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star-o"></i>
-                                        </div>
-                                    </div>
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwqz5zchFqgkS5CDzmtyHMz9BBi8EyF68S_NsijMk7lP4E97Lr" alt="property-8" className="img-fluid"/>
-                                </a>
-                                <div className="property-overlay">
-                                    <a href="/foods/id" className="overlay-link">
-                                        <i className="fa fa-link"></i>
-                                    </a>
-                                    <a className="overlay-link property-video" title="Test Title">
-                                        <i className="fa fa-video-camera"></i>
-                                    </a>
-                                    <div className="property-magnify-gallery">
-                                        <a href="/img/property-8.jpg" className="overlay-link">
-                                            <i className="fa fa-expand"></i>
-                                        </a>
-                                        <a href="/img/property-6.jpg" className="hidden"></a>
-                                        <a href="/img/property-5.jpg" className="hidden"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-7 col-md-7 align-self-center col-pad">
-                            <div className="detail">
-
-                                <h1 className="title">
-                                    <a href="/foods/id">Big Head House</a>
-                                </h1>
-
-                                <div className="location">
-                                    <a href="/foods/id">
-                                        <i className="fa fa-map-marker"></i>123 Kathal St. Tampa City,
-                                    </a>
-                                </div>
-
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt…</p>
-
-                                <ul className="facilities-list clearfix">
-                                    <li>
-                                        <i className="flaticon-bed"></i> 3 Beds
-                                    </li>
-                                    <li>
-                                        <i className="flaticon-bath"></i> 2 Baths
-                                    </li>
-                                    <li>
-                                        <i className="flaticon-square-layouting-with-black-square-in-east-area"></i> Sq Ft:3400
-                                    </li>
-                                    <li>
-                                        <i className="flaticon-car-repair"></i> 1 Garage
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="property-box-5">
-                    <div className="row">
-                        <div className="col-lg-5 col-md-5 col-pad">
-                            <div className="property-thumbnail">
-                                <a href="/foods/id" className="property-img">
-                                    <div className="tag button alt featured">Featured</div>
-                                    <div className="price-ratings-box">
-                                        <p className="price">
-                                            $178,000
-                                        </p>
-                                        <div className="ratings">
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star-o"></i>
-                                        </div>
-                                    </div>
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwqz5zchFqgkS5CDzmtyHMz9BBi8EyF68S_NsijMk7lP4E97Lr" alt="property-9" className="img-fluid"/>
-                                </a>
-                                <div className="property-overlay">
-                                    <a href="/foods/id" className="overlay-link">
-                                        <i className="fa fa-link"></i>
-                                    </a>
-                                    <a className="overlay-link property-video" title="Test Title">
-                                        <i className="fa fa-video-camera"></i>
-                                    </a>
-                                    <div className="property-magnify-gallery">
-                                        <a href="/img/property-9.jpg" className="overlay-link">
-                                            <i className="fa fa-expand"></i>
-                                        </a>
-                                        <a href="/img/property-6.jpg" className="hidden"></a>
-                                        <a href="/img/property-5.jpg" className="hidden"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-7 col-md-7 align-self-center col-pad">
-                            <div className="detail">
-
-                                <h1 className="title">
-                                    <a href="/foods/id">Park avenue</a>
-                                </h1>
-
-                                <div className="location">
-                                    <a href="/foods/id">
-                                        <i className="fa fa-map-marker"></i>123 Kathal St. Tampa City,
-                                    </a>
-                                </div>
-
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt…</p>
-
-                                <ul className="facilities-list clearfix">
-                                    <li>
-                                        <i className="flaticon-bed"></i> 3 Beds
-                                    </li>
-                                    <li>
-                                        <i className="flaticon-bath"></i> 2 Baths
-                                    </li>
-                                    <li>
-                                        <i className="flaticon-square-layouting-with-black-square-in-east-area"></i> Sq Ft:3400
-                                    </li>
-                                    <li>
-                                        <i className="flaticon-car-repair"></i> 1 Garage
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="property-box-5">
-                    <div className="row">
-                        <div className="col-lg-5 col-md-5 col-pad">
-                            <div className="property-thumbnail">
-                                <a href="/foods/id" className="property-img">
-                                    <div className="tag button alt featured">Featured</div>
-                                    <div className="price-ratings-box">
-                                        <p className="price">
-                                            $178,000
-                                        </p>
-                                        <div className="ratings">
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star-o"></i>
-                                        </div>
-                                    </div>
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwqz5zchFqgkS5CDzmtyHMz9BBi8EyF68S_NsijMk7lP4E97Lr" alt="property-3" className="img-fluid"/>
-                                </a>
-                                <div className="property-overlay">
-                                    <a href="/foods/id" className="overlay-link">
-                                        <i className="fa fa-link"></i>
-                                    </a>
-                                    <a className="overlay-link property-video" title="Test Title">
-                                        <i className="fa fa-video-camera"></i>
-                                    </a>
-                                    <div className="property-magnify-gallery">
-                                        <a href="/img/property-3.jpg" className="overlay-link">
-                                            <i className="fa fa-expand"></i>
-                                        </a>
-                                        <a href="/img/property-6.jpg" className="hidden"></a>
-                                        <a href="/img/property-5.jpg" className="hidden"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-7 col-md-7 align-self-center col-pad">
-                            <div className="detail">
-                                <h1 className="title">
-                                    <a href="/foods/id">Luxury Villa</a>
-                                </h1>
-                                <div className="location">
-                                    <a href="/foods/id">
-                                        <i className="fa fa-map-marker"></i>123 Kathal St. Tampa City,
-                                    </a>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt…</p>
-                                <ul className="facilities-list clearfix">
-                                    <li>
-                                        <i className="flaticon-bed"></i> 3 Beds
-                                    </li>
-                                    <li>
-                                        <i className="flaticon-bath"></i> 2 Baths
-                                    </li>
-                                    <li>
-                                        <i className="flaticon-square-layouting-with-black-square-in-east-area"></i> Sq Ft:3400
-                                    </li>
-                                    <li>
-                                        <i className="flaticon-car-repair"></i> 1 Garage
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {food_list}
 
                 <div className="pagination-box hidden-mb-45">
                     <nav aria-label="Page navigation example">
