@@ -29,7 +29,7 @@ export default class Show extends Component {
                 if (localStorage.getItem("loggedIn") && localStorage.getItem("userId") == this.state.userId) {
                     this.setState({
                         renderRightSide: <FormEdit user={this.state.user} />
-                    })    
+                    })
                 } else {
                     this.setState({
                         renderRightSide: <FormShow user={this.state.user} />
