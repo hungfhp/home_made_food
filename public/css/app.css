@@ -18142,7 +18142,7 @@ yx-axis
   src: url(/fonts/Flaticond41d.eot?4e43faffa96522701b9614453b90b53a?#iefix) format("embedded-opentype"),
        url(/fonts/Flaticon.woff?20ff3f02535a622fef87cf33708a34ed) format("woff"),
        url(/fonts/Flaticon.ttf?3a30c257226625ad44c906d9f7f0172e) format("truetype"),
-       url(/fonts/Flaticon.svg?766ad71b99896d7803e763a175b4bbfd#Flaticon) format("svg");
+       url(/fonts/Flaticon.svg?f4532b9c54fb74a099833575f2891e2b#Flaticon) format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -18150,7 +18150,7 @@ yx-axis
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: "Flaticon";
-    src: url(/fonts/Flaticon.svg?766ad71b99896d7803e763a175b4bbfd#Flaticon) format("svg");
+    src: url(/fonts/Flaticon.svg?f4532b9c54fb74a099833575f2891e2b#Flaticon) format("svg");
   }
 }
 
@@ -18199,9 +18199,10 @@ yx-axis
 .flaticon-money-bag-with-dollar-symbol:before { content: "\F122"; }
 .flaticon-tag:before { content: "\F123"; }
 .flaticon-hotel-building:before { content: "\F124"; }
-.flaticon-car-repair:before { content: "\F125"; }
+/* .flaticon-car-repair:before { content: "\f125"; } */
 .flaticon-house:before { content: "\F126"; }
-.flaticon-office-block:before { content: "\F127"; }/*------------------------------------------------------------------
+.flaticon-office-block:before { content: "\F127"; }
+.flaticon-like:before { content: "\F125"; }/*------------------------------------------------------------------
 [Main Stylesheet]
 
 Project:    Xero
@@ -26496,9 +26497,26 @@ li.active.btn.filtr-button.filtr {
   color: #37404d !important;
 }
 
+.selectBox.swal2-select.selectBox-dropdown {
+  display: none !important;
+}
+
+.swal2-container .swal2-shown {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.swal2-container .swal2-popup {
+  font-size: x-small !important;
+  padding: 1.25em 2.25em !important;
+}
+
 .navbar-laravel {
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+body {
+  overflow: auto !important;
 }
 

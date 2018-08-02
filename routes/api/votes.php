@@ -1,7 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth:api'], function () {
     Route::get('/', 'VoteController@index')->name('votes.index');
     Route::get('/{id}', 'VoteController@show')->name('votes.show');
     Route::post('/', 'VoteController@store')->name('votes.store');

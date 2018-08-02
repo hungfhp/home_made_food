@@ -3,12 +3,12 @@ import React, { Component } from "react";
 export default class FavoritedFoods extends Component {
     render() {
         return (
-            <div>
+            <div id="favorited-foods">
                 <div className="my-properties">
                     <table className="table">
                         <thead>
                             <tr>
-                                <th>Favorited Foods</th>
+                                <th>Favorited</th>
                                 <th></th>
                                 <th>Date Added</th>
                                 <th>Views</th>

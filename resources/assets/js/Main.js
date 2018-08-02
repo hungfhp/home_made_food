@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 var browserHistory = require("react-router").browserHistory;
 import { I18nextProvider } from "react-i18next";
 import { Redirect } from 'react-router';
-import axios from "axios";
 import i18n from './i18n';
 import { I18n } from "react-i18next";
 
@@ -57,14 +56,14 @@ import VotesShow from "./pages/votes/Show";
 import ModalCanvasSidebar from "./components/modal/CanvasSidebar";
 import ModalFood from "./components/modal/Food";
 import ModalFullPageSearch from "./components/modal/FullPageSearch";
-import Lang from "./components/Lang";
+
 export default class Main extends Component {
     render() {
         return (
             <Router history={browserHistory}>
                 <div>
                     {/* Pages */}
-                    <Switch>
+                    <Switch>    
                         {/* auth */}
                         <Route exact path="/forgot-password" component={AuthForgotPassword} />
                         <Route exact path="/login" component={AuthLogin} />
@@ -91,7 +90,7 @@ export default class Main extends Component {
                         < Route exact path = "/foods/:id/edit"
                         render = {
                             () => (
-                                localStorage.getItem("loggedIn") ? (<Redirect to = "/foods/:id/edit" />) : (<Redirect to = "/login" />)
+                                localStorage.getItem("logged_in") ? (console.log()) : (<Redirect to = "/login" />)
                             )
                         }
                         />
@@ -131,5 +130,9 @@ export default class Main extends Component {
 
 
 if (document.getElementById("root")) {
-    ReactDOM.render(<I18nextProvider i18n={ i18n }><Main /></I18nextProvider>, document.getElementById("root"));
+    ReactDOM.render(
+        <I18nextProvider i18n={ i18n }>
+                <Main />
+        </I18nextProvider>
+    , document.getElementById("root"));
 }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import {Link} from 'react-router'
+import {Link} from 'react-router';
 
 import HeaderTop from "./HeaderTop";
 
@@ -11,7 +11,7 @@ export default class Header extends Component {
         this.logout = this.logout.bind(this);
     }
     componentWillMount() {
-        if (localStorage.getItem("loggedIn")) {
+        if (localStorage.getItem("logged_in")) {
             this.setState({
                 userLinks: (
                     <li className="nav-item dropdown">
@@ -20,7 +20,7 @@ export default class Header extends Component {
                             {localStorage.getItem("username")}
                         </a>
                         <div className="dropdown-menu" aria-labelledby="navbarDropdown3">
-                            <a className="dropdown-item" href={"/users/" + localStorage.userId}>
+                            <a className="dropdown-item" href={"/users/" + localStorage.user_id}>
                                 Profile
                             </a>
                             <a className="dropdown-item" href="/">

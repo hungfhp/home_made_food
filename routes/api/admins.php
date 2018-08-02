@@ -1,7 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth:api'], function () {
     Route::get('/', 'AdminController@index')->name('admins.index');
     Route::get('/{id}', 'AdminController@show')->name('admins.show');
     Route::post('/', 'AdminController@store')->name('admins.store');

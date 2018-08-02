@@ -9,8 +9,8 @@ export default class FormLogin extends Component {
         this.state = {
             email: "",
             password: "",
-            alertError: "",
-            loggedIn: localStorage.getItem("loggedIn")
+            alert_error: "",
+            logged_in: localStorage.getItem("logged_in")
         }
         this.submitLogin = this.submitLogin.bind(this);
     }
@@ -24,26 +24,27 @@ export default class FormLogin extends Component {
                 password: this.state.password
             })
             .then(res => {
-                localStorage.setItem("userId", res.data.success.user_id);
+                localStorage.setItem("user_id", res.data.success.user_id);
                 localStorage.setItem("token", res.data.success.token);
+                localStorage.setItem("b_token", "Bearer " + res.data.success.token);
                 localStorage.setItem("username", res.data.success.username);
-                localStorage.setItem("loggedIn", true);
+                localStorage.setItem("logged_in", true);
                 history.back();
                 this.setState({
-                    loggedIn: true
+                    logged_in: true
                 });
             })
             .catch(error => {
                 console.log(error);
                 localStorage.clear();
-                let alertError = "Sai email hoặc password";
+                let alert_error = "Sai email hoặc password";
                 this.setState({
-                    alertError
+                    alert_error
                 })
             })
     }
     render() {
-        if (this.state.loggedIn) {
+        if (this.state.logged_in) {
             return (
                 <FormLoggedIn/>
             )
@@ -54,7 +55,7 @@ export default class FormLogin extends Component {
                         <p>
                             Please enter your user name and password to login
                         </p>
-                        <div className="alert-danger">{this.state.alertError}</div>
+                        <div className="alert-danger">{this.state.alert_error}</div>
                         <br/>
                         <div className="form-group">
                             <input ref="email" type="email" className="form-control" name="email" placeholder="Email Address" />

@@ -1,7 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth:api'], function () {
     Route::get('/', 'CertificateController@index')->name('certificates.index');
     Route::get('/{id}', 'CertificateController@show')->name(
         'certificates.show'

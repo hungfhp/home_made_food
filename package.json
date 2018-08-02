@@ -21,6 +21,7 @@
         "laravel-mix": "^2.0",
         "lodash": "^4.17.4",
         "popper.js": "^1.12",
+        "query-string": "^6.1.0",
         "react": "^16.2.0",
         "react-dom": "^16.2.0",
         "react-i18next": "^7.9.0"
@@ -36,6 +37,7 @@
         "react-localize-redux": "^3.2.4",
         "react-router": "^4.3.1",
         "react-router-dom": "^4.3.1",
+        "sweetalert2": "^7.26.9",
         "wow": "0.0.6",
         "wow.js": "^1.2.2"
     }
