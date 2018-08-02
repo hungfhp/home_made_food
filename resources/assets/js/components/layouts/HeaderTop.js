@@ -1,22 +1,23 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import jwt_decode from 'jwt-decode';
+import { connect } from "react-redux";
+import { login, profile } from '@/actions/AuthActions';
 
-export default class HeaderTop extends Component {
+class HeaderTop extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            userForm: ""
         }
     }
     
     componentWillMount() {
+        console.log("this", this);
         if (localStorage.getItem("logged_in")) {
             this.setState({
                 userForm: (
                     <li>
                         <a href={"/users/" + localStorage.user_id} className="sign-in">
-                            <i className="fa fa-user" /> {localStorage.getItem("username")}
+                            <i className="fa fa-user" /> {this.state.username}
                         </a>
                     </li>
                 )
@@ -94,3 +95,19 @@ export default class HeaderTop extends Component {
         );
     }
 }
+
+function mapStateToProps(state) {
+    console.log("state", state);
+    return {
+        auth: state.auth
+    };
+};
+
+function mapDispatchToProps(dispatch) {
+    console.log('sdfs');
+    return {
+        // auth: dispatch(profile())
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderTop);

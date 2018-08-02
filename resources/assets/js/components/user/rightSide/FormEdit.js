@@ -28,8 +28,8 @@ export default class FormEdit extends Component {
             this.state.isChanged = false;
             $(".js-btn-submit").addClass("disabled");
             this.props.handleSubmitUpdate(this.refs.name.value, this.refs.address.value, this.refs.phone.value);
+            localStorage.setItem("username", this.refs.name.value);
         } else {
-            console.log("Please change before update!");
             swal2({
                 type: 'warning',
                 title: 'Please change before update!',

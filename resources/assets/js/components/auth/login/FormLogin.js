@@ -2,61 +2,47 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
 import FormLoggedIn from "./FormLoggedIn";
+import { bindActionCreators } from "redux";
 
 export default class FormLogin extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: "",
-            password: "",
-            alert_error: "",
-            logged_in: localStorage.getItem("logged_in")
-        }
+            auth: this.props.auth
+        };
         this.submitLogin = this.submitLogin.bind(this);
+        console.log(this);
+    }
+    componentWillReceiveProps(nextProps) {
+        
+        // this.setState ({
+        //     auth: nextProps.auth
+        // });
+        console.log("next", this);
     }
     submitLogin(e) {
-        e.preventDefault();
-        this.state.email = this.refs.email.value;
-        this.state.password = this.refs.password.value;
-        axios
-            .post("/api/login", {
-                email: this.state.email,
-                password: this.state.password
-            })
-            .then(res => {
-                localStorage.setItem("user_id", res.data.success.user_id);
-                localStorage.setItem("token", res.data.success.token);
-                localStorage.setItem("b_token", "Bearer " + res.data.success.token);
-                localStorage.setItem("username", res.data.success.username);
-                localStorage.setItem("logged_in", true);
-                history.back();
-                this.setState({
-                    logged_in: true
-                });
-            })
-            .catch(error => {
-                console.log(error);
-                localStorage.clear();
-                let alert_error = "Sai email hoặc password";
-                this.setState({
-                    alert_error
-                })
-            })
+        this.props.login(this.refs.email.value, this.refs.password.value);
+
+        // this.setState({
+        //     this.state = this.props.login(this.refs.email.value, this.refs.password.value);
+        // })
+        // console.log("get", this.props.profile());
+        console.log(this);
+        
+        // dispatch({type: 'LOGIN'});
     }
     render() {
-        if (this.state.logged_in) {
-            return (
-                <FormLoggedIn/>
-            )
-        } else {
+        // if (this.props.auth) {
+            // return <FormLoggedIn />;
+        // } else {
             return (
                 <div>
                     <form action="#">
-                        <p>
-                            Please enter your user name and password to login
-                        </p>
-                        <div className="alert-danger">{this.state.alert_error}</div>
-                        <br/>
+                        <p>Please enter your user name and password to login</p>
+                        <div className="alert-danger">
+                            {/* {this.state.auth.error} */}
+                        </div>
+                        <br />
                         <div className="form-group">
                             <input ref="email" type="email" className="form-control" name="email" placeholder="Email Address" />
                         </div>
@@ -79,7 +65,26 @@ export default class FormLogin extends Component {
                         <a href="/">Home</a>
                     </button>
                 </div>
-            )
+            );
         }
     }
-}
+// }
+
+// function mapStateToProps(state) {
+//     console.log('form login', state.auth);
+//     return {
+//         auth: state.auth
+//     };
+// };
+
+// function mapDispatchToProps(dispatch) {
+//     return {
+//         login: (email, password) => dispatch(login(email, password)),
+//         profile: () => dispatch(profile())
+//     };
+// }
+
+// export default connect(
+//     mapStateToProps,
+//     mapDispatchToProps
+// )(FormLogin);

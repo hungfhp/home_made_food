@@ -7,6 +7,7 @@ export default class FormLoggedIn extends Component {
         super(props);
         this.state = {
         }
+        console.log(this);
     }
     logout() {
         axios.get('/api/logout').then(res => {

@@ -31,7 +31,7 @@ class AuthController extends Controller
         {
             Log::info('login');
             $user = Auth::user();
-            $success['token'] = $user->createToken('MyApp')->accessToken;
+            $success['b_token'] = "Bearer ".$user->createToken('s91209d@skl3($dfjksdfjk')->accessToken;
             $success['username'] = $user->name;
             $success['user_id'] = $user->id;
             return response()->json(
@@ -72,7 +72,7 @@ class AuthController extends Controller
         $input = $request->all();
         $input['password'] = bcrypt($input['password']);
         $user = User::create($input);
-        $success['token'] = $user->createToken('MyApp')->accessToken;
+        $success['token'] = $user->createToken('s91209d@skl3($dfjksdfjk')->accessToken;
         $success['name'] = $user->name;
         return response()->json(['success' => $success], $this->successStatus);
     }

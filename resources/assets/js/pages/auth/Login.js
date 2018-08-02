@@ -3,36 +3,34 @@ import ReactDOM from "react-dom";
 import axios from "axios";
 import FormLogin from "../../components/auth/login/FormLogin";
 import FormLoggedIn from "../../components/auth/login/FormLoggedIn";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { login, profile } from '@/actions/AuthActions';
 
-export default class Login extends Component {
+class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            auth: this.props.auth,
             email: "",
             password: "",
-            alert_error: "",
-            form: "",
-            logged_in: localStorage.getItem("logged_in")
-        }
-        if (this.state.logged_in) {
-            this.state.form = <FormLoggedIn />;
-        } else {
-            this.state.form = <FormLogin renderFrom={this.renderForm}/>;
-        }
+            contentForm: ""
+        };
         this.renderForm = this.renderForm.bind(this);
+        console.log(this);
     }
     componentWillMount() {
         this.renderForm();
     }
     renderForm() {
-        this.state.logged_in = localStorage.getItem("logged_in");
-        if (this.state.logged_in) {
+        console.log(this);
+        if (this.props.auth.isAuth) {
             this.setState({
-                form: <FormLoggedIn />
+                contentForm: <FormLoggedIn {...this.props} />
             });
         } else {
             this.setState({
-                form: <FormLogin renderFrom={this.renderForm.bind(this)}/>
+                contentForm: <FormLogin {...this.props} renderFrom={this.renderForm.bind(this)} />
             });
         }
     }
@@ -52,7 +50,7 @@ export default class Login extends Component {
                                         <h4>Login</h4>
                                     </div>
                                 </div>
-                                {this.state.form}
+                                {this.state.contentForm}
                             </div>
                         </div>
                     </div>
@@ -61,3 +59,21 @@ export default class Login extends Component {
         );
     }
 }
+
+function mapStateToProps(state) {
+    console.log('login state', state);
+    return {
+        auth: state.auth
+    };
+};
+
+function mapDispatchToProps(dispatch) {
+    return {
+        login: (email, password) => dispatch(login(email, password))
+    };
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Login);
