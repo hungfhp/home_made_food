@@ -14,7 +14,7 @@ class FoodsTableSeeder extends Seeder
         $data =[
             [
                 'cooked_id' => 3,
-                'category_id' => 2,
+                'category_id' => 1,
                 'name' => 'thịt rán',
                 'price' => 20000,
                 'description' => 'thịt ba chỉ, rán ít mỡ',
@@ -24,7 +24,7 @@ class FoodsTableSeeder extends Seeder
             ],
             [
                 'cooked_id' => 3,
-                'category_id' => 3,
+                'category_id' => 2,
                 'name' => 'canh măng',
                 'price' => 20000,
                 'description' => 'cần đặt món canh măng nhiều ',
@@ -34,7 +34,7 @@ class FoodsTableSeeder extends Seeder
             ],
             [
                 'cooked_id' => 3,
-                'category_id' => 4,
+                'category_id' => 3,
                 'name' => 'canh ',
                 'price' => 20000,
                 'description' => 'cần đặt món canh chua',
