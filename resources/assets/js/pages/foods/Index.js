@@ -9,13 +9,13 @@ import axios from "axios";
 
 class Index extends Component {
     constructor(props) {
-        super (props);
+        super(props);
         this.state = {
             foods: []
         };
     }
     componentDidMount() {
-        axios.get("http://127.0.0.1:8000/api/foods")
+        axios.get("/api/foods")
             .then(
                 response =>{
                     this.setState({foods: response.data.data.data});

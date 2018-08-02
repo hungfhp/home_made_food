@@ -19309,7 +19309,7 @@ a {
 
 
 .banner-bg{
-    background: url(/images/banner-1.jpg?7761ea25d4422805ff95ac4236568225);
+    background: url(/images/banner-1.jpg?1388376c0c9577bc39b6bc08cf22ee80);
 }
 
 
@@ -19482,7 +19482,7 @@ a {
 }
 /** SUB BANNER **/
 .sub-banner {
-    background: rgba(0, 0, 0, 0.04) url(/images/sub-banner.jpg?e130e3d42ca86fc28c6f7f3b0a3b67e6) top left repeat;
+    background: rgba(0, 0, 0, 0.04) url(/images/sub-banner.jpg?f4fee39b0774ed0a2bb20371894fef62) top left repeat;
     background-size: cover;
     height: 290px;
     background-position: center center;
@@ -20197,7 +20197,7 @@ a {
     background-repeat: no-repeat;
     border: none;
     margin: 0;
-    background: rgba(0, 0, 0, 0.04) url(/images/sub-banner.jpg?e130e3d42ca86fc28c6f7f3b0a3b67e6) top left repeat;
+    background: rgba(0, 0, 0, 0.04) url(/images/sub-banner.jpg?f4fee39b0774ed0a2bb20371894fef62) top left repeat;
     background-size: cover;
     color: #efefef;
 }
@@ -23634,7 +23634,7 @@ table {
 /** SELL YOUR PROPERTIES **/
 .sell-your-properties {
     text-align: center;
-    background: rgba(0, 0, 0, 0.04) url(/images/property-15.jpg?9f35024fae992bc21811d8282d33398e) top left repeat;
+    background: rgba(0, 0, 0, 0.04) url(/images/property-15.jpg?8d3ad7a5bb25de87c8b48696a7597315) top left repeat;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -23657,7 +23657,7 @@ table {
 
 /** HELPING CENTER **/
 .helping-center {
-    background: rgba(0, 0, 0, 0.04) url(/images/property-15.jpg?9f35024fae992bc21811d8282d33398e) top left repeat;
+    background: rgba(0, 0, 0, 0.04) url(/images/property-15.jpg?8d3ad7a5bb25de87c8b48696a7597315) top left repeat;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -23709,7 +23709,7 @@ table {
 
 /** COMING SOON **/
 .coming-soon-bg {
-    background: rgba(0, 0, 0, 0.04) url(/images/banner-2.jpg?8f5a07ebe8fcfa1b2a5d224322143ffa) top left repeat;
+    background: rgba(0, 0, 0, 0.04) url(/images/banner-2.jpg?6e22fd2fde16313c56d8ed3f2906ef8d) top left repeat;
     background-size: cover;
     top: 0;
     width: 100%;
@@ -25881,7 +25881,7 @@ body.off-canvas-sidebar-open {
     }
 
     .helping-center {
-        background: rgba(0, 0, 0, 0.04) url(/images/property-15.jpg?9f35024fae992bc21811d8282d33398e) top left repeat;
+        background: rgba(0, 0, 0, 0.04) url(/images/property-15.jpg?8d3ad7a5bb25de87c8b48696a7597315) top left repeat;
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
@@ -26461,6 +26461,30 @@ li.active.btn.filtr-button.filtr {
         border: solid 2px #274cbf;
     }
 }
+.post-title {
+  text-transform: uppercase;
+}
+
+.name::-webkit-input-placeholder {
+  color: black;
+}
+
+.name:-ms-input-placeholder {
+  color: black;
+}
+
+.name::-ms-input-placeholder {
+  color: black;
+}
+
+.name::placeholder {
+  color: black;
+}
+
+.name {
+  background-color: #eeeeee;
+}
+
 .margin-right-15 {
   margin-right: 15px;
 }

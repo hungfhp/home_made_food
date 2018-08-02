@@ -58,9 +58,15 @@ class FoodController extends Controller
     public function show($id)
     {
         Log::info('show a food');
-        $food = Food::where('id', $id)->get();
-        $food['image'] = Food::find($id)->food_images->all();
-        $food['feature_image'] = Food::find($id)->food_images->first();
+        $food = Food::where('id', $id)
+            ->with('user')
+            ->get();
+        $food['image'] = Food::find($id)
+            ->food_images
+            ->all();
+        $food['feature_image'] = Food::find($id)
+            ->food_images
+            ->first();
         return response()->json(['result' => true, 'data' => $food], 200);
     }
 
