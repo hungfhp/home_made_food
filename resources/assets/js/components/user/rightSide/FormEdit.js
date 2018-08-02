@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
+import swal2 from "sweetalert2";
+
 export default class FormEdit extends Component {
     constructor(props) {
         super(props);
@@ -23,16 +25,26 @@ export default class FormEdit extends Component {
     }
     handleSubmit() {
         if (this.state.isChanged) {
-            this.props.handleSubmitUpdate(this.refs.name, this.refs.address, this.refs.phone);
+            this.state.isChanged = false;
+            $(".js-btn-submit").addClass("disabled");
+            this.props.handleSubmitUpdate(this.refs.name.value, this.refs.address.value, this.refs.phone.value);
         } else {
             console.log("Please change before update!");
+            swal2({
+                type: 'warning',
+                title: 'Please change before update!',
+                showConfirmButton: false,
+                heightAuto: true,
+                width: "auto",
+                timer: 2200
+            });
         }
     }
     render() {
         return (
-            <div className="my-address contact-2 widget">
+            <div id="profile" className="my-address contact-2 widget">
                 <h3 className="heading">Update</h3>
-                {/* <form action="#save"> */}
+                <form action="javascript:void(0)">
                 <div className="row">
                     <div className="col-lg-12 ">
                         <div className="form-group name">
@@ -58,7 +70,7 @@ export default class FormEdit extends Component {
                         </div>
                     </div>
                 </div>
-                {/* </form> */}
+                </form>
             </div>
         );
     }

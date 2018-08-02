@@ -1,7 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth:api'], function () {
     Route::get('/', 'FavoriteController@index')->name('favorites.index');
     Route::get('/{id}', 'FavoriteController@show')->name('favorites.show');
     Route::post('/', 'FavoriteController@store')->name('favorites.store');

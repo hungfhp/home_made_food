@@ -8,8 +8,9 @@ import CookedFoods from "../../components/user/rightSide/CookedFoods";
 import FavoritedFoods from "../../components/user/rightSide/FavoritedFoods";
 import LikedFoods from "../../components/user/rightSide/LikedFoods";
 const queryString = require('query-string');
+import swal2 from "sweetalert2";
 
-export default class Show extends Component {
+class Show extends Component {
     constructor(props) {
         super(props);
         this.state={
@@ -81,18 +82,25 @@ export default class Show extends Component {
         }
     }
     handleSubmitUpdate(name, address, phone) {
-        axios.put('/api/users/'+this.state.user_id,{
-            name: name,
-            address: address,
-            phone: phone
-        },{
+        axios({
+            method: 'PUT',
+            url: '/api/users/' + this.state.user_id,
             headers: {
-                Authorization: localStorage.getItem("b_token"),
-                Accept :"application/json",
-                "Content-Type": "application/x-www-form-urlencoded"
+                Authorization: localStorage.b_token
+            },
+            data: {
+                name: name,
+                address: address,
+                phone: phone
             }
         }).then(res=>{
-            console.log(res);
+            swal2({
+                type: 'success',
+                title: 'Saved',
+                showConfirmButton: false,
+                heightAuto: true,
+                timer: 1200
+            });
         }).catch(err=>{
             console.log(err);
         })
@@ -118,3 +126,4 @@ export default class Show extends Component {
         );
     }
 }
+export default Show;

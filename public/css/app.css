@@ -26473,9 +26473,26 @@ li.active.btn.filtr-button.filtr {
   color: #37404d !important;
 }
 
+.selectBox.swal2-select.selectBox-dropdown {
+  display: none !important;
+}
+
+.swal2-container .swal2-shown {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.swal2-container .swal2-popup {
+  font-size: x-small !important;
+  padding: 1.25em 2.25em !important;
+}
+
 .navbar-laravel {
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+body {
+  overflow: auto !important;
 }
 

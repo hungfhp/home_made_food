@@ -18,13 +18,17 @@
 @import "../theme/fonts/flaticon/font/flaticon.css";
 @import "../theme/css/style.css";
 @import "../theme/css/skins/default.css";
-@import "./product";
 
 // Custom
 @import "./common";
 @import "./user";
+@import "./product";
 
 .navbar-laravel {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+body {
+    overflow: auto !important;
 }

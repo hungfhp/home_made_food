@@ -6,7 +6,7 @@ Route::get('/{id}', 'CategoryImageController@show')->name(
     'category_images.show'
 );
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth:api'], function () {
     Route::post('/', 'CategoryImageController@store')->name(
         'category_images.store'
     );

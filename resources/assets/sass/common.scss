@@ -9,3 +9,16 @@
 .color-default {
     color: #37404d !important;
 }
+
+.selectBox.swal2-select.selectBox-dropdown {
+    display: none !important;
+}
+.swal2-container{
+    .swal2-shown {
+        background-color: rgba(0, 0, 0, 0.1) !important;
+    }
+    .swal2-popup {
+        font-size: x-small !important;
+        padding: 1.25em 2.25em !important;
+    }
+}
