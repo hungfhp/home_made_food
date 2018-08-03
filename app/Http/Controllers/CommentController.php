@@ -54,7 +54,7 @@ class CommentController extends Controller
     public function show($id)
     {
         Log::info('show comment');
-        $comment = Comment::where('food_id', $id)->get();
+        $comment = Comment::where('food_id', $id)->with('user')->get();
         return response()->json(['result' => true, 'data' => $comment], 200);
     }
 

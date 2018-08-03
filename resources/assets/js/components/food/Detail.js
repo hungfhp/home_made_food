@@ -6,6 +6,7 @@ export default class Detail extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            foodId: props.foodId,
             like: 0,
             dislike: 0,
             location: [],
@@ -51,8 +52,8 @@ export default class Detail extends Component {
     }
 
     //get comments
-    getComment () {
-        axios.get('/api/comments')
+    getComment (id) {
+        axios.get('/api/comments/' + id)
             .then(
                 response => {
                     this.setState({comments: response.data.data});
@@ -75,13 +76,9 @@ export default class Detail extends Component {
             .then(response=>{
                 console.log("commented!");
                 $('#newComment #comment').val('');
-                this.getComment();
+                this.getComment(this.state.foodId);
             })
             .catch(error=>console.log("comment: error!"));
-    }
-
-    componentDidMount () {
-        this.getComment();
     }
 
     //google map
@@ -94,6 +91,10 @@ export default class Detail extends Component {
             </GoogleMap>
         ));
         return GoogleMapExample;
+    }
+
+    componentDidMount() {
+        this.getComment(this.state.foodId);
     }
 
     render() {
