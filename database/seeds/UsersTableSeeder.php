@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
                 'password' => bcrypt('123456'),
                 'email' => 'admin@gmail.com',
                 'avatar' =>
-                    'http://www.guoguiyan.com/data/out/59/68410027-dota-2-logo-wallpapers.jpg',
+                    'https://wallpapersfind.com/wp-content/uploads/2017/10/dota-2-wallpaper-1080x1080.jpg',
                 'address' =>
                     'Trường Đại học Ngoại thương, 91 Chùa Láng, Đống Đa, Hà Nội, Việt Nam',
                 'phone' => str_random(11),
@@ -31,7 +31,7 @@ class UsersTableSeeder extends Seeder
                 'password' => bcrypt('123456'),
                 'email' => 'test1@gmail.com',
                 'avatar' =>
-                    'http://www.guoguiyan.com/data/out/59/68410027-dota-2-logo-wallpapers.jpg',
+                    'https://wallpapersfind.com/wp-content/uploads/2017/10/dota-2-wallpaper-1080x1080.jpg',
                 'address' =>
                     'Trường Đại học Ngoại thương, 91 Chùa Láng, Đống Đa, Hà Nội, Việt Nam',
                 'phone' => str_random(11),
@@ -47,7 +47,7 @@ class UsersTableSeeder extends Seeder
                 'password' => bcrypt('123456'),
                 'email' => 'test2@gmail.com',
                 'avatar' =>
-                    'http://www.guoguiyan.com/data/out/59/68410027-dota-2-logo-wallpapers.jpg',
+                    'https://wallpapersfind.com/wp-content/uploads/2017/10/dota-2-wallpaper-1080x1080.jpg',
                 'address' =>
                     'Trường Đại học Ngoại thương, 91 Chùa Láng, Đống Đa, Hà Nội, Việt Nam',
                 'phone' => str_random(11),
@@ -64,7 +64,7 @@ class UsersTableSeeder extends Seeder
                 'password' => bcrypt('123456'),
                 'email' => 'test3@gmail.com',
                 'avatar' =>
-                    'http://www.guoguiyan.com/data/out/59/68410027-dota-2-logo-wallpapers.jpg',
+                    'https://wallpapersfind.com/wp-content/uploads/2017/10/dota-2-wallpaper-1080x1080.jpg',
                 'address' =>
                     'Trường Đại học Ngoại thương, 91 Chùa Láng, Đống Đa, Hà Nội, Việt Nam',
                 'phone' => str_random(11),

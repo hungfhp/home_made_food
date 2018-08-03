@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Header from "../../components/layouts/Header";
-import Subheader from "../../components/favourite/Subheader";
+import Subheader from "../../components/layouts/Subheader";
 import User from "../../components/favourite/User";
 import Footer from "../../components/layouts/Footer";
 import ListFavourite from "../../components/favourite/ListFavourite";

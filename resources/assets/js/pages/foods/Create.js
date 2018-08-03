@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Header from "../../components/layouts/Header";
-import Subheader from "../../components/food/Subheader";
+import Subheader from "../../components/layouts/Subheader";
 import Form from "../../components/food/Form";
 
 export default class Create extends Component {

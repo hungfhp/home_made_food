@@ -18,7 +18,7 @@ class CommentController extends Controller
     public function index()
     {
         Log::info('get index');
-        $comment = Comment::get();
+        $comment = Comment::with('user')->get();
         return response()->json(['result'=>true, 'data'=>$comment]);
     }
 
@@ -40,7 +40,9 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Log::info('post comment');
+        $comment = Comment::create($request->all());
+        return response()->json(['result' => true, 'data' => $comment], 201);
     }
 
     /**
@@ -51,7 +53,9 @@ class CommentController extends Controller
      */
     public function show($id)
     {
-        //
+        Log::info('show comment');
+        $comment = Comment::where('food_id', $id)->get();
+        return response()->json(['result' => true, 'data' => $comment], 200);
     }
 
     /**

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Header from "../../components/layouts/Header";
-import Subheader from "../../components/transaction/Subheader";
+import Subheader from "../../components/layouts/Subheader";
 import Footer from "../../components/layouts/Footer";
 import Total from "../../components/transaction/Total";
 import List from "../../components/transaction/List";

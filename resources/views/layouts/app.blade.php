@@ -80,7 +80,7 @@
         {{-- </main> --}}
     </div>
     <!-- Scripts -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0N5pbJN10Y1oYFRd0MJ_v2g8W2QT74JE"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyTWmAGgtGr0qWC8TkJskEkoz9KHxPq-A"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
 
 </body>
