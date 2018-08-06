@@ -4,33 +4,31 @@ import axios from "axios";
 import FormLogin from "../../components/auth/login/FormLogin";
 import FormLoggedIn from "../../components/auth/login/FormLoggedIn";
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { login, profile } from '@/actions/AuthActions';
+import { loginSuccess, logoutSuccess } from '@/actions/AuthActions';
 
 class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            auth: this.props.auth,
-            email: "",
-            password: "",
             contentForm: ""
         };
         this.renderForm = this.renderForm.bind(this);
-        console.log(this);
     }
     componentWillMount() {
         this.renderForm();
     }
+    componentWillReceiveProps(nextProps) {
+        this.props = nextProps;
+        this.renderForm();
+    }
     renderForm() {
-        console.log(this);
         if (this.props.auth.isAuth) {
             this.setState({
                 contentForm: <FormLoggedIn {...this.props} />
             });
         } else {
             this.setState({
-                contentForm: <FormLogin {...this.props} renderFrom={this.renderForm.bind(this)} />
+                contentForm: <FormLogin {...this.props} />
             });
         }
     }
@@ -38,6 +36,7 @@ class Login extends Component {
         // login 2
         return (
             <div className="login-page cnt-bg-photo overview-bgi" style={{ backgroundImage: "url(/img/banner-1.jpg)" }}>
+            <title>Login</title>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
@@ -61,7 +60,6 @@ class Login extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log('login state', state);
     return {
         auth: state.auth
     };
@@ -69,7 +67,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        login: (email, password) => dispatch(login(email, password))
+        loginSuccess: (email, password) => dispatch(loginSuccess(email, password)),
+        logoutSuccess: ()  => dispatch(logoutSuccess())
     };
 }
 

@@ -7,11 +7,11 @@ export default class FormLoggedIn extends Component {
         super(props);
         this.state = {
         }
-        console.log(this);
+        this.logout = this.logout.bind(this);
     }
     logout() {
         axios.get('/api/logout').then(res => {
-            localStorage.clear();
+            this.props.logoutSuccess();
         }).catch(error =>{
             console.log(error);
         })
@@ -35,7 +35,7 @@ export default class FormLoggedIn extends Component {
                         Home
                     </button>
                 </a>
-                <a href="/login">
+                <a href="#logout">
                     <button onClick={this.logout} style={btnLogoutStyle} className="btn btn-color btn-md pull-right">
                         Logout
                     </button>

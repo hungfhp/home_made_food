@@ -9,14 +9,13 @@ import { I18n } from "react-i18next";
 import SwitchRoute from "./Route";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
-import rootReducer from "./reducers/index";
+import configureStore from '@/reducers/configureStore';
+const store = configureStore();
 
 // layout
 import ModalCanvasSidebar from "./components/modal/CanvasSidebar";
 import ModalFood from "./components/modal/Food";
 import ModalFullPageSearch from "./components/modal/FullPageSearch";
-
-const store = createStore(rootReducer);
 
 export default class Main extends Component {
     render() {

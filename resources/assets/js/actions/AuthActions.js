@@ -6,10 +6,16 @@ export function profile() {
     };
 }
 
-export function login(email, password) {
+export function loginSuccess(user) {
     return {
-        type: types.LOGIN,
-        email: email,
-        password: password
+        type: types.LOGIN_SUCCESS,
+        user
     };
 }
+
+export function logoutSuccess() {
+    return {
+        type: types.LOGOUT_SUCCESS
+    };
+}
+

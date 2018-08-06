@@ -4,7 +4,7 @@ import axios from "axios";
 import {getHeaders} from "@/utils/ApiUtil";
 
 const initialState = {
-    isAuth: localStorage.getItem("b_token") ? true:false,
+    isAuth: localStorage.getItem("b_token") ? true : false,
     b_token: localStorage.getItem("b_token"),
     user: {},
     success: "",
@@ -13,67 +13,63 @@ const initialState = {
 
 var _auth = initialState;
 
-const auth = (state = _auth, action) => {
+const auth = (state = initialState, action) => {
     switch (action.type) {
-        case types.PROFILE: {
-            return _auth = profile(state);
-        }
-        case types.LOGIN: {
-            return _auth = login(state, action.email, action.password);
-        }
-        default: {
-            return state;
-        }
+        case types.LOGIN_SUCCESS:
+            {
+                return { ...state,
+                    b_token: action.user.b_token,
+                    isAuth: true,
+                    user: action.user,
+                    success: AxiosConstants.SUCCESS_LOGIN
+                };
+            }
+        case types.LOGOUT_SUCCESS: 
+            {
+                localStorage.clear();
+                return initialState;
+            }
+        case types.PROFILE:
+            {
+                let user = profile();
+                if (user) {
+                    return { ...state,
+                        isAuth: true,
+                        user: user,
+                        success: AxiosConstants.SUCCESS_PROFILE
+                    }
+                } else {
+                    return { ...state,
+                        isAuth: false,
+                        error: err
+                    };
+                }
+            }
+        default:
+            {
+                return state;
+            }
     }
 };
 
 var profile = state => {
-    return axios
-        .get("/api/users/1", {
+    axios
+        .get("/api/profile", {
             headers: getHeaders()
         })
         .then(res => {
-            let user = res.data.success;
-            return { ...state,
-                isAuth: true,
-                user: user,
-                success: AxiosConstants.PROFILE_SUCCESS
-            };
+            return res.data.success;
         }).catch(err => {
-            return { ...state,
-                isAuth: false,
-                error: err
-            };
+            return null;
         })
 }
 
-var login = async (state, email, password) => {
-    console.log("login axios");
-    await axios
-        .post("/api/login", {
-            email: email,
-            password: password
-        })
-        .then(res => {
-            localStorage.setItem("b_token", res.data.success.b_token);
-            history.back();
-            console.log("login res");
-            return { ...state,
-                isAuth: true,
-                user: {
-                    user_id: res.data.success.user_id,
-                    name: res.data.success.name
-                },
-                success: AxiosConstants.SUCCESS
-            };
-        })
-        .catch(error => {
-            localStorage.clear();
-            return { ...state,
-                isAuth: false,
-                error: AxiosConstants.ERROR
-            };
-        });
-}
+
+
+
+
+
+
+
 
 export default auth;

@@ -32,7 +32,7 @@ class AuthController extends Controller
             Log::info('login');
             $user = Auth::user();
             $success['b_token'] = "Bearer ".$user->createToken('s91209d@skl3($dfjksdfjk')->accessToken;
-            $success['username'] = $user->name;
+            $success['name'] = $user->name;
             $success['user_id'] = $user->id;
             return response()->json(
                 ['success' => $success],

@@ -1,7 +1,7 @@
 export const SUCCESS = "SUCCESS";
 export const ERROR = "ERROR";
 
-export const PROFILE_SUCCESS = "PROFILE_SUCCESS";
+export const SUCCESS_PROFILE = "SUCCESS_PROFILE";
+export const SUCCESS_LOGIN = "SUCCESS_LOGIN";
 
-export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
-export const LOGIN_ERROR = "Sai email hoặc password";
+export const ERROR_LOGIN = "Sai email hoặc password";
