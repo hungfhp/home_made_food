@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { getProfile, logoutSuccess } from '@/actions/AuthActions';
+
 import Header from "../../components/layouts/Header";
 import Footer from "../../components/layouts/Footer";
 import Banner from "../../components/home/Banner";
@@ -12,15 +15,19 @@ import RecentFoods from "../../components/home/RecentFoods";
 import SearchArea from "../../components/home/SearchArea";
 import Services from "../../components/home/Services";
 
-export default class Index extends Component {
+class Index extends Component {
     constructor(props) {
         super(props);
+    }
+    componentDidMount() {
+        console.log(this);
     }
     render() {
         return (
             <div>
                 {/* index 6 */}
-                <Header />
+                <Header {...this.props} />
+                {/* <Header auth={this.props.auth} logoutSuccess={this.props.logoutSuccess} /> */}
                 <Banner />
                 <SearchArea />
                 <FeaturedCategories />
@@ -36,3 +43,18 @@ export default class Index extends Component {
         );
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        auth: state.auth
+    };
+};
+
+function mapDispatchToProps(dispatch) {
+    return {
+        nothing: dispatch(getProfile()),
+        logoutSuccess: () => dispatch(logoutSuccess())
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Index);

@@ -26,13 +26,12 @@ export default class FormLogin extends Component {
                 password: this.state.password
             })
             .then(res => {
-                console.log("sdfjlsdklf");
                 this.props.loginSuccess(res.data.success);
             })
             .catch(error => {
                 console.log(error);
                 localStorage.clear();
-                let alert_error = "Sai email hoặc password";
+                this.state.alert_error = "Sai email hoặc password";
             })
     }
     render() {
@@ -69,21 +68,3 @@ export default class FormLogin extends Component {
         )
     }
 }
-
-// function mapStateToProps(state) {
-//     return {
-//         auth: state.auth
-//     };
-// };
-
-// function mapDispatchToProps(dispatch) {
-//     return {
-//         login: (user) => dispatch(login(user)),
-//         profile: () => dispatch(profile())
-//     };
-// }
-
-// export default connect(
-//     // mapStateToProps,
-//     // mapDispatchToProps
-// )(FormLogin);

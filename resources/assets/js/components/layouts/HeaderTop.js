@@ -1,24 +1,28 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
-import { connect } from "react-redux";
-import { login, profile } from '@/actions/AuthActions';
+import {Link} from "react-router-dom";
 
-class HeaderTop extends Component {
+export default class HeaderTop extends Component {
     constructor(props) {
         super(props);
         this.state = {
         }
+        this.renderLink = this.renderLink.bind(this);
     }
-    
-    componentWillMount() {
-        console.log("this", this);
-        if (localStorage.getItem("logged_in")) {
+    componentDidMount() {
+        this.renderLink();
+    }
+    componentWillReceiveProps(nextProps) {
+        this.props = nextProps;
+        this.renderLink();
+    }
+    renderLink() {
+        if (this.props.auth.isAuth) {
             this.setState({
                 userForm: (
                     <li>
-                        <a href={"/users/" + localStorage.user_id} className="sign-in">
-                            <i className="fa fa-user" /> {this.state.username}
-                        </a>
+                        <Link to={'/users/' + this.props.auth.user.id} className="sign-in">
+                            <i className="fa fa-user" /> {this.props.auth.user.name}
+                        </Link>
                     </li>
                 )
             });
@@ -26,12 +30,12 @@ class HeaderTop extends Component {
             this.setState({
                 userForm: (
                     <li>
-                        <a href="/login" className="sign-in">
+                        <Link to={"/login"} className="sign-in">
                             <i className="fa fa-sign-in" /> Login{" "}
-                        </a>
-                        <a href="/register" className="sign-in">
+                        </Link>
+                        <Link to={"/register"} className="sign-in">
                             <i className="fa fa-user" /> Register
-                        </a>
+                        </Link>
                     </li>
                 )
             });
@@ -40,10 +44,7 @@ class HeaderTop extends Component {
     
     render() {
         return (
-            <header
-                className="top-header top-header-bg d-none d-xl-block d-lg-block d-md-block"
-                id="top-header-2"
-            >
+            <header className="top-header top-header-bg d-none d-xl-block d-lg-block d-md-block" id="top-header-2">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6 col-md-6 col-sm-6">
@@ -95,19 +96,3 @@ class HeaderTop extends Component {
         );
     }
 }
-
-function mapStateToProps(state) {
-    console.log("state", state);
-    return {
-        auth: state.auth
-    };
-};
-
-function mapDispatchToProps(dispatch) {
-    console.log('sdfs');
-    return {
-        // auth: dispatch(profile())
-    };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(HeaderTop);

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
+import {Link} from 'react-router-dom';
 
 export default class FormLoggedIn extends Component {
     constructor(props) {
@@ -31,11 +32,13 @@ export default class FormLoggedIn extends Component {
         return (
             <div>
                 <a href="/">
+                {/* <Link to={'/home'}> */}
                     <button style={btnHomeStyle} className="btn btn-color btn-md pull-right  ">
                         Home
                     </button>
+                {/* </Link> */}
                 </a>
-                <a href="#logout">
+                <a href="/login">
                     <button onClick={this.logout} style={btnLogoutStyle} className="btn btn-color btn-md pull-right">
                         Logout
                     </button>
