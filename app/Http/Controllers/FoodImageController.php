@@ -62,9 +62,9 @@ class FoodImageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($food_id)
     {
-        $food_image = Food_image::find($id);
+        $food_image = Food_image::where('food_id', $food_id)->first();
         return response()->json(['result'=>true, 'data' => $food_image], 200);
     }
 

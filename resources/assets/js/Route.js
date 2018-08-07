@@ -36,6 +36,7 @@ import TransactionsDelete from "./pages/transactions/Delete";
 import TransactionsEdit from "./pages/transactions/Edit";
 import TransactionsIndex from "./pages/transactions/Index";
 import TransactionsShow from "./pages/transactions/Show";
+import TransactionsHistory from "./pages/transactions/History";
 // users
 import UsersCreate from "./pages/users/Create";
 import UsersDelete from "./pages/users/Delete";
@@ -48,7 +49,6 @@ import VotesDelete from "./pages/votes/Delete";
 import VotesEdit from "./pages/votes/Edit";
 import VotesIndex from "./pages/votes/Index";
 import VotesShow from "./pages/votes/Show";
-
 
 export default class Main extends Component {
     render() {
@@ -76,8 +76,8 @@ export default class Main extends Component {
                 {/* foods */}
                 <Route exact path="/foods/create" component={FoodsCreate} />
                 <Route exact path="/foods/:id/delete" component={FoodsDelete} />
-                <Route exact path="/foods/:id/edit" component={FoodsEdit} />
-                < Route exact path = "/foods/:id/edit11111"
+                {/* <Route exact path="/foods/:id/edit" component={FoodsEdit} onEnter={this.requireAuth} /> */}
+                < Route exact path = "/foods/:id/edit"
                 render = {
                     () => (
                         localStorage.getItem("logged_in") ? (console.log()) : (<Redirect to = "/login" />)
@@ -94,6 +94,7 @@ export default class Main extends Component {
                 <Route exact path="/transactions/:id/delete" component={TransactionsDelete} />
                 <Route exact path="/transactions/:id/edit" component={TransactionsEdit} />
                 <Route exact path="/transactions" component={TransactionsIndex} />
+                <Route exact path="/transactions/history" component={TransactionsHistory} />
                 <Route exact path="/transactions/:id" component={TransactionsShow} />
                 {/* users */}
                 <Route exact path="/users/create" component={UsersCreate} />

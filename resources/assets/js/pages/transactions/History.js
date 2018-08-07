@@ -5,42 +5,41 @@ import { getProfile, logoutSuccess } from '@/actions/AuthActions';
 import Header from "../../components/layouts/Header";
 import SubHeader from "../../components/layouts/SubHeader";
 import Footer from "../../components/layouts/Footer";
-import Tool from "../../components/food/Tool";
-import Detail from "../../components/food/Detail";
+import Total from "../../components/transaction/Total";
+import List from "../../components/transaction/List";
 import axios from "axios";
 
-class Show extends Component {
+class History extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            foodId: this.props.match.params.id,
-            foodInfo: 0
-        }
+            userId: localStorage.user_id,
+            HistoryData: [],
+            DataInfo: 0
+        };
     }
 
     componentDidMount() {
-        axios.get('/api/foods/'+this.state.foodId)
+        axios.get('/api/transactions/transactionHistory/' + this.state.userId)
             .then(
                 response=>{
-                    this.setState({foodInfo: response.data.data});
+                    this.setState({HistoryData: response.data.data.data});
                 }
-                )
-            .catch(
-                error=>console.log('foods/:id error!')
-            )
+            ).catch(
+                error=>console.log('Transaction history: error!')
+        )
     }
 
     render() {
         return (
-            //properties detail 3
             <div>
-                <Header title="Homemade - Product"  auth={this.props.auth} logoutSuccess={this.props.logoutSuccess} />
-                <SubHeader title="Product"/>
+                <Header title="Homemade - Transaction history" auth={this.props.auth} logoutSuccess={this.props.logoutSuccess} />
+                <SubHeader title="Homemade - Transaction history"/>
                 <div className="user-page submit-property content-area-7">
                     <div className="container">
                         <div className="row">
-                            <Detail foodInfo={this.state.foodInfo} foodId={this.state.foodId}/>
-                            <Tool/>
+                            <List HistoryData={this.state.HistoryData}/>
+                            <Total/>
                         </div>
                     </div>
                 </div>
@@ -63,4 +62,4 @@ function mapDispatchToProps(dispatch) {
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Show);
+export default connect(mapStateToProps, mapDispatchToProps)(History);
