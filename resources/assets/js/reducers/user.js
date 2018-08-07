@@ -1,21 +1,29 @@
-const user = (state = [], action) => {
+import * as types from '../constants/ActionTypes';
+import * as AxiosConstants from '@/constants/AxiosConstants';
+
+const initialState = {
+    name: "",
+    email: "",
+    address: "",
+    phone: "",
+    success: "",
+    error: ""
+}
+
+const user = (state = initialState, action) => {
     switch (action.type) {
-        case "UPDATED":
-            return [
-                ...state,
-                {
-                    id: action.id,
-                    text: action.text,
-                    completed: false
-                }
-            ];
-        case "TOGGLE_TODO":
-            return state.map(
-                todo =>
-                    todo.id === action.id
-                        ? { ...todo, completed: !todo.completed }
-                        : todo
-            );
+        case types.GET_USER_SUCCESS:
+            return {...state,
+                name: action.user.name,
+                email: action.user.email,
+                address: action.user.address,
+                phone: action.user.phone,
+                success: AxiosConstants.SUCCESS
+            }
+        case types.GET_USER_ERROR:
+            return {...initialState,
+                error: action.err
+            }
         default:
             return state;
     }

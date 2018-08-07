@@ -19,15 +19,11 @@ class Index extends Component {
     constructor(props) {
         super(props);
     }
-    componentDidMount() {
-        console.log(this);
-    }
     render() {
         return (
             <div>
                 {/* index 6 */}
-                <Header {...this.props} />
-                {/* <Header auth={this.props.auth} logoutSuccess={this.props.logoutSuccess} /> */}
+                <Header auth={this.props.auth} logoutSuccess={this.props.logoutSuccess} />
                 <Banner />
                 <SearchArea />
                 <FeaturedCategories />
@@ -52,7 +48,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        nothing: dispatch(getProfile()),
+        default: dispatch(getProfile()),
         logoutSuccess: () => dispatch(logoutSuccess())
     };
 }

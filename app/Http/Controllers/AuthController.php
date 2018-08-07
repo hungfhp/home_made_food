@@ -3,7 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\User;
+use App\Model\User;
 use Illuminate\Support\Facades\Auth;
 use Validator;
 use Log;
@@ -60,6 +60,7 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
+        Log::info($request);
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required|email',
@@ -72,7 +73,7 @@ class AuthController extends Controller
         $input = $request->all();
         $input['password'] = bcrypt($input['password']);
         $user = User::create($input);
-        $success['token'] = $user->createToken('s91209d@skl3($dfjksdfjk')->accessToken;
+        $success['b_token'] = "Bearer ".$user->createToken('s91209d@skl3($dfjksdfjk')->accessToken;
         $success['name'] = $user->name;
         return response()->json(['success' => $success], $this->successStatus);
     }
@@ -84,9 +85,21 @@ class AuthController extends Controller
 
     public function profile()
     {
-        Log::info('api/profile');
         $user = Auth::user();
         return response()->json(['success' => $user], $this->successStatus);
+    }
+
+    public function updateProfile(Request $request)
+    {   
+        Log::info('PUT api/profile');
+        if(Auth::check()){
+            $user = Auth::user();
+            $updated = User::find($user->id)->update($request->all());
+            return response()->json(['success' => User::find($user->id)], $this->successStatus);
+        }
+        else {
+            return response()->json(['success' => null], 401);
+        }
     }
 
     public function loggedInInfo()

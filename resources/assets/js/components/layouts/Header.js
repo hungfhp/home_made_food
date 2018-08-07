@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import {Link} from 'react-router-dom';
-
 import HeaderTop from "./HeaderTop";
 
 export default class Header extends Component {
@@ -14,15 +13,10 @@ export default class Header extends Component {
         this.props = nextProps;
         this.renderLink();
     }
-    // componentWillUpdate() {
-    //     console.log("hsdfs");
-    //     this.renderLink();
-    // }
     componentWilMount() {
         this.renderLink();
     }
     renderLink() {
-        console.log(this.props);
         if (this.props.auth.isAuth) {
             this.setState({
                 userLinks: (
@@ -32,13 +26,13 @@ export default class Header extends Component {
                             {this.props.auth.user.name}
                         </a>
                         <div className="dropdown-menu" aria-labelledby="navbarDropdown3">
-                            <a className="dropdown-item" href={"/users/" + localStorage.user_id}>
+                            <a className="dropdown-item" href={'/users/' + this.props.auth.user.id}>
                                 Profile
                             </a>
                             <a className="dropdown-item" href="/">
                                 My Foods
                             </a>
-                            <a onClick={this.logout} className="dropdown-item" href="#">
+                            <a onClick={this.logout} className="dropdown-item" href="javascript:void(0)">
                                 Logout
                             </a>
                         </div>

@@ -13,9 +13,7 @@ export default class FormEdit extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     componentWillReceiveProps(nextProps) {
-        this.setState ({
-            user: nextProps.user
-        });
+        this.props = nextProps;
     }
     handleChange() {
         $(".js-btn-submit").removeClass("disabled");
@@ -27,8 +25,12 @@ export default class FormEdit extends Component {
         if (this.state.isChanged) {
             this.state.isChanged = false;
             $(".js-btn-submit").addClass("disabled");
-            this.props.handleSubmitUpdate(this.refs.name.value, this.refs.address.value, this.refs.phone.value);
-            localStorage.setItem("username", this.refs.name.value);
+            let user = {
+                name: this.refs.name.value,
+                address: this.refs.address.value,
+                phone: this.refs.phone.value
+            }
+            this.props.updateProfile(user);
         } else {
             swal2({
                 type: 'warning',
