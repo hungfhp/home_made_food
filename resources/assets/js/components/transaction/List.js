@@ -1,99 +1,84 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 export default class List extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    //set style for status
+    getStatusStyle(status) {
+        let style;
+        switch (status) {
+            case 'required': {
+                style = {color: 'silver', fontWeight: 'bold'};
+                return style;
+            }
+            case 'done': {
+                style = {color: 'green', fontWeight: 'bold'};
+                return style;
+            }
+            case 'cancel': {
+                style = {color: 'red', fontWeight: 'bold'};
+                return style;
+            }
+            case 'cooked': {
+                style = {color: 'orange', fontWeight: 'bold'};
+                return style;
+            }
+            case 'shipping': {
+                style = {color: 'blue', fontWeight: 'bold'};
+                return style;
+            }
+        }
+    };
+
     render() {
-        return (
-            <div className="col-lg-8">
-                <table className="shop-table cart">
-                    <thead>
-                    <tr>
-                        <th  className="product-name">Product</th>
-                        <th className="product-price">Description</th>
-                        <th className="product-price">Price</th>
-                        <th className="product-quantity">Qty</th>
-                        <th className="product-subtotal">Status</th>
-                        <th className="product-remove">&nbsp;</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td className="product-thumbnail"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwqz5zchFqgkS5CDzmtyHMz9BBi8EyF68S_NsijMk7lP4E97Lr" alt="shop-1"/></td>
+        if (this.props.HistoryData.length > 0) {
+            const HistoryData = this.props.HistoryData.map((data, index)=> {
+                return (
+                    <tr key={index}>
+                        <td className="product-thumbnail"><img src={data.food_image.link} alt="shop-1"/></td>
 
                         <td className="product-name">
-                            <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac tortor</a>
+                            <a href="#">{data.food_name}</a>
                         </td>
-                        <td>£58.00</td>
-                        <td><input className="qty" type="text" value="+1"/></td>
-                        <td style={{color: 'red', fontWeight: 'bold'}}>cancel</td>
+                        <td style={{fontWeight: "bold"}}>{data.price}</td>
+                        <td style={{fontStyle: 'italic'}}>{data.description}</td>
+                        <td style={this.getStatusStyle(data.status)}>{data.status}</td>
+                        <td>{data.created_at}</td>
+                        <td>{data.updated_at}</td>
                         <td className="product-remove"><a href="#"><i className="fa fa-close"></i></a></td>
                     </tr>
-                    <tr>
-                        <td className="product-thumbnail"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwqz5zchFqgkS5CDzmtyHMz9BBi8EyF68S_NsijMk7lP4E97Lr" alt="shop-2"/></td>
-                        <td className="product-name">
-                            <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac tortor</a>
-                        </td>
-                        <td>£58.00</td>
-                        <td><input className="qty" type="text" value="+1"/></td>
-                        <td style={{color: 'green', fontWeight: 'bold'}}>done</td>
-                        <td className="product-remove"><a href="#"><i className="fa fa-close"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td className="product-thumbnail"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwqz5zchFqgkS5CDzmtyHMz9BBi8EyF68S_NsijMk7lP4E97Lr" alt="shop-3"/></td>
-
-                        <td className="product-name">
-                            <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac tortor</a>
-                        </td>
-                        <td>£58.00</td>
-                        <td><input className="qty" type="text" value="+1"/></td>
-                        <td style={{color: 'silver', fontWeight: 'bold'}}>required</td>
-                        <td className="product-remove"><a href="#"><i className="fa fa-close"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td className="product-thumbnail"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwqz5zchFqgkS5CDzmtyHMz9BBi8EyF68S_NsijMk7lP4E97Lr" alt="shop-4"/></td>
-
-                        <td className="product-name">
-                            <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac tortor</a>
-                        </td>
-                        <td>£58.00</td>
-                        <td><input className="qty" type="text" value="+1"/></td>
-                        <td style={{color: 'orange', fontWeight: 'bold'}}>cooked</td>
-                        <td className="product-remove"><a href="#"><i className="fa fa-close"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td className="product-thumbnail"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwqz5zchFqgkS5CDzmtyHMz9BBi8EyF68S_NsijMk7lP4E97Lr" alt="shop-5"/></td>
-
-                        <td className="product-name">
-                            <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac tortor</a>
-                        </td>
-                        <td>£58.00</td>
-                        <td><input className="qty" type="text" value="+1"/></td>
-                        <td style={{color: 'blue', fontWeight: 'bold'}}>shipping</td>
-                        <td className="product-remove"><a href="#"><i className="fa fa-close"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td className="product-thumbnail"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwqz5zchFqgkS5CDzmtyHMz9BBi8EyF68S_NsijMk7lP4E97Lr" alt="shop-6"/></td>
-                        <td className="product-name">
-                            <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac tortor</a>
-                        </td>
-                        <td>£58.00</td>
-                        <td><input className="qty" type="text" value="+1"/></td>
-                        <td>£58.00</td>
-                        <td className="product-remove"><a href="#"><i className="fa fa-close"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td className="product-thumbnail"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwqz5zchFqgkS5CDzmtyHMz9BBi8EyF68S_NsijMk7lP4E97Lr" alt="shop-7"/></td>
-
-                        <td className="product-name">
-                            <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac tortor</a>
-                        </td>
-                        <td>£58.00</td>
-                        <td><input className="qty" type="text" value="+1"/></td>
-                        <td>£58.00</td>
-                        <td className="product-remove"><a href="#"><i className="fa fa-close"></i></a></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        );
+                );
+            });
+            console.log(this.props.HistoryData);
+            return (
+                <div className="col-lg-8">
+                    <table className="shop-table cart">
+                        <thead>
+                        <tr style={{textAlign: 'center'}}>
+                            <th className="product-name">Product</th>
+                            <th className="product-price">Food name</th>
+                            <th className="product-price">Price</th>
+                            <th className="product-quantity">Description</th>
+                            <th className="product-subtotal">Status</th>
+                            <th className="product-subtotal">Created time</th>
+                            <th className="product-subtotal">Closing time</th>
+                            <th className="product-remove">&nbsp;</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {HistoryData}
+                        </tbody>
+                    </table>
+                </div>
+            );
+        }
+        else {
+            return (
+                <div>waiting</div>
+            );
+        }
     }
 }

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Model\Transaction;
+use App\Model\Food;
+use App\Model\Food_image;
 
 use Log;
 
@@ -109,5 +111,18 @@ class TransactionController extends Controller
         $transaction = Transaction::find($id);
         $transaction->delete();
         return response()->json(['result'=>true, 'data'=>$transaction], 203);
+    }
+
+    public function getTransactionHistory ($userId)
+    {
+        Log::info('get transaction history');
+        $transaction = Transaction::where('required_id', $userId)
+            ->orWhere('cooked_id', $userId)
+            ->orWhere('shipper_id', $userId)
+            ->paginate(10);
+        foreach ($transaction as $item) {
+            $item['food_image'] = Food_image::where('food_id', $item['food_id'])->first();
+        }
+        return response()->json(['result'=>true, 'data'=>$transaction], 200);
     }
 }

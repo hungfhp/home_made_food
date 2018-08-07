@@ -40,6 +40,7 @@ import TransactionsDelete from "./pages/transactions/Delete";
 import TransactionsEdit from "./pages/transactions/Edit";
 import TransactionsIndex from "./pages/transactions/Index";
 import TransactionsShow from "./pages/transactions/Show";
+import TransactionsHistory from "./pages/transactions/History";
 // users
 import UsersCreate from "./pages/users/Create";
 import UsersDelete from "./pages/users/Delete";
@@ -63,7 +64,7 @@ export default class Main extends Component {
             <Router history={browserHistory}>
                 <div>
                     {/* Pages */}
-                    <Switch>    
+                    <Switch>
                         {/* auth */}
                         <Route exact path="/forgot-password" component={AuthForgotPassword} />
                         <Route exact path="/login" component={AuthLogin} />
@@ -104,6 +105,7 @@ export default class Main extends Component {
                         <Route exact path="/transactions/:id/delete" component={TransactionsDelete} />
                         <Route exact path="/transactions/:id/edit" component={TransactionsEdit} />
                         <Route exact path="/transactions" component={TransactionsIndex} />
+                        <Route exact path="/transactions/history" component={TransactionsHistory} />
                         <Route exact path="/transactions/:id" component={TransactionsShow} />
                         {/* users */}
                         <Route exact path="/users/create" component={UsersCreate} />

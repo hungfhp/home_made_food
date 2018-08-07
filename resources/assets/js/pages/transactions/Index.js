@@ -14,8 +14,6 @@ export default class Index extends Component {
                 <div className="user-page submit-property content-area-7">
                     <div className="container">
                         <div className="row">
-                            <List/>
-                            <Total/>
                         </div>
                     </div>
                 </div>
