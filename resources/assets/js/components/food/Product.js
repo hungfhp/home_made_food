@@ -8,9 +8,8 @@ export default class Product extends Component {
     render() {
         const list = this.props.foods;
         const food_list = list.map((food)=> {
+            console.log(food);
             const image = food.images;
-            console.log(2);
-            console.log(image[0].link);
             return (
                 <div className="property-box-5" key={food.id}>
                     <div className="row">
@@ -79,6 +78,7 @@ export default class Product extends Component {
                 </div>
             );
         });
+
         return (
             <div className="col-lg-8 col-md-12">
                 <div className="option-bar d-none d-xl-block d-lg-block d-md-block d-sm-block">
