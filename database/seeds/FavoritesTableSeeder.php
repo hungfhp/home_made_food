@@ -11,16 +11,16 @@ class FavoritesTableSeeder extends Seeder
      */
     public function run()
     {
-        $data = [
-            [
-                'food_id' => 2,
-                'user_id' => 2
-            ],
-            [
-                'food_id' => 4,
-                'user_id' => 2
-            ]
-        ];
+        $faker = Faker\Factory::create();
+
+        for ($i=0; $i < 2000; $i++) { 
+            $data[$i] = [
+                'food_id' => rand(0,1000),
+                'user_id' => rand(0,4),
+                'created_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null),
+                'updated_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null)
+            ];
+        }
         DB::table('favorites')->insert($data);
     }
 }

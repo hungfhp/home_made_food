@@ -15,7 +15,6 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id')->index();
-            $table->string('food_name');
             $table->integer('food_id');
             $table->integer('required_id')->nullable();
             $table->integer('cooked_id')->nullable();

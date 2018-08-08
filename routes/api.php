@@ -56,3 +56,5 @@ Route::prefix("transactions")->group(base_path('routes/api/transactions.php'));
 Route::prefix("users")->group(base_path('routes/api/users.php'));
 // votes routes
 Route::prefix("votes")->group(base_path('routes/api/votes.php'));
+// home routes
+Route::prefix("home")->group(base_path('routes/api/home.php'));

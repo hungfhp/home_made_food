@@ -11,13 +11,18 @@ class CommentsTableSeeder extends Seeder
      */
     public function run()
     {
-        $data = [
-            [
-                'food_id' => 2,
-                'user_id' => 2,
-                'comment' => 'món này ngon vcc!'
-            ]
-        ];
+        $faker = Faker\Factory::create();
+        
+        for ($i=0; $i < 3000; $i++) { 
+            $data[$i] = [
+                'food_id' => rand(0,1000),
+                'user_id' => rand(0,4),
+                'comment' => $faker->realText($maxNbChars = 50, $indexSize = 2),
+                'created_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null),
+                'updated_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null)
+            ];
+        }
+        
         DB::table('comments')->insert($data);
     }
 }
