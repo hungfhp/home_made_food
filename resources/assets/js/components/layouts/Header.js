@@ -33,8 +33,11 @@ export default class Header extends Component {
                             <Link className="dropdown-item" to={'/users/' + this.props.auth.user.id}>
                                 Profile
                             </Link>
-                            <a className="dropdown-item" href="/">
+                            <Link className="dropdown-item" to={'/users/' + this.props.auth.user.id + "#cooked-foods"}>
                                 My Foods
+                            </Link>
+                            <a className="dropdown-item" href="/transactions/history">
+                                My Transactions
                             </a>
                             <a onClick={this.logout} className="dropdown-item" href="javascript:void(0)">
                                 Logout

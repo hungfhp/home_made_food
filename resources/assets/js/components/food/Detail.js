@@ -210,21 +210,20 @@ export default class Detail extends Component {
             });
 
             //comment
-            const logged = localStorage.getItem('logged_in');
             let commentForm = [];
             let userLogged = [];
             let newComment = new FormData();
-            if (logged) {
+            if (this.props.auth.isAuth) {
                 newComment.set('food_id', foodInfo.id);
-                newComment.set('user_id', localStorage.getItem('user_id'));
+                newComment.set('user_id', this.props.auth.user.id);
                 newComment.set('comment', this.refs.comment);
-                userLogged = localStorage.getItem('username');
+                userLogged = this.props.auth.user.name;
                 commentForm =
                     <div className="contact-3 mb-60">
                         <h3 className="heading">Leave a Comment</h3>
                         <div className="container">
                             <div className="row">
-                                <form encType="multipart/form-data" id="newComment">
+                                <form encType="multipart/form-data" action="javascript:void(0)" id="newComment">
                                     <div className="row">
                                         <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                             <div className="form-group name">

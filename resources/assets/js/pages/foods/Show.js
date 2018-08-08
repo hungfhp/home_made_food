@@ -39,7 +39,7 @@ class Show extends Component {
                 <div className="user-page submit-property content-area-7">
                     <div className="container">
                         <div className="row">
-                            <Detail foodInfo={this.state.foodInfo} foodId={this.state.foodId}/>
+                            <Detail {...this.props} foodInfo={this.state.foodInfo} foodId={this.state.foodId}/>
                             <Tool/>
                         </div>
                     </div>
