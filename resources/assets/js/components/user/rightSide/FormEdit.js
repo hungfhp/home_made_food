@@ -8,7 +8,6 @@ export default class FormEdit extends Component {
         this.state = {
             user: this.props.user
         };
-        console.log(this)
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -44,7 +43,7 @@ export default class FormEdit extends Component {
     }
     render() {
         return (
-            <div id="profile" className="my-address contact-2 widget">
+            <div id="tab-profile" className="my-address contact-2 widget">
                 <h3 className="heading">Update</h3>
                 <form action="javascript:void(0)">
                 <div className="row">

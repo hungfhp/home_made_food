@@ -12,19 +12,19 @@ import FormEdit from "@/components/user/rightSide/FormEdit";
 import CookedFoods from "@/components/user/rightSide/CookedFoods";
 import FavoritedFoods from "@/components/user/rightSide/FavoritedFoods";
 import LikedFoods from "@/components/user/rightSide/LikedFoods";
+import Certificate from "@/components/user/rightSide/Certificate";
+import ChangePassword from "@/components/user/rightSide/ChangePassword";
 const queryString = require('query-string');
 
 class Show extends Component {
     constructor(props) {
         super(props);
         this.state={
-            user: {},
             is_my_profile: false,
             param_user_id: this.props.match.params.id,
-            tab: queryString.parse(this.props.location.search).tab
+            tab: this.props.location.hash ? this.props.location.hash.substr(1):"profile"
         };
         this.switchRightSide = this.switchRightSide.bind(this);
-        this.handleSubmitUpdate = this.handleSubmitUpdate.bind(this);
         this.props.getUser(this.state.param_user_id);
     }
     componentWillReceiveProps(nextProps) {
@@ -44,12 +44,12 @@ class Show extends Component {
                 renderLeftSide: <LeftSide is_my_profile={this.state.is_my_profile} user={this.props.user} switchRightSide={this.switchRightSide} />
             })
         }
-        this.switchRightSide();
+        this.switchRightSide(this.state.tab);
     }
     switchRightSide(tab) {
-        this.state.tab = tab;
+        this.setState({tab});
         $(".user-profile-box .leftside-active").removeClass("active");
-        $(".user-profile-box ."+tab).addClass("active");
+        $(".user-profile-box ."+this.state.tab).addClass("active");
 
         switch(this.state.tab) {
             case "cooked-foods": {
@@ -70,6 +70,18 @@ class Show extends Component {
                 }) 
                 return;
             }
+            case "certificate":{
+                this.setState({
+                    renderRightSide: <Certificate auth={this.props.auth} />
+                })
+                return;
+            }
+            case "change-password":{
+                this.setState({
+                    renderRightSide: <ChangePassword auth={this.props.auth} />
+                }) 
+                return;
+            }
             default: {
                 $(".user-profile-box .profile").addClass("active");
                 if (this.state.is_my_profile) {
@@ -85,30 +97,18 @@ class Show extends Component {
             }
         }
     }
-    handleSubmitUpdate(name, address, phone) {
-        axios({
-            method: 'PUT',
-            url: '/api/users/' + this.state.user_id,
-            headers: {
-                Authorization: localStorage.b_token
-            },
-            data: {
-                name: name,
-                address: address,
-                phone: phone
-            }
-        }).then(res=>{
-           
-        }).catch(err=>{
-            console.log(err);
-        })
-    }
     render() {
         return (
             <div>
                 <Header auth={this.props.auth} logoutSuccess={this.props.logoutSuccess} />
                 <SubHeader title={"Profile"}/>
-                <div id="user-page" className="user-page content-area-14">
+                <div id="profile"></div>
+                <div id="cooked-foods"></div>
+                <div id="favorited-foods"></div>
+                <div id="liked-foods"></div>
+                <div id="certificate"></div>
+                <div id="change-password"></div>
+                <div className="user-page content-area-14">
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-4 col-md-5 col-sm-12">

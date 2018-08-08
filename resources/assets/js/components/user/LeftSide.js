@@ -14,9 +14,11 @@ export default class LeftSide extends Component {
         this.props = nextProps;
     }
     handleChangeTab(tab) {
+        if (tab=="certificate") {
+            location.reload();
+        }
         this.props.switchRightSide(tab);
     }
-
     render() {
         return (
             <div className="user-profile-box mrb">
@@ -28,22 +30,22 @@ export default class LeftSide extends Component {
                 <div className="detail clearfix">
                     <ul>
                         <li>
-                            <a href ="#user-page" onClick={() => this.handleChangeTab("profile")} className="profile leftside-active">
+                            <a href ="#profile" onClick={() => this.handleChangeTab("profile")} className="profile leftside-active">
                                 <i className="flaticon-user"></i>Profile
                             </a>
                         </li>
                         <li>
-                            <a href ="#user-page" onClick={() => this.handleChangeTab("cooked-foods")} className="cooked-foods leftside-active">
+                            <a href ="#cooked-foods" onClick={() => this.handleChangeTab("cooked-foods")} className="cooked-foods leftside-active">
                                 <i className="flaticon-house"></i>Cooked Foods
                             </a>
                         </li>
                         <li>
-                            <a href ="#user-page" onClick={() => this.handleChangeTab("favorited-foods")} className="favorited-foods leftside-active">
+                            <a href ="#favorited-foods" onClick={() => this.handleChangeTab("favorited-foods")} className="favorited-foods leftside-active">
                                 <i className="flaticon-heart-shape-outline"></i>Favorited Foods
                             </a>
                         </li>
                         <li>
-                            <a href ="#user-page" onClick={() => this.handleChangeTab("liked-foods")} className="liked-foods leftside-active">
+                            <a href ="#liked-foods" onClick={() => this.handleChangeTab("liked-foods")} className="liked-foods leftside-active">
                                 <i className="fa fa-thumbs-o-up"></i>Liked Foods
                             </a>
                         </li>
@@ -65,7 +67,7 @@ class TabCertificate extends Component {
         if (this.props.is_my_profile) {
             return (
                 <li>
-                    <a href ="#user-page" onClick={() => this.props.handleChangeTab("certificate")} className="certificate leftside-active">
+                    <a href ="#certificate" onClick={() => this.props.handleChangeTab("certificate")} className="certificate leftside-active">
                         <i className="flaticon-draw-check-mark"></i>Certificate
                     </a>
                 </li>
@@ -83,7 +85,7 @@ class TabChangePassword extends Component {
         if (this.props.is_my_profile) {
             return (
                 <li>
-                <a href ="#user-page" onClick={() => this.props.handleChangeTab("change-password")} className="change-password" >
+                <a href ="#change-password" onClick={() => this.props.handleChangeTab("change-password")} className="change-password" >
                     <i className="flaticon-locked-padlock"></i>Change Password
                 </a>
             </li>

@@ -8,7 +8,7 @@ export default class FormShow extends Component {
     }
     render() {
         return (
-            <div id="profile" className="my-address contact-2 widget">
+            <div id="tab-profile" className="my-address contact-2 widget">
                 <h3 className="heading">Info</h3>
                 <form action="#" encType="multipart/form-data">
                     <div className="row">

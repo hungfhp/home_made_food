@@ -5,30 +5,34 @@ import HeaderTop from "./HeaderTop";
 export default class Header extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+        };
         this.logout = this.logout.bind(this);
         this.renderLink = this.renderLink.bind(this);
     }
     componentWillReceiveProps(nextProps) {
         this.props = nextProps;
-        this.renderLink();
+        this.setState({
+            userLinks: this.renderLink()
+        })
     }
     componentWilMount() {
-        this.renderLink();
+        this.setState({
+            userLinks: this.renderLink()
+        })
     }
     renderLink() {
         if (this.props.auth.isAuth) {
-            this.setState({
-                userLinks: (
+            return (
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                             {this.props.auth.user.name}
                         </a>
                         <div className="dropdown-menu" aria-labelledby="navbarDropdown3">
-                            <a className="dropdown-item" href={'/users/' + this.props.auth.user.id}>
+                            <Link className="dropdown-item" to={'/users/' + this.props.auth.user.id}>
                                 Profile
-                            </a>
+                            </Link>
                             <a className="dropdown-item" href="/">
                                 My Foods
                             </a>
@@ -38,10 +42,8 @@ export default class Header extends Component {
                         </div>
                     </li>
                 )
-            })
         } else {
-            this.setState({
-                userLinks: (
+            return (
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
@@ -57,7 +59,6 @@ export default class Header extends Component {
                         </div>
                     </li>
                 )
-            })
         }
     }
     logout() {

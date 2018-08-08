@@ -2,7 +2,6 @@ import * as types from "@/constants/ActionTypes";
 import {getHeaders} from "@/utils/ApiUtil";
 
 export function getUser(id) {
-    console.log("getUser");
     return function (dispatch) {
         axios.get("/api/users/" + id, {
             headers: getHeaders()
