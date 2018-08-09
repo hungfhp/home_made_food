@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Database\Seeder;
 
 class FavoritesTableSeeder extends Seeder
@@ -13,12 +12,22 @@ class FavoritesTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
 
-        for ($i=0; $i < 2000; $i++) { 
+        for ($i = 0; $i < 2000; $i++) {
             $data[$i] = [
-                'food_id' => rand(0,1000),
-                'user_id' => rand(0,4),
-                'created_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null),
-                'updated_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null)
+                'food_id' => rand(1, 1000),
+                'user_id' => rand(1, 5),
+                'created_at' =>
+                    $faker->dateTimeBetween(
+                        $startDate = '-45 days',
+                        $endDate = 'now',
+                        $timezone = null
+                    ),
+                'updated_at' =>
+                    $faker->dateTimeBetween(
+                        $startDate = '-45 days',
+                        $endDate = 'now',
+                        $timezone = null
+                    )
             ];
         }
         DB::table('favorites')->insert($data);
