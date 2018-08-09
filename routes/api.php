@@ -20,9 +20,10 @@ Route::get('/', function () {
 Route::post('login', 'AuthController@login');
 Route::get('logout', 'AuthController@logout');
 Route::post('register', 'AuthController@register');
-Route::get('logged_in_info', 'AuthController@loggedInInfo');
+// Route::get('logged_in_info', 'AuthController@loggedInInfo');
 Route::group(['middleware' => 'auth:api'], function () {
     Route::get('profile', 'AuthController@profile');
+    Route::put('profile', 'AuthController@updateProfile');
 });
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {

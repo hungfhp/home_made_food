@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class Total extends Component {
     render() {
         return (
-            <div className="col-lg-4">
+            <div className="col-ls-4">
                 <div className="cart-total-box bg-white hdn-mb-30 mb-30">
                     <h5>Transactions Total</h5>
                     <hr/>

@@ -11,12 +11,31 @@ class AdminsTableSeeder extends Seeder
      */
     public function run()
     {
+        $faker = Faker\Factory::create();
         $data = [
             [
-                'name' => 'admin',
+                'name' => 'Hung',
                 'password' => bcrypt('123456'),
-                'email' => 'admin@email.com',
-                'phone' => '0123888888'
+                'email' => 'hung@home.foods.com',
+                'phone' => '0123888888',
+                'created_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null),
+                'updated_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null)
+            ],
+            [
+                'name' => 'Hieu',
+                'password' => bcrypt('123456'),
+                'email' => 'hieu@home.foods.com',
+                'phone' => '0123888888',
+                'created_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null),
+                'updated_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null)
+            ],
+            [
+                'name' => 'Thu',
+                'password' => bcrypt('123456'),
+                'email' => 'thu@home.foods.com',
+                'phone' => '0123888888',
+                'created_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null),
+                'updated_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null)
             ]
         ];
         DB::table('admins')->insert($data);

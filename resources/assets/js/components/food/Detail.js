@@ -1,17 +1,24 @@
 import React, { Component } from "react";
+import axios from "axios";
+import { withGoogleMap, GoogleMap } from "react-google-maps";
 
 export default class Detail extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            foodId: props.foodId,
             like: 0,
             dislike: 0,
-            location: []
+            location: [],
+            comments: [],
+            map: []
         };
         this.getLike = this.getLike.bind(this);
         this.getDisLike = this.getDisLike.bind(this);
+        this.getComment = this.getComment.bind(this);
     }
 
+    //get like
     getLike (like){
         if (like === 0) {
             this.setState({like: 1, dislike: 0});
@@ -21,6 +28,7 @@ export default class Detail extends Component {
         }
     }
 
+    //get dislike
     getDisLike (dislike) {
         if (dislike === 0) {
             this.setState({dislike: 1, like: 0});
@@ -43,6 +51,52 @@ export default class Detail extends Component {
             )
     }
 
+    //get comments
+    getComment (id) {
+        axios.get('/api/comments/' + id)
+            .then(
+                response => {
+                    this.setState({comments: response.data.data});
+                }
+            )
+            .catch(
+                error => console.log('get comment: error!')
+            )
+    }
+
+    //send comment
+    postComment (comment) {
+        comment.set('comment',this.refs.comment.value);
+        axios({
+            method: 'post',
+            url: '/api/comments',
+            data:comment,
+            headers: {'Content-Type': 'multipart/form-data', Authorization: localStorage.b_token}
+        })
+            .then(response=>{
+                console.log("commented!");
+                $('#newComment #comment').val('');
+                this.getComment(this.state.foodId);
+            })
+            .catch(error=>console.log("comment: error!"));
+    }
+
+    //google map
+    getMap (lat, long) {
+        const GoogleMapExample = withGoogleMap(props => (
+            <GoogleMap
+                defaultCenter = { { lat: lat, lng: long } }
+                defaultZoom = { 15 }
+            >
+            </GoogleMap>
+        ));
+        return GoogleMapExample;
+    }
+
+    componentDidMount() {
+        this.getComment(this.state.foodId);
+    }
+
     render() {
         //like style
         let likeStyle ={};
@@ -62,18 +116,12 @@ export default class Detail extends Component {
             dislikeStyle = {color: 'red', cursor: 'pointer'};
         }
 
-        //comment
-        const logged = localStorage.getItem('loggedIn');
-        if (logged === true) {
-
-        }
-
         //get food data
         if (this.props.foodInfo !== 0) {
             const dataInfo = this.props.foodInfo;
             const foodInfo = dataInfo[0];
-            const userInfo = dataInfo[0].user;
-            const location = userInfo.address;
+            const cookerInfo = dataInfo[0].user;
+            const location = cookerInfo.address;
 
             //slider
             const images_slider = dataInfo.image.map((image, index) => {
@@ -125,50 +173,79 @@ export default class Detail extends Component {
                 }
             });
 
+            //show comments
+            const comments = this.state.comments.map((comment)=>{
+                return (
+                    <li key={comment.id}>
+                        <div className="comment">
+                            <div className="comment-author">
+                                <a href="#">
+                                    <img
+                                        src={comment.user.avatar}
+                                        alt="property-1" className="img-fluid"/>
+                                </a>
+                            </div>
+                            <div className="comment-content">
+                                <div className="comment-meta">
+                                    <div className="comment-meta-author">
+                                        {comment.user.name}
+                                    </div>
+                                    <div className="comment-meta-reply">
+                                        <a href="#" title="Report to admin"><i className="material-icons">flag</i></a>
+                                    </div>
+                                    <div className="comment-meta-date">
+                                        <span>{comment.updated_at}</span>
+                                    </div>
+                                </div>
+                                <div className="clearfix"></div>
+                                <div className="comment-body">
+                                    <div className="comment-rating">
+                                    </div>
+                                    <p>{comment.comment}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                );
+            });
+
             //comment
-            const logged = localStorage.getItem('loggedIn');
-            let comment = [];
-            if (logged) {
-                comment =
+            let commentForm = [];
+            let userLogged = [];
+            let newComment = new FormData();
+            if (this.props.auth.isAuth) {
+                newComment.set('food_id', foodInfo.id);
+                newComment.set('user_id', this.props.auth.user.id);
+                newComment.set('comment', this.refs.comment);
+                userLogged = this.props.auth.user.name;
+                commentForm =
                     <div className="contact-3 mb-60">
                         <h3 className="heading">Leave a Comment</h3>
                         <div className="container">
                             <div className="row">
-                                <form action="#" method="GET" encType="multipart/form-data">
+                                <form encType="multipart/form-data" action="javascript:void(0)" id="newComment">
                                     <div className="row">
                                         <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                             <div className="form-group name">
                                                 <input type="text" name="name" className="form-control name"
-                                                       placeholder={userInfo.name} disabled/>
+                                                       placeholder={userLogged} disabled/>
                                             </div>
                                         </div>
                                         <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                             <div className="form-group name ">
                                                 <input type="text" name="address" className="form-control name"
-                                                       placeholder={userInfo.address} disabled/>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <div className="form-group subject">
-                                                <input type="text" name="subject" className="form-control"
-                                                       placeholder="Subject"/>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <div className="form-group number">
-                                                <input type="text" name="phone" className="form-control"
-                                                       placeholder="Number"/>
+                                                       placeholder="lay latitude va longitude cho vao day" disabled/>
                                             </div>
                                         </div>
                                         <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div className="form-group message">
-                                                <textarea className="form-control" name="message"
-                                                          placeholder="Write message"></textarea>
+                                                <textarea className="form-control" name="comment" id="comment" ref="comment"
+                                                          placeholder="Write comment"></textarea>
                                             </div>
                                         </div>
                                         <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                                             <div className="send-btn">
-                                                <button type="submit" className="btn btn-color btn-md btn-message">Send
+                                                <button onClick={()=>this.postComment(newComment)} type="submit" className="btn btn-color btn-md btn-message">Send
                                                     Message
                                                 </button>
                                             </div>
@@ -179,6 +256,17 @@ export default class Detail extends Component {
                         </div>
                     </div>;
             }
+            else {
+                commentForm =
+                    <div className="row send-btn">
+                        <div className="col s2"></div>
+                        <a type="submit" href="/login" className="col s8 btn btn-color btn-md btn-message">Please sign in to comment</a>
+                        <div className="col s2"></div>
+                    </div>;
+            }
+
+            //map
+            const GoogleMapExample = this.getMap(parseFloat(cookerInfo.latitude), parseFloat(cookerInfo.longitude));
 
             //main return
             return (
@@ -189,12 +277,13 @@ export default class Detail extends Component {
                                 <div className="col-md-12">
                                     <div className="pull-left">
                                         <h3 className="post-title">{foodInfo.name}</h3>
-                                        <p><i className="fa fa-map-marker"></i>{location}</p>
+                                        <p title="Cooker"><i className="material-icons">bookmark_border</i>{cookerInfo.name}</p>
+                                        <p title="Location"><i className="material-icons">location_on</i>{location}</p>
                                     </div>
                                     <div className="p-r">
                                         <h3><i className="material-icons" style={{marginTop: '4px'}}>attach_money</i>{foodInfo.price}VND</h3>
-                                        <a><i className="material-icons favourite" style={likeStyle}  onClick={()=>this.getLike(this.state.like)} title="Favourite">thumb_up</i> &emsp;
-                                            <i className="material-icons favourite" style={dislikeStyle} onClick={()=>this.getDisLike(this.state.dislike)} title="Favourite">thumb_down</i> &emsp;
+                                        <a><i className="material-icons favourite" style={likeStyle}  onClick={()=>this.getLike(this.state.like)} title="Like">thumb_up</i> &emsp;
+                                            <i className="material-icons favourite" style={dislikeStyle} onClick={()=>this.getDisLike(this.state.dislike)} title="Dislike">thumb_down</i> &emsp;
                                             <i className="material-icons favourite" style={{color: 'red', cursor: 'pointer'}} title="Favourite">favorite_border</i></a>
                                     </div>
                                 </div>
@@ -246,10 +335,13 @@ export default class Detail extends Component {
                                         <div className="col-md-4 col-sm-6">
                                             <ul>
                                                 <li>
-                                                    <strong>Food's name:</strong>{foodInfo.name}
+                                                    <strong>Food's name: </strong>{foodInfo.name}
                                                 </li>
                                                 <li>
-                                                    <strong>Price:</strong>{foodInfo.price} VND
+                                                    <strong>Price: </strong>{foodInfo.price} VND
+                                                </li>
+                                                <li>
+                                                    <strong>Cooker: </strong>{cookerInfo.name}
                                                 </li>
                                             </ul>
                                         </div>
@@ -260,6 +352,9 @@ export default class Detail extends Component {
                                                 </li>
                                                 <li>
                                                     <strong>Favourite: </strong>10 <i className="material-icons">favorite</i>
+                                                </li>
+                                                <li>
+                                                    <strong>Phone Number: </strong>{cookerInfo.phone}
                                                 </li>
                                             </ul>
                                         </div>
@@ -280,7 +375,10 @@ export default class Detail extends Component {
                                 <div className="section location">
                                     <h3 className="heading">Property Location</h3>
                                     <div className="map">
-                                        <div id="contactMap" className="contact-map"></div>
+                                        <GoogleMapExample
+                                            containerElement={ <div style={{ height: `500px`, width: '750px' }} /> }
+                                            mapElement={ <div style={{ height: `100%` }} /> }
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -443,132 +541,13 @@ export default class Detail extends Component {
                     </div>
 
                     <div className="comments-section">
-                        <h3 className="heading">Comments Section</h3>
+                        <h3 className="heading">Comments</h3>
                         <ul className="comments">
-                            <li>
-                                <div className="comment">
-                                    <div className="comment-author">
-                                        <a href="#">
-                                            <img
-                                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwqz5zchFqgkS5CDzmtyHMz9BBi8EyF68S_NsijMk7lP4E97Lr"
-                                                alt="property-1" className="img-fluid"/>
-                                        </a>
-                                    </div>
-                                    <div className="comment-content">
-                                        <div className="comment-meta">
-                                            <div className="comment-meta-author">
-                                                Jane Doe
-                                            </div>
-                                            <div className="comment-meta-reply">
-                                                <a href="#">Reply</a>
-                                            </div>
-                                            <div className="comment-meta-date">
-                                                <span>8:42 PM 10/3/2018</span>
-                                            </div>
-                                        </div>
-                                        <div className="clearfix"></div>
-                                        <div className="comment-body">
-                                            <div className="comment-rating">
-                                                <i className="fa fa-star"></i>
-                                                <i className="fa fa-star"></i>
-                                                <i className="fa fa-star"></i>
-                                                <i className="fa fa-star"></i>
-                                                <i className="fa fa-star-o"></i>
-                                            </div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus
-                                                tincidunt aliquam. Aliquam gravida massa at sem vulputate interdum et
-                                                vel eros. Maecenas eros enim, tincidunt vel turpis vel, dapibus tempus
-                                                nulla. Donec vel nulla dui. Pellentesque sed ante sed.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <ul>
-                                    <li>
-                                        <div className="comment">
-                                            <div className="comment-author">
-                                                <a href="#">
-                                                    <img
-                                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwqz5zchFqgkS5CDzmtyHMz9BBi8EyF68S_NsijMk7lP4E97Lr"
-                                                        alt="property-1" className="img-fluid"/>
-                                                </a>
-                                            </div>
-
-                                            <div className="comment-content">
-                                                <div className="comment-meta">
-                                                    <div className="comment-meta-author">
-                                                        Jane Doe
-                                                    </div>
-
-                                                    <div className="comment-meta-reply">
-                                                        <a href="#">Reply</a>
-                                                    </div>
-
-                                                    <div className="comment-meta-date">
-                                                        <span>8:42 PM 10/3/2018</span>
-                                                    </div>
-                                                </div>
-                                                <div className="clearfix"></div>
-                                                <div className="comment-body">
-                                                    <div className="comment-rating">
-                                                        <i className="fa fa-star"></i>
-                                                        <i className="fa fa-star"></i>
-                                                        <i className="fa fa-star"></i>
-                                                        <i className="fa fa-star-half-o"></i>
-                                                        <i className="fa fa-star-o"></i>
-                                                    </div>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                                                        luctus tincidunt aliquam. Aliquam gravida massa at sem vulputate
-                                                        interdum et vel eros. Maecenas eros enim, tincidunt vel turpis
-                                                        vel, dapibus tempus nulla. Donec vel nulla dui.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <div className="comment">
-                                    <div className="comment-author">
-                                        <a href="#">
-                                            <img
-                                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwqz5zchFqgkS5CDzmtyHMz9BBi8EyF68S_NsijMk7lP4E97Lr"
-                                                alt="property-1" className="img-fluid"/>
-                                        </a>
-                                    </div>
-                                    <div className="comment-content">
-                                        <div className="comment-meta">
-                                            <div className="comment-meta-author">
-                                                Jane Doe
-                                            </div>
-                                            <div className="comment-meta-reply">
-                                                <a href="#">Reply</a>
-                                            </div>
-                                            <div className="comment-meta-date">
-                                                <span>8:42 PM 10/3/2018</span>
-                                            </div>
-                                        </div>
-                                        <div className="clearfix"></div>
-                                        <div className="comment-body">
-                                            <div className="comment-rating">
-                                                <i className="fa fa-star"></i>
-                                                <i className="fa fa-star"></i>
-                                                <i className="fa fa-star"></i>
-                                                <i className="fa fa-star"></i>
-                                                <i className="fa fa-star-o"></i>
-                                            </div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus
-                                                tincidunt aliquam. Aliquam gravida massa at sem vulputate interdum et
-                                                vel eros. Maecenas eros enim, tincidunt vel turpis vel, dapibus tempus
-                                                nulla. Donec vel nulla dui. Pellentesque.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </li>
+                            {comments}
                         </ul>
                     </div>
 
-                    {comment}
+                    {commentForm}
                 </div>
             );
         }

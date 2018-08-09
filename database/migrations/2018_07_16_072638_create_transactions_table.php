@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
+use Carbon\Carbon;
 class CreateTransactionsTable extends Migration
 {
     /**
@@ -15,7 +15,6 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id')->index();
-            $table->string('food_name');
             $table->integer('food_id');
             $table->integer('required_id')->nullable();
             $table->integer('cooked_id')->nullable();
@@ -23,6 +22,7 @@ class CreateTransactionsTable extends Migration
             $table->string('status');
             $table->longText('description');
             $table->integer('price');
+            $table->dateTime('desired_time')->default(Carbon::now());
             $table->timestamps();
         });
     }

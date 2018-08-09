@@ -1,9 +1,10 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Model\Transaction;
+use App\Model\Food;
+use App\Model\Food_image;
 
 use Log;
 
@@ -14,25 +15,78 @@ class TransactionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        if ($request->user()->email == 'admin@gmail.com')
-        {
-            Log::info('admin: get transactions');
-            $transaction = Transaction::get();
-            return response()->json(['result'=>true, 'data'=>$transaction], 200);
-        }
-        else
-        {
-            Log::info('user: get transactions');
-            $transaction['required'] = Transaction::where('required_id', $request->user()->id)
-                ->get();
-            $transaction['cooked'] = Transaction::where('cooked_id', $request->user()->id)
-                ->get();
-            $transaction['shipper'] = Transaction::where('shipper_id', $request->user()->id)
-                ->get();
-            return response()->json(['result'=>true, 'data'=>$transaction], 200);
-        }
+        $transactions = Transaction::with('food.feature_image')
+            ->with('required')
+            ->with('cooked')
+            ->with('shipped')
+            ->orderBy('created_at', 'desc')
+            ->paginate(20);
+
+        return response()->json(['data' => $transactions], 200);
+    }
+
+    public function required()
+    {
+        $transactions = Transaction::where('status', 'required')
+            ->with('required')
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+
+        return response()->json(['data' => $transactions], 200);
+    }
+
+    public function cooked()
+    {
+        $transactions = Transaction::where('status', 'cooked')
+            ->with('cooked')
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+        return response()->json(['data' => $transactions], 200);
+    }
+
+    public function dealed()
+    {
+        $transactions = Transaction::where('status', 'dealed')
+            ->with('required')
+            ->with('cooked')
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+        return response()->json(['data' => $transactions], 200);
+    }
+
+    public function shipping()
+    {
+        $transactions = Transaction::where('status', 'shipping')
+            ->with('required')
+            ->with('cooked')
+            ->with('shipped')
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+        return response()->json(['data' => $transactions], 200);
+    }
+
+    public function done()
+    {
+        $transactions = Transaction::where('status', 'done')
+            ->with('required')
+            ->with('cooked')
+            ->with('shipped')
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+        return response()->json(['data' => $transactions], 200);
+    }
+
+    public function cancel()
+    {
+        $transactions = Transaction::where('status', 'done')
+            ->with('required')
+            ->with('cooked')
+            ->with('shipped')
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+        return response()->json(['data' => $transactions], 200);
     }
 
     /**
@@ -55,7 +109,7 @@ class TransactionController extends Controller
     {
         Log::info('post transactions');
         $transaction = Transaction::create($request->all());
-        return response()->json(['result'=>true, 'data'=>$transaction], 201);
+        return response()->json(['data' => $transaction], 201);
     }
 
     /**
@@ -68,7 +122,7 @@ class TransactionController extends Controller
     {
         Log::info('show a transaction');
         $transaction = Transaction::where('id', $id)->get();
-        return response()->json(['result'=>true, 'data'=>$transaction], 200);
+        return response()->json(['data' => $transaction], 200);
     }
 
     /**
@@ -92,9 +146,8 @@ class TransactionController extends Controller
     public function update(Request $request, $id)
     {
         Log::info('update a transaction');
-        $transaction = Transaction::find($id)
-            ->update($request->all());
-        return response()->json(['result'=>true, 'data'=>$transaction], 202);
+        $transaction = Transaction::find($id)->update($request->all());
+        return response()->json(['data' => $transaction], 202);
     }
 
     /**
@@ -108,6 +161,23 @@ class TransactionController extends Controller
         Log::info('delete a transaction');
         $transaction = Transaction::find($id);
         $transaction->delete();
-        return response()->json(['result'=>true, 'data'=>$transaction], 203);
+        return response()->json(['data' => $transaction], 203);
+    }
+
+    public function getTransactionHistory($userId)
+    {
+        Log::info('get transaction history');
+        $transaction = Transaction::where('required_id', $userId)
+            ->orWhere('cooked_id', $userId)
+            ->orWhere('shipper_id', $userId)
+            ->paginate(10);
+
+        foreach ($transaction as $item) {
+            $item['food_image'] = Food_image::where(
+                'food_id',
+                $item['food_id']
+            )->first();
+        }
+        return response()->json(['data' => $transaction], 200);
     }
 }

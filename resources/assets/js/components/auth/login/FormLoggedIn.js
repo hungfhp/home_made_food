@@ -1,16 +1,18 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
+import {Link} from 'react-router-dom';
 
 export default class FormLoggedIn extends Component {
     constructor(props) {
         super(props);
         this.state = {
         }
+        this.logout = this.logout.bind(this);
     }
     logout() {
         axios.get('/api/logout').then(res => {
-            localStorage.clear();
+            this.props.logoutSuccess();
         }).catch(error =>{
             console.log(error);
         })
@@ -30,9 +32,11 @@ export default class FormLoggedIn extends Component {
         return (
             <div>
                 <a href="/">
+                {/* <Link to={'/home'}> */}
                     <button style={btnHomeStyle} className="btn btn-color btn-md pull-right  ">
                         Home
                     </button>
+                {/* </Link> */}
                 </a>
                 <a href="/login">
                     <button onClick={this.logout} style={btnLogoutStyle} className="btn btn-color btn-md pull-right">

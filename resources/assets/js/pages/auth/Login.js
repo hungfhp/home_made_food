@@ -3,36 +3,32 @@ import ReactDOM from "react-dom";
 import axios from "axios";
 import FormLogin from "../../components/auth/login/FormLogin";
 import FormLoggedIn from "../../components/auth/login/FormLoggedIn";
+import { connect } from "react-redux";
+import { loginSuccess, logoutSuccess } from '@/actions/AuthActions';
 
-export default class Login extends Component {
+class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: "",
-            password: "",
-            alert_error: "",
-            form: "",
-            logged_in: localStorage.getItem("logged_in")
-        }
-        if (this.state.logged_in) {
-            this.state.form = <FormLoggedIn />;
-        } else {
-            this.state.form = <FormLogin renderFrom={this.renderForm}/>;
-        }
+            contentForm: ""
+        };
         this.renderForm = this.renderForm.bind(this);
     }
     componentWillMount() {
         this.renderForm();
     }
+    componentWillReceiveProps(nextProps) {
+        this.props = nextProps;
+        this.renderForm();
+    }
     renderForm() {
-        this.state.logged_in = localStorage.getItem("logged_in");
-        if (this.state.logged_in) {
+        if (this.props.auth.isAuth) {
             this.setState({
-                form: <FormLoggedIn />
+                contentForm: <FormLoggedIn {...this.props} />
             });
         } else {
             this.setState({
-                form: <FormLogin renderFrom={this.renderForm.bind(this)}/>
+                contentForm: <FormLogin {...this.props} />
             });
         }
     }
@@ -40,6 +36,7 @@ export default class Login extends Component {
         // login 2
         return (
             <div className="login-page cnt-bg-photo overview-bgi" style={{ backgroundImage: "url(/img/banner-1.jpg)" }}>
+            <title>Login</title>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
@@ -52,7 +49,7 @@ export default class Login extends Component {
                                         <h4>Login</h4>
                                     </div>
                                 </div>
-                                {this.state.form}
+                                {this.state.contentForm}
                             </div>
                         </div>
                     </div>
@@ -61,3 +58,21 @@ export default class Login extends Component {
         );
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        auth: state.auth
+    };
+};
+
+function mapDispatchToProps(dispatch) {
+    return {
+        loginSuccess: (email, password) => dispatch(loginSuccess(email, password)),
+        logoutSuccess: ()  => dispatch(logoutSuccess())
+    };
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Login);

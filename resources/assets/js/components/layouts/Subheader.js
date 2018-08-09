@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class Subheader extends Component {
+export default class SubHeader extends Component {
     constructor(props) {
         super(props);
     }

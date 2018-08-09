@@ -22,40 +22,8 @@ class UserController extends Controller
     {
         $data = User::get();
         Log::info('1');
-        return response()->json(['result' => true, 'data' => $data], 200);
+        return response()->json(['success' => $data], 200);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function postRegister(Request $request)
-    {
-        $data = $request->only('password', 'email');
-        $check = User::where('email', $data['email'])->count();
-        if ($check == 0) {
-            return response()->json(['result' => true, 'data' => $data], 200);
-        } else {
-            return response()->json(
-                ['result' => false, 'data' => 'error: register'],
-                401
-            );
-        }
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function postLogin(Request $request)
-    {
-        Log::info('2');
-        return 1;
-    }
-
     /**
      * Display the specified resource.
      *
@@ -65,7 +33,7 @@ class UserController extends Controller
     public function show($id)
     {
         $data = User::find($id);
-        return response()->json(['result' => true, 'data' => $data], 200);
+        return response()->json(['success' => $data], 200);
     }
     /**
      * Show the form for editing the specified resource.
@@ -91,7 +59,7 @@ class UserController extends Controller
         $user = Auth::user();
         $updated = User::find($user->id)->update($request->all());
 
-        return response()->json(['data' => $updated], 200);
+        return response()->json(['success' => $updated], 200);
     }
 
     /**
@@ -114,7 +82,7 @@ class UserController extends Controller
             $cf_item['feature_image'] = Food_image::find($cf_item['id'])->first();
         }
         
-        return response()->json(['data' => $cooked_foods], 200);
+        return response()->json(['success' => $cooked_foods], 200);
     }
     
     public function getFavoritedFoods($user_id) {
@@ -127,7 +95,7 @@ class UserController extends Controller
             $ff_item['feature_image'] = Food_image::find($ff_item['food_id'])->first();
         }
 
-        return response()->json(['data' => $favorited_foods], 200);
+        return response()->json(['success' => $favorited_foods], 200);
     }
     
     public function getLikedFoods($user_id) {
@@ -140,14 +108,13 @@ class UserController extends Controller
             $lf_item['feature_image'] = Food_image::find($lf_item['food_id'])->first();
         }
 
-        return response()->json(['data' => $liked_foods], 200);
+        return response()->json(['success' => $liked_foods], 200);
 
         $votes = Vote::whereIn('user_id', $user_id)
-        ->with('user')
-        ->with('food.food_images')
-        ->orderBy('created_at', 'desc')
-        ->paginate(10);
-    return response()->json(['result'=>true,"data" => $votes], 200);
-        // return response()->json(['data' => 1], 200);
+            ->with('user')
+            ->with('food.food_images')
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+        return response()->json(["success" => $votes], 200);
     }
 }
