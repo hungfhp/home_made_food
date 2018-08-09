@@ -1,8 +1,6 @@
 <?php
-
 use Illuminate\Database\Seeder;
 use GuzzleHttp\Client;
-
 
 class Food_imagesTableSeeder extends Seeder
 {
@@ -79,26 +77,56 @@ class Food_imagesTableSeeder extends Seeder
             "https://www.gooverseas.com/sites/default/files/styles/1014x/public/images/2018-02-06/Must-Try%20Foods%20While%20Studying%20in%20Japan.jpg?itok=1AKxfonX",
             "https://favy-inbound-singapore.s3.amazonaws.com/uploads/topic_item/image/32037/retina_pixta_35245741_S.jpg"
         ];
-        
+
         $data = [];
-        for ($i=0; $i < 1000; $i++) { 
+        for ($i = 0; $i < 1000; $i++) {
             array_push($data, [
                 'food_id' => $i,
-                'link' => $images[rand(0, sizeof($images)-1)],
-                'created_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null),
-                'updated_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null)
+                'link' => $images[rand(1, sizeof($images) - 1)],
+                'created_at' =>
+                    $faker->dateTimeBetween(
+                        $startDate = '-45 days',
+                        $endDate = 'now',
+                        $timezone = null
+                    ),
+                'updated_at' =>
+                    $faker->dateTimeBetween(
+                        $startDate = '-45 days',
+                        $endDate = 'now',
+                        $timezone = null
+                    )
             ]);
             array_push($data, [
                 'food_id' => $i,
-                'link' => $images[rand(0, sizeof($images)-1)],
-                'created_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null),
-                'updated_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null)
+                'link' => $images[rand(1, sizeof($images) - 1)],
+                'created_at' =>
+                    $faker->dateTimeBetween(
+                        $startDate = '-45 days',
+                        $endDate = 'now',
+                        $timezone = null
+                    ),
+                'updated_at' =>
+                    $faker->dateTimeBetween(
+                        $startDate = '-45 days',
+                        $endDate = 'now',
+                        $timezone = null
+                    )
             ]);
             array_push($data, [
                 'food_id' => $i,
-                'link' => $images[rand(0, sizeof($images)-1)],
-                'created_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null),
-                'updated_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null)
+                'link' => $images[rand(1, sizeof($images) - 1)],
+                'created_at' =>
+                    $faker->dateTimeBetween(
+                        $startDate = '-45 days',
+                        $endDate = 'now',
+                        $timezone = null
+                    ),
+                'updated_at' =>
+                    $faker->dateTimeBetween(
+                        $startDate = '-45 days',
+                        $endDate = 'now',
+                        $timezone = null
+                    )
             ]);
         }
 

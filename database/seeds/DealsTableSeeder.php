@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Database\Seeder;
 
 class DealsTableSeeder extends Seeder
@@ -12,14 +11,24 @@ class DealsTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker\Factory::create();
-        
-        for ($i=0; $i < 2000; $i++) { 
+
+        for ($i = 0; $i < 2000; $i++) {
             $data[$i] = [
-                'user_id' => rand(0,5),
-                'transaction_id' => rand(0,500),
+                'user_id' => rand(1, 20),
+                'transaction_id' => rand(1, 500),
                 'comment' => $faker->realText($maxNbChars = 50, $indexSize = 2),
-                'created_at' => $faker->dateTimeBetween($startDate = '-1 days', $endDate = 'now', $timezone = null),
-                'updated_at' => $faker->dateTimeBetween($startDate = '-1 days', $endDate = 'now', $timezone = null)
+                'created_at' =>
+                    $faker->dateTimeBetween(
+                        $startDate = '-1 days',
+                        $endDate = 'now',
+                        $timezone = null
+                    ),
+                'updated_at' =>
+                    $faker->dateTimeBetween(
+                        $startDate = '-1 days',
+                        $endDate = 'now',
+                        $timezone = null
+                    )
             ];
         }
         DB::table('deals')->insert($data);
