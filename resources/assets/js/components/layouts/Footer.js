@@ -61,7 +61,6 @@ export default class Footer extends Component {
                         </div>
                         <div className="col-xl-2 col-lg-2 col-md-6 col-sm-6">
                             <div className="footer-item">
-                                <h4>Useful Links</h4>
                                 <ul className="links">
                                     <li>
                                         <a href="#">
@@ -81,32 +80,14 @@ export default class Footer extends Component {
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <i className="fa fa-angle-right" />Properties
-                                            Grid
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
                                             <i className="fa fa-angle-right" />Contact
                                             Us
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i className="fa fa-angle-right" />Blog
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i className="fa fa-angle-right" />Property
-                                            Details
                                         </a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                         <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                            <img style={{width: 200 + 'px'}} src="/img/logos/old_logo-white.png"/>
                         </div>
                         <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                             <div className="footer-item clearfix">
@@ -116,8 +97,8 @@ export default class Footer extends Component {
                                 </h4>
                                 <div className="Subscribe-box">
                                     <p>
-                                        <a href="https://www.computerhope.com/">
-                                            <img src="https://www.computerhope.com/logo.gif" />
+                                        <a href="#">
+                                            <img src="/img/logos/logo.png" width="150px" />
                                         </a>
                                     </p>
                                     <form action="#" method="GET">
@@ -148,13 +129,7 @@ export default class Footer extends Component {
                         <div className="col-xl-12">
                             <p className="copy">
                                 &copy; 2018{" "}
-                                <a
-                                    href="http://themevessel.com/"
-                                    target="_blank"
-                                >
-                                    Theme Vessel
-                                </a>. Trademarks and brands are the property of
-                                their respective owners.
+                                    Home Food
                             </p>
                         </div>
                     </div>
