@@ -33,6 +33,12 @@ class TransactionsTableSeeder extends Seeder
                         $endDate = 'now',
                         $timezone = null
                     ),
+                'desired_time' =>   
+                    $faker->dateTimeBetween(
+                        $startDate = '+1 days',
+                        $endDate = '+2 days',
+                        $timezone = null
+                    ),
                 'description' =>
                     $faker->realText($maxNbChars = 150, $indexSize = 2),
                 'price' => rand(4, 15) * 5000
@@ -53,6 +59,12 @@ class TransactionsTableSeeder extends Seeder
                     $faker->dateTimeBetween(
                         $startDate = '-1 days',
                         $endDate = 'now',
+                        $timezone = null
+                    ),
+                'desired_time' =>   
+                    $faker->dateTimeBetween(
+                        $startDate = '+1 days',
+                        $endDate = '+2 days',
                         $timezone = null
                     ),
                 'description' =>
@@ -77,6 +89,12 @@ class TransactionsTableSeeder extends Seeder
                         $endDate = 'now',
                         $timezone = null
                     ),
+                'desired_time' =>   
+                    $faker->dateTimeBetween(
+                        $startDate = '+1 days',
+                        $endDate = '+2 days',
+                        $timezone = null
+                    ),
                 'description' =>
                     $faker->realText($maxNbChars = 150, $indexSize = 2),
                 'price' => rand(4, 15) * 5000
@@ -97,6 +115,12 @@ class TransactionsTableSeeder extends Seeder
                     $faker->dateTimeBetween(
                         $startDate = '-1 days',
                         $endDate = 'now',
+                        $timezone = null
+                    ),
+                'desired_time' =>   
+                    $faker->dateTimeBetween(
+                        $startDate = '+1 days',
+                        $endDate = '+2 days',
                         $timezone = null
                     ),
                 'description' =>
@@ -121,6 +145,12 @@ class TransactionsTableSeeder extends Seeder
                         $endDate = 'now',
                         $timezone = null
                     ),
+                'desired_time' =>   
+                    $faker->dateTimeBetween(
+                        $startDate = '+1 days',
+                        $endDate = '+2 days',
+                        $timezone = null
+                    ),
                 'description' =>
                     $faker->realText($maxNbChars = 150, $indexSize = 2),
                 'price' => rand(4, 15) * 5000
@@ -141,6 +171,12 @@ class TransactionsTableSeeder extends Seeder
                     $faker->dateTimeBetween(
                         $startDate = '-45 days',
                         $endDate = 'now',
+                        $timezone = null
+                    ),
+                'desired_time' =>   
+                    $faker->dateTimeBetween(
+                        $startDate = '+1 days',
+                        $endDate = '+2 days',
                         $timezone = null
                     ),
                 'description' =>

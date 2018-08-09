@@ -82,7 +82,7 @@ class Food_imagesTableSeeder extends Seeder
         for ($i = 0; $i < 1000; $i++) {
             array_push($data, [
                 'food_id' => $i,
-                'link' => $images[rand(0, sizeof($images - 1))],
+                'link' => $images[rand(0, sizeof($images) - 1)],
                 'created_at' =>
                     $faker->dateTimeBetween(
                         $startDate = '-45 days',
@@ -98,7 +98,7 @@ class Food_imagesTableSeeder extends Seeder
             ]);
             array_push($data, [
                 'food_id' => $i,
-                'link' => $images[rand(0, sizeof($images - 1))],
+                'link' => $images[rand(0, sizeof($images) - 1)],
                 'created_at' =>
                     $faker->dateTimeBetween(
                         $startDate = '-45 days',
@@ -114,7 +114,7 @@ class Food_imagesTableSeeder extends Seeder
             ]);
             array_push($data, [
                 'food_id' => $i,
-                'link' => $images[rand(0, sizeof($images - 1))],
+                'link' => $images[rand(0, sizeof($images) - 1)],
                 'created_at' =>
                     $faker->dateTimeBetween(
                         $startDate = '-45 days',

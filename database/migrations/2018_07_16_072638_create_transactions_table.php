@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
+use Carbon\Carbon;
 class CreateTransactionsTable extends Migration
 {
     /**
@@ -22,6 +22,7 @@ class CreateTransactionsTable extends Migration
             $table->string('status');
             $table->longText('description');
             $table->integer('price');
+            $table->dateTime('desired_time')->default(Carbon::now());
             $table->timestamps();
         });
     }

@@ -14,7 +14,8 @@ class Transaction extends Model
         'shipper_id',
         'status',
         'description',
-        'price'
+        'price',
+        'desired_time'
     ];
 
     public function Food()
