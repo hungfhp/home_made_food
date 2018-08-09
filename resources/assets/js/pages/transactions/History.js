@@ -1,13 +1,16 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { getProfile, logoutSuccess } from '@/actions/AuthActions';
+
 import Header from "../../components/layouts/Header";
-import Subheader from "../../components/layouts/Subheader";
+import SubHeader from "../../components/layouts/SubHeader";
 import Footer from "../../components/layouts/Footer";
 import Total from "../../components/transaction/Total";
 import List from "../../components/transaction/List";
 import axios from "axios";
 import ModalFood from "../../components/transaction/ModalFood";
 
-export default class History extends Component {
+class History extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -31,8 +34,8 @@ export default class History extends Component {
     render() {
         return (
             <div>
-                <Header title="Homemade - Transaction history"/>
-                <Subheader title="Homemade - Transaction history"/>
+                <Header title="Homemade - Transaction history" auth={this.props.auth} logoutSuccess={this.props.logoutSuccess} />
+                <SubHeader title="Homemade - Transaction history"/>
                 <div className="user-page submit-property content-area-7">
                     <div className="container">
                         <div className="row">
@@ -46,3 +49,18 @@ export default class History extends Component {
         );
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        auth: state.auth
+    };
+};
+
+function mapDispatchToProps(dispatch) {
+    return {
+        default: dispatch(getProfile()),
+        logoutSuccess: () => dispatch(logoutSuccess())
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(History);

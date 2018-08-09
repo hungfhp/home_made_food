@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
-import axios from "axios";
 
 export default class LeftSide extends Component {
     constructor(props) {
@@ -11,8 +9,14 @@ export default class LeftSide extends Component {
         this.handleChangeTab = this.handleChangeTab.bind(this);
     }
     componentWillMount() {
+    }    
+    componentWillReceiveProps(nextProps) {
+        this.props = nextProps;
     }
     handleChangeTab(tab) {
+        if (tab=="certificate") {
+            location.reload();
+        }
         this.props.switchRightSide(tab);
     }
     render() {
@@ -45,19 +49,49 @@ export default class LeftSide extends Component {
                                 <i className="fa fa-thumbs-o-up"></i>Liked Foods
                             </a>
                         </li>
-                        <li>
-                            <a href ="#certificate" onClick={() => this.handleChangeTab("certificate")} className="certificate leftside-active">
-                                <i className="flaticon-draw-check-mark"></i>Certificate
-                            </a>
-                        </li>
-                        <li>
-                            <a href ="#change-password" onClick={() => this.handleChangeTab("change-password")} className="change-password" >
-                                <i className="flaticon-locked-padlock"></i>Change Password
-                            </a>
-                        </li>
+                        <TabCertificate is_my_profile={this.props.is_my_profile} handleChangeTab={this.handleChangeTab} />
+                        <TabChangePassword is_my_profile={this.props.is_my_profile} handleChangeTab={this.handleChangeTab} />
                     </ul>
                 </div>
             </div>
         )
+    }
+}
+
+
+class TabCertificate extends Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        if (this.props.is_my_profile) {
+            return (
+                <li>
+                    <a href ="#certificate" onClick={() => this.props.handleChangeTab("certificate")} className="certificate leftside-active">
+                        <i className="flaticon-draw-check-mark"></i>Certificate
+                    </a>
+                </li>
+            )
+        } else {
+            return null;
+        }
+    }
+}
+class TabChangePassword extends Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        if (this.props.is_my_profile) {
+            return (
+                <li>
+                <a href ="#change-password" onClick={() => this.props.handleChangeTab("change-password")} className="change-password" >
+                    <i className="flaticon-locked-padlock"></i>Change Password
+                </a>
+            </li>
+            )
+        } else {
+            return null;
+        }
     }
 }

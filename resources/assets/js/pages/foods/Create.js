@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Header from "../../components/layouts/Header";
-import Subheader from "../../components/layouts/Subheader";
+import SubHeader from "../../components/layouts/SubHeader";
 import Form from "../../components/food/Form";
 
 export default class Create extends Component {
@@ -9,7 +9,7 @@ export default class Create extends Component {
             //submit properties
             <div>
                 <Header title="Homemade - New food"/>
-                <Subheader title="New food"/>
+                <SubHeader title="New food"/>
                 <div className="user-page submit-property content-area-7">
                     <div className="container">
                         <div className="row">

@@ -1,23 +1,28 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
-import jwt_decode from 'jwt-decode';
+import {Link} from "react-router-dom";
 
 export default class HeaderTop extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            userForm: ""
         }
+        this.renderLink = this.renderLink.bind(this);
     }
-    
-    componentWillMount() {
-        if (localStorage.getItem("logged_in")) {
+    componentDidMount() {
+        this.renderLink();
+    }
+    componentWillReceiveProps(nextProps) {
+        this.props = nextProps;
+        this.renderLink();
+    }
+    renderLink() {
+        if (this.props.auth.isAuth) {
             this.setState({
                 userForm: (
                     <li>
-                        <a href={"/users/" + localStorage.user_id} className="sign-in">
-                            <i className="fa fa-user" /> {localStorage.getItem("username")}
-                        </a>
+                        <Link to={'/users/' + this.props.auth.user.id} className="sign-in">
+                            <i className="fa fa-user" /> {this.props.auth.user.name}
+                        </Link>
                     </li>
                 )
             });
@@ -25,12 +30,12 @@ export default class HeaderTop extends Component {
             this.setState({
                 userForm: (
                     <li>
-                        <a href="/login" className="sign-in">
+                        <Link to={"/login"} className="sign-in">
                             <i className="fa fa-sign-in" /> Login{" "}
-                        </a>
-                        <a href="/register" className="sign-in">
+                        </Link>
+                        <Link to={"/register"} className="sign-in">
                             <i className="fa fa-user" /> Register
-                        </a>
+                        </Link>
                     </li>
                 )
             });
@@ -39,10 +44,7 @@ export default class HeaderTop extends Component {
     
     render() {
         return (
-            <header
-                className="top-header top-header-bg d-none d-xl-block d-lg-block d-md-block"
-                id="top-header-2"
-            >
+            <header className="top-header top-header-bg d-none d-xl-block d-lg-block d-md-block" id="top-header-2">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6 col-md-6 col-sm-6">

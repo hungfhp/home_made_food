@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class FavoritedFoods extends Component {
     render() {
         return (
-            <div id="favorited-foods">
+            <div id="tab-favorited-foods">
                 <div className="my-properties">
                     <table className="table">
                         <thead>

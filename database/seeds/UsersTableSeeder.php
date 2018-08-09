@@ -10,73 +10,105 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+        $faker = Faker\Factory::create();
+
         $data = [
             [
-                'name' => 'user test',
+                'name' => 'Hung',
                 'password' => bcrypt('123456'),
-                'email' => 'admin@gmail.com',
-                'avatar' =>
-                    'https://wallpapersfind.com/wp-content/uploads/2017/10/dota-2-wallpaper-1080x1080.jpg',
-                'address' =>
-                    'Trường Đại học Ngoại thương, 91 Chùa Láng, Đống Đa, Hà Nội, Việt Nam',
+                'email' => 'hung@gmail.com',
+                'avatar' => 'https://www.mautic.org/media/images/default_avatar.png',
+                'address' => 'Trường Đại học Ngoại thương, 91 Chùa Láng, Đống Đa, Hà Nội, Việt Nam',
                 'phone' => str_random(11),
-                'ident' => false,
-                'certificate' => null,
+                'ident' => true,
+                'certificate' => "http://therewardboss.com/wp-content/uploads/2015/11/jason-bourne-passport-photo.jpg",
                 'description' => 'this is user test',
-                'latitude' => 21.023038,
-                'longitude' => 105.803243
+                'latitude' => $faker->latitude($min = 19, $max = 22),
+                'longitude' => $faker->longitude($min = 102, $max = 107)
             ],
             [
-                'name' => str_random(10),
+                'name' => "Hieu",
                 'password' => bcrypt('123456'),
-                'email' => 'test1@gmail.com',
-                'avatar' =>
-                    'https://wallpapersfind.com/wp-content/uploads/2017/10/dota-2-wallpaper-1080x1080.jpg',
-                'address' =>
-                    'Trường Đại học Ngoại thương, 91 Chùa Láng, Đống Đa, Hà Nội, Việt Nam',
+                'email' => 'hieu@gmail.com',
+                'avatar' => 'https://www.mautic.org/media/images/default_avatar.png',
+                'address' => 'Trường Đại học Ngoại thương, 91 Chùa Láng, Đống Đa, Hà Nội, Việt Nam',
+                'phone' => str_random(11),
+                'ident' => true,
+                'certificate' => "http://therewardboss.com/wp-content/uploads/2015/11/jason-bourne-passport-photo.jpg",
+                'description' => $faker->text($maxNbChars = 200),
+                'latitude' => $faker->latitude($min = 19, $max = 22),
+                'longitude' => $faker->longitude($min = 102, $max = 107)
+            ],
+            [
+                'name' => "Thu",
+                'password' => bcrypt('123456'),
+                'email' => 'thu@gmail.com',
+                'avatar' => 'https://www.mautic.org/media/images/default_avatar.png',
+                'address' => 'Trường Đại học Ngoại thương, 91 Chùa Láng, Đống Đa, Hà Nội, Việt Nam',
+                'phone' => str_random(11),
+                'ident' => true,
+                'certificate' => "http://therewardboss.com/wp-content/uploads/2015/11/jason-bourne-passport-photo.jpg",
+                'description' => $faker->text($maxNbChars = 200),
+                'latitude' => $faker->latitude($min = 19, $max = 22),
+                'longitude' => $faker->longitude($min = 102, $max = 107)
+            ],
+            [
+                'name' => $faker->name,
+                'password' => bcrypt('123456'),
+                'email' => 'test@gmail.com',
+                'avatar' => 'https://www.mautic.org/media/images/default_avatar.png',
+                'address' => 'Trường Đại học Ngoại thương, 91 Chùa Láng, Đống Đa, Hà Nội, Việt Nam',
                 'phone' => str_random(11),
                 'ident' => false,
                 'certificate' => null,
-                'description' =>
-                    'The International Battle Pass is here to tap into the heart of the Dota summer season. Packed full of exclusive features and rewards, the Battle Pass is sure to unearth a hoard of treasures for your stash as we approach the culmination of this year\'s Dota Pro Circuit and the climactic showdown in Vancouver. 25% of all Battle Pass sales go directly to The International 2018 prize pool.',
-                'latitude' => 21.023038,
-                'longitude' => 105.803243
+                'description' => $faker->text($maxNbChars = 200),
+                'latitude' => $faker->latitude($min = 19, $max = 22),
+                'longitude' => $faker->longitude($min = 102, $max = 107)
             ],
             [
-                'name' => str_random(10),
+                'name' => $faker->name,
                 'password' => bcrypt('123456'),
-                'email' => 'test2@gmail.com',
-                'avatar' =>
-                    'https://wallpapersfind.com/wp-content/uploads/2017/10/dota-2-wallpaper-1080x1080.jpg',
-                'address' =>
-                    'Trường Đại học Ngoại thương, 91 Chùa Láng, Đống Đa, Hà Nội, Việt Nam',
+                'email' => 'test4@gmail.com',
+                'avatar' => 'https://www.mautic.org/media/images/default_avatar.png',
+                'address' => 'Trường Đại học Ngoại thương, 91 Chùa Láng, Đống Đa, Hà Nội, Việt Nam',
                 'phone' => str_random(11),
-                'ident' => true,
-                'certificate' =>
-                    'https://static1.squarespace.com/static/5265a809e4b011999b2b8e7a/52729e31e4b0a406b9069c5d/589a3ddd725e250f863ecf7e/1486503392327/Screen+Shot+2017-02-07+at+2.25.06+PM.png?format=750w',
-                'description' =>
-                    'The International Battle Pass is here to tap into the heart of the Dota summer season. Packed full of exclusive features and rewards, the Battle Pass is sure to unearth a hoard of treasures for your stash as we approach the culmination of this year\'s Dota Pro Circuit and the climactic showdown in Vancouver. 25% of all Battle Pass sales go directly to The International 2018 prize pool.',
-                'latitude' => 21.023038,
-                'longitude' => 105.803243
+                'ident' => false,
+                'certificate' => null,
+                'description' => $faker->text($maxNbChars = 200),
+                'latitude' => $faker->latitude($min = 19, $max = 22),
+                'longitude' => $faker->longitude($min = 102, $max = 107)
             ],
             [
-                'name' => str_random(10),
+                'name' => $faker->name,
                 'password' => bcrypt('123456'),
-                'email' => 'test3@gmail.com',
-                'avatar' =>
-                    'https://wallpapersfind.com/wp-content/uploads/2017/10/dota-2-wallpaper-1080x1080.jpg',
-                'address' =>
-                    'Trường Đại học Ngoại thương, 91 Chùa Láng, Đống Đa, Hà Nội, Việt Nam',
+                'email' => 'test5@gmail.com',
+                'avatar' => 'https://www.mautic.org/media/images/default_avatar.png',
+                'address' => 'Trường Đại học Ngoại thương, 91 Chùa Láng, Đống Đa, Hà Nội, Việt Nam',
                 'phone' => str_random(11),
-                'ident' => true,
-                'certificate' =>
-                    'https://static1.squarespace.com/static/5265a809e4b011999b2b8e7a/52729e31e4b0a406b9069c5d/589a3ddd725e250f863ecf7e/1486503392327/Screen+Shot+2017-02-07+at+2.25.06+PM.png?format=750w',
-                'description' =>
-                    'The International Battle Pass is here to tap into the heart of the Dota summer season. Packed full of exclusive features and rewards, the Battle Pass is sure to unearth a hoard of treasures for your stash as we approach the culmination of this year\'s Dota Pro Circuit and the climactic showdown in Vancouver. 25% of all Battle Pass sales go directly to The International 2018 prize pool.',
-                'latitude' => 21.023038,
-                'longitude' => 105.803243
+                'ident' => false,
+                'certificate' => null,
+                'description' => 'The International Battle Pass is here to tap into the heart of the Dota summer season. Packed full of exclusive features and rewards, the Battle Pass is sure to unearth a hoard of treasures for your stash as we approach the culmination of this year\'s Dota Pro Circuit and the climactic showdown in Vancouver. 25% of all Battle Pass sales go directly to The International 2018 prize pool.',
+                'latitude' => $faker->latitude($min = 19, $max = 22),
+                'longitude' => $faker->longitude($min = 102, $max = 107)
             ]
         ];
+
+        for ($i=0; $i < 100; $i++) { 
+            $data[$i+5] = [
+                'name' => $faker->name,
+                'password' => bcrypt('123456'),
+                'email' => $faker->email,
+                'avatar' => 'https://www.mautic.org/media/images/default_avatar.png',
+                'address' => 'Trường Đại học Ngoại thương, 91 Chùa Láng, Đống Đa, Hà Nội, Việt Nam',
+                'phone' => str_random(11),
+                'ident' => false,
+                'certificate' => null,
+                'description' => $faker->text($maxNbChars = 200),
+                'latitude' => $faker->latitude($min = 19, $max = 22),
+                'longitude' => $faker->longitude($min = 102, $max = 107)
+            ];
+        }
+
         DB::table('users')->insert($data);
     }
 }

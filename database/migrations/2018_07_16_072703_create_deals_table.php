@@ -18,7 +18,6 @@ class CreateDealsTable extends Migration
             $table->integer('user_id');
             $table->integer('transaction_id');
             $table->string('comment');
-            $table->string('user_name');
             $table->timestamps();
         });
     }

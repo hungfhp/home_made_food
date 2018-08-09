@@ -1,48 +1,73 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
-import {Link} from 'react-router';
-
+import {Link} from 'react-router-dom';
 import HeaderTop from "./HeaderTop";
 
 export default class Header extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+        };
         this.logout = this.logout.bind(this);
+        this.renderLink = this.renderLink.bind(this);
     }
-    componentWillMount() {
-        if (localStorage.getItem("logged_in")) {
-            this.setState({
-                userLinks: (
+    componentWillReceiveProps(nextProps) {
+        this.props = nextProps;
+        this.setState({
+            userLinks: this.renderLink()
+        })
+    }
+    componentWilMount() {
+        this.setState({
+            userLinks: this.renderLink()
+        })
+    }
+    renderLink() {
+        if (this.props.auth.isAuth) {
+            return (
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
-                            {localStorage.getItem("username")}
+                            {this.props.auth.user.name}
                         </a>
                         <div className="dropdown-menu" aria-labelledby="navbarDropdown3">
-                            <a className="dropdown-item" href={"/users/" + localStorage.user_id}>
+                            <Link className="dropdown-item" to={'/users/' + this.props.auth.user.id}>
                                 Profile
-                            </a>
-                            <a className="dropdown-item" href="/">
+                            </Link>
+                            <Link className="dropdown-item" to={'/users/' + this.props.auth.user.id + "#cooked-foods"}>
                                 My Foods
+                            </Link>
+                            <a className="dropdown-item" href="/transactions/history">
+                                My Transactions
                             </a>
-                            <a onClick={this.logout} className="dropdown-item" href="/">
+                            <a onClick={this.logout} className="dropdown-item" href="javascript:void(0)">
                                 Logout
                             </a>
                         </div>
                     </li>
                 )
-            })
         } else {
-            this.setState({
-                userLinks: ""
-            })
+            return (
+                    <li className="nav-item dropdown">
+                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Account
+                        </a>
+                        <div className="dropdown-menu" aria-labelledby="navbarDropdown3">
+                            <Link className="dropdown-item" to={"/login"}>
+                                Login
+                            </Link>
+                            <Link className="dropdown-item" to={"/register"}>
+                                Register
+                            </Link>
+                        </div>
+                    </li>
+                )
         }
     }
     logout() {
-        axios.get('/api/logout').then(function () {
-            localStorage.clear();
-        }).catch(function (error) {
+        axios.get('/api/logout').then(res => {
+            this.props.logoutSuccess();
+        }).catch(error =>{
             console.log(error);
         })
     }
@@ -50,7 +75,7 @@ export default class Header extends Component {
         return (
             <div>
                 <title>{this.props.title}</title>
-                <HeaderTop />
+                <HeaderTop {...this.props} />
                 <header className="main-header do-sticky" id="main-header-2">
                     <div className="container">
                         <div className="row">
@@ -74,110 +99,6 @@ export default class Header extends Component {
                                                 <a className="nav-link" href="/foods" id="navbarDropdownMenuLink2">
                                                     Foods
                                                 </a>
-                                                {/* <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true"
-                                                    aria-expanded="false">
-                                                    Properties
-                                                </a> */}
-                                                {/* <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                                    <li className="dropdown-submenu">
-                                                        <a className="dropdown-item dropdown-toggle" href="#">
-                                                            List Layout
-                                                        </a>
-                                                        <ul className="dropdown-menu">
-                                                            <li>
-                                                                <a className="dropdown-item" href="properties-list-rightside.html">
-                                                                    Right Sidebar
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a className="dropdown-item" href="properties-list-leftside.html">
-                                                                    Left Sidebar
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a className="dropdown-item" href="properties-list-fullwidth.html">
-                                                                    Fullwidth
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li className="dropdown-submenu">
-                                                        <a className="dropdown-item dropdown-toggle" href="#">
-                                                            Grid Layout
-                                                        </a>
-                                                        <ul className="dropdown-menu">
-                                                            <li>
-                                                                <a className="dropdown-item" href="properties-grid-rightside.html">
-                                                                    Right Sidebar
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a className="dropdown-item" href="properties-grid-leftside.html">
-                                                                    Left Sidebar
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a className="dropdown-item" href="properties-grid-fullwidth.html">
-                                                                    Fullwidth
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li className="dropdown-submenu">
-                                                        <a className="dropdown-item dropdown-toggle" href="#">
-                                                            Map View
-                                                        </a>
-                                                        <ul className="dropdown-menu">
-                                                            <li>
-                                                                <a className="dropdown-item" href="properties-map-rightside-list.html">
-                                                                    Map List Right Sidebar
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a className="dropdown-item" href="properties-map-leftside-list.html">
-                                                                    Map List Left Sidebar
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a className="dropdown-item" href="properties-map-rightside-grid.html">
-                                                                    Map Grid Right Sidebar
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a className="dropdown-item" href="properties-map-leftside-grid.html">
-                                                                    Map Grid Left Sidebar
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a className="dropdown-item" href="properties-map-full.html">
-                                                                    Map FullWidth
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li className="dropdown-submenu">
-                                                        <a className="dropdown-item dropdown-toggle" href="#">
-                                                            Property Detail
-                                                        </a>
-                                                        <ul className="dropdown-menu">
-                                                            <li>
-                                                                <a className="dropdown-item" href="properties-details.html">
-                                                                    Property Detail 1
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a className="dropdown-item" href="properties-details-2.html">
-                                                                    Property Detail 2
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a className="dropdown-item" href="properties-details-3.html">
-                                                                    Property Detail 3
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                </ul> */}
                                             </li>
                                             <li className="nav-item dropdown megamenu-li">
                                                 <a className="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -194,9 +115,6 @@ export default class Header extends Component {
                                                                     <a className="dropdown-item" href="about-1.html">
                                                                         About 1
                                                                     </a>
-                                                                    <a className="dropdown-item" href="about-2.html">
-                                                                        About 2
-                                                                    </a>
                                                                 </div>
                                                             </div>
                                                             <div className="col-sm-6 col-lg-3">
@@ -206,9 +124,6 @@ export default class Header extends Component {
                                                                     </h6>
                                                                     <a className="dropdown-item" href="agent-list.html">
                                                                         Agent List 1
-                                                                    </a>
-                                                                    <a className="dropdown-item" href="agent-list-2.html">
-                                                                        Agent List 2
                                                                     </a>
                                                                 </div>
                                                             </div>
@@ -220,9 +135,6 @@ export default class Header extends Component {
                                                                     <a className="dropdown-item" href="gallery-2column.html">
                                                                         Gallery 2 column
                                                                     </a>
-                                                                    <a className="dropdown-item" href="gallery-3column.html">
-                                                                        Gallery 3 column
-                                                                    </a>
                                                                 </div>
                                                             </div>
                                                             <div className="col-sm-6 col-lg-3">
@@ -232,9 +144,6 @@ export default class Header extends Component {
                                                                     </h6>
                                                                     <a className="dropdown-item" href="user-profile.html">
                                                                         User profile
-                                                                    </a>
-                                                                    <a className="dropdown-item" href="my-properties.html">
-                                                                        My Properties
                                                                     </a>
                                                                 </div>
                                                             </div>
@@ -282,11 +191,6 @@ export default class Header extends Component {
                                                                     Right Sidebar
                                                                 </a>
                                                             </li>
-                                                            <li>
-                                                                <a className="dropdown-item" href="blog-classic-sidebar-left.html">
-                                                                    Left Sidebar
-                                                                </a>
-                                                            </li>
                                                         </ul>
                                                     </li>
                                                     <li className="dropdown-submenu">
@@ -297,11 +201,6 @@ export default class Header extends Component {
                                                             <li>
                                                                 <a className="dropdown-item" href="blog-columns-2col.html">
                                                                     2 Columns
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a className="dropdown-item" href="blog-columns-3col.html">
-                                                                    3 Columns
                                                                 </a>
                                                             </li>
                                                         </ul>
@@ -316,11 +215,6 @@ export default class Header extends Component {
                                                                     2 Masonry
                                                                 </a>
                                                             </li>
-                                                            <li>
-                                                                <a className="dropdown-item" href="blog-masonry-3col.html">
-                                                                    3 Masonry
-                                                                </a>
-                                                            </li>
                                                         </ul>
                                                     </li>
                                                     <li className="dropdown-submenu">
@@ -331,11 +225,6 @@ export default class Header extends Component {
                                                             <li>
                                                                 <a className="dropdown-item" href="blog-single-sidebar-right.html">
                                                                     Right Sidebar
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a className="dropdown-item" href="blog-single-sidebar-left.html">
-                                                                    Left Sidebar
                                                                 </a>
                                                             </li>
                                                         </ul>
@@ -350,9 +239,6 @@ export default class Header extends Component {
                                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown3">
                                                     <a className="dropdown-item" href="shop-list.html">
                                                         Shop List
-                                                    </a>
-                                                    <a className="dropdown-item" href="shop-cart.html">
-                                                        Shop Cart
                                                     </a>
                                                 </div>
                                             </li>

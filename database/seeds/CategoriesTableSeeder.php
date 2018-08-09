@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+// use Log;
 
 class CategoriesTableSeeder extends Seeder
 {
@@ -11,28 +12,59 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
+        $faker = Faker\Factory::create();
+        
         $data =  [
             [
-            'name' => 'trứng rán',
-            'description' => 'đây là món trứng rán'
+                'name' => 'hải sản',
+                'description' => 'đây là món hải sản',
+                'created_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null),
+                'updated_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null)
             ],
             [
-                'name' => 'thịt rán',
-                'description' => 'đây là món thịt rán'
+                'name' => 'thịt',
+                'description' => 'đây là món thịt',
+                'created_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null),
+                'updated_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null)
             ],
             [
-                'name' => 'canh măng',
-                'description' => 'đây là món canh măng'
+                'name' => 'canh',
+                'description' => 'đây là món canh',
+                'created_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null),
+                'updated_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null)
             ],
             [
-                'name' => 'canh chua',
-                'description' => 'đây là món canh chua'
+                'name' => 'cơm',
+                'description' => 'đây là món cơm',
+                'created_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null),
+                'updated_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null)
             ],
             [
-                'name' => 'thịt gà chiên',
-                'description' => 'đây là món thịt gà chiên'
+                'name' => 'gà',
+                'description' => 'đây là món thịt gà',
+                'created_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null),
+                'updated_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null)
+            ],
+            [
+                'name' => 'phở',
+                'description' => 'đây là món thịt phở',
+                'created_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null),
+                'updated_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null)
+            ],
+            [
+                'name' => 'King of foods',
+                'description' => 'đây là món thịt King of foods',
+                'created_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null),
+                'updated_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null)
+            ],
+            [
+                'name' => 'Japan',
+                'description' => 'đây là món thịt Japan',
+                'created_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null),
+                'updated_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null)
             ]
         ];
+
         DB::table('categories')->insert($data);
     }
 }

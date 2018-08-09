@@ -1,114 +1,113 @@
 import React, { Component } from "react";
-import Header from "../../components/layouts/Header";
-import Footer from "../../components/layouts/Footer";
-import LeftSide from "../../components/user/LeftSide";
-import FormShow from "../../components/user/rightSide/FormShow";
-import FormEdit from "../../components/user/rightSide/FormEdit";
-import CookedFoods from "../../components/user/rightSide/CookedFoods";
-import FavoritedFoods from "../../components/user/rightSide/FavoritedFoods";
-import LikedFoods from "../../components/user/rightSide/LikedFoods";
+import { connect } from "react-redux";
+import { getProfile, updateProfile, logoutSuccess } from '@/actions/AuthActions';
+import { getUser } from '@/actions/UsersActions';
+
+import Header from "@/components/layouts/Header";
+import SubHeader from "@/components/layouts/SubHeader";
+import Footer from "@/components/layouts/Footer";
+import LeftSide from "@/components/user/LeftSide";
+import FormShow from "@/components/user/rightSide/FormShow";
+import FormEdit from "@/components/user/rightSide/FormEdit";
+import CookedFoods from "@/components/user/rightSide/CookedFoods";
+import FavoritedFoods from "@/components/user/rightSide/FavoritedFoods";
+import LikedFoods from "@/components/user/rightSide/LikedFoods";
+import Certificate from "@/components/user/rightSide/Certificate";
+import ChangePassword from "@/components/user/rightSide/ChangePassword";
 const queryString = require('query-string');
-import swal2 from "sweetalert2";
 
 class Show extends Component {
     constructor(props) {
         super(props);
         this.state={
-            user: {},
-            user_id: this.props.match.params.id,
-            tab: queryString.parse(this.props.location.search).tab
+            is_my_profile: false,
+            param_user_id: this.props.match.params.id,
+            tab: this.props.location.hash ? this.props.location.hash.substr(1):"profile"
         };
         this.switchRightSide = this.switchRightSide.bind(this);
-        this.handleSubmitUpdate = this.handleSubmitUpdate.bind(this);
+        this.props.getUser(this.state.param_user_id);
     }
-    componentWillMount() {
-        axios.get("/api/users/" + this.state.user_id, {
-            headers: {
-                Authorization: localStorage.getItem("b_token"),
-                Accept :"application/json",
-                "Content-Type": "application/x-www-form-urlencoded"
+    componentWillReceiveProps(nextProps) {
+        this.props = nextProps;
+
+        if (this.props.auth.isAuth) {
+            if (this.props.auth.user.id == this.state.param_user_id) {
+                this.setState({
+                    is_my_profile: true
+                })
             }
-        })
-            .then(res => {
-                this.setState({
-                    user: res.data.data
-                })
-                this.setState({
-                    renderLeftSide: <LeftSide user={this.state.user} switchRightSide={this.switchRightSide} />
-                })
-                this.switchRightSide(this.state.tab);
-            }).catch(err =>{
-                console.error(err);
+            this.setState({
+                renderLeftSide: <LeftSide is_my_profile={this.state.is_my_profile} user={this.props.auth.user} switchRightSide={this.switchRightSide} />
             })
-       
+        } else {
+            this.setState({
+                renderLeftSide: <LeftSide is_my_profile={this.state.is_my_profile} user={this.props.user} switchRightSide={this.switchRightSide} />
+            })
+        }
+        this.switchRightSide(this.state.tab);
     }
     switchRightSide(tab) {
-        this.state.tab = tab;
+        this.setState({tab});
         $(".user-profile-box .leftside-active").removeClass("active");
-        $(".user-profile-box ."+tab).addClass("active");
+        $(".user-profile-box ."+this.state.tab).addClass("active");
 
         switch(this.state.tab) {
             case "cooked-foods": {
                 this.setState({
-                    renderRightSide: <CookedFoods user_id={this.state.user_id} />
+                    renderRightSide: <CookedFoods is_my_profile={this.state.is_my_profile} user_id={this.props.user.id} />
                 })    
                 return;
             }
             case "favorited-foods": {
                 this.setState({
-                    renderRightSide: <FavoritedFoods user_id={this.state.user_id} />
+                    renderRightSide: <FavoritedFoods is_my_profile={this.state.is_my_profile} user_id={this.props.user.id} />
                 })    
                 return;
             }
             case "liked-foods":{
                 this.setState({
-                    renderRightSide: <LikedFoods user_id={this.state.user_id} />
+                    renderRightSide: <LikedFoods is_my_profile={this.state.is_my_profile} user_id={this.props.user.id} />
+                }) 
+                return;
+            }
+            case "certificate":{
+                this.setState({
+                    renderRightSide: <Certificate auth={this.props.auth} />
+                })
+                return;
+            }
+            case "change-password":{
+                this.setState({
+                    renderRightSide: <ChangePassword auth={this.props.auth} />
                 }) 
                 return;
             }
             default: {
                 $(".user-profile-box .profile").addClass("active");
-                if (localStorage.getItem("logged_in") && localStorage.getItem("user_id") == this.state.user_id) {
+                if (this.state.is_my_profile) {
                     this.setState({
-                        renderRightSide: <FormEdit user={this.state.user} handleSubmitUpdate={this.handleSubmitUpdate} />
+                        renderRightSide: <FormEdit user={this.props.auth.user} updateProfile={this.props.updateProfile} />
                     })    
                 } else {
                     this.setState({
-                        renderRightSide: <FormShow user={this.state.user} />
+                        renderRightSide: <FormShow user={this.props.user} />
                     })
                 }
                 return;
             }
         }
     }
-    handleSubmitUpdate(name, address, phone) {
-        axios({
-            method: 'PUT',
-            url: '/api/users/' + this.state.user_id,
-            headers: {
-                Authorization: localStorage.b_token
-            },
-            data: {
-                name: name,
-                address: address,
-                phone: phone
-            }
-        }).then(res=>{
-            swal2({
-                type: 'success',
-                title: 'Saved',
-                showConfirmButton: false,
-                heightAuto: true,
-                timer: 1200
-            });
-        }).catch(err=>{
-            console.log(err);
-        })
-    }
     render() {
         return (
             <div>
-                <Header />
+                <Header auth={this.props.auth} logoutSuccess={this.props.logoutSuccess} />
+                <SubHeader title={"Profile"}/>
+                <div id="profile"></div>
+                <div id="cooked-foods"></div>
+                <div id="favorited-foods"></div>
+                <div id="liked-foods"></div>
+                <div id="certificate"></div>
+                <div id="change-password"></div>
                 <div className="user-page content-area-14">
                     <div className="container">
                         <div className="row">
@@ -126,4 +125,21 @@ class Show extends Component {
         );
     }
 }
-export default Show;
+
+function mapStateToProps(state) {
+    return {
+        auth: state.auth,
+        user: state.user
+    };
+};
+
+function mapDispatchToProps(dispatch) {
+    return {
+        default: dispatch(getProfile()),
+        getUser: (user_id) => dispatch(getUser(user_id)),
+        updateProfile: (user) => dispatch(updateProfile(user)),
+        logoutSuccess: () => dispatch(logoutSuccess()) // header
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Show);

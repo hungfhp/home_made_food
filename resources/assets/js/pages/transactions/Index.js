@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Header from "../../components/layouts/Header";
-import Subheader from "../../components/layouts/Subheader";
+import SubHeader from "../../components/layouts/SubHeader";
 import Footer from "../../components/layouts/Footer";
 import Total from "../../components/transaction/Total";
 import List from "../../components/transaction/List";
@@ -10,7 +10,7 @@ export default class Index extends Component {
         return (
             <div>
                 <Header title="List Transactions"/>
-                <Subheader title="Transactions"/>
+                <SubHeader title="Transactions"/>
                 <div className="user-page submit-property content-area-7">
                     <div className="container">
                         <div className="row">

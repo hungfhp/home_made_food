@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Header from "../../components/layouts/Header";
-import Subheader from "../../components/layouts/Subheader";
+import SubHeader from "../../components/layouts/SubHeader";
 import Form from "../../components/food/Form";
 
 export default class Edit extends Component {
@@ -8,7 +8,7 @@ export default class Edit extends Component {
         return (
             <div>
                 <Header title="Homemade - Edit food"/>
-                <Subheader title="Edit food"/>
+                <SubHeader title="Edit food"/>
                 <div className="user-page submit-property content-area-7">
                     <div className="container">
                         <div className="row">
