@@ -22,17 +22,18 @@ class Index extends Component {
             <div>
                 {/* index 6 */}
                 <Header auth={this.props.auth} logoutSuccess={this.props.logoutSuccess} />
-                {/*<Banner />*/}
+                <Banner />
 
                 {/*<SearchArea />*/}
 
-                {/*<FeaturedCategories />*/}
-                {/*<Services />*/}
-                {/*<MostLikedFoods />*/}
+                <FeaturedCategories />
+                <Services />
+                <MostLikedFoods />
 
                 {/*<GoodCookers />*/}
-                {/*<CertificatedUsers />*/}
+                {/*<CertificatedUsers/>*/}
                 {/*<Intro />*/}
+
                 <Footer />
             </div>
         );
