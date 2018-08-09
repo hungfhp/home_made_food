@@ -3,6 +3,7 @@ import * as AxiosConstants from '@/constants/AxiosConstants';
 import swal2 from "sweetalert2";
 
 const emptyState = {
+    is_loading: false,
     isAuth: false,
     b_token: "",
     user: {},
@@ -22,6 +23,7 @@ const auth = (state = initialState, action) => {
                 localStorage.setItem("b_token", action.user.b_token);
                 window.location.replace('/');
                 return { ...state,
+                    is_loading: false,
                     b_token: action.user.b_token,
                     isAuth: true,
                     user: action.user,
@@ -32,6 +34,7 @@ const auth = (state = initialState, action) => {
             {
                 localStorage.clear();
                 return { ...emptyState,
+                    is_loading: false,
                     isAuth: false,
                     error: action.err
                 };
@@ -40,6 +43,7 @@ const auth = (state = initialState, action) => {
             {
                 localStorage.setItem("b_token", action.user.b_token);
                 return { ...state,
+                    is_loading: false,
                     b_token: action.user.b_token,
                     isAuth: true,
                     user: action.user,
@@ -50,12 +54,14 @@ const auth = (state = initialState, action) => {
             {
                 localStorage.clear();
 
-                return { ...emptyState
+                return { ...emptyState,
+                    is_loading: false
                 };
             }
         case types.GET_PROFILE_SUCCESS:
             {
                 return { ...state,
+                    is_loading: false,
                     isAuth: true,
                     user: { ...action.payload
                     },
@@ -65,6 +71,7 @@ const auth = (state = initialState, action) => {
         case types.GET_PROFILE_ERROR:
             {
                 return { ...emptyState,
+                    is_loading: false,
                     isAuth: false,
                     error: AxiosConstants.ERROR_PROFILE
                 };
@@ -79,6 +86,7 @@ const auth = (state = initialState, action) => {
                     timer: 1200
                 });
                 return { ...state,
+                    is_loading: false,
                     isAuth: true,
                     user: {...action.user},
                     success: AxiosConstants.SUCCESS_PROFILE
@@ -87,6 +95,7 @@ const auth = (state = initialState, action) => {
         case types.UPDATE_PROFILE_ERROR:
             {
                 return { ...emptyState,
+                    is_loading: false,
                     isAuth: false,
                     error: AxiosConstants.ERROR_PROFILE
                 };

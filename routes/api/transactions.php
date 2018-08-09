@@ -10,7 +10,7 @@ Route::get('/done', 'TransactionController@done')->name('transactions.done');
 Route::get('/cancel', 'TransactionController@cancel')->name('transactions.cancel');
 
 Route::get('/{id}', 'TransactionController@show')->name('transactions.show');
-Route::get('/transactionHistory/{userId}', 'TransactionController@getTransactionHistory')->name('transactions.history');
+Route::get('/history', 'TransactionController@getTransactionHistory')->name('transactions.history');
 
 Route::group(['middleware' => 'auth:api'], function () {
     Route::post('/', 'TransactionController@store')->name('transactions.store');

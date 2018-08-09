@@ -20,7 +20,7 @@ class History extends Component {
     }
 
     componentDidMount() {
-        axios.get('/api/transactions/transactionHistory/' + this.state.userId)
+        axios.get('/api/transactions/history/')
             .then(
                 response=>{
                     this.setState({HistoryData: response.data.data.data});
