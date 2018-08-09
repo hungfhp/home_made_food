@@ -5,6 +5,7 @@ import Footer from "../../components/layouts/Footer";
 import Total from "../../components/transaction/Total";
 import List from "../../components/transaction/List";
 import axios from "axios";
+import ModalFood from "../../components/transaction/ModalFood";
 
 export default class History extends Component {
     constructor(props) {

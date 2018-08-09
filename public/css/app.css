@@ -26461,30 +26461,6 @@ li.active.btn.filtr-button.filtr {
         border: solid 2px #274cbf;
     }
 }
-.post-title {
-  text-transform: uppercase;
-}
-
-.name::-webkit-input-placeholder {
-  color: black;
-}
-
-.name:-ms-input-placeholder {
-  color: black;
-}
-
-.name::-ms-input-placeholder {
-  color: black;
-}
-
-.name::placeholder {
-  color: black;
-}
-
-.name {
-  background-color: #eeeeee;
-}
-
 .margin-right-15 {
   margin-right: 15px;
 }
@@ -26508,6 +26484,30 @@ li.active.btn.filtr-button.filtr {
 .swal2-container .swal2-popup {
   font-size: x-small !important;
   padding: 1.25em 2.25em !important;
+}
+
+.post-title {
+  text-transform: uppercase;
+}
+
+.name::-webkit-input-placeholder {
+  color: black;
+}
+
+.name:-ms-input-placeholder {
+  color: black;
+}
+
+.name::-ms-input-placeholder {
+  color: black;
+}
+
+.name::placeholder {
+  color: black;
+}
+
+.form-group .name {
+  background-color: #eeeeee;
 }
 
 .navbar-laravel {
