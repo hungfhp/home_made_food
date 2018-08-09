@@ -20,12 +20,7 @@ class Food extends Model
 
     public function transaction()
     {
-        return $this->hasOne('App\Model\Transaction');
-    }
-
-    public function food()
-    {
-        return $this->hasOne('App\Model\Food');
+        return $this->hasMany('App\Model\Transaction');
     }
 
     public function comments()
@@ -46,6 +41,11 @@ class Food extends Model
     public function food_images()
     {
         return $this->hasMany('App\Model\Food_image');
+    }
+
+    public function feature_image()
+    {
+        return $this->hasOne('App\Model\Food_image')->oldest();
     }
 
     public function user()

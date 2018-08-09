@@ -32,22 +32,22 @@ class FoodsTableSeeder extends Seeder
             ['name' => 'Japan', 'description' => 'đây là món thịt Japan']
         ];
 
-        $category_id = rand(1, 7);
         $data = [];
         for ($i = 0; $i < 1000; $i++) {
+            $category_id = rand(1, 8);
             array_push($data, [
                 'cooked_id' => rand(1, 5),
                 'category_id' => $category_id,
                 'name' => $categories[$category_id]["name"] . " " . $i,
                 'price' => rand(3, 20) * 5000,
-                'description' => $description[rand(1, 3)],
+                'description' => $description[rand(1, 4)],
                 'like' => rand(1, 10),
                 'dislike' => rand(1, 2),
                 'publish' =>
-                    rand(1, 1) < 0.5 ||
-                        rand(1, 1) < 0.5 ||
-                        rand(1, 1) < 0.5 ||
-                        rand(1, 1) < 0.5,
+                    rand(0, 1) < 0.5 ||
+                        rand(0, 1) < 0.5 ||
+                        rand(0, 1) < 0.5 ||
+                        rand(0, 1) < 0.5,
                 'created_at' =>
                     $faker->dateTimeBetween(
                         $startDate = '-45 days',

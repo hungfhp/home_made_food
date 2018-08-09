@@ -22,7 +22,7 @@ class UserController extends Controller
     {
         $data = User::get();
         Log::info('1');
-        return response()->json(['result' => true, 'success' => $data], 200);
+        return response()->json(['success' => $data], 200);
     }
     /**
      * Display the specified resource.
@@ -33,7 +33,7 @@ class UserController extends Controller
     public function show($id)
     {
         $data = User::find($id);
-        return response()->json(['result' => true, 'success' => $data], 200);
+        return response()->json(['success' => $data], 200);
     }
     /**
      * Show the form for editing the specified resource.
@@ -115,6 +115,6 @@ class UserController extends Controller
             ->with('food.food_images')
             ->orderBy('created_at', 'desc')
             ->paginate(10);
-        return response()->json(['result'=>true,"success" => $votes], 200);
+        return response()->json(["success" => $votes], 200);
     }
 }

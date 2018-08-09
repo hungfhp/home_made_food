@@ -7,12 +7,19 @@ class Transaction extends Model
 {
     protected $table = 'transactions';
     protected $fillable = [
-        'food_name', 'food_id', 'required_id', 'cooked_id', 'shipper_id', 'status', 'description', 'price'
+        'food_name',
+        'food_id',
+        'required_id',
+        'cooked_id',
+        'shipper_id',
+        'status',
+        'description',
+        'price'
     ];
 
     public function Food()
     {
-        return $this->hasOne('App\Model\Food');
+        return $this->belongsTo('App\Model\Food');
     }
 
     public function deals()
@@ -23,5 +30,20 @@ class Transaction extends Model
     public function user()
     {
         return $this->belongsTo('App\Model\User');
+    }
+
+    public function required()
+    {
+        return $this->belongsTo('App\Model\User', 'required_id');
+    }
+
+    public function cooked()
+    {
+        return $this->belongsTo('App\Model\User', 'cooked_id');
+    }
+
+    public function shipped()
+    {
+        return $this->belongsTo('App\Model\User', 'shipped_id');
     }
 }
