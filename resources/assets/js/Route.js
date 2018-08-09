@@ -76,14 +76,7 @@ export default class Main extends Component {
                 {/* foods */}
                 <Route exact path="/foods/create" component={FoodsCreate} />
                 <Route exact path="/foods/:id/delete" component={FoodsDelete} />
-                {/* <Route exact path="/foods/:id/edit" component={FoodsEdit} onEnter={this.requireAuth} /> */}
-                < Route exact path = "/foods/:id/edit"
-                render = {
-                    () => (
-                        localStorage.getItem("logged_in") ? (console.log()) : (<Redirect to = "/login" />)
-                    )
-                }
-                />
+                <Route exact path = "/foods/:id/edit" component={FoodsEdit} />
                 <Route exact path="/foods" component={FoodsIndex} />
                 <Route exact path="/foods/:id" component={FoodsShow} />
                 {/* home */}

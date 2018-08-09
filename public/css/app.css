@@ -26469,6 +26469,10 @@ li.active.btn.filtr-button.filtr {
   margin-left: 15px;
 }
 
+.margin-top-10 {
+  margin-top: 10px;
+}
+
 .color-default {
   color: #37404d !important;
 }

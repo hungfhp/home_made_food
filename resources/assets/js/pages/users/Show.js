@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getProfile, updateProfile, logoutSuccess } from '@/actions/AuthActions';
-import { getUser } from '@/actions/UsersActions';
+import { getUser, getCookedFoods, getLikedFoods, getFavoritedFoods } from '@/actions/UsersActions';
 
 import Header from "@/components/layouts/Header";
 import SubHeader from "@/components/layouts/SubHeader";
@@ -26,6 +26,9 @@ class Show extends Component {
         };
         this.switchRightSide = this.switchRightSide.bind(this);
         this.props.getUser(this.state.param_user_id);
+        this.props.getCookedFoods(this.state.param_user_id);
+        this.props.getLikedFoods(this.state.param_user_id);
+        this.props.getFavoritedFoods(this.state.param_user_id);
     }
     componentWillReceiveProps(nextProps) {
         this.props = nextProps;
@@ -54,19 +57,28 @@ class Show extends Component {
         switch(this.state.tab) {
             case "cooked-foods": {
                 this.setState({
-                    renderRightSide: <CookedFoods is_my_profile={this.state.is_my_profile} user_id={this.props.user.id} />
+                    renderRightSide: <CookedFoods 
+                        is_my_profile={this.state.is_my_profile} 
+                        foods = {this.props.user.cooked_foods.data} 
+                    />
                 })    
                 return;
             }
             case "favorited-foods": {
                 this.setState({
-                    renderRightSide: <FavoritedFoods is_my_profile={this.state.is_my_profile} user_id={this.props.user.id} />
+                    renderRightSide: <FavoritedFoods 
+                        is_my_profile={this.state.is_my_profile} 
+                        foods = {this.props.user.favorited_foods.data} 
+                    />
                 })    
                 return;
             }
             case "liked-foods":{
                 this.setState({
-                    renderRightSide: <LikedFoods is_my_profile={this.state.is_my_profile} user_id={this.props.user.id} />
+                    renderRightSide: <LikedFoods 
+                        is_my_profile={this.state.is_my_profile.data} 
+                        foods = {this.props.user.liked_foods} 
+                    />
                 }) 
                 return;
             }
@@ -136,6 +148,9 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         default: dispatch(getProfile()),
+        getCookedFoods: (user_id) => dispatch(getCookedFoods(user_id)),
+        getLikedFoods: (user_id) => dispatch(getLikedFoods(user_id)),
+        getFavoritedFoods: (user_id) => dispatch(getFavoritedFoods(user_id)),
         getUser: (user_id) => dispatch(getUser(user_id)),
         updateProfile: (user) => dispatch(updateProfile(user)),
         logoutSuccess: () => dispatch(logoutSuccess()) // header

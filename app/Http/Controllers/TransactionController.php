@@ -6,6 +6,7 @@ use App\Model\Transaction;
 use App\Model\Food;
 use App\Model\Food_image;
 
+use Auth;
 use Log;
 
 class TransactionController extends Controller
@@ -105,7 +106,7 @@ class TransactionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
         Log::info('post transactions');
         $transaction = Transaction::create($request->all());
