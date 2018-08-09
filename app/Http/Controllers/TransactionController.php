@@ -29,7 +29,8 @@ class TransactionController extends Controller
 
     public function required()
     {
-        $transactions = Transaction::where('status', 'required')->with('required')
+        $transactions = Transaction::where('status', 'required')
+            ->with('required')
             ->orderBy('created_at', 'desc')
             ->paginate(10);
 
@@ -38,49 +39,53 @@ class TransactionController extends Controller
 
     public function cooked()
     {
-        $transactions = Transaction::where('status', 'cooked')->with('cooked')
+        $transactions = Transaction::where('status', 'cooked')
+            ->with('cooked')
             ->orderBy('created_at', 'desc')
             ->paginate(10);
-
         return response()->json(['data' => $transactions], 200);
     }
 
     public function dealed()
     {
-        $transactions = Transaction::where('status', 'dealed')->with('cooked')
+        $transactions = Transaction::where('status', 'dealed')
+            ->with('required')
+            ->with('cooked')
             ->orderBy('created_at', 'desc')
             ->paginate(10);
-
         return response()->json(['data' => $transactions], 200);
     }
 
-
-    public function shipped()
+    public function shipping()
     {
-        $transactions = Transaction::where('status', 'shipped')->with('shipped')
+        $transactions = Transaction::where('status', 'shipping')
+            ->with('required')
+            ->with('cooked')
+            ->with('shipped')
             ->orderBy('created_at', 'desc')
             ->paginate(10);
-
         return response()->json(['data' => $transactions], 200);
     }
-
 
     public function done()
     {
-        $transactions = Transaction::where('status', 'shipped')->with('shipped')
+        $transactions = Transaction::where('status', 'done')
+            ->with('required')
+            ->with('cooked')
+            ->with('shipped')
             ->orderBy('created_at', 'desc')
             ->paginate(10);
-
         return response()->json(['data' => $transactions], 200);
     }
 
-
     public function cancel()
     {
-        $transactions = Transaction::where('status', 'shipped')->with('shipped')
+        $transactions = Transaction::where('status', 'done')
+            ->with('required')
+            ->with('cooked')
+            ->with('shipped')
             ->orderBy('created_at', 'desc')
             ->paginate(10);
-
         return response()->json(['data' => $transactions], 200);
     }
 

@@ -27,10 +27,10 @@ class Transaction extends Model
         return $this->hasMany('App\Model\Deal');
     }
 
-    public function user()
-    {
-        return $this->belongsTo('App\Model\User');
-    }
+    // public function user()
+    // {
+    //     return $this->belongsTo('App\Model\User');
+    // }
 
     public function required()
     {
