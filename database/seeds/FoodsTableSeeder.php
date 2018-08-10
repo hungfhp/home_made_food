@@ -36,7 +36,7 @@ class FoodsTableSeeder extends Seeder
         for ($i = 0; $i < 1000; $i++) {
             $category_id = rand(0, 7);
             array_push($data, [
-                'cooked_id' => rand(1, 5),
+                'cooker_id' => rand(1, 5),
                 'category_id' => $category_id+1,
                 'name' => $categories[$category_id]["name"] . " " . $i,
                 'price' => rand(3, 20) * 5000,
