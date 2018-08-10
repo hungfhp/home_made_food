@@ -18,25 +18,45 @@ class Index extends Component {
         super(props);
     }
     render() {
-        return (
-            <div>
-                {/* index 6 */}
-                <Header auth={this.props.auth} logoutSuccess={this.props.logoutSuccess} />
-                <Banner />
+        if (this.props.auth.isAuth) {
+            return (
+                <div>
+                    {/* index 6 */}
+                    <Header auth={this.props.auth} logoutSuccess={this.props.logoutSuccess}/>
 
-                {/*<SearchArea />*/}
+                    {/*<SearchArea />*/}
 
-                <FeaturedCategories />
-                <Services />
-                <MostLikedFoods />
+                    <FeaturedCategories/>
+                    <MostLikedFoods/>
 
-                {/*<GoodCookers />*/}
-                {/*<CertificatedUsers/>*/}
-                {/*<Intro />*/}
+                    {/*<GoodCookers />*/}
+                    {/*<CertificatedUsers/>*/}
+                    {/*<Intro />*/}
 
-                <Footer />
-            </div>
-        );
+                    <Footer/>
+                </div>
+            );
+        } else {
+            return (
+                <div>
+                    {/* index 6 */}
+                    <Header auth={this.props.auth} logoutSuccess={this.props.logoutSuccess}/>
+                    <Banner/>
+
+                    {/*<SearchArea />*/}
+
+                    <FeaturedCategories/>
+                    <Services/>
+                    <MostLikedFoods/>
+
+                    {/*<GoodCookers />*/}
+                    {/*<CertificatedUsers/>*/}
+                    {/*<Intro />*/}
+
+                    <Footer/>
+                </div>
+            );
+        }
     }
 }
 
