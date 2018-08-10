@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import TrFoodItem from "@/components/food/TrFoodItem";
+import TrCookedFood from "@/components/food/TrCookedFood";
+import Pagination from "@/components/layouts/Pagination";
 
 export default class CookedFoods extends Component {
     constructor(props) {
@@ -21,7 +22,7 @@ export default class CookedFoods extends Component {
                                 <th>Updated</th>
                                 <th>Like</th>
                                 <th>Publish</th>
-                                <th></th>
+                                <th>Edit</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -31,24 +32,21 @@ export default class CookedFoods extends Component {
                             {
                                 this.props.foods.length ? (
                                     this.props.foods.map((food, i) => {
-                                    return <TrFoodItem key={food.id} food={food} is_my_food={this.props.is_my_profile} />
+                                    return <TrCookedFood 
+                                        key={food.id} food={food} 
+                                        is_my_food={this.props.is_my_profile} 
+                                        updateFood={this.props.updateFood} />
                                     })
                                 ) : null
                             }
                         </tbody>
                     </table>    
                 </div>
-                <div className="pagination-box">
-                    <nav aria-label="Page navigation example">
-                        <ul className="pagination">
-                            <li className="page-item"><a className="page-link" href="#"><span aria-hidden="true">«</span></a></li>
-                            <li className="page-item"><a className="page-link active" href="#">1</a></li>
-                            <li className="page-item"><a className="page-link" href="#">2</a></li>
-                            <li className="page-item"><a className="page-link" href="#">3</a></li>
-                            <li className="page-item"><a className="page-link" href="#"><span aria-hidden="true">»</span></a></li>
-                        </ul>
-                    </nav>
-                </div>
+                {
+                    this.props.pagination && 
+                    <Pagination href_to="#cooked-foods" user_id={this.props.user_id} pagination={this.props.pagination} getDataPaging={this.props.getCookedFoods} />
+                }
+                   
             </div>
         );
     }

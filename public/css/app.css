@@ -26469,12 +26469,24 @@ li.active.btn.filtr-button.filtr {
   margin-left: 15px;
 }
 
+.margin-left-25 {
+  margin-left: 25px;
+}
+
 .margin-top-10 {
   margin-top: 10px;
 }
 
+.margin-top-15 {
+  margin-top: 15px;
+}
+
 .color-default {
   color: #37404d !important;
+}
+
+.price-background {
+  background-color: rgba(69, 32, 37, 0.8);
 }
 
 .selectBox.swal2-select.selectBox-dropdown {
@@ -26488,6 +26500,10 @@ li.active.btn.filtr-button.filtr {
 .swal2-container .swal2-popup {
   font-size: x-small !important;
   padding: 1.25em 2.25em !important;
+}
+
+.my-properties table tbody tr td.actions {
+  text-align: center;
 }
 
 .post-title {

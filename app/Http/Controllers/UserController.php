@@ -90,7 +90,7 @@ class UserController extends Controller
     }
     
     public function getLikedFoods($user_id) {
-        $liked_foods = Vote::where('user_id', $user_id)
+        $liked_foods = Vote::where('user_id', $user_id)->where('like','!=',1)
             ->with('food.feature_image')
             ->orderBy('created_at', 'desc')
             ->paginate(10);

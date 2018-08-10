@@ -24,8 +24,6 @@ export default class MostLikedFoods extends Component {
         if (this.state.foods != 0)
         {
             const most_liked_list = this.state.foods.map((food)=> {
-                // console.log(this.state.foods);
-                console.log(food);
                 return (
                     <div className="col-lg-3 col-md-6 col-sm-6 wow fadeInRight delay-04s" key={food.id}>
                         <div className="card property-box-2">

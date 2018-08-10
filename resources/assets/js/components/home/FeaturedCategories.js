@@ -34,22 +34,18 @@ export default class FeaturedCategories extends Component {
         if (this.state.categories != 0)
         {
             const list = this.state.categories[0].foods.concat(this.state.categories[1].foods).concat(this.state.categories[2].foods);
-            console.log(list);
             const food_list = list.map((food)=> {
-                // const image = food.images;
-                // console.log("ok");
-                console.log(food);
                 return (
                     <div className="col-lg-4 col-md-6 col-sm-12 filtr-item" data-category={food.category_id} key={food.id}>
                         <div className="property-box">
                             <div className="property-thumbnail">
                                 <a href={"/foods/" + food.id} className="property-img">
                                     <div className="price-ratings-box">
-                                        <p className="price">
-                                            {food.price}
+                                        <p className="price price-background">
+                                            {food.price} Đ
                                         </p>
                                     </div>
-                                    <img src={food.images[0].link} alt="property-7" className="img-fluid"/>
+                                    <div style={{backgroundImage: "url(" + food.images[0].link + ")", height: "230px", backgroundPosition: "center", backgroundSize: "cover"}}></div>
                                 </a>
                             </div>
                             <div className="detail">

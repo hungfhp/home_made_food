@@ -6,6 +6,7 @@ use App\Model\Food;
 use Illuminate\Support\Facades\DB;
 use App\Model\Category;
 use App\Model\Food_image;
+use Auth;
 use Log;
 
 class FoodController extends Controller
@@ -92,6 +93,7 @@ class FoodController extends Controller
     public function update(Request $request, $id)
     {
         Log::info('update food');
+        $user = Auth::user();
         $food = Food::find($id)->update($request->all());
         return response()->json(['result' => true, 'data' => $food], 202);
     }
