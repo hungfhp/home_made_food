@@ -58,6 +58,8 @@ class CategoryController extends Controller
             ->get();
         $category['image'] = Category::find($id)->category_images->all();
         $category['feature_image'] = Category::find($id)->category_images->first();
+        $category['foods'] = Category::find($id)->foods()->get();
+
         return response()->json(['result'=>true, 'data'=>$category], 200);
     }
 
