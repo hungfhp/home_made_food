@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Model\Category;
+use App\Model\Food;
 use App\Model\Category_image;
 
 use Log;
@@ -58,7 +59,11 @@ class CategoryController extends Controller
             ->get();
         $category['image'] = Category::find($id)->category_images->all();
         $category['feature_image'] = Category::find($id)->category_images->first();
-        $category['foods'] = Category::find($id)->foods()->get();
+        $foods = Category::find($id)->foods()->get();
+        foreach ($foods as $food) {
+            $food['images'] = Food::find($food['id'])->food_images->all();
+        }
+        $category['foods'] = $foods;
 
         return response()->json(['result'=>true, 'data'=>$category], 200);
     }

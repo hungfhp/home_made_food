@@ -5,6 +5,8 @@ import Header from "../../components/layouts/Header";
 import SubHeader from "../../components/layouts/SubHeader";
 import Footer from "../../components/layouts/Footer";
 import connect from "react-redux/es/connect/connect";
+import Product from "../../components/food/Product";
+import Tool from "../../components/food/Tool";
 
 class Show extends Component {
     constructor(props) {
@@ -22,6 +24,7 @@ class Show extends Component {
                     this.setState({categoryInfo: response.data.data});
                     console.log(this.state.categoryInfo);
                     console.log(this.state.categoryInfo["image"][0]);
+                    console.log(this.state.categoryInfo["foods"][0]);
                 }
             )
             .catch(
@@ -31,7 +34,7 @@ class Show extends Component {
 
     render() {
 
-        if (this.state.categoryInfo != 0) {
+        if ((this.state.categoryInfo != 0)&&(this.state.categoryInfo["foods"]!=0)) {
             return (
                 <div>
                     <Header title={"Homemade"} auth={this.props.auth} logoutSuccess={this.props.logoutSuccess}/>
@@ -56,8 +59,10 @@ class Show extends Component {
 
                                 </div>
                                 <div className="col-lg-4">
-
                                 </div>
+                            </div>
+                            <div className="row">
+                                <Product foods={this.state.categoryInfo["foods"]}/>
                             </div>
                         </div>
                     </div>
