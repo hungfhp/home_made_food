@@ -79,22 +79,22 @@ const user = (state = initialState, action) => {
                 error: action.err
             }
 
-        // case types.GET_FAVORITED_FOODS_SUCCESS:
-        //     return {...state,
-        //         favorited_foods: {
-        //             is_loading: false,
-        //             data: action.data.data,
-        //             pagination: action.data.pagination
-        //         },
-        //         success: AxiosConstants.SUCCESS
-        //     }
-        // case types.GET_FAVORITED_FOODS_ERROR:
-        //     return {...initialState,
-        //         favorited_foods: {
-        //             is_loading: false
-        //         },
-        //         error: action.err
-        //     }
+        case types.GET_FAVORITED_FOODS_SUCCESS:
+            return {...state,
+                favorited_foods: {
+                    is_loading: false,
+                    data: action.data.data,
+                    pagination: action.data.pagination
+                },
+                success: AxiosConstants.SUCCESS
+            }
+        case types.GET_FAVORITED_FOODS_ERROR:
+            return {...initialState,
+                favorited_foods: {
+                    is_loading: false
+                },
+                error: action.err
+            }
         default:
             return {...state,
                 is_loading: false

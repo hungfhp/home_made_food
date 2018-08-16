@@ -29,9 +29,7 @@ export function getUserError(err) {
 }
 
 export function getCookedFoods(id, page) {
-    if (!page) {
-        page = 1;
-    }
+    if (!page) {page = 1;}
     return function (dispatch) {
         axios.get("/api/users/" + id + "/cooked_foods" + "?page="+page, {
             headers: getHeaders()
@@ -58,10 +56,7 @@ export function getCookedFoodsError(err) {
     };
 }
 
-export function getLikedFoods(id, page) {
-    if (!page) {
-        page = 1;
-    }
+export function getLikedFoods(id, page) {    
     return function (dispatch) {
         axios.get("/api/users/" + id +"/liked_foods" + "?page="+page, {
             headers: getHeaders()
@@ -89,15 +84,13 @@ export function getLikedFoodsError(err) {
 }
 
 export function getFavoritedFoods(id, page) {
-    if (!page) {
-        page = 1;
-    }
+    if (!page) {page = 1;}
     return function (dispatch) {
         axios.get("/api/users/" + id +"/favorited_foods" + "?page="+page, {
             headers: getHeaders()
         })
         .then(res => {
-            dispatch(getFavoritedFoodsSuccess(res.data.success));
+            dispatch(getFavoritedFoodsSuccess(res.data));
         }).catch(err => {
             dispatch(getFavoritedFoodsError(err));
         })

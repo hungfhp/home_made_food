@@ -6,9 +6,13 @@ export default class CookedFoods extends Component {
     constructor(props) {
         super(props);
         this.state={};
+        this.getCookedFoodsPaging = this.getCookedFoodsPaging.bind(this);
     }
     componentWillReceiveProps(nextProps) {
         this.props = nextProps;
+    }
+    getCookedFoodsPaging(page) {
+        this.props.getCookedFoods(this.props.user_id, page);
     }
     render() {
         return (
@@ -31,9 +35,10 @@ export default class CookedFoods extends Component {
                             }
                             {
                                 this.props.foods.length ? (
-                                    this.props.foods.map((food, i) => {
+                                    this.props.foods.map((food, index) => {
                                     return <TrCookedFood 
-                                        key={food.id} food={food} 
+                                        key={food.id} 
+                                        food={food} 
                                         is_my_food={this.props.is_my_profile} 
                                         updateFood={this.props.updateFood} />
                                     })
@@ -44,7 +49,7 @@ export default class CookedFoods extends Component {
                 </div>
                 {
                     this.props.pagination && 
-                    <Pagination href_to="#cooked-foods" user_id={this.props.user_id} pagination={this.props.pagination} getDataPaging={this.props.getCookedFoods} />
+                    <Pagination href_to="#cooked-foods" user_id={this.props.user_id} pagination={this.props.pagination} getDataPaging={this.getCookedFoodsPaging} />
                 }
                    
             </div>

@@ -6,10 +6,13 @@ export default class LikedFoods extends Component {
     constructor(props) {
         super(props);
         this.state={};
+        this.getLikedFoodsPaging = this.getLikedFoodsPaging.bind(this);
     }
     componentWillReceiveProps(nextProps) {
         this.props = nextProps;
-        console.log(this)
+    }
+    getLikedFoodsPaging(page) {
+        this.props.getLikedFoods(this.props.user_id, page);
     }
     render() {
         return (
@@ -46,7 +49,7 @@ export default class LikedFoods extends Component {
                 </div>
                 {
                     this.props.pagination && 
-                    <Pagination href_to="#liked-foods" user_id={this.props.user_id} pagination={this.props.pagination} getDataPaging={this.props.getCookedFoods} />
+                    <Pagination href_to="#liked-foods" user_id={this.props.user_id} pagination={this.props.pagination} getDataPaging={this.getLikedFoodsPaging} />
                 }
                    
             </div>

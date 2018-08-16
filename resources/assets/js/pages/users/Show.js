@@ -33,7 +33,6 @@ class Show extends Component {
     }
     componentWillReceiveProps(nextProps) {
         this.props = nextProps;
-        console.log(this.props)
         if (this.props.auth.isAuth) {
             if (this.props.auth.user.id == this.state.param_user_id) {
                 this.setState({
@@ -54,7 +53,7 @@ class Show extends Component {
         this.setState({tab});
         $(".user-profile-box .leftside-active").removeClass("active");
         $(".user-profile-box ."+this.state.tab).addClass("active");
-
+        
         switch(this.state.tab) {
             case "cooked-foods": {
                 this.setState({

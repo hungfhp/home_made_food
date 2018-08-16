@@ -9,7 +9,6 @@ export default class TrLikedFood extends Component {
     }
     componentWillReceiveProps(nextProps) {
         this.props = nextProps;
-        console.log(this.props.food)
     }
     handleChangePublish(food_id) {
         // $('.check-input-change-publish-food-'+food_id).attr("checked", !$('.check-input-change-publish-food-'+food_id).val());
@@ -35,7 +34,7 @@ export default class TrLikedFood extends Component {
                 <td>{food.like}</td>
                 <td></td>
                 <td className="actions ">
-                    <i class="material-icons">thumb_up</i>
+                    <i className="like-icon material-icons">thumb_up</i>
                 </td>
             </tr>
         )

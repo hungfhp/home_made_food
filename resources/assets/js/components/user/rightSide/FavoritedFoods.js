@@ -1,14 +1,18 @@
 import React, { Component } from "react";
-import TrCookedFood from "@/components/food/TrCookedFood";
+import TrFavoritedFood  from "@/components/food/TrFavoritedFood";
 import Pagination from "@/components/layouts/Pagination";
 
 export default class FavoritedFoods extends Component {
     constructor(props) {
         super(props);
         this.state={};
+        this.getFavoritedFoodsPaging = this.getFavoritedFoodsPaging.bind(this);
     }
     componentWillReceiveProps(nextProps) {
         this.props = nextProps;
+    }
+    getFavoritedFoodsPaging(page) {
+        this.props.getFavoritedFoods(this.props.user_id, page);
     }
     render() {
         return (
@@ -21,6 +25,7 @@ export default class FavoritedFoods extends Component {
                                 <th></th>
                                 <th>Updated</th>
                                 <th>Like</th>
+                                <th></th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -29,10 +34,11 @@ export default class FavoritedFoods extends Component {
                                 this.props.is_loading && <tr><td> Loading... </td></tr>
                             }
                             {
-                                this.props.foods.length ? (
-                                    this.props.foods.map((food, i) => {
+                                this.props.favorited_foods.length ? (
+                                    this.props.favorited_foods.map((favorited_food, i) => {
                                     return <TrFavoritedFood 
-                                        key={food.id} food={food} 
+                                        key={favorited_food.id} 
+                                        favorited_food={favorited_food} 
                                         is_my_food={this.props.is_my_profile} 
                                         updateFood={this.props.updateFood} />
                                     })
@@ -43,7 +49,7 @@ export default class FavoritedFoods extends Component {
                 </div>
                 {
                     this.props.pagination && 
-                    <Pagination href_to="#favorited-foods" user_id={this.props.user_id} pagination={this.props.pagination} getDataPaging={this.props.getCookedFoods} />
+                    <Pagination href_to="#favorited-foods" pagination={this.props.pagination} getDataPaging={this.getFavoritedFoodsPaging} />
                 }
             </div>
         );

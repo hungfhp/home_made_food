@@ -73,7 +73,7 @@ class UserController extends Controller
 
     public function getCookedFoods($user_id) {
         Log::info($user_id);
-        $cooked_foods = Food::where('cooked_id', $user_id)->with('feature_image')
+        $cooked_foods = Food::where('cooker_id', $user_id)->with('feature_image')
             ->orderBy('created_at', 'desc')
             ->paginate(10);
 
