@@ -15216,7 +15216,7 @@ yx-axis
 @font-face {
     font-family: 'FontAwesome';
     src: url(/fonts/fontawesome-webfont3e6e.eot?674f50d287a8c48dc19ba404d20fe713);
-    src: url(/fonts/fontawesome-webfontd41d.eot?674f50d287a8c48dc19ba404d20fe713?#iefix&v=4.7.0) format('embedded-opentype'), url(/fonts/fontawesome-webfont3e6e.woff2?af7ae505a9eed503f8b8e6982036873e) format('woff2'), url(/fonts/fontawesome-webfont3e6e.woff?fee66e712a8a08eef5805a46892932ad) format('woff'), url(/fonts/fontawesome-webfont3e6e.ttf?b06871f281fee6b241d60582ae9369b9) format('truetype'), url(/fonts/fontawesome-webfont3e6e.svg?912ec66d7572ff821749319396470bde#fontawesomeregular) format('svg');
+    src: url(/fonts/fontawesome-webfontd41d.eot?674f50d287a8c48dc19ba404d20fe713?#iefix&v=4.7.0) format('embedded-opentype'), url(/fonts/fontawesome-webfont3e6e.woff2?af7ae505a9eed503f8b8e6982036873e) format('woff2'), url(/fonts/fontawesome-webfont3e6e.woff?fee66e712a8a08eef5805a46892932ad) format('woff'), url(/fonts/fontawesome-webfont3e6e.ttf?b06871f281fee6b241d60582ae9369b9) format('truetype'), url(/fonts/fontawesome-webfont3e6e.svg?acf3dcb7ff752b5296ca23ba2c7c2606#fontawesomeregular) format('svg');
     font-weight: normal;
     font-style: normal
 }
@@ -18142,7 +18142,7 @@ yx-axis
   src: url(/fonts/Flaticond41d.eot?4e43faffa96522701b9614453b90b53a?#iefix) format("embedded-opentype"),
        url(/fonts/Flaticon.woff?20ff3f02535a622fef87cf33708a34ed) format("woff"),
        url(/fonts/Flaticon.ttf?3a30c257226625ad44c906d9f7f0172e) format("truetype"),
-       url(/fonts/Flaticon.svg?f4532b9c54fb74a099833575f2891e2b#Flaticon) format("svg");
+       url(/fonts/Flaticon.svg?990cd64757fe1c742b22a12237d763b3#Flaticon) format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -18150,7 +18150,7 @@ yx-axis
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: "Flaticon";
-    src: url(/fonts/Flaticon.svg?f4532b9c54fb74a099833575f2891e2b#Flaticon) format("svg");
+    src: url(/fonts/Flaticon.svg?990cd64757fe1c742b22a12237d763b3#Flaticon) format("svg");
   }
 }
 
@@ -26461,20 +26461,82 @@ li.active.btn.filtr-button.filtr {
         border: solid 2px #274cbf;
     }
 }
+.margin-top-10 {
+  margin-top: 10px !important;
+}
+
+.margin-top-1 {
+  margin-top: 1px !important;
+}
+
+.margin-top-15 {
+  margin-top: 15px !important;
+}
+
 .margin-right-15 {
-  margin-right: 15px;
+  margin-right: 15px !important;
+}
+
+.margin-bottom-1 {
+  margin-bottom: 1px !important;
 }
 
 .margin-left-15 {
-  margin-left: 15px;
+  margin-left: 15px !important;
 }
 
-.margin-top-10 {
-  margin-top: 10px;
+.margin-left-25 {
+  margin-left: 25px !important;
+}
+
+.margin-top-bottom-1 {
+  margin-top: 1px !important;
+  margin-bottom: 1px !important;
+}
+
+.padding-top-10 {
+  padding-top: 10px !important;
+}
+
+.padding-top-1 {
+  padding-top: 1px !important;
+}
+
+.padding-top-15 {
+  padding-top: 15px !important;
+}
+
+.padding-right-15 {
+  padding-right: 15px !important;
+}
+
+.padding-bottom-1 {
+  padding-bottom: 1px !important;
+}
+
+.padding-left-15 {
+  padding-left: 15px !important;
+}
+
+.padding-left-25 {
+  padding-left: 25px !important;
+}
+
+.padding-top-bottom-1 {
+  padding-top: 1px !important;
+  padding-bottom: 1px !important;
+}
+
+.min-width-100-per {
+  min-width: 100% !important;
 }
 
 .color-default {
   color: #37404d !important;
+}
+
+.price-background {
+  background-color: rgba(69, 32, 37, 0.8);
 }
 
 .selectBox.swal2-select.selectBox-dropdown {
@@ -26488,6 +26550,30 @@ li.active.btn.filtr-button.filtr {
 .swal2-container .swal2-popup {
   font-size: x-small !important;
   padding: 1.25em 2.25em !important;
+}
+
+.text-transform-none {
+  text-transform: none !important;
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+.text-align-center {
+  text-align: center !important;
+}
+
+.font-weight-700 {
+  font-weight: 700;
+}
+
+.text-transform-uppercase {
+  text-transform: uppercase !important;
+}
+
+.my-properties table tbody tr td.actions {
+  text-align: center;
 }
 
 .post-title {

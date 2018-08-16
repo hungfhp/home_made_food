@@ -1,143 +1,57 @@
 import React, { Component } from "react";
+import TrLikedFood from "@/components/food/TrLikedFood";
+import Pagination from "@/components/layouts/Pagination";
 
 export default class LikedFoods extends Component {
+    constructor(props) {
+        super(props);
+        this.state={};
+        this.getLikedFoodsPaging = this.getLikedFoodsPaging.bind(this);
+    }
+    componentWillReceiveProps(nextProps) {
+        this.props = nextProps;
+    }
+    getLikedFoodsPaging(page) {
+        this.props.getLikedFoods(this.props.user_id, page);
+    }
     render() {
         return (
-            <div id="liked-foods">
+            <div id="tab-liked-foods">
                 <div className="my-properties">
                     <table className="table">
                         <thead>
                             <tr>
                                 <th>Liked Foods</th>
                                 <th></th>
-                                <th>Date Added</th>
-                                <th>Views</th>
+                                <th>Updated</th>
+                                <th>Like</th>
+                                <th></th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td className="image">
-                                    <a href="properties-details.html"><img alt="my-properties-3" src="/img/my-properties-3.jpg" className="img-fluid"/></a>
-                                </td>
-                                <td>
-                                    <div className="inner">
-                                        <a href="properties-details.html"><h2>Modern Family Home</h2></a>
-                                        <figure><i className="flaticon-facebook-placeholder-for-locate-places-on-maps"></i> 123 Kathal St. Tampa City,</figure>
-                                        <div className="tag price">$ 27,000</div>
-                                    </div>
-                                </td>
-                                <td>14.02.2018</td>
-                                <td>421</td>
-                                <td className="actions">
-                                    <a href="#" className="edit"><i className="fa fa-pencil"></i>Edit</a>
-                                    <a href="#"><i className="delete fa fa-trash-o"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className="image">
-                                    <a href="properties-details.html"><img alt="my-properties" src="/img/my-properties.jpg"/></a>
-                                </td>
-                                <td>
-                                    <div className="inner">
-                                        <a href="properties-details.html"><h2>Beautiful Single Home</h2></a>
-                                        <figure><i className="flaticon-facebook-placeholder-for-locate-places-on-maps"></i> 123 Kathal St. Tampa City,</figure>
-                                        <div className="tag price">$ 315,000</div>
-                                    </div>
-                                </td>
-                                <td>4.01.2018</td>
-                                <td>266</td>
-                                <td className="actions">
-                                    <a href="#" className="edit"><i className="fa fa-pencil"></i>Edit</a>
-                                    <a href="#"><i className="delete fa fa-trash-o"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className="image">
-                                    <a href="properties-details.html"><img alt="my-properties-2" src="/img/my-properties-2.jpg"/></a>
-                                </td>
-                                <td>
-                                    <div className="inner">
-                                        <a href="properties-details.html"><h2>Masons Villas</h2></a>
-                                        <figure><i className="flaticon-facebook-placeholder-for-locate-places-on-maps"></i> 123 Kathal St. Tampa City,</figure>
-                                        <div className="tag price">$ 62,000</div>
-                                    </div>
-                                </td>
-                                <td>24.03.2018</td>
-                                <td>45</td>
-                                <td className="actions">
-                                    <a href="#" className="edit"><i className="fa fa-pencil"></i>Edit</a>
-                                    <a href="#"><i className="delete fa fa-trash-o"></i></a>
-                                </td>
-                             </tr>
-                            <tr>
-                                <td className="image">
-                                    <a href="properties-details.html"><img alt="my-properties-3" src="/img/my-properties-3.jpg"/></a>
-                                </td>
-                                <td>
-                                    <div className="inner">
-                                        <a href="properties-details.html"><h2>Modern Family Home</h2></a>
-                                        <figure><i className="flaticon-facebook-placeholder-for-locate-places-on-maps"></i> 123 Kathal St. Tampa City,</figure>
-                                        <div className="tag price">$ 27,000</div>
-                                    </div>
-                                </td>
-                                <td>14.02.2018</td>
-                                <td>421</td>
-                                <td className="actions">
-                                    <a href="#" className="edit"><i className="fa fa-pencil"></i>Edit</a>
-                                    <a href="#"><i className="delete fa fa-trash-o"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className="image">
-                                    <a href="properties-details.html"><img alt="my-properties" src="/img/my-properties.jpg"/></a>
-                                </td>
-                                <td>
-                                    <div className="inner">
-                                        <a href="properties-details.html"><h2>Beautiful Single Home</h2></a>
-                                        <figure><i className="flaticon-facebook-placeholder-for-locate-places-on-maps"></i> 123 Kathal St. Tampa City,</figure>
-                                        <div className="tag price">$ 315,000</div>
-                                    </div>
-                                </td>
-                                <td>4.01.2018</td>
-                                <td>266</td>
-                                <td className="actions">
-                                    <a href="#" className="edit"><i className="fa fa-pencil"></i>Edit</a>
-                                    <a href="#"><i className="delete fa fa-trash-o"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className="image">
-                                    <a href="properties-details.html"><img alt="my-properties-2" src="/img/my-properties-2.jpg"/></a>
-                                </td>
-                                <td>
-                                    <div className="inner">
-                                        <a href="properties-details.html"><h2>Masons Villas</h2></a>
-                                        <figure><i className="flaticon-facebook-placeholder-for-locate-places-on-maps"></i> 123 Kathal St. Tampa City,</figure>
-                                        <div className="tag price">$ 62,000</div>
-                                    </div>
-                                </td>
-                                <td>24.03.2018</td>
-                                <td>45</td>
-                                <td className="actions">
-                                    <a href="#" className="edit"><i className="fa fa-pencil"></i>Edit</a>
-                                    <a href="#"><i className="delete fa fa-trash-o"></i></a>
-                                </td>
-                            </tr>
+                            {
+                                this.props.is_loading && <tr><td> Loading... </td></tr>
+                            }
+                            {
+                                this.props.liked_foods.length ? (
+                                    this.props.liked_foods.map((liked_food, i) => {
+                                    return <TrLikedFood 
+                                        key={liked_food.id} 
+                                        liked_food={liked_food} 
+                                        is_my_food={this.props.is_my_profile} 
+                                        updateFood={this.props.updateFood} />
+                                    })
+                                ) : null
+                            }
                         </tbody>
-                    </table>
+                    </table>    
                 </div>
-                <div className="pagination-box">
-                    <nav aria-label="Page navigation example">
-                        <ul className="pagination">
-                            <li className="page-item"><a className="page-link" href="#"><span aria-hidden="true">«</span></a></li>
-                            <li className="page-item"><a className="page-link active" href="#">1</a></li>
-                            <li className="page-item"><a className="page-link" href="#">2</a></li>
-                            <li className="page-item"><a className="page-link" href="#">3</a></li>
-                            <li className="page-item"><a className="page-link" href="#"><span aria-hidden="true">»</span></a></li>
-                        </ul>
-                    </nav>
-                </div>
+                {
+                    this.props.pagination && 
+                    <Pagination href_to="#liked-foods" user_id={this.props.user_id} pagination={this.props.pagination} getDataPaging={this.getLikedFoodsPaging} />
+                }
+                   
             </div>
         );
     }

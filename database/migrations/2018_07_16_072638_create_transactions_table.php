@@ -16,13 +16,13 @@ class CreateTransactionsTable extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id')->index();
             $table->integer('food_id');
-            $table->integer('required_id')->nullable();
-            $table->integer('cooked_id')->nullable();
+            $table->integer('requirer_id')->nullable();
+            $table->integer('cooker_id')->nullable();
             $table->integer('shipper_id')->nullable();
             $table->string('status');
             $table->longText('description');
             $table->integer('price');
-            $table->dateTime('desired_time')->default(Carbon::now());
+            $table->dateTime('desired_at')->default(Carbon::now());
             $table->timestamps();
         });
     }
