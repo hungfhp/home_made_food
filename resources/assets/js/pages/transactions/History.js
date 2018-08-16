@@ -25,6 +25,7 @@ class History extends Component {
             .then(
                 response=>{
                     this.setState({HistoryData: response.data.data.data});
+                    console.log(response.data.data.data);
                 }
             ).catch(
                 error=>console.log('Transaction history: error!')

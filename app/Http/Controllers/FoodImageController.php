@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Auth;
 use Log;
 use DB;
+use Image;
 
 class FoodImageController extends Controller
 {
@@ -45,15 +46,18 @@ class FoodImageController extends Controller
      */
     public function store(Request $request)
     {
-        $user = Auth::user();
-
-        $new_food_image = [
-            'food_id' => $request->food_id,
-            'link' => $request->link
-        ];
-
-        DB::table('food_images')->insert($new_food_image);
-        return response()->json(['result'=>true, 'data' => $new_food_image], 201);
+        $image = $request->only('file');
+        Log::info($image);
+        $id = Food::select('id')
+            ->orderBy('id', 'desc')
+            ->first();
+        $name = time().'.' . 'jpg';
+        \Image::make($image['file'])->save('image_food/'.$name);
+        $fileupload = new Food_image();
+        $fileupload->link = $name;
+        $fileupload->food_id = $id->id;
+        $fileupload->save();
+        return response()->json(['result'=>true], 201);
     }
 
     /**

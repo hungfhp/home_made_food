@@ -126,6 +126,10 @@ export default class Detail extends Component {
             //slider
             const images_slider = dataInfo.image.map((image, index) => {
                 if (index === 1) {
+                    if (image.link.substring(0,4) === 'image') {
+                        image.link = '/' + image.link;
+                    }
+                    console.log(image.link);
                     return (
                         <div key={image.id} className="item carousel-item active" data-slide-number={index}>
                             <img
@@ -135,6 +139,10 @@ export default class Detail extends Component {
                     );
                 }
                 else {
+                    if (image.link.substring(0,5) === 'image') {
+                        image.link = '/' + image.link;
+                    }
+                    console.log(image.link);
                     return (
                         <div key={image.id} className="item carousel-item" data-slide-number={index}>
                             <img
