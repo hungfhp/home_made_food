@@ -67,7 +67,7 @@
             , settings = options || {}
             , tabIndex = parseInt(select.prop('tabindex')) || 0
             , self     = this;
-
+        
         control
             .width(select.outerWidth())
             .addClass(select.attr('class'))
@@ -206,10 +206,10 @@
 
             // Set label width
             var labelWidth =
-                control.width()
-                - arrow.outerWidth()
-                - (parseInt(label.css('paddingLeft')) || 0)
-                - (parseInt(label.css('paddingRight')) || 0);
+                    control.width()
+                  - arrow.outerWidth()
+                  - (parseInt(label.css('paddingLeft')) || 0)
+                  - (parseInt(label.css('paddingRight')) || 0);
 
             label.width(labelWidth);
             this.disableSelection(control);
@@ -476,8 +476,8 @@
             , posTop = (heightToTop > heightToBottom) && (settings.keepInViewport == null ? true : settings.keepInViewport)
             , width = control.innerWidth() >= options.innerWidth() ? control.innerWidth() + 'px' : 'auto'
             , top = posTop
-            ? pos.top - optionsHeight + borderTopWidth + topPositionCorrelation
-            : pos.top + controlHeight - borderBottomWidth - bottomPositionCorrelation;
+                  ? pos.top - optionsHeight + borderTopWidth + topPositionCorrelation
+                  : pos.top + controlHeight - borderBottomWidth - bottomPositionCorrelation;
 
 
         // If the height to top and height to bottom are less than the max-height
@@ -509,10 +509,10 @@
             // Add Top and Bottom class based on position
             .addClass('selectBox-options selectBox-options-'+(posTop?'top':'bottom'));
 
-        if (settings.styleClass) {
-            options.addClass(settings.styleClass);
-        }
-
+		if (settings.styleClass) {
+			options.addClass(settings.styleClass);
+		}
+		
         if (select.triggerHandler('beforeopen')) {
             return false;
         }
@@ -545,10 +545,11 @@
         this.keepOptionInView(li, true);
         this.addHover(li);
         control.addClass('selectBox-menuShowing selectBox-menuShowing-'+(posTop?'top':'bottom'));
+        options.width(select.data('selectBox-control').outerWidth());
 
         $(document).bind('mousedown.selectBox', function (event) {
             if (1 === event.which) {
-                if ($(event.target).parents().andSelf().hasClass('selectBox-options')) {
+                if ($(event.target).parents().addBack().hasClass('selectBox-options')) {
                     return;
                 }
                 self.hideMenus();
@@ -702,7 +703,7 @@
         var select = $(this.selectElement)
             , control   = select.data('selectBox-control')
             , options = control.data('selectBox-options');
-
+        control.width(select.data('selectBox-control').outerWidth());
         options.find('.selectBox-hover').removeClass('selectBox-hover');
         li.addClass('selectBox-hover');
     };
@@ -813,7 +814,7 @@
                     totalOptions = options.find('LI:not(.selectBox-optgroup)').length;
                     i = 0;
                     while (prev.length === 0 || prev.hasClass('selectBox-disabled') ||
-                    prev.hasClass('selectBox-optgroup')) {
+                        prev.hasClass('selectBox-optgroup')) {
                         prev = prev.prev('LI');
                         if (prev.length === 0) {
                             if (settings.loopOptions) {
@@ -843,7 +844,7 @@
                     totalOptions = options.find('LI:not(.selectBox-optgroup)').length;
                     i = 0;
                     while (0 === next.length || next.hasClass('selectBox-disabled') ||
-                    next.hasClass('selectBox-optgroup')) {
+                        next.hasClass('selectBox-optgroup')) {
                         next = next.next('LI');
                         if (next.length === 0) {
                             if (settings.loopOptions) {
@@ -1039,51 +1040,51 @@
      */
     $.extend($.fn, {
 
-        /**
-         * Sets the option elements.
-         *
-         * @param {String|Object} options
-         */
-        setOptions : function (options) {
-            var select = $(this)
-                , control = select.data('selectBox-control');
-
-
-            switch (typeof(options)) {
-                case 'string':
-                    select.html(options);
-                    break;
-                case 'object':
-                    select.html('');
-                    for (var i in options) {
-                        if (options[i] === null) {
-                            continue;
-                        }
-                        if (typeof(options[i]) === 'object') {
-                            var optgroup = $('<optgroup label="' + i + '" />');
-                            for (var j in options[i]) {
-                                optgroup.append('<option value="' + j + '">' + options[i][j] + '</option>');
-                            }
-                            select.append(optgroup);
-                        } else {
-                            var option = $('<option value="' + i + '">' + options[i] + '</option>');
-                            select.append(option);
-                        }
+          /**
+     * Sets the option elements.
+     *
+     * @param {String|Object} options
+     */
+    setOptions : function (options) {
+        var select = $(this)
+            , control = select.data('selectBox-control');
+         
+      
+        switch (typeof(options)) {
+            case 'string':
+                select.html(options);
+                break;
+            case 'object':
+                select.html('');
+                for (var i in options) {
+                    if (options[i] === null) {
+                        continue;
                     }
-                    break;
-            }
+                    if (typeof(options[i]) === 'object') {
+                        var optgroup = $('<optgroup label="' + i + '" />');
+                        for (var j in options[i]) {
+                            optgroup.append('<option value="' + j + '">' + options[i][j] + '</option>');
+                        }
+                        select.append(optgroup);
+                    } else {
+                        var option = $('<option value="' + i + '">' + options[i] + '</option>');
+                        select.append(option);
+                    }
+                }
+                break;
+        }
 
-            if (control) {
-                // Refresh the control
-                $(this).selectBox('refresh');
-                // Remove old options
-
-            }
-        },
-
-
-
-        selectBox: function (method, options) {
+        if (control) {
+            // Refresh the control
+            $(this).selectBox('refresh');
+            // Remove old options
+  
+        }
+      },
+      
+      
+      
+      selectBox: function (method, options) {
             var selectBox;
 
             switch (method) {
@@ -1099,11 +1100,11 @@
                     break;
                 case 'options':
                     // Getter
-
+                   
                     if (undefined === options) {
                         return $(this).data('selectBox-control').data('selectBox-options');
                     }
-
+                   
                     // Setter
                     $(this).each(function () {
                         $(this).setOptions(options);
