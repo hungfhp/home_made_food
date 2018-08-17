@@ -85,7 +85,6 @@ export default class Header extends Component {
     }
 
     render() {
-<<<<<<< HEAD
         if (this.state.categories != 0) {
             const categories_list = this.state.categories.map((category)=> {
                 return(
@@ -126,6 +125,20 @@ export default class Header extends Component {
                                                     </a>
                                                 </li>
                                                 <li className="nav-item dropdown">
+                                                    <a className="nav-link dropdown-toggle" href="#"
+                                                       id="navbarDropdownMenuLink5" data-toggle="dropdown"
+                                                       aria-haspopup="true"
+                                                       aria-expanded="false">
+                                                        Categories
+                                                    </a>
+                                                    <ul className="dropdown-menu"
+                                                        aria-labelledby="navbarDropdownMenuLink">
+                                                        <li className="dropdown-submenu">
+                                                            {categories_list}
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li className="nav-item dropdown">
                                                     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true"
                                                     aria-expanded="false">
                                                         Transactions
@@ -145,108 +158,94 @@ export default class Header extends Component {
                                                         </Link>
                                                     </div>
                                                 </li>
-                                                <li className="nav-item dropdown megamenu-li">
-                                                    <a className="nav-link dropdown-toggle" href="#" id="dropdown01"
-                                                       data-toggle="dropdown" aria-haspopup="true"
-                                                       aria-expanded="false">
-                                                        Hot
-                                                    </a>
-                                                    <div className="dropdown-menu megamenu"
-                                                         aria-labelledby="dropdown01">
-                                                        <div className="megamenu-area">
-                                                            <div className="row">
-                                                                <div className="col-sm-6 col-lg-3">
-                                                                    <div className="megamenu-section">
-                                                                        <h6 className="megamenu-title">
-                                                                            Most rating
-                                                                        </h6>
-                                                                        <a className="dropdown-item"
-                                                                           href="about-1.html">
-                                                                            About 1
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="col-sm-6 col-lg-3">
-                                                                    <div className="megamenu-section">
-                                                                        <h6 className="megamenu-title">
-                                                                            Pages
-                                                                        </h6>
-                                                                        <a className="dropdown-item"
-                                                                           href="agent-list.html">
-                                                                            Agent List 1
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="col-sm-6 col-lg-3">
-                                                                    <div className="megamenu-section">
-                                                                        <h6 className="megamenu-title">
-                                                                            Pages
-                                                                        </h6>
-                                                                        <a className="dropdown-item"
-                                                                           href="gallery-2column.html">
-                                                                            Gallery 2 column
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="col-sm-6 col-lg-3">
-                                                                    <div className="megamenu-section">
-                                                                        <h6 className="megamenu-title">
-                                                                            Pages
-                                                                        </h6>
-                                                                        <a className="dropdown-item"
-                                                                           href="user-profile.html">
-                                                                            User profile
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div className="row">
-                                                                <div className="col-sm-3 col-lg-3">
-                                                                    <div className="megamenu-section">
-                                                                        <h6 className="megamenu-title">
-                                                                            Others
-                                                                        </h6>
-                                                                        <p>
-                                                                            Lorem ipsum dolor sit amet, consectetu
-                                                                            radipisi cing elitBeatae autem aperiam nequ
-                                                                            quaera molestias voluptatibus harum.
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="col-sm-9 col-lg-9">
-                                                                    <div className="megamenu-section">
-                                                                        <h6 className="megamenu-title">
-                                                                            Others
-                                                                        </h6>
-                                                                        <p>
-                                                                            Lorem ipsum dolor sit amet, consectetu
-                                                                            radipisi cing elitBeatae autem aperiam nequ
-                                                                            quaera molestias voluptatibus harum. Lorem
-                                                                            ipsum dolor sit amet, consectetu radipisi
-                                                                            cing elitBeatae autem
-                                                                            aperiam nequ quaera molestias voluptatibus
-                                                                            harum.
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li className="nav-item dropdown">
-                                                    <a className="nav-link dropdown-toggle" href="#"
-                                                       id="navbarDropdownMenuLink5" data-toggle="dropdown"
-                                                       aria-haspopup="true"
-                                                       aria-expanded="false">
-                                                        Categories
-                                                    </a>
-                                                    <ul className="dropdown-menu"
-                                                        aria-labelledby="navbarDropdownMenuLink">
-                                                        <li className="dropdown-submenu">
-                                                            {categories_list}
-                                                        </li>
-                                                    </ul>
-                                                </li>
+                                                {/*<li className="nav-item dropdown megamenu-li">*/}
+                                                    {/*<a className="nav-link dropdown-toggle" href="#" id="dropdown01"*/}
+                                                       {/*data-toggle="dropdown" aria-haspopup="true"*/}
+                                                       {/*aria-expanded="false">*/}
+                                                        {/*Hot*/}
+                                                    {/*</a>*/}
+                                                    {/*<div className="dropdown-menu megamenu"*/}
+                                                         {/*aria-labelledby="dropdown01">*/}
+                                                        {/*<div className="megamenu-area">*/}
+                                                            {/*<div className="row">*/}
+                                                                {/*<div className="col-sm-6 col-lg-3">*/}
+                                                                    {/*<div className="megamenu-section">*/}
+                                                                        {/*<h6 className="megamenu-title">*/}
+                                                                            {/*Most rating*/}
+                                                                        {/*</h6>*/}
+                                                                        {/*<a className="dropdown-item"*/}
+                                                                           {/*href="about-1.html">*/}
+                                                                            {/*About 1*/}
+                                                                        {/*</a>*/}
+                                                                    {/*</div>*/}
+                                                                {/*</div>*/}
+                                                                {/*<div className="col-sm-6 col-lg-3">*/}
+                                                                    {/*<div className="megamenu-section">*/}
+                                                                        {/*<h6 className="megamenu-title">*/}
+                                                                            {/*Pages*/}
+                                                                        {/*</h6>*/}
+                                                                        {/*<a className="dropdown-item"*/}
+                                                                           {/*href="agent-list.html">*/}
+                                                                            {/*Agent List 1*/}
+                                                                        {/*</a>*/}
+                                                                    {/*</div>*/}
+                                                                {/*</div>*/}
+                                                                {/*<div className="col-sm-6 col-lg-3">*/}
+                                                                    {/*<div className="megamenu-section">*/}
+                                                                        {/*<h6 className="megamenu-title">*/}
+                                                                            {/*Pages*/}
+                                                                        {/*</h6>*/}
+                                                                        {/*<a className="dropdown-item"*/}
+                                                                           {/*href="gallery-2column.html">*/}
+                                                                            {/*Gallery 2 column*/}
+                                                                        {/*</a>*/}
+                                                                    {/*</div>*/}
+                                                                {/*</div>*/}
+                                                                {/*<div className="col-sm-6 col-lg-3">*/}
+                                                                    {/*<div className="megamenu-section">*/}
+                                                                        {/*<h6 className="megamenu-title">*/}
+                                                                            {/*Pages*/}
+                                                                        {/*</h6>*/}
+                                                                        {/*<a className="dropdown-item"*/}
+                                                                           {/*href="user-profile.html">*/}
+                                                                            {/*User profile*/}
+                                                                        {/*</a>*/}
+                                                                    {/*</div>*/}
+                                                                {/*</div>*/}
+                                                            {/*</div>*/}
+                                                            {/*<div className="row">*/}
+                                                                {/*<div className="col-sm-3 col-lg-3">*/}
+                                                                    {/*<div className="megamenu-section">*/}
+                                                                        {/*<h6 className="megamenu-title">*/}
+                                                                            {/*Others*/}
+                                                                        {/*</h6>*/}
+                                                                        {/*<p>*/}
+                                                                            {/*Lorem ipsum dolor sit amet, consectetu*/}
+                                                                            {/*radipisi cing elitBeatae autem aperiam nequ*/}
+                                                                            {/*quaera molestias voluptatibus harum.*/}
+                                                                        {/*</p>*/}
+                                                                    {/*</div>*/}
+                                                                {/*</div>*/}
+                                                                {/*<div className="col-sm-9 col-lg-9">*/}
+                                                                    {/*<div className="megamenu-section">*/}
+                                                                        {/*<h6 className="megamenu-title">*/}
+                                                                            {/*Others*/}
+                                                                        {/*</h6>*/}
+                                                                        {/*<p>*/}
+                                                                            {/*Lorem ipsum dolor sit amet, consectetu*/}
+                                                                            {/*radipisi cing elitBeatae autem aperiam nequ*/}
+                                                                            {/*quaera molestias voluptatibus harum. Lorem*/}
+                                                                            {/*ipsum dolor sit amet, consectetu radipisi*/}
+                                                                            {/*cing elitBeatae autem*/}
+                                                                            {/*aperiam nequ quaera molestias voluptatibus*/}
+                                                                            {/*harum.*/}
+                                                                        {/*</p>*/}
+                                                                    {/*</div>*/}
+                                                                {/*</div>*/}
+                                                            {/*</div>*/}
+                                                        {/*</div>*/}
+                                                    {/*</div>*/}
+                                                {/*</li>*/}
                                                 <li className="nav-item dropdown">
                                                     <a className="nav-link dropdown-toggle" href="#"
                                                        id="navbarDropdown4" role="button" data-toggle="dropdown"
