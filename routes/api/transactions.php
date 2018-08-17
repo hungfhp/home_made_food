@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'TransactionController@index')->name('transactions.index');
+Route::get('/recent', 'TransactionController@recent')->name('transactions.recent');
 
 Route::group(['middleware' => 'auth:api'], function () {
     Route::get('/required', 'TransactionController@required')->name('transactions.required');
