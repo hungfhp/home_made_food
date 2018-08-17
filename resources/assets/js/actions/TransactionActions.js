@@ -59,12 +59,12 @@ export function createTransactionError(err) {
     };
 }
 // updateTransaction
-export function updateTransaction(food) {
+export function updateTransaction(transaction) {
     return function (dispatch) {
         axios({
             method: 'PUT',
-            url: "/api/transactions/" + food.id,
-            data: food,
+            url: "/api/transactions/" + transaction.id,
+            data: transaction,
             headers: getHeaders()
         })
         .then(res => {
@@ -77,14 +77,14 @@ export function updateTransaction(food) {
 
 export function updateTransactionSuccess(data) {
     return {
-        type: types.UPDATE_FOOD_SUCCESS,
+        type: types.UPDATE_TRANSACTION_SUCCESS,
         data
     };
 }
 
 export function updateTransactionError(err) {
     return {
-        type: types.UPDATE_FOOD_ERROR,
+        type: types.UPDATE_TRANSACTION_ERROR,
         err
     };
 }

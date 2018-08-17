@@ -18,7 +18,11 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        $transactions = Transaction::with('food.feature_image')
+        $transactions = Transaction::where('status', 'required')
+            ->orwhere('status', 'cooked')
+            ->orwhere('status', 'dealed')
+            ->withCount('deals')
+            ->with('food.feature_image')
             ->with('requirer')
             ->with('cooker')
             ->with('shipper')
@@ -90,6 +94,16 @@ class TransactionController extends Controller
         return response()->json(['data' => $transactions], 200);
     }
 
+    public function recent() {
+        $transactions = Transaction::where('status', 'required')
+            ->orwhere('status', 'cooked')
+            ->orwhere('status', 'dealed')
+            ->with('food.feature_image')
+            ->inRandomOrder()->limit(3)->get();
+
+        return response()->json(['data' => $transactions], 200);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -147,8 +161,16 @@ class TransactionController extends Controller
     public function update(Request $request, $id)
     {
         Log::info('update a transaction');
-        $transaction = Transaction::find($id)->update($request->all());
-        return response()->json(['data' => $transaction], 202);
+        $user = Auth::user();
+        $next_transaction = $request->all();
+        $transaction = Transaction::find($id);
+        // if (condition) {
+        //     # code...
+        // }
+        //  check dieu kien next status
+
+        $transaction = Transaction::find($id)->update($next_transaction);
+        return response()->json(['data' => $next_transaction], 202);
     }
 
     /**

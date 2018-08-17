@@ -22,19 +22,16 @@ export default class RightSide extends Component {
                 </div>
 
                 <div className="widget categories">
-                    <h5 className="sidebar-title">Categories</h5>
+                    <h5 className="sidebar-title">Now </h5>
                     <ul>
-                        <li><a href="#">Apartments<span>(12)</span></a></li>
-                        <li><a href="#">Houses<span>(8)</span></a></li>
-                        <li><a href="#">Family Houses<span>(23)</span></a></li>
-                        <li><a href="#">Offices<span>(5)</span></a></li>
-                        <li><a href="#">Villas<span>(63)</span></a></li>
-                        <li><a href="#">Other<span>(7)</span></a></li>
+                        <li><a href="#">Required<span>(12)</span></a></li>
+                        <li><a href="#">Cooked<span>(8)</span></a></li>
+                        <li><a href="#">Dealed<span>(23)</span></a></li>
                     </ul>
                 </div>
 
                 <div className="widget recent-posts">
-                    <h5 className="sidebar-title">Recent Properties</h5>
+                    <h5 className="sidebar-title">You like</h5>
                     <div className="media mb-4">
                         <a className="pr-4" href="properties-details.html">
                             <img src="/img/sub-property/sub-property.jpg" alt="sub-property"/>
@@ -73,7 +70,7 @@ export default class RightSide extends Component {
                     </div>
                 </div>
 
-                <div className="widget tags clearfix">
+                {/* <div className="widget tags clearfix">
                     <h5 className="sidebar-title">Tags</h5>
                     <ul className="tags">
                         <li><a href="#">Business</a></li>
@@ -88,10 +85,10 @@ export default class RightSide extends Component {
                         <li><a href="#">Villa</a></li>
                         <li><a href="#">Sellers</a></li>
                     </ul>
-                </div>
+                </div> */}
 
                 <div className="widget recent-comments">
-                    <h5 className="sidebar-title">Recent comments</h5>
+                    <h5 className="sidebar-title">New comments</h5>
                     <div className="media mb-4">
                         <a className="pr-3" href="#">
                             <img src="/img/avatar/avatar.jpg" className="rounded-circle" alt="avatar"/>
@@ -112,11 +109,11 @@ export default class RightSide extends Component {
                     </div>
                 </div>
 
-                <div className="widget latest-tweet">
+                {/* <div className="widget latest-tweet">
                     <h5 className="sidebar-title">Latest Tweet</h5>
                     <p><a href="#">Lorem Ipsum is simply</a> dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text,</p>
                     <p>@Lorem ipsum dolor<a href="#">sit amet, consectetur</a> adipiscing elit. Aenean id dignissim justo. Maecenas urna lacus,</p>
-                </div>
+                </div> */}
             </div>
         );
     }

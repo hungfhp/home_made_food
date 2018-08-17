@@ -17,7 +17,6 @@ export default class LeftSide extends Component {
         let is_loading = this.props.transactions.is_loading;
         let pagination = this.props.transactions.pagination;
         let auth = this.props.auth;
-        console.log(this);
 
         return (
             <div className="row">
@@ -32,11 +31,9 @@ export default class LeftSide extends Component {
                     )
                 }
                 <div className="col-lg-12">
-
                 {
-
-                    // this.props.transactions.pagination && 
-                    // <Pagination current_page={this.props.transactions.pagination.current_page} last_page={this.props.transactions.pagination.last_page} getDataPaging={this.props.getTransactions}/>
+                    pagination && 
+                    <Pagination href_to="#list-top" pagination={pagination} getDataPaging={this.props.getTransactions}/>
                 }
                 </div>
 
