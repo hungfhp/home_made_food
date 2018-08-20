@@ -9,6 +9,13 @@ use Log;
 
 class DealController extends Controller
 {
+    public function newest() {
+        $deals = Deal::orderBy('updated_at', 'desc')
+            ->take(3)->with('user')->with('transaction.food')->get();
+
+        return response()->json(['data' => $deals], 200);
+    }
+
     /**
      * Display a listing of the resource.
      *

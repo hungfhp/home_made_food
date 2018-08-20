@@ -49,18 +49,26 @@ class FoodController extends Controller
     public function store(Request $request)
     {
         Log::info('add food');
+        $user = Auth::user();
+        $userId = $user->id;
         $food = Food::create($request->all());
         $transactionData = $request->all();
-        $transactionData['food_id'] = $food['id'];
-        $transactionData['description'] = $transactionData['descriptionTransaction'];
-        $time = new  Carbon($transactionData['desired_time']);
-        $transactionData['desired_time'] = $time->format('Y-m-d H:i:s');
-        Log::info($transactionData['desired_time']);
-        $quantity = intval($transactionData['quantity']);
-        for ($i = 1; $i<= $quantity; $i++) {
-            $transaction =Transaction::create($transactionData);
+        if ($userId == intval($transactionData['creator_id'])) {
+            $transactionData['creator_id'] = $userId;
+            $transactionData['food_id'] = $food['id'];
+            $transactionData['description'] = $transactionData['descriptionTransaction'];
+            $time = new  Carbon($transactionData['desired_at']);
+            $transactionData['desired_at'] = $time->format('Y-m-d H:i:s');
+            $quantity = intval($transactionData['quantity']);
+            for ($i = 1; $i<= $quantity; $i++) {
+                $transaction =Transaction::create($transactionData);
+            }
+            return response()->json(['result' => true, 'data' => ['food'=>$food, 'transaction'=>$transaction]], 201);
         }
-        return response()->json(['result' => true, 'data' => ['food'=>$food, 'transaction'=>$transaction]], 201);
+        else{
+            Log::info('error');
+            return response()->json(['result' => false], 400);
+        }
     }
 
     /**

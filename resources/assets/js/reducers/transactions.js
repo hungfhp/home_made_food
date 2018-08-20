@@ -3,8 +3,16 @@ import * as AxiosConstants from '@/constants/AxiosConstants';
 
 const initialState = {
     is_loading: true,
-    data: {},
-    pagination: {},
+    index: {
+        is_loading: true,
+        data: {},
+        pagination: {}
+    },
+    recent: {
+        is_loading: true,
+        data: {},
+        pagination: {}
+    },
     history: {
         is_loading: true,
         data: {},
@@ -18,20 +26,40 @@ const initialState = {
     error: ""
 }
 
-const user = (state = initialState, action) => {
+const transactions = (state = initialState, action) => {
     switch (action.type) {
         case types.GET_TRANSACTIONS_SUCCESS:
             return {...state,
                 is_loading: false,
                 success: AxiosConstants.SUCCESS,
-                data: action.data.data,
-                pagination: action.data.pagination
+                index: {
+                    is_loading: false,
+                    data: action.data.data,
+                    pagination: action.data.pagination
+                }
             }
         case types.GET_TRANSACTIONS_ERROR:
             return {...initialState,
                 is_loading: false,
                 error: action.err
             }
+
+        case types.GET_TRANSACTIONS_RECENT_SUCCESS:
+            return {...state,
+                is_loading: false,
+                success: AxiosConstants.SUCCESS,
+                recent: {
+                    is_loading: false,
+                    data: action.data.data,
+                    pagination: action.data.pagination
+                }
+            }
+        case types.GET_TRANSACTIONS_RECENT_ERROR:
+            return {...initialState,
+                is_loading: false,
+                error: action.err
+            }
+
         case types.GET_TRANSACTIONS_HISTORY_SUCCESS:
             return {...state,
                 is_loading: false,
@@ -47,6 +75,7 @@ const user = (state = initialState, action) => {
                 is_loading: false,
                 error: action.err
             }
+
         case types.GET_TRANSACTIONS_HISTORY_TOTAL_SUCCESS:
             return {...state,
                 is_loading: false,
@@ -68,4 +97,4 @@ const user = (state = initialState, action) => {
     }
 };
 
-export default user;
+export default transactions;

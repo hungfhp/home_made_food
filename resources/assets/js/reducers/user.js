@@ -6,6 +6,8 @@ const initialState = {
     id: "",
     name: "",
     email: "",
+    avatar: "",
+    ident: 0,
     address: "",
     phone: "",
     success: "",
@@ -35,6 +37,8 @@ const user = (state = initialState, action) => {
                 id: action.user.id,
                 name: action.user.name,
                 email: action.user.email,
+                avatar: action.user.avatar,
+                ident: action.user.ident,
                 address: action.user.address,
                 phone: action.user.phone,
                 success: AxiosConstants.SUCCESS

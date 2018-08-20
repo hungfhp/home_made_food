@@ -18,6 +18,7 @@ export default class TrCookedFood extends Component {
         })
     }
     render() {
+        let is_my_food = this.props.is_my_food;
         return (
             <tr>
                 <td className="image">
@@ -31,15 +32,21 @@ export default class TrCookedFood extends Component {
                 </td>
                 <td>{this.props.food.updated_at}</td>
                 <td>{this.props.food.like}</td>
-                <td className="actions ">
-                    <div className="form-check checkbox-theme margin-top-15 margin-left-25">
-                        <input className={"form-check-input check-input-change-publish-food-"+this.props.food.id} onClick={(food_id)=>this.handleChangePublish(this.props.food.id)} type="checkbox" id={this.props.food.id} defaultChecked={this.props.food.publish ? true:false}/>
-                        <label className="form-check-label" htmlFor={this.props.food.id}></label>
-                    </div>
-                </td>
-                <td>
-                    <a href={"/foods/" + this.props.food.id +"/edit"} className="edit"><i className="fa fa-pencil"></i>Edit</a>
-                </td>
+                {
+                    is_my_food && 
+                    <td className="actions ">
+                        <div className="form-check checkbox-theme margin-top-15 margin-left-25">
+                            <input className={"form-check-input check-input-change-publish-food-"+this.props.food.id} onClick={(food_id)=>this.handleChangePublish(this.props.food.id)} type="checkbox" id={this.props.food.id} defaultChecked={this.props.food.publish ? true:false}/>
+                            <label className="form-check-label" htmlFor={this.props.food.id}></label>
+                        </div>
+                    </td>
+                }
+                {
+                    is_my_food && 
+                    <td>
+                        <a href={"/foods/" + this.props.food.id +"/edit"} className="edit"><i className="fa fa-pencil"></i>Edit</a>
+                    </td>
+                }
             </tr>
         )
     }

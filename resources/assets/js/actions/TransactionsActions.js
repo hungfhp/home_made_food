@@ -2,9 +2,9 @@ import * as types from "@/constants/ActionTypes";
 import {getHeaders, getPagination} from "@/utils/ApiUtil";
 
 // getTransactions
-export function getTransactions(page) {
+export function getTransactions(params) {
     return function (dispatch) {
-        axios.get("/api/transactions" + "?page="+page)
+        axios.get("/api/transactions" + "?page="+params.page + "&status="+params.status)
         .then(res => {
             dispatch(getTransactionsSuccess(res.data.data));
         }).catch(err => {
@@ -27,13 +27,40 @@ export function getTransactionsError(err) {
     };
 }
 
-// getTransactionsHitory
-export function getTransactionsHitory(page) {
+// getTransactionsRecent
+export function getTransactionsRecent(params) {
     return function (dispatch) {
-        axios.get("/api/transactions/history" + "?page="+page, {
+        axios.get("/api/transactions" + "?page="+params.page + "&status=recent")
+        .then(res => {
+            dispatch(getTransactionsRecentSuccess(res.data.data));
+        }).catch(err => {
+            dispatch(getTransactionsRecentError(err));
+        })
+    }    
+}
+
+export function getTransactionsRecentSuccess(data) {
+    return {
+        type: types.GET_TRANSACTIONS_RECENT_SUCCESS,
+        data: getPagination(data)
+    };
+}
+
+export function getTransactionsRecentError(err) {
+    return {
+        type: types.GET_TRANSACTIONS_RECENT_ERROR,
+        err
+    };
+}
+
+// getTransactionsHitory
+export function getTransactionsHitory(params) {
+    return function (dispatch) {
+        axios.get("/api/transactions/history" + "?page="+params.page + "&status="+params.status , {
             headers: getHeaders()
         })
         .then(res => {
+            console.log(res.data);
             dispatch(getTransactionsHitorySuccess(res.data.data));
         }).catch(err => {
             dispatch(getTransactionsHitoryError(err));

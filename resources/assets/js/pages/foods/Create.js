@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getProfile, logoutSuccess } from '@/actions/AuthActions';
+import {Redirect} from "react-router-dom";
 
 import Header from "../../components/layouts/Header";
 import SubHeader from "../../components/layouts/SubHeader";
@@ -16,20 +17,27 @@ class Create extends Component {
     }
 
     render() {
-        return (
-            //submit properties
-            <div>
-                <Header title="Homemade - New food" auth={this.props.auth} logoutSuccess={this.props.logoutSuccess}/>
-                <SubHeader title="New food"/>
-                <div className="user-page submit-property content-area-7">
-                    <div className="container">
-                        <div className="row">
-                            <Form {...this.props}/>
+        if (this.props.auth.isAuth) {
+            return (
+                //submit properties
+                <div>
+                    <Header title="Homemade - New food" auth={this.props.auth} logoutSuccess={this.props.logoutSuccess}/>
+                    <SubHeader title="New food"/>
+                    <div className="user-page submit-property content-area-7">
+                        <div className="container">
+                            <div className="row">
+                                <Form {...this.props}/>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        );
+            );
+        }
+        else {
+            return(
+                <Redirect to='/foods'/>
+            );
+        }
     }
 }
 

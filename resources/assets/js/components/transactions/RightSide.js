@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import {Link} from "react-router-dom";
 
+import TransactionsListSmall from "../transactions/TransactionsListSmall";
+import DealsListSmall from "../deals/DealsListSmall";
+
 export default class RightSide extends Component {
     constructor(props) {
         super(props);
@@ -11,6 +14,10 @@ export default class RightSide extends Component {
         this.props = nextProps;
     }
     render() {
+        let deals_newest = this.props.deals_newest;
+        let transactions_recent = this.props.transactions_recent;
+        this.props.transactions_recent.data.length ? transactions_recent.data = this.props.transactions_recent.data.slice(0,3) : transactions_recent.data={};
+        
         return (
             <div className="sidebar mbl">
                 <div className="widget search-box">
@@ -21,53 +28,9 @@ export default class RightSide extends Component {
                     </form>
                 </div>
 
-                <div className="widget categories">
-                    <h5 className="sidebar-title">Now </h5>
-                    <ul>
-                        <li><a href="#">Required<span>(12)</span></a></li>
-                        <li><a href="#">Cooked<span>(8)</span></a></li>
-                        <li><a href="#">Dealed<span>(23)</span></a></li>
-                    </ul>
-                </div>
-
                 <div className="widget recent-posts">
                     <h5 className="sidebar-title">You like</h5>
-                    <div className="media mb-4">
-                        <a className="pr-4" href="properties-details.html">
-                            <img src="/img/sub-property/sub-property.jpg" alt="sub-property"/>
-                        </a>
-                        <div className="media-body align-self-center">
-                            <h5>
-                                <a href="properties-details.html">Beautiful Single Home</a>
-                            </h5>
-                            <p>February 27, 2018</p>
-                            <p> <strong>$245,000</strong></p>
-                        </div>
-                    </div>
-                    <div className="media mb-4">
-                        <a className="pr-4" href="properties-details.html">
-                            <img src="/img/sub-property/sub-property-2.jpg" alt="sub-property-2"/>
-                        </a>
-                        <div className="media-body align-self-center">
-                            <h5>
-                                <a href="properties-details.html">Sweet Family Home</a>
-                            </h5>
-                            <p>February 27, 2018</p>
-                            <p> <strong>$245,000</strong></p>
-                        </div>
-                    </div>
-                    <div className="media">
-                        <a className="pr-4" href="properties-details.html">
-                            <img src="/img/sub-property/sub-property-3.jpg" alt="sub-property-3"/>
-                        </a>
-                        <div className="media-body align-self-center">
-                            <h5>
-                                <a href="properties-details.html">Real Luxury Villa</a>
-                            </h5>
-                            <p>February 27, 2018</p>
-                            <p> <strong>$245,000</strong></p>
-                        </div>
-                    </div>
+                    <TransactionsListSmall transactions={transactions_recent} />
                 </div>
 
                 {/* <div className="widget tags clearfix">
@@ -88,25 +51,8 @@ export default class RightSide extends Component {
                 </div> */}
 
                 <div className="widget recent-comments">
-                    <h5 className="sidebar-title">New comments</h5>
-                    <div className="media mb-4">
-                        <a className="pr-3" href="#">
-                            <img src="/img/avatar/avatar.jpg" className="rounded-circle" alt="avatar"/>
-                        </a>
-                        <div className="media-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiamrisus tortor,</p>
-                            <p>By <span>John Doe</span></p>
-                        </div>
-                    </div>
-                    <div className="media">
-                        <a className="pr-3" href="#">
-                            <img src="/img/avatar/avatar-2.jpg" className="rounded-circle" alt="avatar-2"/>
-                        </a>
-                        <div className="media-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiamrisus tortor,</p>
-                            <p>By <span>Karen Paran</span></p>
-                        </div>
-                    </div>
+                    <h5 className="sidebar-title">New discussion</h5>
+                    <DealsListSmall deals={deals_newest} />
                 </div>
 
                 {/* <div className="widget latest-tweet">

@@ -36,15 +36,19 @@ class Show extends Component {
         if (this.props.auth.isAuth) {
             if (this.props.auth.user.id == this.state.param_user_id) {
                 this.setState({
-                    is_my_profile: true
+                    is_my_profile: true,
+                    renderLeftSide: <LeftSide is_my_profile={true} user={this.props.auth.user} switchRightSide={this.switchRightSide} />
+                })
+            } else {
+                this.setState({
+                    is_my_profile: false,
+                    renderLeftSide: <LeftSide is_my_profile={false} user={this.props.user} switchRightSide={this.switchRightSide} />
                 })
             }
-            this.setState({
-                renderLeftSide: <LeftSide is_my_profile={this.state.is_my_profile} user={this.props.auth.user} switchRightSide={this.switchRightSide} />
-            })
         } else {
             this.setState({
-                renderLeftSide: <LeftSide is_my_profile={this.state.is_my_profile} user={this.props.user} switchRightSide={this.switchRightSide} />
+                is_my_profile: false,
+                renderLeftSide: <LeftSide is_my_profile={false} user={this.props.user} switchRightSide={this.switchRightSide} />
             })
         }
         this.switchRightSide(this.state.tab);

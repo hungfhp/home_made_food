@@ -11,97 +11,187 @@ use Log;
 
 class TransactionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $transactions = Transaction::where('status', 'required')
-            ->orwhere('status', 'cooked')
-            ->orwhere('status', 'dealed')
+    public function index(Request $request) { //dealing_dealed
+        switch ($request->status) {
+            case 'required':
+                $transactions = Transaction::required();
+                break;
+            case 'cooked':
+                $transactions = Transaction::cooked();
+                break;
+            case 'dealing':
+                $transactions = Transaction::dealing();
+                break;
+            case 'dealed':
+                $transactions = Transaction::dealed();
+                break;
+            case 'shipping':
+                $transactions = Transaction::shipping();
+                break;
+            case 'done':
+                $transactions = Transaction::done();
+                break;
+            case 'cancel':
+                $transactions = Transaction::cancel();
+                break;
+            case 'recent':
+                $transactions = Transaction::recent();
+                break;
+            case 'dealing_dealed':
+                $transactions = Transaction::dealing_dealed();
+            default:
+                $transactions = Transaction::dealing_dealed();
+                break;
+        }
+
+        $transactions = $transactions
             ->withCount('deals')
             ->with('food.feature_image')
             ->with('requirer')
             ->with('cooker')
             ->with('shipper')
-            ->orderBy('created_at', 'desc')
+            ->orderBy('updated_at', 'desc')
             ->paginate(10);
 
         return response()->json(['data' => $transactions], 200);
     }
 
-    public function required()
+    public function getHistory(Request $request)
     {
-        $transactions = Transaction::where('status', 'required')
-            ->with('requirer')
-            ->orderBy('created_at', 'desc')
-            ->paginate(10);
-
-        return response()->json(['data' => $transactions], 200);
-    }
-
-    public function cooked()
-    {
-        $transactions = Transaction::where('status', 'cooked')
-            ->with('cooker')
-            ->orderBy('created_at', 'desc')
-            ->paginate(10);
-        return response()->json(['data' => $transactions], 200);
-    }
-
-    public function dealed()
-    {
-        $transactions = Transaction::where('status', 'dealed')
-            ->with('requirer')
-            ->with('cooker')
-            ->orderBy('created_at', 'desc')
-            ->paginate(10);
-        return response()->json(['data' => $transactions], 200);
-    }
-
-    public function shipping()
-    {
-        $transactions = Transaction::where('status', 'shipping')
-            ->with('requirer')
-            ->with('cooker')
-            ->with('shipper')
-            ->orderBy('created_at', 'desc')
-            ->paginate(10);
-        return response()->json(['data' => $transactions], 200);
-    }
-
-    public function done()
-    {
-        $transactions = Transaction::where('status', 'done')
-            ->with('requirer')
-            ->with('cooker')
-            ->with('shipper')
-            ->orderBy('created_at', 'desc')
-            ->paginate(10);
-        return response()->json(['data' => $transactions], 200);
-    }
-
-    public function cancel()
-    {
-        $transactions = Transaction::where('status', 'done')
-            ->with('requirer')
-            ->with('cooker')
-            ->with('shipper')
-            ->orderBy('created_at', 'desc')
-            ->paginate(10);
-        return response()->json(['data' => $transactions], 200);
-    }
-
-    public function recent() {
-        $transactions = Transaction::where('status', 'required')
-            ->orwhere('status', 'cooked')
-            ->orwhere('status', 'dealed')
+        Log::info("transaction history");
+        $user = Auth::user();
+        $userId = $user->id;
+        $transactions = Transaction::myTransactions($userId)
+            ->withCount('deals')
             ->with('food.feature_image')
-            ->inRandomOrder()->limit(3)->get();
+            ->with('requirer')
+            ->with('cooker')
+            ->with('shipper')
+            ->orderBy('updated_at', 'desc')
+            ->paginate(10);
+
+        Log::info($transactions);
 
         return response()->json(['data' => $transactions], 200);
+        switch ($request->status) {
+            case 'required':
+                $transactions = Transaction::historyRequired($userId);
+                break;
+            case 'cooked':
+                $transactions = Transaction::historyCooked($userId);
+                break;
+            case 'dealing':
+                $transactions = Transaction::historyDealing($userId);
+                break;
+            case 'dealed':
+                $transactions = Transaction::historyDealed($userId);
+                break;
+            case 'shipping':
+                $transactions = Transaction::historyShipping($userId);
+                break;
+            case 'done':
+                $transactions = Transaction::historyDone($userId);
+                break;
+            case 'cancel':
+                $transactions = Transaction::historyCancel($userId);
+                break;
+            default:
+                $transactions = Transaction();
+        }
+        $transactions = $transactions
+            ->withCount('deals')
+            ->with('food.feature_image')
+            ->with('requirer')
+            ->with('cooker')
+            ->with('shipper')
+            ->orderBy('updated_at', 'desc')
+            ->paginate(10);
+
+        return response()->json(['data' => $transactions], 200);
+    }
+
+    public function getHistoryTotal()
+    {
+        Log::info("transaction history total");
+        $user = Auth::user();
+        $userId = $user->id;
+
+        // $required = Transaction::required()->where('requirer_id', '=', $userId);
+        // $cooked = Transaction::cooked()->where('cooker_id', '=', $userId);
+
+        // $dealed = Transaction::dealed()->where(function ($query) use ($userId) {
+        //     $query
+        //         ->where('requirer_id', $userId)
+        //         ->orwhere('cooker_id', $userId);
+        // });
+        // $shipping = Transaction::shipping()->where(function ($query) use ($userId) {
+        //     $query
+        //         ->where('requirer_id', $userId)
+        //         ->orwhere('cooker_id', $userId)
+        //         ->orwhere('shipper_id', $userId);
+        // });
+        // $done = Transaction::done()->where(function ($query) use ($userId) {
+        //     $query
+        //         ->where('requirer_id', $userId)
+        //         ->orwhere('cooker_id', $userId)
+        //         ->orwhere('shipper_id', $userId);
+        // });
+        // $cancel = Transaction::cancel()->where(function ($query) use ($userId) {
+        //     $query
+        //         ->where('requirer_id', $userId)
+        //         ->orwhere('cooker_id', $userId)
+        //         ->orwhere('shipper_id', $userId);
+        // });
+
+        $data = [
+            'required' => [
+                'total_price' => Transaction::historyRequired($userId)->sum('price'),
+                'quantity' => Transaction::historyRequired($userId)->count('price')
+            ],
+            'cooked' => [
+                'total_price' => Transaction::historyCooked($userId)->sum('price'),
+                'quantity' => Transaction::historyCooked($userId)->count('price')
+            ],
+            'dealing' => [
+                'total_price' => Transaction::historyDealing($userId)->sum('price'),
+                'quantity' => Transaction::historyDealing($userId)->count('price')
+            ],
+            'dealed' => [
+                'total_price' => Transaction::historyDealed($userId)->sum('price'),
+                'quantity' => Transaction::historyDealed($userId)->count('price')
+            ],
+            'shipping' => [
+                'total_price' => Transaction::historyShipping($userId)->sum('price'),
+                'quantity' => Transaction::historyShipping($userId)->count('price')
+            ],
+            'done' => [
+                'total_price' => Transaction::historyDone($userId)->sum('price'),
+                'quantity' => Transaction::historyDone($userId)->count('price')
+            ],
+            'cancel' => [
+                'total_price' => Transaction::historyCancel($userId)->sum('price'),
+                'quantity' => Transaction::historyCancel($userId)->count('price')
+            ]
+        ];
+
+        $data['total'] = [
+            'price' =>
+                $data['required']['total_price'] +
+                    $data['cooked']['total_price'] +
+                    $data['dealed']['total_price'] +
+                    $data['shipping']['total_price'] +
+                    $data['done']['total_price'] +
+                    $data['cancel']['total_price'],
+            'quantity' =>
+                $data['required']['quantity'] +
+                    $data['cooked']['quantity'] +
+                    $data['dealed']['quantity'] +
+                    $data['shipping']['quantity'] +
+                    $data['done']['quantity'] +
+                    $data['cancel']['quantity']
+        ];
+
+        return response()->json(['data' => $data], 200);
     }
 
     /**
@@ -185,92 +275,5 @@ class TransactionController extends Controller
         $transaction = Transaction::find($id);
         $transaction->delete();
         return response()->json(['data' => $transaction], 203);
-    }
-
-    public function getHistory()
-    {
-        Log::info("transaction history");
-        $user = Auth::user();
-        $userId = $user->id;
-        $transactions = Transaction::where('requirer_id', $userId)
-            ->orWhere('cooker_id', $userId)
-            ->orWhere('shipper_id', $userId)
-            ->with('food.feature_image')
-            ->orderBy('created_at', 'desc')
-            ->paginate(10);
-
-            return response()->json(['data' => $transactions], 200);
-    }
-
-    public function getHistoryTotal()
-    {
-        Log::info("transaction history total");
-        $user = Auth::user();
-        $userId = $user->id;
-
-        $required = Transaction::required()->where('requirer_id', '=', $userId);
-        $cooked = Transaction::cooked()->where('cooker_id', '=', $userId);
-
-        $dealed = Transaction::dealed()
-            ->where(function($query) use ($userId) {
-                $query->where('requirer_id',$userId)
-                ->orwhere('cooker_id',$userId);
-            });
-        $shipping = Transaction::shipping()
-            ->where(function($query) use ($userId) {
-                $query->where('requirer_id',$userId)
-                ->orwhere('cooker_id',$userId)
-                ->orwhere('shipper_id',$userId);
-            });
-        $done = Transaction::done()
-            ->where(function($query) use ($userId) {
-                $query->where('requirer_id',$userId)
-                ->orwhere('cooker_id',$userId)
-                ->orwhere('shipper_id',$userId);
-            });
-        $cancel = Transaction::cancel()
-            ->where(function($query) use ($userId) {
-                $query->where('requirer_id',$userId)
-                ->orwhere('cooker_id',$userId)
-                ->orwhere('shipper_id',$userId);
-            });
-        
-        $data = [
-            'required' => [
-                'total_price'=> $required->sum('price'),
-                'quantity'=> $required->count('price')
-            ],
-            'cooked' => [
-                'total_price'=> $cooked->sum('price'),
-                'quantity'=> $cooked->count('price')
-            ],
-            'dealed' => [
-                'total_price'=> $dealed->sum('price'),
-                'quantity'=> $dealed->count('price')
-            ],
-            'shipping' => [
-                'total_price'=> $shipping->sum('price'),
-                'quantity'=> $shipping->count('price')
-            ],
-            'done' => [
-                'total_price'=> $done->sum('price'),
-                'quantity'=> $done->count('price')
-            ],
-            'cancel' => [
-                'total_price'=> $cancel->sum('price'),
-                'quantity'=> $cancel->count('price')
-            ]
-        ];
-
-        $data['total'] = [
-            'price'=>    $data['required']['total_price'] + $data['cooked']['total_price'] +
-                        $data['dealed']['total_price'] + $data['shipping']['total_price'] +
-                        $data['done']['total_price'] + $data['cancel']['total_price'],
-            'quantity'=> $data['required']['quantity'] + $data['cooked']['quantity'] +
-                        $data['dealed']['quantity'] + $data['shipping']['quantity'] +
-                        $data['done']['quantity'] + $data['cancel']['quantity']
-        ];
-
-        return response()->json(['data' => $data], 200);
     }
 }

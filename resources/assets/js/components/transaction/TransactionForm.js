@@ -7,7 +7,7 @@ export default class TransactionForm extends Component {
                 <div className="heading-2">
                     <h4>Require's information</h4>
                 </div>
-                <form action="#" method="GET" enctype="multipart/form-data">
+                <form action="#" method="GET" encType="multipart/form-data">
                     <div className="row">
                         <div className="col-md-6">
                             <div className="form-group">

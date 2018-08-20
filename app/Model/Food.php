@@ -8,7 +8,7 @@ class Food extends Model
     protected $table = 'foods';
 
     protected $fillable = [
-        'cooked_id',
+        'cooker_id',
         'category_id',
         'name',
         'price',
@@ -50,7 +50,7 @@ class Food extends Model
 
     public function user()
     {
-        return $this->belongsTo('App\Model\User', 'cooked_id');
+        return $this->belongsTo('App\Model\User', 'cooker_id');
     }
 
     public function category()

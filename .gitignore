@@ -13,3 +13,5 @@ yarn-error.log
 .env
 .package-lock.json
 /resources/assets/html/resources/assets/html
+/public/js/app.js
+/public/css/app.css

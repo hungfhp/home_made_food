@@ -4,6 +4,7 @@ import moment from 'moment';
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios/index";
 import swal2 from "sweetalert2";
+import { Redirect } from "react-router-dom";
 
 export default class Form extends Component {
     constructor (props) {
@@ -117,14 +118,15 @@ export default class Form extends Component {
             newFood.set('like', 0);
             newFood.set('dislike', 0);
             newFood.set('publish', 1);
-            newFood.set('status', 'cooked');
-            newFood.set('desired_time', this.state.startDate);
+            newFood.set('status', 'dealing');
+            newFood.set('desired_at', this.state.startDate);
             newFood.set('quantity', this.refs.quantity.value);
 
             const address = this.refs.address.value === ''? this.props.auth.user.address : this.refs.address.value;
             const email = this.refs.email.value === ''? this.props.auth.user.email : this.refs.email.value;
             const phone = this.refs.phone.value === ''? this.props.auth.user.phone : this.refs.phone.value;
-            const description = 'Address: ' + address + '<br/>' + 'Email: '+ email + '<br/>' +'Phone: '+ phone;
+            const description = 'Email: '+ email + '<br/>' +'Phone: '+ phone;
+            newFood.set('address_from', address);
             newFood.set('descriptionTransaction', description);
             axios({
                 method: 'post',
@@ -134,9 +136,29 @@ export default class Form extends Component {
             })
                 .then(response=>{
                     console.log("created new food!");
+                    this.onFormSubmit();
+                    swal2({
+                        type: 'success',
+                        title: 'Successfully created new food!',
+                        showConfirmButton: false,
+                        heightAuto: true,
+                        width: "auto",
+                        timer: 2200
+                    });
+                    this.props.history.push('/foods');
+
                 })
-                .catch(error=>console.log("create food: error!"));
-            this.onFormSubmit();
+                .catch(error=>{
+                    console.log("create food: error!");
+                    swal2({
+                        type: 'error',
+                        title: 'Fail to create new food!',
+                        showConfirmButton: false,
+                        heightAuto: true,
+                        width: "auto",
+                        timer: 2200
+                    });
+                });
         }
     }
 
@@ -146,11 +168,10 @@ export default class Form extends Component {
 
     render() {
         let newFood = new FormData();
-        let newTransaction = new FormData();
         if (this.props.auth.isAuth) {
             const userData = this.props.auth.user;
-            newFood.set('cooked_id', userData.id);
-            newTransaction.set('cooked_id', userData.id);
+            newFood.set('cooker_id', userData.id);
+            newFood.set('creator_id', userData.id);
             return (
                 <div className="col-lg-12">
                     <div className="notification-box mb-60">
@@ -186,13 +207,18 @@ export default class Form extends Component {
                                         <div className="col-lg-4 col-md-4">
                                             <div className="form-group">
                                                 <label>Quantity (max quantities is 4)</label>
-                                                <input type="number" name="quantity" className="form-control" placeholder="Quantity" ref="quantity" max={4} min={1}/>
+                                                <select className="search-fields" name="Quantity" ref="quantity">
+                                                    <option value={1} defaultValue>1</option>
+                                                    <option value={2}>2</option>
+                                                    <option value={3}>3</option>
+                                                    <option value={4}>4</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div className="col-lg-4 col-md-4">
                                             <div className="form-group">
                                                 <label>Price</label>
-                                                <input type="number" name="price" className="form-control" placeholder="Price" ref="price"/>
+                                                <input type="number" name="price" className="form-control" placeholder="Price" ref="price" defaultValue={10000}/>
                                             </div>
                                         </div>
                                         <div className="col-lg-4 col-md-4">

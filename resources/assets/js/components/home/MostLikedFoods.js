@@ -33,11 +33,7 @@ export default class MostLikedFoods extends Component {
                                     href={"/foods/" + food.id}
                                     className="property-img"
                                 >
-                                    <img
-                                        src={food.images[0].link}
-                                        alt="property-1"
-                                        className="img-fluid"
-                                    />
+                                    <div style={{backgroundImage: "url(" + food.images[0].link + ")", height: "150px", backgroundPosition: "center", backgroundSize: "cover"}}></div>
                                 </a>
                             </div>
                             {/* <!-- detail --> */}

@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import {Link} from "react-router-dom";
-import {updateTransaction}  from '@/actions/TransactionActions';
 
-class TransactionGridItem extends Component {
+export default class TransactionGridItem extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -15,6 +13,17 @@ class TransactionGridItem extends Component {
     }
     componentWillReceiveProps(nextProps) {
         this.props = nextProps;
+    }
+    getStatus(transaction) {
+        if (transaction.status == "dealing") {
+            if (transaction.requirer) {
+                return "required";
+            } else {
+                return "cooked";
+            }
+        } else {
+            return transaction.status;
+        }
     }
     getStatusStyle(status) {
         let style;
@@ -43,11 +52,11 @@ class TransactionGridItem extends Component {
         let style;
         switch (status) {
             case 'required': {
-                style = {backgroundColor: '#ea0000db', fontWeight: 'bold', color: "aliceblue"};
+                style = {backgroundColor: '#c1751ae6', fontWeight: 'bold', color: "aliceblue"};
                 return <a href="javascript:void(0)" style={style} className="btn-read-more pull-right padding-bottom-4" onClick={()=>this.props.updateTransaction({...transaction, cooker_id: auth.user.id, status: "dealed"})}>Cook Now</a>;
             }
             case 'cooked': {
-                style = {backgroundColor: '#c1751ae6', fontWeight: 'bold', color: "aliceblue"};
+                style = {backgroundColor: '#ea0000db', fontWeight: 'bold', color: "aliceblue"};
                 return <a href="javascript:void(0)" style={style} className="btn-read-more pull-right padding-bottom-4" onClick={()=>this.props.updateTransaction({...transaction, requirer_id: auth.user.id, status: "dealed"})}>Require Now</a>;
             }
             case 'dealed': {
@@ -73,8 +82,8 @@ class TransactionGridItem extends Component {
                 <div className="blog-grid-box">
                     <div style={{backgroundImage: "url(" + transaction.food.feature_image.link + ")", height: "230px", backgroundPosition: "center", backgroundSize: "cover"}}></div>
                     <div className="detail">
-                        <div className="date-box" style={this.getStatusStyle(transaction.status)}>
-                            <h5>{transaction.status}</h5>
+                        <div className="date-box" style={this.getStatusStyle(this.getStatus(transaction))}>
+                            <h5>{this.getStatus(transaction)}</h5>
                         </div>                       
                         <h3>
                             {
@@ -86,7 +95,7 @@ class TransactionGridItem extends Component {
                             <Dealer transaction={transaction}/>
                         </div>
                         <p className="overflow-hidden height-100 text-overflow-ellipsis">{transaction.description}</p>
-                            {this.getActionButton(transaction.status)}
+                            {this.getActionButton(this.getStatus(transaction))}
                             <hr/>
                             <span><a href="#" className="margin-right-9 color-red-black"><i className="fa fa-thumbs-o-up"></i>{transaction.food.like}</a></span>
                             <span><a href="#" className="margin-right-9 color-red-black"><i className="fa fa-commenting-o"></i>{transaction.deals_count}</a></span>
@@ -132,19 +141,5 @@ class Dealer extends Component {
         }
     }
 }
-
-function mapStateToProps(state) {
-    return {
-        transaction_action: state.transaction
-    };
-};
-
-function mapDispatchToProps(dispatch) {
-    return {
-        updateTransaction: (transaction) => dispatch(updateTransaction(transaction))
-    };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(TransactionGridItem);
 
 

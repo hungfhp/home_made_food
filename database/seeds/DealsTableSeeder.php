@@ -12,7 +12,7 @@ class DealsTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
 
-        for ($i = 0; $i < 2000; $i++) {
+        for ($i = 0; $i < 1000; $i++) {
             $data[$i] = [
                 'user_id' => rand(1, 20),
                 'transaction_id' => rand(1, 500),
