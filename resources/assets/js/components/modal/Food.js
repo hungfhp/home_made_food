@@ -9,7 +9,7 @@ export default class Food extends Component {
                     <div className="modal-content">
                         <div className="modal-header">
                             <h5 className="modal-title" id="propertyModalLabel">
-                                Find Your Dream Properties
+                                alalal
                             </h5>
                             <p>123 Kathal St. Tampa City,</p>
                             <span className="ratings">

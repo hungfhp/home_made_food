@@ -1,6 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Model\Transaction;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Model\Food;
 use Illuminate\Support\Facades\DB;
@@ -48,7 +50,17 @@ class FoodController extends Controller
     {
         Log::info('add food');
         $food = Food::create($request->all());
-        return response()->json(['result' => true, 'data' => $food], 201);
+        $transactionData = $request->all();
+        $transactionData['food_id'] = $food['id'];
+        $transactionData['description'] = $transactionData['descriptionTransaction'];
+        $time = new  Carbon($transactionData['desired_time']);
+        $transactionData['desired_time'] = $time->format('Y-m-d H:i:s');
+        Log::info($transactionData['desired_time']);
+        $quantity = intval($transactionData['quantity']);
+        for ($i = 1; $i<= $quantity; $i++) {
+            $transaction =Transaction::create($transactionData);
+        }
+        return response()->json(['result' => true, 'data' => ['food'=>$food, 'transaction'=>$transaction]], 201);
     }
 
     /**

@@ -1,9 +1,18 @@
 import React, { Component } from "react";
 import TrTransaction from "@/components/transaction/TrTransaction";
+import axios from "axios";
+import {Modal} from "react-bootstrap";
+import {Button} from "react-bootstrap";
 
 export default class List extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            modal: [],
+            show: false
+        };
+        this.handleShow = this.handleShow.bind(this);
+        this.handleClose = this.handleClose.bind(this);
     }
     componentWillReceiveProps(nextProps) {
         this.props = nextProps;
