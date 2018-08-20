@@ -8,6 +8,12 @@ config file .env
 clone
 
 composer update
+</pre>
+Nếu lỗi: 
+<pre>
+php composer.phar require intervention/image
+composer update
+</pre>
 
 php artisan key:generate
 

@@ -10,9 +10,17 @@ class TransactionsTableSeeder extends Seeder
      *
      * @return void
      */
+
     public function run()
     {
         $faker = Faker\Factory::create();
+        $address_array = [
+            'Đại học Bách Khoa Hà Nội',
+            "Đại học Ngoại Thương",
+            "434 Trần Khát Chân",
+            "Time City",
+            "Phố đi bộ Hồ Gươm"
+        ];
 
         for ($i = 0; $i < 500; $i += 5) {
             $user0 = rand(1,4);
@@ -48,6 +56,8 @@ class TransactionsTableSeeder extends Seeder
                     ),
                 'description' =>
                     $faker->realText($maxNbChars = 150, $indexSize = 2),
+                'address_from' => $address_array[rand(0,4)],
+                'address_to' => $address_array[rand(0,4)],
                 'price' => rand(4, 15) * 5000
             ];
             // dealed 
@@ -78,6 +88,8 @@ class TransactionsTableSeeder extends Seeder
                     ),
                 'description' =>
                     $faker->realText($maxNbChars = 150, $indexSize = 2),
+                'address_from' => $address_array[rand(0,4)],
+                'address_to' => $address_array[rand(0,4)],
                 'price' => rand(4, 15) * 5000
             ];
             // shipping
@@ -108,6 +120,8 @@ class TransactionsTableSeeder extends Seeder
                     ),
                 'description' =>
                     $faker->realText($maxNbChars = 150, $indexSize = 2),
+                'address_from' => $address_array[rand(0,4)],
+                'address_to' => $address_array[rand(0,4)],
                 'price' => rand(4, 15) * 5000
             ];
             // done
@@ -138,6 +152,8 @@ class TransactionsTableSeeder extends Seeder
                     ),
                 'description' =>
                     $faker->realText($maxNbChars = 150, $indexSize = 2),
+                'address_from' => $address_array[rand(0,4)],
+                'address_to' => $address_array[rand(0,4)],
                 'price' => rand(4, 15) * 5000
             ];
             // cancel
@@ -168,6 +184,8 @@ class TransactionsTableSeeder extends Seeder
                     ),
                 'description' =>
                     $faker->realText($maxNbChars = 150, $indexSize = 2),
+                'address_from' => $address_array[rand(0,4)],
+                'address_to' => $address_array[rand(0,4)],
                 'price' => rand(4, 15) * 5000
             ];
         }

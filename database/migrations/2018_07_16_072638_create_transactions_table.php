@@ -22,6 +22,8 @@ class CreateTransactionsTable extends Migration
             $table->integer('shipper_id')->nullable();
             $table->string('status');
             $table->longText('description');
+            $table->longText('address_to');
+            $table->longText('address_from');
             $table->integer('price');
             $table->dateTime('desired_at')->default(Carbon::now());
             $table->timestamps();
