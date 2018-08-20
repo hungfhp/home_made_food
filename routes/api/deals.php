@@ -2,7 +2,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'DealController@index')->name('deals.index');
-Route::get('/{id}', 'DealController@show')->name('deals.show');
+Route::get('/newest', 'DealController@newest')->name('deals.newest');
 
 Route::group(['middleware' => 'auth:api'], function () {
     Route::post('/', 'DealController@store')->name('deals.store');
@@ -11,3 +11,5 @@ Route::group(['middleware' => 'auth:api'], function () {
     );
     Route::delete('/{id}', 'DealController@delete')->name('deals.delete');
 });
+
+Route::get('/{id}', 'DealController@show')->name('deals.show');

@@ -8,7 +8,7 @@ const initialState = {
     error: ""
 }
 
-const user = (state = initialState, action) => {
+const food = (state = initialState, action) => {
     switch (action.type) {
         case types.GET_FOOD_SUCCESS:
             return {...state,
@@ -64,4 +64,4 @@ const user = (state = initialState, action) => {
     }
 };
 
-export default user;
+export default food;

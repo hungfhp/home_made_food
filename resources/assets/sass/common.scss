@@ -150,7 +150,62 @@
 .height-100 {
     height: 100px;
 }
+.height-70 {
+    height: 70px;
+}
+.max-height-70 {
+    max-height: 70px !important;
+}
 
 .text-overflow-ellipsis {
     text-overflow: ellipsis;
+}
+
+.transaction-required-color {
+    color: #c1751ae6;
+}
+.transaction-required-bg-color {
+    background-color: #c1751ae6;
+}
+
+.transaction-cooked-color {
+    color: #ea0000db;
+}
+.transaction-cooked-bg-color {
+    
+    background-color: #ea0000db;
+}
+.transaction-dealing-color {
+    color: #1c850ee6;
+}
+.transaction-dealing-bg-color {
+    background-color: #1c850ee6;
+}
+.transaction-dealed-color {
+    color: #1c31aae8;
+}
+.transaction-dealed-bg-color {
+    background-color: #1c31aae8;
+}
+.transaction-shipping-color {
+    color: #452c6de6;
+}
+.transaction-shipping-bg-color {
+    background-color: #452c6de6;
+}
+.transaction-done-color {
+    color: #122e33e6;
+}
+.transaction-done-bg-color {
+    background-color: #122e33e6;
+}
+.transaction-cancel-color {
+    color: #4e3b24e6;
+}
+.transaction-cancel-bg-color {
+    background-color: #4e3b24e6;
+}
+
+.color-aliceblue{
+    color: "aliceblue"
 }

@@ -60,10 +60,10 @@ export default class Main extends Component {
                 <Route exact path="/register" component={AuthRegister} />
                 <Route exact path="/reset-password" component={AuthResetPassword} />
                 {/* categories */}
+                <Route exact path="/categories" component={CategoriesIndex} />
                 <Route exact path="/categories/create" component={CategoriesCreate} />
                 <Route exact path="/categories/:id/delete" component={CategoriesDelete} />
                 <Route exact path="/categories/:id/edit" component={CategoriesEdit} />
-                <Route exact path="/categories" component={CategoriesIndex} />
                 <Route exact path="/categories/:id" component={CategoriesShow} />
                 {/* error */}
                 <Route exact path="/error" component={ErrorShow} />
@@ -83,12 +83,12 @@ export default class Main extends Component {
                 <Route exact path="/" component={HomeIndex} />
                 <Route exact path="/home" component={HomeIndex} />
                 {/* transactions */}
-                <Route exact path="/transactions/create" component={TransactionsCreate} />
-                <Route exact path="/transactions/:id/delete" component={TransactionsDelete} />
-                <Route exact path="/transactions/:id/edit" component={TransactionsEdit} />
-                <Route exact path="/transactions" component={TransactionsIndex} />
+                <Route exact path="/transactions" component={TransactionsIndex}/>
                 <Route exact path="/transactions/history" component={TransactionsHistory} />
+                <Route exact path="/transactions/create" component={TransactionsCreate} />
                 <Route exact path="/transactions/:id" component={TransactionsShow} />
+                <Route exact path="/transactions/:id/edit" component={TransactionsEdit} />
+                <Route exact path="/transactions/:id/delete" component={TransactionsDelete} />
                 {/* users */}
                 <Route exact path="/users/create" component={UsersCreate} />
                 <Route exact path="/users/:id/delete" component={UsersDelete} />

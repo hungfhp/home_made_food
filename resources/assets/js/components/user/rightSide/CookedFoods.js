@@ -15,6 +15,7 @@ export default class CookedFoods extends Component {
         this.props.getCookedFoods(this.props.user_id, page);
     }
     render() {
+        let is_my_profile= this.props.is_my_profile;
         return (
             <div id="tab-cooked-foods">
                 <div className="my-properties">
@@ -25,8 +26,11 @@ export default class CookedFoods extends Component {
                                 <th></th>
                                 <th>Updated</th>
                                 <th>Like</th>
-                                <th>Publish</th>
-                                <th>Edit</th>
+                                {
+                                    is_my_profile &&
+                                    <th>Publish</th> &&
+                                    <th>Edit</th>
+                                }
                             </tr>
                         </thead>
                         <tbody>
@@ -39,7 +43,7 @@ export default class CookedFoods extends Component {
                                     return <TrCookedFood 
                                         key={food.id} 
                                         food={food} 
-                                        is_my_food={this.props.is_my_profile} 
+                                        is_my_food={is_my_profile}
                                         updateFood={this.props.updateFood} />
                                     })
                                 ) : null

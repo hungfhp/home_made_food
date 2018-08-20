@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {Link} from "react-router-dom";
-import TransactionGridItem from "@/components/transactions/TransactionGridItem";
+import TransactionItemGrid from "@/components/transaction/TransactionItemGrid";
 import Pagination from "@/components/layouts/Pagination";
 
 export default class LeftSide extends Component {
@@ -17,14 +17,13 @@ export default class LeftSide extends Component {
         let is_loading = this.props.transactions.is_loading;
         let pagination = this.props.transactions.pagination;
         let auth = this.props.auth;
-
         return (
             <div className="row">
                 {
                     is_loading ? (<div>Loading...</div>):(
                         transactions.length ? (
                             transactions.map((transaction, index) => {
-                                return <TransactionGridItem key={index} auth={auth} transaction={transaction} />
+                                return <TransactionItemGrid key={index} auth={auth} transaction={transaction} updateTransaction={this.props.updateTransaction} />
                             })
                         ):null
 
@@ -33,7 +32,7 @@ export default class LeftSide extends Component {
                 <div className="col-lg-12">
                 {
                     pagination && 
-                    <Pagination href_to="#list-top" pagination={pagination} getDataPaging={this.props.getTransactions}/>
+                    <Pagination href_to="#list-top" pagination={pagination} getDataPaging={this.props.getTransactionsPaging}/>
                 }
                 </div>
 

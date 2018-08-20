@@ -106,16 +106,16 @@ export default class Header extends Component {
                                                     Transactions
                                                 </a>
                                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown3">
-                                                    <Link className="dropdown-item" to={"/transactions"}>
+                                                    <Link className="dropdown-item" to={"/transactions#all"}>
                                                         All
                                                     </Link>
-                                                    <Link className="dropdown-item" to={"/transactions"}>
+                                                    <Link className="dropdown-item" to={"/transactions#required"}>
                                                         Required
                                                     </Link>
-                                                    <Link className="dropdown-item" to={"/transactions"}>
+                                                    <Link className="dropdown-item" to={"/transactions#cooked"}>
                                                         Cooked
                                                     </Link>
-                                                    <Link className="dropdown-item" to={"/transactions"}>
+                                                    <Link className="dropdown-item" to={"/transactions#dealed"}>
                                                         Dealed
                                                     </Link>
                                                 </div>

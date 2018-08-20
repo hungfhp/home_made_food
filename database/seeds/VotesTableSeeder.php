@@ -12,7 +12,7 @@ class VotesTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
 
-        for ($i = 0; $i < 2000; $i += 2) {
+        for ($i = 0; $i < 1000; $i += 2) {
             $data[$i] = [
                 'food_id' => rand(1, 1000),
                 'user_id' => rand(1, 5),

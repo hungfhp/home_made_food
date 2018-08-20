@@ -12,7 +12,7 @@ class CommentsTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
 
-        for ($i = 0; $i < 3000; $i++) {
+        for ($i = 0; $i < 1000; $i++) {
             $data[$i] = [
                 'food_id' => rand(1, 1000),
                 'user_id' => rand(1, 5),

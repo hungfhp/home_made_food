@@ -15,6 +15,13 @@ class History extends Component {
         super(props);
         this.state = {};
     }
+    componentWillMount(){
+        let params = {
+            page: 1,
+            status: "required"
+        }
+        this.props.dispatchGetTransactionsHitory(params);
+    }
     componentWillReceiveProps(nextProps) {
         this.props = nextProps;
     }
@@ -52,7 +59,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         default: dispatch(getProfile()),
-        default2: dispatch(getTransactionsHitory()),
+        dispatchGetTransactionsHitory: (params) => dispatch(getTransactionsHitory(params)),
         default3: dispatch(getTransactionsHitoryTotal()),
         logoutSuccess: () => dispatch(logoutSuccess())
     };
