@@ -16,7 +16,10 @@ class CategoryImageController extends Controller
      */
     public function index()
     {
-        //
+        $category_images = Category_image::with('category')
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+        return response()->json(['result'=>true, 'data'=> $category_images], 200);
     }
 
     /**
@@ -48,9 +51,10 @@ class CategoryImageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($category_id)
     {
-        //
+        $category_image = Category_image::where('category_id', $category_id)->first();
+        return response()->json(['result'=>true, 'data' => $category_image], 200);
     }
 
     /**
