@@ -236,19 +236,19 @@ export default class Form extends Component {
                                         <div className="col-lg-6 col-md-6">
                                             <div className="form-group">
                                                 <label>Email</label>
-                                                <input type="email" name="email" className="form-control" placeholder={userData.email} ref="email" value=''/>
+                                                <input type="email" name="email" className="form-control" placeholder={userData.email} ref="email"/>
                                             </div>
                                         </div>
                                         <div className="col-lg-6 col-md-6">
                                             <div className="form-group">
                                                 <label>Address</label>
-                                                <input type="text" name="address" className="form-control" placeholder={userData.address} ref="address" value=''/>
+                                                <input type="text" name="address" className="form-control" placeholder={userData.address} ref="address"/>
                                             </div>
                                         </div>
                                         <div className="col-lg-6 col-md-6">
                                             <div className="form-group">
                                                 <label>Phone number</label>
-                                                <input type="text" name="phone" className="form-control" placeholder={userData.phone} ref="phone" value=''/>
+                                                <input type="text" name="phone" className="form-control" placeholder={userData.phone} ref="phone"/>
                                             </div>
                                         </div>
                                     </div>
