@@ -1,4 +1,4 @@
-require("../theme/js/jquery-2.2.0.min.js");
+require("../theme/js/jquery-3.3.1.min.js");
 require("../theme/js/popper.min.js");
 require("../theme/js/bootstrap.min.js");
 require("../theme/js/jquery.selectBox.js");

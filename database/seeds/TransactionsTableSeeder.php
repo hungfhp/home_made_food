@@ -17,8 +17,8 @@ class TransactionsTableSeeder extends Seeder
         for ($i = 0; $i < 500; $i += 6) {
             $data[$i] = [
                 'food_id' => rand(1, 1000),
-                'required_id' => rand(1, 5),
-                'cooked_id' => null,
+                'requirer_id' => rand(1, 5),
+                'cooker_id' => null,
                 'shipper_id' => null,
                 'status' => 'required',
                 'created_at' =>
@@ -33,7 +33,7 @@ class TransactionsTableSeeder extends Seeder
                         $endDate = 'now',
                         $timezone = null
                     ),
-                'desired_time' =>   
+                'desired_at' =>   
                     $faker->dateTimeBetween(
                         $startDate = '+1 days',
                         $endDate = '+2 days',
@@ -45,8 +45,8 @@ class TransactionsTableSeeder extends Seeder
             ];
             $data[$i + 1] = [
                 'food_id' => rand(1, 1000),
-                'required_id' => null,
-                'cooked_id' => rand(1, 5),
+                'requirer_id' => null,
+                'cooker_id' => rand(1, 5),
                 'shipper_id' => null,
                 'status' => 'cooked',
                 'created_at' =>
@@ -61,7 +61,7 @@ class TransactionsTableSeeder extends Seeder
                         $endDate = 'now',
                         $timezone = null
                     ),
-                'desired_time' =>   
+                'desired_at' =>   
                     $faker->dateTimeBetween(
                         $startDate = '+1 days',
                         $endDate = '+2 days',
@@ -73,8 +73,8 @@ class TransactionsTableSeeder extends Seeder
             ];
             $data[$i + 2] = [
                 'food_id' => rand(1, 1000),
-                'required_id' => rand(1, 5),
-                'cooked_id' => rand(1, 5),
+                'requirer_id' => rand(1, 5),
+                'cooker_id' => rand(1, 5),
                 'shipper_id' => null,
                 'status' => 'dealed',
                 'created_at' =>
@@ -89,7 +89,7 @@ class TransactionsTableSeeder extends Seeder
                         $endDate = 'now',
                         $timezone = null
                     ),
-                'desired_time' =>   
+                'desired_at' =>   
                     $faker->dateTimeBetween(
                         $startDate = '+1 days',
                         $endDate = '+2 days',
@@ -101,8 +101,8 @@ class TransactionsTableSeeder extends Seeder
             ];
             $data[$i + 3] = [
                 'food_id' => rand(1, 1000),
-                'required_id' => rand(1, 5),
-                'cooked_id' => rand(1, 5),
+                'requirer_id' => rand(1, 5),
+                'cooker_id' => rand(1, 5),
                 'shipper_id' => rand(1, 5),
                 'status' => 'shipping',
                 'created_at' =>
@@ -117,7 +117,7 @@ class TransactionsTableSeeder extends Seeder
                         $endDate = 'now',
                         $timezone = null
                     ),
-                'desired_time' =>   
+                'desired_at' =>   
                     $faker->dateTimeBetween(
                         $startDate = '+1 days',
                         $endDate = '+2 days',
@@ -129,8 +129,8 @@ class TransactionsTableSeeder extends Seeder
             ];
             $data[$i + 4] = [
                 'food_id' => rand(1, 1000),
-                'required_id' => rand(1, 5),
-                'cooked_id' => rand(1, 5),
+                'requirer_id' => rand(1, 5),
+                'cooker_id' => rand(1, 5),
                 'shipper_id' => rand(1, 5),
                 'status' => 'done',
                 'created_at' =>
@@ -145,7 +145,7 @@ class TransactionsTableSeeder extends Seeder
                         $endDate = 'now',
                         $timezone = null
                     ),
-                'desired_time' =>   
+                'desired_at' =>   
                     $faker->dateTimeBetween(
                         $startDate = '+1 days',
                         $endDate = '+2 days',
@@ -157,8 +157,8 @@ class TransactionsTableSeeder extends Seeder
             ];
             $data[$i + 5] = [
                 'food_id' => rand(1, 1000),
-                'required_id' => rand(1, 5),
-                'cooked_id' => rand(1, 5),
+                'requirer_id' => rand(1, 5),
+                'cooker_id' => rand(1, 5),
                 'shipper_id' => rand(1, 5),
                 'status' => 'cancel',
                 'created_at' =>
@@ -173,7 +173,7 @@ class TransactionsTableSeeder extends Seeder
                         $endDate = 'now',
                         $timezone = null
                     ),
-                'desired_time' =>   
+                'desired_at' =>   
                     $faker->dateTimeBetween(
                         $startDate = '+1 days',
                         $endDate = '+2 days',

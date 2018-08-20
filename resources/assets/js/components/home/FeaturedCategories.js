@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Product from '../../components/food/Product';
 
 export default class FeaturedCategories extends Component {
     constructor(props) {
@@ -34,29 +33,24 @@ export default class FeaturedCategories extends Component {
     render() {
         if (this.state.categories != 0)
         {
-        const list = this.state.categories[0].foods.concat(this.state.categories[1].foods).concat(this.state.categories[2].foods);
-        console.log(list);
-        const food_list = list.map((food)=> {
-            // const image = food.images;
-            // console.log("ok");
-            console.log(food);
-
+            const list = this.state.categories[0].foods.concat(this.state.categories[1].foods).concat(this.state.categories[2].foods);
+            const food_list = list.map((food)=> {
                 return (
                     <div className="col-lg-4 col-md-6 col-sm-12 filtr-item" data-category={food.category_id} key={food.id}>
                         <div className="property-box">
                             <div className="property-thumbnail">
-                                <a href="properties-details.html" className="property-img">
+                                <a href={"/foods/" + food.id} className="property-img">
                                     <div className="price-ratings-box">
-                                        <p className="price">
-                                            {food.price}
+                                        <p className="price price-background">
+                                            {food.price} Đ
                                         </p>
                                     </div>
-                                    <img src={food.images[0].link} alt="property-7" className="img-fluid"/>
+                                    <div style={{backgroundImage: "url(" + food.images[0].link + ")", height: "230px", backgroundPosition: "center", backgroundSize: "cover"}}></div>
                                 </a>
                             </div>
                             <div className="detail">
                                 <h1 className="title">
-                                    <a href="properties-details.html">
+                                    <a href={"/foods/" + food.id}>
                                         {food.name}
                                     </a>
                                 </h1>
@@ -67,25 +61,12 @@ export default class FeaturedCategories extends Component {
                                     <li>
                                         <i className="material-icons">thumb_down</i>{food.dislike}
                                     </li>
-                                    <li>
-                                        <i className="material-icons">favorite</i> 10
-                                    </li>
                                 </ul>
-                            </div>
-                            <div className="footer">
-                                <a href="#">
-                                    <i className="fa fa-user" /> Jhon Doe
-                                </a>
-                                <span>
-                                    <i className="fa fa-calendar-o" /> 2 years ago
-                                </span>
                             </div>
                         </div>
                     </div>
                 );
-
-        });
-
+            });
 
             return(
                 <div className="featured-properties content-area-2">

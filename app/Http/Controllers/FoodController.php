@@ -5,8 +5,10 @@ use App\Model\Transaction;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Model\Food;
+use Illuminate\Support\Facades\DB;
 use App\Model\Category;
 use App\Model\Food_image;
+use Auth;
 use Log;
 
 class FoodController extends Controller
@@ -103,6 +105,7 @@ class FoodController extends Controller
     public function update(Request $request, $id)
     {
         Log::info('update food');
+        $user = Auth::user();
         $food = Food::find($id)->update($request->all());
         return response()->json(['result' => true, 'data' => $food], 202);
     }
@@ -119,5 +122,18 @@ class FoodController extends Controller
         $food = Food::find($id);
         $food->delete();
         return response()->json(['result' => true, 'data' => $food], 203);
+    }
+
+    public function mostLike(Request $request)
+    {
+        Log::info('user: get most liked food');
+        $result = Food::where([
+            ['publish','=', true],
+            ['like','=',DB::table('foods')->max('like')],
+        ])->take(4)->get();
+        foreach ($result as $item) {
+            $item['images'] = Food::find($item['id'])->food_images->all();
+        }
+        return response()->json(['result' => true, 'data' => $result], 200);
     }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getProfile, logoutSuccess } from '@/actions/AuthActions';
+import { getTransactionsHitory, getTransactionsHitoryTotal } from '@/actions/TransactionsActions';
 
 import Header from "../../components/layouts/Header";
 import SubHeader from "../../components/layouts/SubHeader";
@@ -13,11 +14,7 @@ import ModalFood from "../../components/transaction/ModalFood";
 class History extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            userId: localStorage.user_id,
-            HistoryData: [],
-            DataInfo: 0
-        };
+        this.state = {};
     }
 
     componentDidMount() {
@@ -29,9 +26,11 @@ class History extends Component {
                 }
             ).catch(
                 error=>console.log('Transaction history: error!')
-        )
-    }
+        )}
 
+    componentWillReceiveProps(nextProps) {
+        this.props = nextProps;
+    }
     render() {
         return (
             <div>
@@ -40,8 +39,12 @@ class History extends Component {
                 <div className="user-page submit-property content-area-7">
                     <div className="container">
                         <div className="row">
-                            <List HistoryData={this.state.HistoryData}/>
-                            <Total/>
+                            <div className="col-lg-12">
+                                <Total total_cart={this.props.total_cart} />
+                            </div>
+                            <div className="col-lg-12">
+                                <List {...this.props}/>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -53,13 +56,17 @@ class History extends Component {
 
 function mapStateToProps(state) {
     return {
-        auth: state.auth
+        auth: state.auth,
+        transactions_history: state.transactions.history,
+        total_cart: state.transactions.total_cart
     };
 };
 
 function mapDispatchToProps(dispatch) {
     return {
         default: dispatch(getProfile()),
+        default2: dispatch(getTransactionsHitory()),
+        default3: dispatch(getTransactionsHitoryTotal()),
         logoutSuccess: () => dispatch(logoutSuccess())
     };
 }

@@ -47,21 +47,21 @@ export default class Header extends Component {
                 )
         } else {
             return (
-                    <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            Account
-                        </a>
-                        <div className="dropdown-menu" aria-labelledby="navbarDropdown3">
-                            <Link className="dropdown-item" to={"/login"}>
-                                Login
-                            </Link>
-                            <Link className="dropdown-item" to={"/register"}>
-                                Register
-                            </Link>
-                        </div>
-                    </li>
-                )
+                <li className="nav-item dropdown">
+                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Account
+                    </a>
+                    <div className="dropdown-menu" aria-labelledby="navbarDropdown3">
+                        <Link className="dropdown-item" to={"/login"}>
+                            Login
+                        </Link>
+                        <Link className="dropdown-item" to={"/register"}>
+                            Register
+                        </Link>
+                    </div>
+                </li>
+            )
         }
     }
     logout() {
@@ -96,9 +96,29 @@ export default class Header extends Component {
                                                 </a>                                    
                                             </li>
                                             <li className="nav-item dropdown">
-                                                <a className="nav-link" href="/foods" id="navbarDropdownMenuLink2">
+                                                <Link className="nav-link" to={"/foods"} id="navbarDropdownMenuLink2">
                                                     Foods
+                                                </Link>
+                                            </li>
+                                            <li className="nav-item dropdown">
+                                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    Transactions
                                                 </a>
+                                                <div className="dropdown-menu" aria-labelledby="navbarDropdown3">
+                                                    <Link className="dropdown-item" to={"/transactions"}>
+                                                        All
+                                                    </Link>
+                                                    <Link className="dropdown-item" to={"/transactions"}>
+                                                        Required
+                                                    </Link>
+                                                    <Link className="dropdown-item" to={"/transactions"}>
+                                                        Cooked
+                                                    </Link>
+                                                    <Link className="dropdown-item" to={"/transactions"}>
+                                                        Dealed
+                                                    </Link>
+                                                </div>
                                             </li>
                                             <li className="nav-item dropdown megamenu-li">
                                                 <a className="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

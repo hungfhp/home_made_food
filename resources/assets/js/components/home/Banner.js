@@ -8,70 +8,70 @@ export default class Banner extends Component {
             slides: [
                 {
                     status: "active",
-                    img_src: "/img/banner-3.jpg",
+                    img_src: "/img/banner1.jpg",
                     contents: [
                         {
-                            text: "We love make things <br />amazing and simple"
+                            text: "We love connecting people"
                         },
                         {
                             text:
-                                "This is real estate website template based on Bootstrap 4 framework."
+                                "To every one can get delecious meals."
                         }
                     ],
                     buttons: [
                         {
-                            text: "Get Started Now",
-                            link_to: "/categories"
+                            text: "View your meals",
+                            link_to: "/foods"
                         },
                         {
-                            text: "Free Download",
-                            link_to: "/categories"
+                            text: "Join us",
+                            link_to: "/register"
                         }
                     ]
                 },
                 {
                     status: "",
-                    img_src: "/img/banner-3.jpg",
+                    img_src: "/img/banner2.jpg",
                     contents: [
                         {
-                            text: "We love make things <br />amazing and simple"
+                            text: "I  want family foods..."
                         },
                         {
                             text:
-                                "This is real estate website template based on Bootstrap 4 framework."
+                                "... I dont want to eat fastfood anymore"
                         }
                     ],
                     buttons: [
                         {
-                            text: "Get Started Now",
-                            link_to: "/categories"
+                            text: "View your meals",
+                            link_to: "/foods"
                         },
                         {
-                            text: "Free Download",
-                            link_to: "/categories"
+                            text: "Join us",
+                            link_to: "/register"
                         }
                     ]
                 },
                 {
                     status: "",
-                    img_src: "/img/banner-3.jpg",
+                    img_src: "/img/banner3.jpg",
                     contents: [
                         {
-                            text: "We love make things <br />amazing and simple"
+                            text: "I like to cook healthy food..."
                         },
                         {
                             text:
-                                "This is real estate website template based on Bootstrap 4 framework."
+                                "... and share them to anyone who want"
                         }
                     ],
                     buttons: [
                         {
-                            text: "Get Started Now",
+                            text: "View your meals",
                             link_to: "/categories"
                         },
                         {
-                            text: "Free Download",
-                            link_to: "/categories"
+                            text: "Join us",
+                            link_to: "/register"
                         }
                     ]
                 }
