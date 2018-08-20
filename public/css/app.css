@@ -15216,7 +15216,7 @@ yx-axis
 @font-face {
     font-family: 'FontAwesome';
     src: url(/fonts/fontawesome-webfont3e6e.eot?674f50d287a8c48dc19ba404d20fe713);
-    src: url(/fonts/fontawesome-webfontd41d.eot?674f50d287a8c48dc19ba404d20fe713?#iefix&v=4.7.0) format('embedded-opentype'), url(/fonts/fontawesome-webfont3e6e.woff2?af7ae505a9eed503f8b8e6982036873e) format('woff2'), url(/fonts/fontawesome-webfont3e6e.woff?fee66e712a8a08eef5805a46892932ad) format('woff'), url(/fonts/fontawesome-webfont3e6e.ttf?b06871f281fee6b241d60582ae9369b9) format('truetype'), url(/fonts/fontawesome-webfont3e6e.svg?912ec66d7572ff821749319396470bde#fontawesomeregular) format('svg');
+    src: url(/fonts/fontawesome-webfontd41d.eot?674f50d287a8c48dc19ba404d20fe713?#iefix&v=4.7.0) format('embedded-opentype'), url(/fonts/fontawesome-webfont3e6e.woff2?af7ae505a9eed503f8b8e6982036873e) format('woff2'), url(/fonts/fontawesome-webfont3e6e.woff?fee66e712a8a08eef5805a46892932ad) format('woff'), url(/fonts/fontawesome-webfont3e6e.ttf?b06871f281fee6b241d60582ae9369b9) format('truetype'), url(/fonts/fontawesome-webfont3e6e.svg?acf3dcb7ff752b5296ca23ba2c7c2606#fontawesomeregular) format('svg');
     font-weight: normal;
     font-style: normal
 }
@@ -18142,7 +18142,7 @@ yx-axis
   src: url(/fonts/Flaticond41d.eot?4e43faffa96522701b9614453b90b53a?#iefix) format("embedded-opentype"),
        url(/fonts/Flaticon.woff?20ff3f02535a622fef87cf33708a34ed) format("woff"),
        url(/fonts/Flaticon.ttf?3a30c257226625ad44c906d9f7f0172e) format("truetype"),
-       url(/fonts/Flaticon.svg?f4532b9c54fb74a099833575f2891e2b#Flaticon) format("svg");
+       url(/fonts/Flaticon.svg?990cd64757fe1c742b22a12237d763b3#Flaticon) format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -18150,7 +18150,7 @@ yx-axis
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: "Flaticon";
-    src: url(/fonts/Flaticon.svg?f4532b9c54fb74a099833575f2891e2b#Flaticon) format("svg");
+    src: url(/fonts/Flaticon.svg?990cd64757fe1c742b22a12237d763b3#Flaticon) format("svg");
   }
 }
 
@@ -19309,7 +19309,7 @@ a {
 
 
 .banner-bg{
-    background: url(/images/banner-1.jpg?7761ea25d4422805ff95ac4236568225);
+    background: url(/images/banner-1.jpg?1388376c0c9577bc39b6bc08cf22ee80);
 }
 
 
@@ -19482,7 +19482,7 @@ a {
 }
 /** SUB BANNER **/
 .sub-banner {
-    background: rgba(0, 0, 0, 0.04) url(/images/sub-banner.jpg?e130e3d42ca86fc28c6f7f3b0a3b67e6) top left repeat;
+    background: rgba(0, 0, 0, 0.04) url(/images/sub-banner.jpg?f4fee39b0774ed0a2bb20371894fef62) top left repeat;
     background-size: cover;
     height: 290px;
     background-position: center center;
@@ -20197,7 +20197,7 @@ a {
     background-repeat: no-repeat;
     border: none;
     margin: 0;
-    background: rgba(0, 0, 0, 0.04) url(/images/sub-banner.jpg?e130e3d42ca86fc28c6f7f3b0a3b67e6) top left repeat;
+    background: rgba(0, 0, 0, 0.04) url(/images/sub-banner.jpg?f4fee39b0774ed0a2bb20371894fef62) top left repeat;
     background-size: cover;
     color: #efefef;
 }
@@ -23634,7 +23634,7 @@ table {
 /** SELL YOUR PROPERTIES **/
 .sell-your-properties {
     text-align: center;
-    background: rgba(0, 0, 0, 0.04) url(/images/property-15.jpg?9f35024fae992bc21811d8282d33398e) top left repeat;
+    background: rgba(0, 0, 0, 0.04) url(/images/property-15.jpg?8d3ad7a5bb25de87c8b48696a7597315) top left repeat;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -23657,7 +23657,7 @@ table {
 
 /** HELPING CENTER **/
 .helping-center {
-    background: rgba(0, 0, 0, 0.04) url(/images/property-15.jpg?9f35024fae992bc21811d8282d33398e) top left repeat;
+    background: rgba(0, 0, 0, 0.04) url(/images/property-15.jpg?8d3ad7a5bb25de87c8b48696a7597315) top left repeat;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -23709,7 +23709,7 @@ table {
 
 /** COMING SOON **/
 .coming-soon-bg {
-    background: rgba(0, 0, 0, 0.04) url(/images/banner-2.jpg?8f5a07ebe8fcfa1b2a5d224322143ffa) top left repeat;
+    background: rgba(0, 0, 0, 0.04) url(/images/banner-2.jpg?6e22fd2fde16313c56d8ed3f2906ef8d) top left repeat;
     background-size: cover;
     top: 0;
     width: 100%;
@@ -25881,7 +25881,7 @@ body.off-canvas-sidebar-open {
     }
 
     .helping-center {
-        background: rgba(0, 0, 0, 0.04) url(/images/property-15.jpg?9f35024fae992bc21811d8282d33398e) top left repeat;
+        background: rgba(0, 0, 0, 0.04) url(/images/property-15.jpg?8d3ad7a5bb25de87c8b48696a7597315) top left repeat;
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
@@ -26461,20 +26461,90 @@ li.active.btn.filtr-button.filtr {
         border: solid 2px #274cbf;
     }
 }
+.margin-top-10 {
+  margin-top: 10px !important;
+}
+
+.margin-top-1 {
+  margin-top: 1px !important;
+}
+
+.margin-top-15 {
+  margin-top: 15px !important;
+}
+
 .margin-right-15 {
-  margin-right: 15px;
+  margin-right: 15px !important;
+}
+
+.margin-right-9 {
+  margin-right: 9px !important;
+}
+
+.margin-bottom-1 {
+  margin-bottom: 1px !important;
 }
 
 .margin-left-15 {
-  margin-left: 15px;
+  margin-left: 15px !important;
 }
 
-.margin-top-10 {
-  margin-top: 10px;
+.margin-left-25 {
+  margin-left: 25px !important;
+}
+
+.margin-top-bottom-1 {
+  margin-top: 1px !important;
+  margin-bottom: 1px !important;
+}
+
+.padding-top-10 {
+  padding-top: 10px !important;
+}
+
+.padding-top-1 {
+  padding-top: 1px !important;
+}
+
+.padding-top-15 {
+  padding-top: 15px !important;
+}
+
+.padding-right-15 {
+  padding-right: 15px !important;
+}
+
+.padding-bottom-1 {
+  padding-bottom: 1px !important;
+}
+
+.padding-left-15 {
+  padding-left: 15px !important;
+}
+
+.padding-left-25 {
+  padding-left: 25px !important;
+}
+
+.padding-bottom-4 {
+  padding-bottom: 4px !important;
+}
+
+.padding-top-bottom-1 {
+  padding-top: 1px !important;
+  padding-bottom: 1px !important;
+}
+
+.min-width-100-per {
+  min-width: 100% !important;
 }
 
 .color-default {
   color: #37404d !important;
+}
+
+.price-background {
+  background-color: rgba(69, 32, 37, 0.8);
 }
 
 .selectBox.swal2-select.selectBox-dropdown {
@@ -26488,6 +26558,142 @@ li.active.btn.filtr-button.filtr {
 .swal2-container .swal2-popup {
   font-size: x-small !important;
   padding: 1.25em 2.25em !important;
+}
+
+.text-transform-none {
+  text-transform: none !important;
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+.text-align-center {
+  text-align: center !important;
+}
+
+.font-weight-700 {
+  font-weight: 700;
+}
+
+.text-transform-uppercase {
+  text-transform: uppercase !important;
+}
+
+.price-text {
+  font-size: 19px !important;
+  color: brown !important;
+}
+
+.price-box {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: block;
+  letter-spacing: 1px;
+  padding: 12px;
+  text-align: center;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.price-box h5 {
+  color: #fff;
+  margin: -4px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.color-red-black {
+  color: #450013 !important;
+}
+
+.hover-green-black:hover {
+  color: #304a00 !important;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.height-100 {
+  height: 100px;
+}
+
+.height-70 {
+  height: 70px;
+}
+
+.max-height-70 {
+  max-height: 70px !important;
+}
+
+.text-overflow-ellipsis {
+  text-overflow: ellipsis;
+}
+
+.transaction-required-color {
+  color: #c1751ae6;
+}
+
+.transaction-required-bg-color {
+  background-color: #c1751ae6;
+}
+
+.transaction-cooked-color {
+  color: #ea0000db;
+}
+
+.transaction-cooked-bg-color {
+  background-color: #ea0000db;
+}
+
+.transaction-dealing-color {
+  color: #1c850ee6;
+}
+
+.transaction-dealing-bg-color {
+  background-color: #1c850ee6;
+}
+
+.transaction-dealed-color {
+  color: #1c31aae8;
+}
+
+.transaction-dealed-bg-color {
+  background-color: #1c31aae8;
+}
+
+.transaction-shipping-color {
+  color: #452c6de6;
+}
+
+.transaction-shipping-bg-color {
+  background-color: #452c6de6;
+}
+
+.transaction-done-color {
+  color: #122e33e6;
+}
+
+.transaction-done-bg-color {
+  background-color: #122e33e6;
+}
+
+.transaction-cancel-color {
+  color: #4e3b24e6;
+}
+
+.transaction-cancel-bg-color {
+  background-color: #4e3b24e6;
+}
+
+.color-aliceblue {
+  color: "aliceblue";
+}
+
+.my-properties table tbody tr td.actions {
+  text-align: center;
 }
 
 .post-title {
@@ -26512,6 +26718,28 @@ li.active.btn.filtr-button.filtr {
 
 .form-group .name {
   background-color: #eeeeee;
+}
+
+.form-control {
+  color: black !important;
+}
+
+.datepicker {
+  min-height: 45px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 1px solid #e8e8e8;
+  background: #fff;
+  border-radius: 3px;
+  width: 100% !important;
+  padding: 2px 15px;
+  display: initial;
+  white-space: nowrap;
+  overflow: hidden;
+  line-height: 37px;
+  font-size: 14px;
+  color: black;
+  font-weight: 400;
 }
 
 .navbar-laravel {

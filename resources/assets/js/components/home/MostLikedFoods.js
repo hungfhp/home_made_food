@@ -24,8 +24,6 @@ export default class MostLikedFoods extends Component {
         if (this.state.foods != 0)
         {
             const most_liked_list = this.state.foods.map((food)=> {
-                // console.log(this.state.foods);
-                console.log(food);
                 return (
                     <div className="col-lg-3 col-md-6 col-sm-6 wow fadeInRight delay-04s" key={food.id}>
                         <div className="card property-box-2">
@@ -35,11 +33,7 @@ export default class MostLikedFoods extends Component {
                                     href={"/foods/" + food.id}
                                     className="property-img"
                                 >
-                                    <img
-                                        src={food.images[0].link}
-                                        alt="property-1"
-                                        className="img-fluid"
-                                    />
+                                    <div style={{backgroundImage: "url(" + food.images[0].link + ")", height: "150px", backgroundPosition: "center", backgroundSize: "cover"}}></div>
                                 </a>
                             </div>
                             {/* <!-- detail --> */}

@@ -107,7 +107,7 @@ export default class Product extends Component {
                     </div>
                 </div>
                 <div className="subtitle">
-                    20 Result Found
+                    {/*20 Result Found*/}
                 </div>
 
                 {food_list}
@@ -117,9 +117,9 @@ export default class Product extends Component {
                         <ul className="pagination">
                             <li className="page-item"><a className="page-link" href="#"><span aria-hidden="true">«</span></a></li>
                             <li className="page-item"><a className="page-link active" href="/foods">1</a></li>
-                            <li className="page-item"><a className="page-link" href="/foods">2</a></li>
-                            <li className="page-item"><a className="page-link" href="/foods">3</a></li>
-                            <li className="page-item"><a className="page-link" href="/foods"><span aria-hidden="true">»</span></a></li>
+                            <li className="page-item"><a className="page-link" href="#">2</a></li>
+                            <li className="page-item"><a className="page-link" href="#">3</a></li>
+                            <li className="page-item"><a className="page-link" href="#"><span aria-hidden="true">»</span></a></li>
                         </ul>
                     </nav>
                 </div>

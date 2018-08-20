@@ -126,20 +126,27 @@ export default class Detail extends Component {
             //slider
             const images_slider = dataInfo.image.map((image, index) => {
                 if (index === 1) {
+                    if (image.link.substring(0,4) !== 'http') {
+                        image.link = '/' + image.link;
+                    }
+                    console.log(image.link);
                     return (
                         <div key={image.id} className="item carousel-item active" data-slide-number={index}>
                             <img
                                 src={image.link}
-                                alt={index} className="img-fluid" style={{width: "800px", height: "auto"}}/>
+                                alt={index} style={{width: "700px", height: "400px"}}/>
                         </div>
                     );
                 }
                 else {
+                    if (image.link.substring(0,4) !== 'http') {
+                        image.link = '/' + image.link;
+                    }
                     return (
                         <div key={image.id} className="item carousel-item" data-slide-number={index}>
                             <img
                                 src={image.link}
-                                alt={index} className="img-fluid" style={{width: "800px", height: "auto"}}/>
+                                alt={index} style={{width: "700px", height: "400px"}}/>
                         </div>
                     );
                 }
@@ -154,7 +161,7 @@ export default class Detail extends Component {
                                data-target="#propertiesDetailsSlider">
                                 <img
                                     src={image.link}
-                                    alt={index} className="img-fluid" style={{width: "800px", height: "auto"}}/>
+                                    alt={index} style={{width: "150px", height: "110px"}}/>
                             </a>
                         </li>
                     );
@@ -166,7 +173,7 @@ export default class Detail extends Component {
                                data-target="#propertiesDetailsSlider">
                                 <img
                                     src={image.link}
-                                    alt={index} className="img-fluid" style={{width: "800px", height: "auto"}}/>
+                                    alt={index} className="img-fluid" style={{width: "150px", height: "110px"}}/>
                             </a>
                         </li>
                     );

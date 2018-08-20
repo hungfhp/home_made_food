@@ -6,19 +6,24 @@ const initialState = {
     id: "",
     name: "",
     email: "",
+    avatar: "",
+    ident: 0,
     address: "",
     phone: "",
     success: "",
     error: "",
     cooked_foods: {
+        is_loading: true,
         data: {},
         pagination: {}
     },
     liked_foods: {
+        is_loading: true,
         data: {},
         pagination: {}
     },
     favorited_foods: {
+        is_loading: true,
         data: {},
         pagination: {}
     }
@@ -32,6 +37,8 @@ const user = (state = initialState, action) => {
                 id: action.user.id,
                 name: action.user.name,
                 email: action.user.email,
+                avatar: action.user.avatar,
+                ident: action.user.ident,
                 address: action.user.address,
                 phone: action.user.phone,
                 success: AxiosConstants.SUCCESS
@@ -41,10 +48,11 @@ const user = (state = initialState, action) => {
                 is_loading: false,
                 error: action.err
             }
+
         case types.GET_COOKED_FOODS_SUCCESS:
             return {...state,
-                is_loading: false,
                 cooked_foods: {
+                    is_loading: false,
                     data: action.data.data,
                     pagination: action.data.pagination
                 },
@@ -52,7 +60,43 @@ const user = (state = initialState, action) => {
             }
         case types.GET_COOKED_FOODS_ERROR:
             return {...initialState,
-                is_loading: false,
+                cooked_foods: {
+                    is_loading: false
+                },
+                error: action.err
+            }
+            
+        case types.GET_LIKED_FOODS_SUCCESS:
+            return {...state,
+                liked_foods: {
+                    is_loading: false,
+                    data: action.data.data,
+                    pagination: action.data.pagination
+                },
+                success: AxiosConstants.SUCCESS
+            }
+        case types.GET_LIKED_FOODS_ERROR:
+            return {...initialState,
+                liked_foods: {
+                    is_loading: false
+                },
+                error: action.err
+            }
+
+        case types.GET_FAVORITED_FOODS_SUCCESS:
+            return {...state,
+                favorited_foods: {
+                    is_loading: false,
+                    data: action.data.data,
+                    pagination: action.data.pagination
+                },
+                success: AxiosConstants.SUCCESS
+            }
+        case types.GET_FAVORITED_FOODS_ERROR:
+            return {...initialState,
+                favorited_foods: {
+                    is_loading: false
+                },
                 error: action.err
             }
         default:

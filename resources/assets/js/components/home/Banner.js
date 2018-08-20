@@ -67,7 +67,7 @@ export default class Banner extends Component {
                     buttons: [
                         {
                             text: "View your meals",
-                            link_to: "/categories"
+                            link_to: "/foods"
                         },
                         {
                             text: "Join us",
