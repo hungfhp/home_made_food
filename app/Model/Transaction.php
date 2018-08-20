@@ -9,13 +9,16 @@ class Transaction extends Model
     protected $fillable = [
         'food_name',
         'food_id',
-        'required_id',
-        'cooked_id',
+        'creator_id',
+        'requirer_id',
+        'cooker_id',
         'shipper_id',
         'status',
         'description',
         'price',
-        'desired_time'
+        'desired_at',
+        'address_from',
+        'address_to'
     ];
 
     public function food()

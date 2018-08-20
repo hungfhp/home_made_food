@@ -56,8 +56,8 @@ class TransactionsTableSeeder extends Seeder
                     ),
                 'description' =>
                     $faker->realText($maxNbChars = 150, $indexSize = 2),
-                'address_from' => $address_array[rand(0,4)],
-                'address_to' => $address_array[rand(0,4)],
+                'address_from' => $rand ? $address_array[rand(0,4)] : null,
+                'address_to' => $rand ? null : $address_array[rand(0,4)],
                 'price' => rand(4, 15) * 5000
             ];
             // dealed 
