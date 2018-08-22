@@ -46,8 +46,8 @@ class Index extends Component {
                     {/*<SearchArea />*/}
 
                     <FeaturedCategories/>
-                    <Services/>
                     <MostLikedFoods/>
+                    <Services/>
 
                     {/*<GoodCookers />*/}
                     {/*<CertificatedUsers/>*/}

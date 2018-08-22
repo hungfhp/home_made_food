@@ -15216,7 +15216,7 @@ yx-axis
 @font-face {
     font-family: 'FontAwesome';
     src: url(/fonts/fontawesome-webfont3e6e.eot?674f50d287a8c48dc19ba404d20fe713);
-    src: url(/fonts/fontawesome-webfontd41d.eot?674f50d287a8c48dc19ba404d20fe713?#iefix&v=4.7.0) format('embedded-opentype'), url(/fonts/fontawesome-webfont3e6e.woff2?af7ae505a9eed503f8b8e6982036873e) format('woff2'), url(/fonts/fontawesome-webfont3e6e.woff?fee66e712a8a08eef5805a46892932ad) format('woff'), url(/fonts/fontawesome-webfont3e6e.ttf?b06871f281fee6b241d60582ae9369b9) format('truetype'), url(/fonts/fontawesome-webfont3e6e.svg?912ec66d7572ff821749319396470bde#fontawesomeregular) format('svg');
+    src: url(/fonts/fontawesome-webfontd41d.eot?674f50d287a8c48dc19ba404d20fe713?#iefix&v=4.7.0) format('embedded-opentype'), url(/fonts/fontawesome-webfont3e6e.woff2?af7ae505a9eed503f8b8e6982036873e) format('woff2'), url(/fonts/fontawesome-webfont3e6e.woff?fee66e712a8a08eef5805a46892932ad) format('woff'), url(/fonts/fontawesome-webfont3e6e.ttf?b06871f281fee6b241d60582ae9369b9) format('truetype'), url(/fonts/fontawesome-webfont3e6e.svg?acf3dcb7ff752b5296ca23ba2c7c2606#fontawesomeregular) format('svg');
     font-weight: normal;
     font-style: normal
 }
@@ -18142,7 +18142,7 @@ yx-axis
   src: url(/fonts/Flaticond41d.eot?4e43faffa96522701b9614453b90b53a?#iefix) format("embedded-opentype"),
        url(/fonts/Flaticon.woff?20ff3f02535a622fef87cf33708a34ed) format("woff"),
        url(/fonts/Flaticon.ttf?3a30c257226625ad44c906d9f7f0172e) format("truetype"),
-       url(/fonts/Flaticon.svg?f4532b9c54fb74a099833575f2891e2b#Flaticon) format("svg");
+       url(/fonts/Flaticon.svg?990cd64757fe1c742b22a12237d763b3#Flaticon) format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -18150,7 +18150,7 @@ yx-axis
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: "Flaticon";
-    src: url(/fonts/Flaticon.svg?f4532b9c54fb74a099833575f2891e2b#Flaticon) format("svg");
+    src: url(/fonts/Flaticon.svg?990cd64757fe1c742b22a12237d763b3#Flaticon) format("svg");
   }
 }
 
@@ -18291,7 +18291,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: 999999;
-    background: url(/images/loader.gif?b317d4417a11df18ad1da036bb5787af) center no-repeat #fff;
+    background: url(/images/loader.gif?8c29ba58bf7e5289fed70efcb011b398) center no-repeat #fff;
 }
 
 ul {
@@ -19309,7 +19309,7 @@ a {
 
 
 .banner-bg{
-    background: url(/images/banner-1.jpg?7761ea25d4422805ff95ac4236568225);
+    background: url(/images/banner-1.jpg?854252c8cdad947c5e1f2bd16561d632);
 }
 
 
@@ -19482,7 +19482,7 @@ a {
 }
 /** SUB BANNER **/
 .sub-banner {
-    background: rgba(0, 0, 0, 0.04) url(/images/sub-banner.jpg?e130e3d42ca86fc28c6f7f3b0a3b67e6) top left repeat;
+    background: rgba(0, 0, 0, 0.04) url(/images/sub-banner.jpg?162d512039618c004c8218120465ac44) top left repeat;
     background-size: cover;
     height: 290px;
     background-position: center center;
@@ -20197,7 +20197,7 @@ a {
     background-repeat: no-repeat;
     border: none;
     margin: 0;
-    background: rgba(0, 0, 0, 0.04) url(/images/sub-banner.jpg?e130e3d42ca86fc28c6f7f3b0a3b67e6) top left repeat;
+    background: rgba(0, 0, 0, 0.04) url(/images/sub-banner.jpg?162d512039618c004c8218120465ac44) top left repeat;
     background-size: cover;
     color: #efefef;
 }
@@ -23634,7 +23634,7 @@ table {
 /** SELL YOUR PROPERTIES **/
 .sell-your-properties {
     text-align: center;
-    background: rgba(0, 0, 0, 0.04) url(/images/property-15.jpg?9f35024fae992bc21811d8282d33398e) top left repeat;
+    background: rgba(0, 0, 0, 0.04) url(/images/property-15.jpg?7f64c83f75b3c8d9e8ba9e46cebd1e9a) top left repeat;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -23657,7 +23657,7 @@ table {
 
 /** HELPING CENTER **/
 .helping-center {
-    background: rgba(0, 0, 0, 0.04) url(/images/property-15.jpg?9f35024fae992bc21811d8282d33398e) top left repeat;
+    background: rgba(0, 0, 0, 0.04) url(/images/property-15.jpg?7f64c83f75b3c8d9e8ba9e46cebd1e9a) top left repeat;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -23709,7 +23709,7 @@ table {
 
 /** COMING SOON **/
 .coming-soon-bg {
-    background: rgba(0, 0, 0, 0.04) url(/images/banner-2.jpg?8f5a07ebe8fcfa1b2a5d224322143ffa) top left repeat;
+    background: rgba(0, 0, 0, 0.04) url(/images/banner-2.jpg?c7a58d135a2d29feb42979ce06ebe32a) top left repeat;
     background-size: cover;
     top: 0;
     width: 100%;
@@ -25881,7 +25881,7 @@ body.off-canvas-sidebar-open {
     }
 
     .helping-center {
-        background: rgba(0, 0, 0, 0.04) url(/images/property-15.jpg?9f35024fae992bc21811d8282d33398e) top left repeat;
+        background: rgba(0, 0, 0, 0.04) url(/images/property-15.jpg?7f64c83f75b3c8d9e8ba9e46cebd1e9a) top left repeat;
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;

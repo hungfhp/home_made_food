@@ -54,6 +54,14 @@ export default class FeaturedCategories extends Component {
                                         {food.name}
                                     </a>
                                 </h1>
+                                <div className="facilities-list clearfix">
+                                    <a href={"/users/" + food.user.id}>
+                                        <i class="fa fa-user"></i> {food.user.name}
+                                    </a>
+                                </div>
+                                <div className="facilities-list clearfix">
+                                    <i class="fa fa-heart" aria-hidden="true"></i> {food.favorites.length}
+                                </div>
                                 <ul className="facilities-list clearfix">
                                     <li>
                                         <i className="material-icons">thumb_up</i>{food.like}
@@ -62,6 +70,9 @@ export default class FeaturedCategories extends Component {
                                         <i className="material-icons">thumb_down</i>{food.dislike}
                                     </li>
                                 </ul>
+                                <div className="facilities-list clearfix">
+                                <i class="fa fa-bookmark-o" aria-hidden="true"></i> {food.description}
+                                </div>
                             </div>
                         </div>
                     </div>
