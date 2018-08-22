@@ -30,10 +30,22 @@ export default class FeaturedCategories extends Component {
         );
     }
 
+    GetSortOrder(prop) {  
+        return function(a, b) {  
+            if (a[prop] > b[prop]) {  
+                return 1;  
+            } else if (a[prop] < b[prop]) {  
+                return -1;  
+            }  
+            return 0;  
+        }
+    }
+
     render() {
         if (this.state.categories != 0)
         {
             const list = this.state.categories[0].foods.concat(this.state.categories[1].foods).concat(this.state.categories[2].foods);
+            list.sort(this.GetSortOrder("id"));
             const food_list = list.map((food)=> {
                 return (
                     <div className="col-lg-4 col-md-6 col-sm-12 filtr-item" data-category={food.category_id} key={food.id}>
@@ -56,11 +68,11 @@ export default class FeaturedCategories extends Component {
                                 </h1>
                                 <div className="facilities-list clearfix">
                                     <a href={"/users/" + food.user.id}>
-                                        <i class="fa fa-user"></i> {food.user.name}
+                                        <i className="fa fa-user"></i> {food.user.name}
                                     </a>
                                 </div>
                                 <div className="facilities-list clearfix">
-                                    <i class="fa fa-heart" aria-hidden="true"></i> {food.favorites.length}
+                                    <i className="fa fa-heart" aria-hidden="true"></i> {food.favorites.length}
                                 </div>
                                 <ul className="facilities-list clearfix">
                                     <li>
@@ -71,7 +83,7 @@ export default class FeaturedCategories extends Component {
                                     </li>
                                 </ul>
                                 <div className="facilities-list clearfix">
-                                <i class="fa fa-bookmark-o" aria-hidden="true"></i> {food.description}
+                                <i className="fa fa-bookmark-o" aria-hidden="true"></i> {food.description}
                                 </div>
                             </div>
                         </div>
