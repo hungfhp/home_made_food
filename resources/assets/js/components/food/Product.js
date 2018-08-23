@@ -1,14 +1,36 @@
 import React, { Component } from "react";
+import Pagination from "../../components/layouts/Pagination";
 
 export default class Product extends Component {
     constructor(props){
         super(props);
     }
 
+    recommended(like, dislike) {
+        if (dislike === 0) {
+            if (like >10) {
+                return (
+                    <div className="tag button" style={{backgroundColor: "#ea0000db", marginLeft:"10px"}}>Recommended</div>
+                );
+            }
+        }
+        else {
+            if (parseInt(like)/parseInt(dislike) >= 2) {
+                return (
+                    <div className="tag button" style={{backgroundColor: "#ea0000db", marginLeft:"10px"}}>Recommended</div>
+                );
+            }
+        }
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.props = nextProps;
+    }
+
     render() {
         const list = this.props.foods;
+        console.log(list);
         const food_list = list.map((food)=> {
-            console.log(food);
             const image = food.images;
             return (
                 <div className="property-box-5" key={food.id}>
@@ -16,7 +38,7 @@ export default class Product extends Component {
                         <div className="col-lg-5 col-md-5 col-pad">
                             <div className="property-thumbnail">
                                 <a href={"/foods/" + food.id} className="property-img">
-                                    <div className="tag button alt featured">Featured</div>
+                                    {this.recommended(food.like, food.dislike)}
                                     <div className="price-ratings-box">
                                     </div>
                                     <img src={food.images[0].link} alt="property-1" className="img-fluid"/>
@@ -28,15 +50,10 @@ export default class Product extends Component {
                                     <a href={"/foods/"+food.id} className="overlay-link" title="Dislike">
                                         <i className="material-icons" style={{marginTop: '4px'}}>thumb_down</i>
                                     </a>
-                                    <a className="overlay-link property-video" title="Test Title">
-                                        <i className="material-icons" style={{marginTop: '4px'}}>videocam</i>
-                                    </a>
                                     <div className="property-magnify-gallery">
-                                        <a href="assets/img/property-1.jpg" className="overlay-link">
+                                        <a href={food.images[0].link} className="overlay-link">
                                             <i className="material-icons" style={{marginTop: '4px'}}>zoom_in</i>
                                         </a>
-                                        <a href="/img/property-6.jpg" className="hidden"></a>
-                                        <a href="/img/property-4.jpg" className="hidden"></a>
                                     </div>
                                 </div>
                             </div>
@@ -53,7 +70,7 @@ export default class Product extends Component {
                                 </div>
                                 <div className="location">
                                     <a href="/foods/id">
-                                        <i className="fa fa-map-marker"></i>123 Kathal St. Tampa City,
+                                        <i className="fa fa-map-marker"></i>{food.user.address}
                                     </a>
                                 </div>
 
@@ -80,7 +97,7 @@ export default class Product extends Component {
         });
 
         return (
-            <div className="col-lg-8 col-md-12">
+            <div className="col-lg-8 col-md-12" id="food-top">
                 <div className="option-bar d-none d-xl-block d-lg-block d-md-block d-sm-block">
                     <div className="row clearfix">
                         <div className="col-xl-4 col-lg-5 col-md-5 col-sm-5">
@@ -109,20 +126,9 @@ export default class Product extends Component {
                 <div className="subtitle">
                     {/*20 Result Found*/}
                 </div>
-
                 {food_list}
 
-                <div className="pagination-box hidden-mb-45">
-                    <nav aria-label="Page navigation example">
-                        <ul className="pagination">
-                            <li className="page-item"><a className="page-link" href="#"><span aria-hidden="true">«</span></a></li>
-                            <li className="page-item"><a className="page-link active" href="/foods">1</a></li>
-                            <li className="page-item"><a className="page-link" href="#">2</a></li>
-                            <li className="page-item"><a className="page-link" href="#">3</a></li>
-                            <li className="page-item"><a className="page-link" href="#"><span aria-hidden="true">»</span></a></li>
-                        </ul>
-                    </nav>
-                </div>
+                <Pagination pagination={this.props.pagination} getDataPaging={this.props.getFoodsPaginate} href_to="#food-top"/>
             </div>
         );
     }

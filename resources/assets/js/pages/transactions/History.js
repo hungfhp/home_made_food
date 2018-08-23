@@ -8,8 +8,6 @@ import SubHeader from "../../components/layouts/SubHeader";
 import Footer from "../../components/layouts/Footer";
 import Total from "../../components/transaction/Total";
 import List from "../../components/transaction/List";
-import axios from "axios";
-import ModalFood from "../../components/transaction/ModalFood";
 
 class History extends Component {
     constructor(props) {

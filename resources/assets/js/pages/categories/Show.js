@@ -5,26 +5,29 @@ import Header from "../../components/layouts/Header";
 import SubHeader from "../../components/layouts/SubHeader";
 import Footer from "../../components/layouts/Footer";
 import connect from "react-redux/es/connect/connect";
-import Product from "../../components/food/Product";
+import Product from "../../components/categories/Product";
 import Tool from "../../components/food/Tool";
+import Pagination from "../../components/layouts/Pagination";
 
 class Show extends Component {
     constructor(props) {
         super(props);
         this.state = {
             id: this.props.match.params.id,
-            categoryInfo: 0
-        }
+            categoryInfo: 0,
+            current_page: '',
+            last_page: ''
+        };
+        this.getFoodsPaginate = this.getFoodsPaginate.bind(this);
     }
 
-    componentDidMount() {
-        axios.get('/api/categories/'+this.state.id)
+    getFoodsPaginate(page)  {
+        axios.get('/api/categories/'+this.state.id+'?page='+page)
             .then(
                 response=>{
-                    this.setState({categoryInfo: response.data.data});
-                    console.log(this.state.categoryInfo);
-                    console.log(this.state.categoryInfo["image"][0]);
-                    console.log(this.state.categoryInfo["foods"][0]);
+                    this.setState({categoryInfo: response.data.data.data});
+                    this.setState({current_page: response.data.data.current_page});
+                    this.setState({last_page: response.data.data.last_page});
                 }
             )
             .catch(
@@ -32,13 +35,20 @@ class Show extends Component {
             )
     }
 
-    render() {
+    componentDidMount() {
+        this.getFoodsPaginate(1);
+    }
 
-        if ((this.state.categoryInfo != 0)&&(this.state.categoryInfo["foods"]!=0)) {
+    render() {
+        if (this.state.categoryInfo !== 0) {
+            let pagination = {
+                current_page: this.state.current_page,
+                last_page : this.state.last_page
+            };
             return (
                 <div>
                     <Header title={"Homemade"} auth={this.props.auth} logoutSuccess={this.props.logoutSuccess}/>
-                    <SubHeader title={this.state.categoryInfo[0].name}/>
+                    <SubHeader title={this.state.categoryInfo[0].category.name}/>
                     <div className="user-page submit-property content-area-7">
                         <div className="container">
                             <div className="row">
@@ -47,13 +57,13 @@ class Show extends Component {
                                         <div className="heading-properties">
                                             <div className="col-md-12">
                                                 <div className="pull-left">
-                                                <h3 className="post-title">{this.state.categoryInfo[0].name}</h3>
-                                                <p>{this.state.categoryInfo[0].description}</p>
+                                                {/*<h3 className="post-title">{this.state.categoryInfo[0].name}</h3>*/}
+                                                {/*<p>{this.state.categoryInfo[0].description}</p>*/}
                                                 </div>
                                             </div>
                                         </div>
                                         <div className="carousel-inner">
-                                            <img src={this.state.categoryInfo["image"][0].link} alt="property-7" className="img-fluid"/>
+                                            {/*<img src={this.state.categoryInfo["image"][0].link} alt="property-7" className="img-fluid"/>*/}
                                         </div>
                                     </div>
 
@@ -62,7 +72,7 @@ class Show extends Component {
                                 </div>
                             </div>
                             <div className="row">
-                                <Product foods={this.state.categoryInfo["foods"]}/>
+                                <Product foods={this.state.categoryInfo} pagination={pagination} getFoodsPaginate={this.getFoodsPaginate}/>
                             </div>
                         </div>
                     </div>
@@ -81,7 +91,7 @@ function mapStateToProps(state) {
     return {
         auth: state.auth
     };
-};
+}
 
 function mapDispatchToProps(dispatch) {
     return {

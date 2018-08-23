@@ -22,6 +22,7 @@ class FoodController extends Controller
     {
         Log::info('user: get food');
         $result = Food::where('publish', true)
+            ->with('user')
             ->orderBy('created_at', 'desc')
             ->paginate(10);
         foreach ($result as $item) {

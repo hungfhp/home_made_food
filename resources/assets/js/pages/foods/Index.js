@@ -14,20 +14,34 @@ class Index extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            foods: []
+            foods: [],
+            current_page: '',
+            last_page: ''
         };
+        this.getFoodsPaginate = this.getFoodsPaginate.bind(this);
     }
-    componentDidMount() {
-        axios.get("/api/foods")
+
+    getFoodsPaginate(page) {
+        axios.get("/api/foods/?page=" + page)
             .then(
                 response =>{
                     this.setState({foods: response.data.data.data});
+                    this.setState({current_page: response.data.data.current_page});
+                    this.setState({last_page: response.data.data.last_page});
                 }
             ).catch(
             error => console.log("foods error!")
         );
     }
+
+    componentDidMount() {
+       this.getFoodsPaginate(1);
+    }
     render() {
+        let pagination = {
+            current_page: this.state.current_page,
+            last_page : this.state.last_page
+        };
         return (
             //index 6
             <div>
@@ -36,7 +50,7 @@ class Index extends Component {
                 <div className="user-page submit-property content-area-7">
                     <div className="container">
                         <div className="row">
-                            <Product foods={this.state.foods}/>
+                            <Product foods={this.state.foods} pagination={pagination} getFoodsPaginate={this.getFoodsPaginate}/>
                             <Tool/>
                         </div>
                     </div>

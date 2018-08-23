@@ -55,15 +55,23 @@ class CategoryController extends Controller
     public function show($id)
     {
         Log::info('show a category');
-        $category = Category::where('id', $id)
-            ->get();
-        $category['image'] = Category::find($id)->category_images->all();
-        $category['feature_image'] = Category::find($id)->category_images->first();
-        $foods = Category::find($id)->foods()->get();
-        foreach ($foods as $food) {
-            $food['images'] = Food::find($food['id'])->food_images->all();
+//        $category = Category::where('id', $id)
+//            ->get();
+//        $category['image'] = Category::find($id)->category_images->all();
+//        $category['feature_image'] = Category::find($id)->category_images->first();
+//        $foods = Category::find($id)->foods()->get();
+//        foreach ($foods as $food) {
+//            $food['images'] = Food::find($food['id'])->food_images->all();
+//        }
+//        $category['foods'] = $foods;
+        $category = Food::where('category_id', $id)
+            ->with('user')
+            ->with('category')
+            ->paginate(10);
+        foreach ($category as $item) {
+            $item['images'] = Food::find($item['id'])->food_images->all();
         }
-        $category['foods'] = $foods;
+//        $category['category'] = Category::find($id)->all();
 
         return response()->json(['result'=>true, 'data'=>$category], 200);
     }

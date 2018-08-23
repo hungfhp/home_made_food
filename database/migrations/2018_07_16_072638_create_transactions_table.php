@@ -21,7 +21,7 @@ class CreateTransactionsTable extends Migration
             $table->integer('cooker_id')->nullable();
             $table->integer('shipper_id')->nullable();
             $table->string('status');
-            $table->longText('description');
+            $table->longText('description')->nullable();
             $table->longText('address_to')->nullable();
             $table->longText('address_from')->nullable();
             $table->integer('price');

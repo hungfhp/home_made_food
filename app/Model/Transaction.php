@@ -17,8 +17,8 @@ class Transaction extends Model
         'description',
         'price',
         'desired_at',
-        'address_to',
         'address_from',
+        'address_to'
     ];
 
     public function food()

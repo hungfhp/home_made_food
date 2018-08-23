@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import {Link} from "react-router-dom";
 
+import {getStatus} from "@/utils/TransactionUtil";
+
 export default class TransactionGridItem extends Component {
     constructor(props) {
         super(props);
@@ -13,17 +15,6 @@ export default class TransactionGridItem extends Component {
     }
     componentWillReceiveProps(nextProps) {
         this.props = nextProps;
-    }
-    getStatus(transaction) {
-        if (transaction.status == "dealing") {
-            if (transaction.requirer) {
-                return "required";
-            } else {
-                return "cooked";
-            }
-        } else {
-            return transaction.status;
-        }
     }
     getStatusStyle(status) {
         let style;
@@ -82,8 +73,8 @@ export default class TransactionGridItem extends Component {
                 <div className="blog-grid-box">
                     <div style={{backgroundImage: "url(" + transaction.food.feature_image.link + ")", height: "230px", backgroundPosition: "center", backgroundSize: "cover"}}></div>
                     <div className="detail">
-                        <div className="date-box" style={this.getStatusStyle(this.getStatus(transaction))}>
-                            <h5>{this.getStatus(transaction)}</h5>
+                        <div className="date-box" style={this.getStatusStyle(getStatus(transaction))}>
+                            <h5>{getStatus(transaction)}</h5>
                         </div>                       
                         <h3>
                             {
@@ -95,7 +86,7 @@ export default class TransactionGridItem extends Component {
                             <Dealer transaction={transaction}/>
                         </div>
                         <p className="overflow-hidden height-100 text-overflow-ellipsis">{transaction.description}</p>
-                            {this.getActionButton(this.getStatus(transaction))}
+                            {this.getActionButton(getStatus(transaction))}
                             <hr/>
                             <span><a href="#" className="margin-right-9 color-red-black"><i className="fa fa-thumbs-o-up"></i>{transaction.food.like}</a></span>
                             <span><a href="#" className="margin-right-9 color-red-black"><i className="fa fa-commenting-o"></i>{transaction.deals_count}</a></span>
