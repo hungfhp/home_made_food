@@ -25976,6 +25976,7 @@ body.off-canvas-sidebar-open {
     list-style: none;
     padding: 0;
     z-index: 100;
+    width: 500px;
 }
 .menu-item-result{
     height: 80px;
@@ -25989,17 +25990,16 @@ body.off-canvas-sidebar-open {
 .image-result {
     width: 10%;
     float: left;
-    padding: 10px;
+    /* padding: 10px; */
 }
 .image-result img{
-    width: 80px;
-    height : 60px;
+    /* width: 80px; */
+    /* height : 60px; */
 }
 .label-result{
     width: 89%;
     float:right;
     color: rgb(124,77,255);
-    font-weight: bold;
     text-align: left;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -26013,9 +26013,6 @@ body.off-canvas-sidebar-open {
     }
     .label-result{
         width: 70%;
-    }
-    .label-result h4{
-        font-size: 15px;
     }
 }
 .btn-theme {

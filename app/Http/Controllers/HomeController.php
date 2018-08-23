@@ -47,13 +47,14 @@ class HomeController extends Controller
     public function getReactSearch($search)
     {
         $foods = '';
-        // $search = "canh";
 
         if (trim($search)) {
             $foods = Food::where('name','LIKE',"%{$search}%")
                          ->orderBy('created_at','DESC')->limit(10)->get();
         }
-
+        foreach ($foods as $food) {
+            $food['image'] = Food::find($food['id'])->food_images->get(1);
+        }
         return response()->json([ 'data'=>$foods], 200);
     }
 

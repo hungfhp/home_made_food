@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import TrSearchResult from "./TrSearchResult";
 
 export default class SearchArea extends Component {
     constructor(props) {
@@ -7,8 +8,7 @@ export default class SearchArea extends Component {
         this.state =  {
             foods : [],
             search : '',
-            count : 0,
-            width: 0,
+            count : 0
         };
     
         this.handleSearch = this.handleSearch.bind(this);
@@ -18,16 +18,6 @@ export default class SearchArea extends Component {
     }
     
     componentDidMount() {
-        // get width of search input for react search widget on initial load
-        const width = document.getElementById("search").offsetWidth; 
-        this.setState(() => ({ width : width }));
-
-        // get width of search input for react search widget when page resize
-        window.addEventListener('resize', (e) => {
-            const newWidth = document.getElementById('search').offsetWidth; 
-            this.setState(() => ({ width : newWidth }));
-        });
-
         // To clear react search widget when press ESC
         document.body.addEventListener('keydown', (e) => {
             if (e.keyCode === 27) {
@@ -59,8 +49,7 @@ export default class SearchArea extends Component {
                 // then call ajax again on down arrow key press 
                 this.getFoods();
                 return;
-            }                
-            // this.selectPost(e.keyCode);
+            }
         } else {
             this.getFoods();
         }
@@ -82,25 +71,8 @@ export default class SearchArea extends Component {
             });
 
         }
-        if(this.state.foods!=0) console.log(this.state.foods[0].name);
     }
     
-    // selectPost(keyCode) {
-    // // If down arrow key is pressed
-    // if (keyCode == 40 && this.state.count < this.state.posts.length) {
-    //     this.setState((prevState) => ({ count : prevState.count + 1 }));
-    // }
-    // // If up arrow key is pressed
-    // if (keyCode == 38 && this.state.count > 1) {
-    //     this.setState((prevState) => ({ count : prevState.count - 1 }));
-    // }
-    // // If enter key is pressed
-    // if (keyCode == 13) {
-    //     // Go to selected post
-    //     document.getElementById(this.state.count).childNodes[0].click();
-    // }
-    // }
-
     clearData(e) {
         if (e.target.id == 'search') {
             this.setState(() => ({ 
@@ -113,22 +85,24 @@ export default class SearchArea extends Component {
     render() {
         if (this.state.foods != 0)
         {
-            const ulStyle = {
-                width : this.state.width + 'px'
-            }
-        
             const results = this.state.foods.map((result, index) => (
+                // <TrSearchResult key={index} result={result}/>
+                
                 <div id={index} key={result.id}
                     className={ (index === this.state.count) ? 'active menu-item-result' : 'menu-item-result'} 
                 >
-                    <a href="#" >
-                    <div className="list_item_container" title={result.name}>
-                        {/* <div className="image">
-                            <img src={result.image} />
-                        </div> */}
-                        <div className="label-result">
-                            <h4>{ result.name}</h4>
-                            <h5>{ result.description}</h5>
+                    <a href={"/foods/" + result.id} >
+                    <div className="list_item_container row" title={result.name}>
+                        <div className="col-sm-1"></div>
+                        <div className="image-result col-sm-2" style={{backgroundImage: "url(" + result.image.link + ")", backgroundPosition: "center", height: "70px", backgroundSize: "cover"}}></div>
+                        <div className="label-result col-sm-9">
+                            <h5 className="row">
+                                <div className="col-lg-11">{ result.name}</div>
+                                <div className="col-lg-1"></div>
+                            </h5>
+                            <div className="row">
+                                <div className="col-lg-8">{ result.description}</div>                                
+                            </div>
                         </div>
                     </div>
                     </a>
@@ -151,7 +125,7 @@ export default class SearchArea extends Component {
                             />
 
                             {this.state.foods.length > 0 && 
-                                <ul style={ulStyle} className="widget-result" >
+                                <ul className="widget-result" >
                                 {results}
                                 </ul>
                             }

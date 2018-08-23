@@ -26,14 +26,14 @@ class Index extends Component {
 
                     <SearchArea />
 
-                    {/* <FeaturedCategories/> */}
-                    {/* <MostLikedFoods/> */}
+                    <FeaturedCategories/>
+                    <MostLikedFoods/>
 
                     {/*<GoodCookers />*/}
                     {/*<CertificatedUsers/>*/}
                     {/*<Intro />*/}
 
-                    {/* <Footer/> */}
+                    <Footer/>
                 </div>
             );
         } else {
