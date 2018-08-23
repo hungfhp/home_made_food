@@ -44,4 +44,17 @@ class HomeController extends Controller
         return response()->json([ 'data'=>$categories], 200);
     }
 
+    public function getReactSearch($search)
+    {
+        $foods = '';
+        // $search = "canh";
+
+        if (trim($search)) {
+            $foods = Food::where('name','LIKE',"%{$search}%")
+                         ->orderBy('created_at','DESC')->limit(10)->get();
+        }
+
+        return response()->json([ 'data'=>$foods], 200);
+    }
+
 }

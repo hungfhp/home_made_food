@@ -24,16 +24,16 @@ class Index extends Component {
                     {/* index 6 */}
                     <Header auth={this.props.auth} logoutSuccess={this.props.logoutSuccess}/>
 
-                    {/*<SearchArea />*/}
+                    <SearchArea />
 
-                    <FeaturedCategories/>
-                    <MostLikedFoods/>
+                    {/* <FeaturedCategories/> */}
+                    {/* <MostLikedFoods/> */}
 
                     {/*<GoodCookers />*/}
                     {/*<CertificatedUsers/>*/}
                     {/*<Intro />*/}
 
-                    <Footer/>
+                    {/* <Footer/> */}
                 </div>
             );
         } else {
