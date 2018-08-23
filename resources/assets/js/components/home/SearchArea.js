@@ -91,17 +91,17 @@ export default class SearchArea extends Component {
                 <div id={index} key={result.id}
                     className={ (index === this.state.count) ? 'active menu-item-result' : 'menu-item-result'} 
                 >
-                    <a href={"/foods/" + result.id} >
+                    <a href={"/foods/" + result.id}>
                     <div className="list_item_container row" title={result.name}>
                         <div className="col-sm-1"></div>
                         <div className="image-result col-sm-2" style={{backgroundImage: "url(" + result.image.link + ")", backgroundPosition: "center", height: "70px", backgroundSize: "cover"}}></div>
-                        <div className="label-result col-sm-9">
+                        <div className="col-sm-9">
                             <h5 className="row">
                                 <div className="col-lg-11">{ result.name}</div>
                                 <div className="col-lg-1"></div>
                             </h5>
                             <div className="row">
-                                <div className="col-lg-8">{ result.description}</div>                                
+                                <div className="label-result col-lg-8">{ result.description}</div>                                
                             </div>
                         </div>
                     </div>
