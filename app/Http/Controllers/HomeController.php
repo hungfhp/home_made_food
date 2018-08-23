@@ -50,7 +50,8 @@ class HomeController extends Controller
 
         if (trim($search)) {
             $foods = Food::where('name','LIKE',"%{$search}%")
-                         ->orderBy('created_at','DESC')->limit(10)->get();
+                        ->orWhere('description','LIKE',"%{$search}%")
+                        ->orderBy('created_at','DESC')->limit(10)->get();
         }
         foreach ($foods as $food) {
             $food['image'] = Food::find($food['id'])->food_images->get(1);
