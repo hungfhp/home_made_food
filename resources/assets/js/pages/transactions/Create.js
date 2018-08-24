@@ -3,7 +3,7 @@ import Header from "../../components/layouts/Header";
 import SubHeader from "../../components/layouts/SubHeader";
 import Footer from "../../components/layouts/Footer";
 import TransactionForm from "../../components/transaction/TransactionForm";
-import ShippingForm from "../../components/transaction/ShippingForm";
+// import ShippingForm from "../../components/transaction/ShippingForm";
 import Term from "../../components/transaction/Term";
 import Confirm from "../../components/transaction/Confirm";
 
@@ -18,7 +18,7 @@ export default class Create extends Component {
                         <div className="container">
                             <div className="row">
                                 <TransactionForm/>
-                                <ShippingForm/>
+                                {/* <ShippingForm/> */}
                             </div>
                             <div className="row">
                                 <Term/>

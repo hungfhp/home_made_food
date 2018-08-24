@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Link} from "react-router-dom";
 
 export default class TrTransaction extends Component {
     constructor(props) {
@@ -76,11 +77,11 @@ export default class TrTransaction extends Component {
                 <td className="product-thumbnail"><img src={transaction.food.feature_image.link} alt="shop-1"/></td>
                 <td style={{fontWeight: "bold"}}>{transaction.price}</td>
                 <td className="text-transform-none" style={{fontStyle: 'italic'}}>
-                    <a href={"/foods/"+transaction.food.id} style={{fontWeight: "bold"}} className="text-transform-uppercase">{transaction.food.name}</a>
+                    <Link to={"/foods/"+transaction.food.id} style={{fontWeight: "bold"}} className="text-transform-uppercase">{transaction.food.name}</Link>
                     <br/>
                     {transaction.description}
                 </td>
-                <td><a href={'/transactions/'+transaction.id} style={this.getStatusStyle(transaction.status)}>{transaction.status}</a></td>
+                <td><Link to={'/transactions/'+transaction.id} style={this.getStatusStyle(transaction.status)}>{transaction.status}</Link></td>
                 <td>{transaction.updated_at.replace('-','/').replace('-','/')}</td>
                 <td>{transaction.desired_at.replace('-','/').replace('-','/')}</td>
                 <td><ButtonActions auth={this.props.auth} transaction={transaction}>{transaction.status}</ButtonActions></td>

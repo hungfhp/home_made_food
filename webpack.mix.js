@@ -5,7 +5,7 @@ mix.webpackConfig({
       alias: {
         '@': __dirname + '/resources/assets/js'
       },
-    },
+    }
 })
   
 

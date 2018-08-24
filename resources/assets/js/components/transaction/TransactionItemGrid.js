@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import {Link} from "react-router-dom";
 
 import {getStatus} from "@/utils/TransactionUtil";
+import {getDistance} from "@/utils/GoogleAPIUtil";
 
 export default class TransactionGridItem extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            distance: null
         }
         this.getStatusStyle = this.getStatusStyle.bind(this);
         this.getActionButton = this.getActionButton.bind(this);
@@ -44,11 +46,11 @@ export default class TransactionGridItem extends Component {
         switch (status) {
             case 'required': {
                 style = {backgroundColor: '#c1751ae6', fontWeight: 'bold', color: "aliceblue"};
-                return <a href="javascript:void(0)" style={style} className="btn-read-more pull-right padding-bottom-4" onClick={()=>this.props.updateTransaction({...transaction, cooker_id: auth.user.id, status: "dealed"})}>Cook Now</a>;
+                return <Link to={"/transactions/"+transaction.id} style={style} className="btn-read-more pull-right padding-bottom-4"> Cook Now</Link>;
             }
             case 'cooked': {
                 style = {backgroundColor: '#ea0000db', fontWeight: 'bold', color: "aliceblue"};
-                return <a href="javascript:void(0)" style={style} className="btn-read-more pull-right padding-bottom-4" onClick={()=>this.props.updateTransaction({...transaction, requirer_id: auth.user.id, status: "dealed"})}>Require Now</a>;
+                return <Link to={"/transactions/"+transaction.id} style={style} className="btn-read-more pull-right padding-bottom-4">Require Now</Link>;
             }
             case 'dealed': {
                 style = {backgroundColor: '#094801e8', fontWeight: 'bold', color: "aliceblue"};
@@ -68,6 +70,7 @@ export default class TransactionGridItem extends Component {
         }
 
         let auth = this.props.auth;
+        
         return (
             <div className="col-lg-6 col-md-6 col-sm-6">
                 <div className="blog-grid-box">
@@ -89,7 +92,17 @@ export default class TransactionGridItem extends Component {
                             {this.getActionButton(getStatus(transaction))}
                             <hr/>
                             <span><a href="#" className="margin-right-9 color-red-black"><i className="fa fa-thumbs-o-up"></i>{transaction.food.like}</a></span>
-                            <span><a href="#" className="margin-right-9 color-red-black"><i className="fa fa-commenting-o"></i>{transaction.deals_count}</a></span>
+                            {/* <span><a href="#" className="margin-right-9 color-red-black"><i className="fa fa-commenting-o"></i>{transaction.deals_count}</a></span> */}
+                            {
+                                auth.isAuth && transaction.requirer && !transaction.cooker &&
+                                <span><a href="#" className="margin-right-9 color-red-black"><i className="fa fa-map-marker"></i> {getDistance(auth.user.address, transaction.address_to)} km</a></span>
+                            }{
+                                auth.isAuth && !transaction.requirer && transaction.cooker &&
+                                <span><a href="#" className="margin-right-9 color-red-black"><i className="fa fa-map-marker"></i> {getDistance(auth.user.address, transaction.address_from)} km</a></span>
+                            }{
+                                auth.isAuth && transaction.requirer && transaction.cooker &&
+                                <span><a href="#" className="margin-right-9 color-red-black"><i className="fa fa-map-marker"></i> {getDistance(transaction.address_from, transaction.address_to)} km</a></span>
+                            }
                     </div>
                 </div>
             </div>
@@ -121,10 +134,28 @@ class Dealer extends Component {
             )
         } else {
             if (transaction.requirer) {
-                return (<Link to={"/users/"+transaction.requirer.id} className="color-red-black"><i className="fa fa-user"></i> {transaction.requirer.name}</Link>);
+                return (
+                    <div className="row">       
+                        <div className="col-lg-6 col-md-6 col-sm-6">
+                            <Link to={"/users/"+transaction.requirer.id} className="color-red-black"><i className="fa fa-user"></i> {transaction.requirer.name}</Link>
+                        </div>
+                        <div className="col-lg-6 col-md-6 col-sm-6">
+                            <Link to={"/transactions/"+transaction.id} className="color-red-black"><i className="fa fa-commenting-o"></i> {transaction.deals_count}</Link>
+                        </div>
+                    </div>
+                )
             }
             if (transaction.cooker) {
-                return (<Link to={"/users/"+transaction.cooker.id} className="color-red-black"><i className="fa fa-user"></i> {transaction.cooker.name}</Link>);
+                return (
+                    <div className="row">       
+                        <div className="col-lg-6 col-md-6 col-sm-6">
+                            <Link to={"/users/"+transaction.cooker.id} className="color-red-black"><i className="fa fa-user"></i> {transaction.cooker.name}</Link>
+                        </div>
+                        <div className="col-lg-6 col-md-6 col-sm-6">
+                            <Link to={"/transactions/"+transaction.id} className="color-red-black"><i className="fa fa-commenting-o"></i> {transaction.deals_count}</Link>
+                        </div>
+                    </div>
+                )
             }
         }
     }

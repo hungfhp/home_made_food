@@ -4,25 +4,40 @@ import swal2 from "sweetalert2";
 
 const initialState = {
     is_loading: true,
-    data: {},
     success: "",
-    error: ""
+    error: "",
+    show: {
+        is_loading: true,
+        data: {}
+    }
 }
 
 const transaction = (state = initialState, action) => {
     switch (action.type) {
-        case types.UPDATE_TRANSACTION_SUCCESS:
-            swal2({
-                type: 'success',
-                title: 'Success',
-                showConfirmButton: false,
-                heightAuto: true,
-                timer: 1200
-            });
+        case types.GET_TRANSACTION_SUCCESS:
             return {...state,
                 is_loading: false,
                 success: AxiosConstants.SUCCESS,
-                data: action.data,
+                show: {
+                    is_loading: false,
+                    data: action.data
+                }
+            }
+        case types.GET_TRANSACTION_ERROR:
+            return {...initialState,
+                is_loading: false,
+                error: action.err
+            }
+        
+        case types.UPDATE_TRANSACTION_SUCCESS:
+        console.log(action.data)
+            return {...state,
+                is_loading: false,
+                success: AxiosConstants.SUCCESS
+                // show: {
+                //     is_loading: false,
+                //     data: action.data
+                // }
             }
         case types.UPDATE_TRANSACTION_ERROR:
             return {...initialState,
