@@ -6,6 +6,7 @@ import SubHeader from "../../components/layouts/SubHeader";
 import Footer from "../../components/layouts/Footer";
 import connect from "react-redux/es/connect/connect";
 import Product from "../../components/food/Product";
+import SearchArea from "@/components/home/SearchArea";
 import Tool from "../../components/food/Tool";
 
 class Show extends Component {
@@ -39,6 +40,7 @@ class Show extends Component {
                 <div>
                     <Header title={"Homemade"} auth={this.props.auth} logoutSuccess={this.props.logoutSuccess}/>
                     <SubHeader title={this.state.categoryInfo[0].name}/>
+                    <SearchArea />
                     <div className="user-page submit-property content-area-7">
                         <div className="container">
                             <div className="row">
