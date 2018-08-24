@@ -45,7 +45,7 @@ function mapStateToProps(state) {
     return {
         auth: state.auth
     };
-};
+}
 
 function mapDispatchToProps(dispatch) {
     return {

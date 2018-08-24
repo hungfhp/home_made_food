@@ -289,9 +289,12 @@ export default class Detail extends Component {
                                     </div>
                                     <div className="p-r">
                                         <h3><i className="material-icons" style={{marginTop: '4px'}}>attach_money</i>{foodInfo.price}VND</h3>
-                                        <a><i className="material-icons favourite" style={likeStyle}  onClick={()=>this.getLike(this.state.like)} title="Like">thumb_up</i> &emsp;
+                                        <a>
+                                            <a className="nav-link btn btn-success btn-md" href={"/transactions/" + foodInfo.id}>Order food</a> &emsp;
+                                            <i className="material-icons favourite" style={likeStyle}  onClick={()=>this.getLike(this.state.like)} title="Like">thumb_up</i> &emsp;
                                             <i className="material-icons favourite" style={dislikeStyle} onClick={()=>this.getDisLike(this.state.dislike)} title="Dislike">thumb_down</i> &emsp;
-                                            <i className="material-icons favourite" style={{color: 'red', cursor: 'pointer'}} title="Favourite">favorite_border</i></a>
+                                            <i className="material-icons favourite" style={{color: 'red', cursor: 'pointer'}} title="Favourite">favorite_border</i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
