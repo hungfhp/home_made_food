@@ -85,7 +85,7 @@ export default class Main extends Component {
                 {/* transactions */}
                 <Route exact path="/transactions" component={TransactionsIndex}/>
                 <Route exact path="/transactions/history" component={TransactionsHistory} />
-                <Route exact path="/transactions/create" component={TransactionsCreate} />
+                <Route exact path="/transactions/create/:id" component={TransactionsCreate} />
                 <Route exact path="/transactions/:id" component={TransactionsShow} />
                 <Route exact path="/transactions/:id/edit" component={TransactionsEdit} />
                 <Route exact path="/transactions/:id/delete" component={TransactionsDelete} />

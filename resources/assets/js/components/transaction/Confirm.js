@@ -29,7 +29,7 @@ export default class Confirm extends Component {
                                 Grand Total<span className="pull-right">$9531</span>
                             </p>
                             <br/>
-                                <button className="btn btn-dark btn-block btn-md" type="submit">Update Cart</button>
+                                <button className="btn btn-dark btn-block btn-md" type="submit">Back to home</button>
                                 <button className="btn btn-color btn-block btn-md" type="submit">Proceed To Checkout</button>
                 </div>
             </div>
