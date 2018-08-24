@@ -93,7 +93,7 @@ export default class Product extends Component {
                             </h4>
                         </div>
                         <div className="col-xl-8 col-lg-7 col-md-7 col-sm-7">
-                            <div className="sorting-options clearfix">
+                            {/* <div className="sorting-options clearfix">
                                 <a href="properties-list-rightside.html" className="change-view-btn active-view-btn"><i className="fa fa-th-list"></i></a>
                                 <a href="properties-grid-rightside.html" className="change-view-btn"><i className="fa fa-th-large"></i></a>
                             </div>
@@ -102,13 +102,13 @@ export default class Product extends Component {
                                     <option>High to Low</option>
                                     <option>Low to High</option>
                                 </select>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
-                <div className="subtitle">
-                    {/*20 Result Found*/}
-                </div>
+                {/* <div className="subtitle">
+                    20 Result Found
+                </div> */}
 
                 {food_list}
 
