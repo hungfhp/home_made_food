@@ -246,7 +246,7 @@ export default class Header extends Component {
                                                         {/*</div>*/}
                                                     {/*</div>*/}
                                                 {/*</li>*/}
-                                                <li className="nav-item dropdown">
+                                                {/* <li className="nav-item dropdown">
                                                     <a className="nav-link dropdown-toggle" href="#"
                                                        id="navbarDropdown4" role="button" data-toggle="dropdown"
                                                        aria-haspopup="true"
@@ -258,13 +258,13 @@ export default class Header extends Component {
                                                             Shop List
                                                         </a>
                                                     </div>
-                                                </li>
+                                                </li> */}
                                                 {this.state.userLinks}
-                                                <li className="nav-item dropdown">
+                                                {/* <li className="nav-item dropdown">
                                                     <a href="#full-page-search" className="nav-link">
                                                         <i className="fa fa-search"/>
                                                     </a>
-                                                </li>
+                                                </li> */}
                                                 <li className="nav-item dropdown">
                                                     <a className="open-offcanvas nav-link" href="#">
                                                         <span/>
