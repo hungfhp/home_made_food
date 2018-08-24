@@ -24,7 +24,7 @@ class Index extends Component {
                     {/* index 6 */}
                     <Header auth={this.props.auth} logoutSuccess={this.props.logoutSuccess}/>
 
-                    {/*<SearchArea />*/}
+                    <SearchArea />
 
                     <FeaturedCategories/>
                     <MostLikedFoods/>
@@ -43,7 +43,7 @@ class Index extends Component {
                     <Header auth={this.props.auth} logoutSuccess={this.props.logoutSuccess}/>
                     <Banner/>
 
-                    {/*<SearchArea />*/}
+                    <SearchArea />
 
                     <FeaturedCategories/>
                     <MostLikedFoods/>

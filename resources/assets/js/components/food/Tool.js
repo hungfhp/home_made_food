@@ -4,7 +4,7 @@ export default class Tool extends Component {
     render() {
         return (
             <div className="col-lg-4 col-md-12">
-                <div className="sidebar mbl">
+                {/* <div className="sidebar mbl">
                     <div className="widget search-area">
                         <h5 className="sidebar-title">Advanced Search</h5>
                         <div className="search-area-inner">
@@ -207,7 +207,7 @@ export default class Tool extends Component {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         );
     }

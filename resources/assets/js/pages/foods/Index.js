@@ -7,6 +7,7 @@ import { translate, Trans } from 'react-i18next';
 import Header from "../../components/layouts/Header";
 import SubHeader from "../../components/layouts/SubHeader";
 import Tool from "../../components/food/Tool";
+import SearchArea from "@/components/home/SearchArea";
 import Product from "../../components/food/Product";
 import axios from "axios";
 
@@ -33,6 +34,7 @@ class Index extends Component {
             <div>
                 <Header title="Homemade - Foods" auth={this.props.auth} logoutSuccess={this.props.logoutSuccess} />
                 <SubHeader title="Foods"/>
+                <SearchArea />
                 <div className="user-page submit-property content-area-7">
                     <div className="container">
                         <div className="row">

@@ -25963,7 +25963,59 @@ body.off-canvas-sidebar-open {
         font-size: 50px;
         margin-top: 44px;
     }
-}.btn-theme {
+}
+
+/**Search result**/
+
+/* Styling Vue Search Widget - You can customize it as you wish */
+.widget-result {
+    border: 1px solid #c5c5c5;
+    background: white;
+    position: absolute;
+    cursor: pointer;
+    list-style: none;
+    padding: 0;
+    z-index: 100;
+    width: 500px;
+}
+.menu-item-result{
+    height: 80px;
+    border: 1px solid #ececf9;
+}
+.list_item_container {
+    width: 98%;
+    float: left;
+}
+
+.image-result {
+    width: 10%;
+    float: left;
+    /* padding: 10px; */
+}
+.image-result img{
+    /* width: 80px; */
+    /* height : 60px; */
+}
+.label-result{
+    width: 89%;
+    float:right;
+    color: rgb(124,77,255);
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+@media only screen and (max-width:768px) {
+
+    .image-result img{
+        width: 70px;
+        height : 55px;
+    }
+    .label-result{
+        width: 70%;
+    }
+}
+.btn-theme {
     color: #fff;
     background: #274cbf;
     border: solid 1px #274cbf;
