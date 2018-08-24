@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 
 import TransactionsListSmall from "../transactions/TransactionsListSmall";
 import DealsListSmall from "../deals/DealsListSmall";
+import SearchArea from "@/components/home/SearchArea";
 
 export default class RightSide extends Component {
     constructor(props) {
@@ -23,8 +24,9 @@ export default class RightSide extends Component {
                 <div className="widget search-box">
                     <h5 className="sidebar-title">Search</h5>
                     <form className="form-search" method="GET">
-                        <input type="text" className="form-control" placeholder="Search"/>
-                        <button type="submit" className="btn"><i className="fa fa-search"></i></button>
+                        {/* <input type="text" className="form-control" placeholder="Search"/> */}
+                        {/* <button type="submit" className="btn"><i className="fa fa-search"></i></button> */}
+                        <SearchArea />
                     </form>
                 </div>
 

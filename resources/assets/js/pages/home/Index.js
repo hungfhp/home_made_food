@@ -23,13 +23,22 @@ class Index extends Component {
                 <div>
                     {/* index 6 */}
                     <Header auth={this.props.auth} logoutSuccess={this.props.logoutSuccess}/>
+                    <Banner/>
 
-                    {/*<SearchArea />*/}
+                    <div className="row">
+                        <div className="col-md-2"></div>
+                        <div className="col-md-8">
+                        <div className="width-100-per" style={{position: "relative"}}>
+                        <SearchArea />
+                        </div>
+                        </div>
+                        <div className="col-md-2"></div>
+                    </div>
 
                     <FeaturedCategories/>
                     <MostLikedFoods/>
 
-                    {/*<GoodCookers />*/}
+                    <GoodCookers />
                     {/*<CertificatedUsers/>*/}
                     {/*<Intro />*/}
 
@@ -43,13 +52,13 @@ class Index extends Component {
                     <Header auth={this.props.auth} logoutSuccess={this.props.logoutSuccess}/>
                     <Banner/>
 
-                    {/*<SearchArea />*/}
+                    <SearchArea />
 
                     <FeaturedCategories/>
-                    <Services/>
                     <MostLikedFoods/>
+                    <Services/>
 
-                    {/*<GoodCookers />*/}
+                    <GoodCookers />
                     {/*<CertificatedUsers/>*/}
                     {/*<Intro />*/}
 
