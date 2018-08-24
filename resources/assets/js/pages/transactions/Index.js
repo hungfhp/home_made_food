@@ -6,6 +6,8 @@ import { getTransactions, getTransactionsRecent } from '@/actions/TransactionsAc
 import { updateTransaction }  from '@/actions/TransactionActions';
 import { getDealsNewest }  from '@/actions/DealsActions';
 
+import { convertURL } from "@/utils/ConvertUtil";
+
 import Header from "../../components/layouts/Header";
 import SubHeader from "../../components/layouts/SubHeader";
 import Footer from "../../components/layouts/Footer";
@@ -44,7 +46,8 @@ class Index extends Component {
         this.setState({
             page: page
         })
-        this.props.dispatchGetTransactions({page: this.state.page, status: this.state.status});
+        convertURL({page: page, status: this.state.status})
+        this.props.dispatchGetTransactions({page: page, status: this.state.status});
     }
     updateTransaction(new_transaction) {
         this.props.dispatchUpdateTransaction(new_transaction);

@@ -5,6 +5,7 @@ import food from "./food";
 import transactions from "./transactions";
 import transaction from "./transaction";
 import deals from "./deals";
+import deal from "./deal";
 
 export default combineReducers({
     auth,
@@ -12,5 +13,6 @@ export default combineReducers({
     food,
     transactions,
     transaction,
-    deals
+    deals,
+    deal
 });

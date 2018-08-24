@@ -86,7 +86,15 @@ class TransactionController extends Controller
                 $transactions = Transaction::historyCancel($userId);
                 break;
             default:
-                $transactions = Transaction();
+                $transactions =  Transaction::withCount('deals')
+                    ->with('food.feature_image')
+                    ->with('requirer')
+                    ->with('cooker')
+                    ->with('shipper')
+                    ->orderBy('updated_at', 'desc')
+                    ->paginate(10);
+                
+                return response()->json(['data' => $transactions], 200);
         }
         $transactions = $transactions
             ->withCount('deals')

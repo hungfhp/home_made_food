@@ -1,30 +1,52 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+
 import { getProfile, logoutSuccess } from '@/actions/AuthActions';
 import { getTransactionsHitory, getTransactionsHitoryTotal } from '@/actions/TransactionsActions';
+
+import { convertURL } from "@/utils/ConvertUtil";
+import { parsedSearch } from "@/utils/ConvertUtil";
 
 import Header from "../../components/layouts/Header";
 import SubHeader from "../../components/layouts/SubHeader";
 import Footer from "../../components/layouts/Footer";
 import Total from "../../components/transaction/Total";
 import List from "../../components/transaction/List";
+import Pagination from "@/components/layouts/Pagination";
 
 class History extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            page: parsedSearch().page || 1,
+            status: this.props.location.hash ? this.props.location.hash.substr(1):"all"
+        };
+        this.handleChangeHash = this.handleChangeHash.bind(this);
+        this.getTransactionsHitoryPaging = this.getTransactionsHitoryPaging.bind(this);
     }
-    componentWillMount(){
-        let params = {
-            page: 1,
-            status: "required"
-        }
-        this.props.dispatchGetTransactionsHitory(params);
+    componentDidMount(){
+        this.props.dispatchGetTransactionsHitory({page: this.state.page, status: this.state.status});
     }
     componentWillReceiveProps(nextProps) {
         this.props = nextProps;
     }
+    handleChangeHash(hash) {
+        this.setState({
+            status: hash
+        })
+        window.location.hash = '#'+hash;
+        this.props.dispatchGetTransactionsHitory({page: this.state.page, status: hash});
+        // this.getTransactionsHitoryPaging(this.state.page);
+    }
+    getTransactionsHitoryPaging(page) {
+        this.setState({
+            page: page
+        })
+        convertURL({page: page, status: this.state.status});
+        this.props.dispatchGetTransactionsHitory({page: page, status: this.state.status});
+    }
     render() {
+        let pagination = this.props.transactions_history.pagination;
         return (
             <div>
                 <Header title="Homemade - Transaction history" auth={this.props.auth} logoutSuccess={this.props.logoutSuccess} />
@@ -33,10 +55,12 @@ class History extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12">
-                                <Total total_cart={this.props.total_cart} />
+                                <Total total_cart={this.props.total_cart} handleChangeHash={this.handleChangeHash} />
                             </div>
                             <div className="col-lg-12">
+                                <div id="history-top"></div>
                                 <List {...this.props}/>
+                                <Pagination href_to="#history-top" pagination={pagination} getDataPaging={this.getTransactionsHitoryPaging} />
                             </div>
                         </div>
                     </div>

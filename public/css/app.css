@@ -26485,6 +26485,10 @@ li.active.btn.filtr-button.filtr {
   margin-bottom: 1px !important;
 }
 
+.margin-bottom-5 {
+  margin-bottom: 5px !important;
+}
+
 .margin-left-15 {
   margin-left: 15px !important;
 }
@@ -26587,6 +26591,10 @@ li.active.btn.filtr-button.filtr {
 
 .font-size-20 {
   font-size: 20px !important;
+}
+
+.font-size-13 {
+  font-size: 13px !important;
 }
 
 .font-size-14 {

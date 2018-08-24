@@ -30,14 +30,20 @@ const transaction = (state = initialState, action) => {
             }
         
         case types.UPDATE_TRANSACTION_SUCCESS:
-        console.log(action.data)
+            swal2({
+                type: 'success',
+                title: 'Success!',
+                showConfirmButton: false,
+                heightAuto: true,
+                timer: 1200
+            });
             return {...state,
                 is_loading: false,
-                success: AxiosConstants.SUCCESS
-                // show: {
-                //     is_loading: false,
-                //     data: action.data
-                // }
+                success: AxiosConstants.SUCCESS,
+                show: {
+                    is_loading: false,
+                    data: action.data
+                }
             }
         case types.UPDATE_TRANSACTION_ERROR:
             return {...initialState,

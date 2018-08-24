@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import TrTransaction from "@/components/transaction/TrTransaction";
 
 export default class List extends Component {
@@ -41,7 +42,9 @@ export default class List extends Component {
                         ) : null
                     }
                 </tbody>
+                
             </table>
+            
         );
     }
 }

@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getProfile, logoutSuccess } from '@/actions/AuthActions';
 import { getTransaction, updateTransaction } from "@/actions/TransactionActions";
+import { createDeal, updateDeal } from "@/actions/DealActions";
+
+import {alertWarning} from "@/utils/AlertUtil";
+import {alertPleaseLogin} from "@/utils/AlertUtil";
 
 import Header from "../../components/layouts/Header";
 import SubHeader from "../../components/layouts/SubHeader";
@@ -20,46 +24,79 @@ class Show extends Component {
         this.state = {
             transaction_id: this.props.match.params.id
         }
-        // this.getTransactionsPaging = this.getTransactionsPaging.bind(this);
         this.updateTransaction = this.updateTransaction.bind(this);
+        this.createDeal = this.createDeal.bind(this);
+        this.updateDeal = this.updateDeal.bind(this);
         this.props.dispatchGetTransaction(this.state.transaction_id);
     }
     updateTransaction(transaction) {
-        console.log("transaction");
-        this.props.dispatchUpdateTransaction(transaction);
+        if (this.props.auth.isAuth) {
+            this.props.dispatchUpdateTransaction(transaction);
+            this.props.dispatchGetTransaction(transaction.id);
+        } else {
+            alertPleaseLogin();
+        }
+    }
+    createDeal(deal) {
+        if (deal.comment == "") {
+            alertWarning("Comment something !")
+        }
+        this.props.dispatchCreateDeal(deal);
+        this.props.dispatchGetTransaction(this.state.transaction_id);
+    }
+    updateDeal(deal) {
+        if (deal.comment == "") {
+            alertWarning("Comment something !")
+        }
+        this.props.dispatchUpdateDeal(deal);
+        this.props.dispatchGetTransaction(this.state.transaction_id);
     }
     render() {
+        let auth=this.props.auth;
         let transaction = this.props.transaction_show.data;
+
         let is_my_transaction;
         if (this.props.auth.user.id == transaction.creator_id) {
             is_my_transaction = true;
         } else {
             is_my_transaction = false;
         }
+
         let is_my_shipping_transaction;
         if (this.props.auth.user.id == transaction.shipper_id) {
             is_my_shipping_transaction = true;
         } else {
             is_my_shipping_transaction = false;
         }
-        console.log(transaction);
+
+        let my_dealed = false;
+
+        if (transaction.deals) {
+            
+            for (let i = 0; i < transaction.deals.length; i++) {
+                let deal = transaction.deals[i];
+                if (deal.user_id == auth.user.id) {
+                    my_dealed = deal;
+                }
+            }
+        }
 
         return (
             <div>
                 <div>
-                    <Header title="Transaction's Info" auth={this.props.auth} logoutSuccess={this.props.logoutSuccess} />
+                    <Header title="Transaction's Info" auth={auth} logoutSuccess={this.props.logoutSuccess} />
                     <SubHeader title="Transaction's Info"/>
                     <div className="user-page submit-property content-area-7">
                         <div className="container">
                             <div className="row">
                                 <div className="col-lg-8">
-                                    {transaction && <TransactionDetailHead auth={this.props.auth} transaction={transaction} />}
-                                    {transaction.food && transaction.food.images && <FoodImagesSlider auth={this.props.auth} images={transaction.food.images} />}
+                                    {transaction && <TransactionDetailHead auth={auth} transaction={transaction} />}
+                                    {transaction.food && transaction.food.images && <FoodImagesSlider auth={auth} images={transaction.food.images} />}
                                     {
                                         transaction && 
-                                        <TransactionDetailTabbing auth={this.props.auth} 
+                                        <TransactionDetailTabbing auth={auth} 
                                             transaction={transaction} 
-                                            updateTransaction={updateTransaction} 
+                                            updateTransaction={this.updateTransaction} 
                                             is_my_transaction ={is_my_transaction} 
                                             is_my_shipping_transaction={is_my_shipping_transaction} 
                                         />
@@ -72,7 +109,19 @@ class Show extends Component {
                                 </div>
                             </div>
                             <div className="row">
-                                {transaction.deals && <DealsListMedium auth={this.props.auth} transaction={transaction} updateTransaction={updateTransaction} is_my_transaction={is_my_transaction} deals={transaction.deals} />}
+                                <div className="col-lg-8">
+                                    {
+                                        transaction.deals && 
+                                        <DealsListMedium auth={auth} transaction={transaction} 
+                                            updateTransaction={this.updateTransaction} 
+                                            is_my_transaction={is_my_transaction} 
+                                            deals={transaction.deals} 
+                                            my_dealed={my_dealed} 
+                                            createDeal={this.createDeal} 
+                                            updateDeal={this.updateDeal} 
+                                        />
+                                    }
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -86,7 +135,8 @@ class Show extends Component {
 function mapStateToProps(state) {
     return {
         auth: state.auth,
-        transaction_show: state.transaction.show
+        transaction_show: state.transaction.show,
+        my_deal: state.deal.show
     };
 };
 
@@ -95,7 +145,9 @@ function mapDispatchToProps(dispatch) {
         default: dispatch(getProfile()),
         logoutSuccess: () => dispatch(logoutSuccess()),
         dispatchGetTransaction: (id) => dispatch(getTransaction(id)),
-        dispatchUpdateTransaction: (transaction) => dispatch(UpdateTransaction(transaction))
+        dispatchUpdateTransaction: (transaction) => dispatch(updateTransaction(transaction)),
+        dispatchCreateDeal: (deal) => dispatch(createDeal(deal)),
+        dispatchUpdateDeal: (deal) => dispatch(updateDeal(deal))
     };
 }
 

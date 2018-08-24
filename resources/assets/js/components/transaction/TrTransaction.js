@@ -7,7 +7,6 @@ export default class TrTransaction extends Component {
         this.state = {
         };
         this.getStatusStyle = this.getStatusStyle.bind(this);
-        this.getActions = this.getActions.bind(this);
     }
     componentWillReceiveProps(nextProps) {
         this.props = nextProps;
@@ -41,35 +40,6 @@ export default class TrTransaction extends Component {
             }
         }
     };
-    getActions() {
-        let actions;
-        switch (status) {
-            case 'required': {
-                actions = <button className="btn btn-sm btn-default">hihi</button>;
-                return actions;
-            }
-            case 'cooked': {
-                actions = <button className="btn btn-sm btn-default">hihi</button>;
-                return actions;
-            }
-            case 'dealed': {
-                actions = <button className="btn btn-sm btn-default">hihi</button>;
-                return actions;
-            }
-            case 'done': {
-                actions = <button className="btn btn-sm btn-default">hihi</button>;
-                return actions;
-            }
-            case 'cancel': {
-                actions = <button className="btn btn-sm btn-default">hihi</button>;
-                return actions;
-            }
-            case 'shipping': {
-                actions = <button className="btn btn-sm btn-default">hihi</button>;
-                return actions;
-            }
-        }
-    }
     render() {
         let transaction = this.props.transaction;
         return (
@@ -84,7 +54,8 @@ export default class TrTransaction extends Component {
                 <td><Link to={'/transactions/'+transaction.id} style={this.getStatusStyle(transaction.status)}>{transaction.status}</Link></td>
                 <td>{transaction.updated_at.replace('-','/').replace('-','/')}</td>
                 <td>{transaction.desired_at.replace('-','/').replace('-','/')}</td>
-                <td><ButtonActions auth={this.props.auth} transaction={transaction}>{transaction.status}</ButtonActions></td>
+                {/* <td><ButtonActions auth={this.props.auth} transaction={transaction}>{transaction.status}</ButtonActions></td> */}
+                <td><Link to={'/transactions/'+transaction.id} className="btn btn-sm btn-link">Read more</Link></td>
             </tr>
         )
     }

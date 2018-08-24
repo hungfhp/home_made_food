@@ -15,7 +15,7 @@ export default class LeftSide extends Component {
     }
     handleChangeTab(tab) {
         if (tab=="certificate") {
-            location.reload();
+            // location.reload();
         }
         this.props.switchRightSide(tab);
     }

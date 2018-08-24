@@ -47,9 +47,9 @@ export default class Header extends Component {
                             <Link className="dropdown-item" to={'/users/' + this.props.auth.user.id + "#cooked-foods"}>
                                 My Foods
                             </Link>
-                            <a className="dropdown-item" href="/transactions/history">
+                            <Link className="dropdown-item" to="/transactions/history">
                                 My Transactions
-                            </a>
+                            </Link>
                             <a onClick={this.logout} className="dropdown-item" href="javascript:void(0)">
                                 Logout
                             </a>
@@ -246,7 +246,7 @@ export default class Header extends Component {
                                                         {/*</div>*/}
                                                     {/*</div>*/}
                                                 {/*</li>*/}
-                                                <li className="nav-item dropdown">
+                                                {/* <li className="nav-item dropdown">
                                                     <a className="nav-link dropdown-toggle" href="#"
                                                        id="navbarDropdown4" role="button" data-toggle="dropdown"
                                                        aria-haspopup="true"
@@ -258,7 +258,7 @@ export default class Header extends Component {
                                                             Shop List
                                                         </a>
                                                     </div>
-                                                </li>
+                                                </li> */}
                                                 {this.state.userLinks}
                                                 <li className="nav-item dropdown">
                                                     <a href="#full-page-search" className="nav-link">

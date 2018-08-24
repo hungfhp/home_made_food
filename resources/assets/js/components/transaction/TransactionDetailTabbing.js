@@ -30,13 +30,12 @@ export default class TransactionDetailTabbing extends Component {
                         <a className="nav-link" id="three-tab" data-toggle="tab" href="#three" role="tab"
                             aria-controls="three" aria-selected="true">Location</a>
                     </li>
-                    {/* <li className="nav-item">
-                        <a className="nav-link" id="four-tab" data-toggle="tab" href="#four" role="tab"
-                            aria-controls="four" aria-selected="true">Related Foods</a>
-                    </li> */}
                 </ul>
                 <div className="tab-content" id="carTabContent">
-                    <TransactionDetailTabDescription auth={auth} transaction={transaction} updateTransaction={this.props.updateTransaction} is_my_transaction={is_my_transaction} is_my_shipping_transaction={is_my_shipping_transaction} />
+                    <TransactionDetailTabDescription auth={auth} transaction={transaction} 
+                    updateTransaction={this.props.updateTransaction} 
+                    is_my_transaction={is_my_transaction} 
+                    is_my_shipping_transaction={is_my_shipping_transaction} />
                     <FoodDetailTabMap />
                     {/* <FoodDetailTabRelated /> */}
                 </div>

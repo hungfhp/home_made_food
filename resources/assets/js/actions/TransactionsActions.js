@@ -60,7 +60,6 @@ export function getTransactionsHitory(params) {
             headers: getHeaders()
         })
         .then(res => {
-            console.log(res.data);
             dispatch(getTransactionsHitorySuccess(res.data.data));
         }).catch(err => {
             dispatch(getTransactionsHitoryError(err));

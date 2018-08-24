@@ -15,7 +15,6 @@ import FavoritedFoods from "@/components/user/rightSide/FavoritedFoods";
 import LikedFoods from "@/components/user/rightSide/LikedFoods";
 import Certificate from "@/components/user/rightSide/Certificate";
 import ChangePassword from "@/components/user/rightSide/ChangePassword";
-const queryString = require('query-string');
 
 class Show extends Component {
     constructor(props) {
