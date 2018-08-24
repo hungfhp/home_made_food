@@ -15,7 +15,10 @@ class FoodsTableSeeder extends Seeder
             "món ăn bổ ích",
             "tốt cho sức khỏe",
             "ăn nhiều cũng được",
-            "không nên ăn ít"
+            "không nên ăn ít",
+            "Tận dụng nguyên liệu có sẵn và không quá cầu kỳ, món ăn này có cách thực hiện rất nhanh và đơn giản",
+            "Với thành phần và nguyên liệu đa dạng như rau củ, bột làm từ các loại cây thiên nhiên, đây là một trong những món ăn nên thường xuyên đưa vào thực đơn.",
+            "Được nhiều người thích, nhất là vào mùa hè"
         ];
 
         $categories = [
