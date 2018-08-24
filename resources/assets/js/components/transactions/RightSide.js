@@ -29,7 +29,7 @@ export default class RightSide extends Component {
                 </div>
 
                 <div className="widget recent-posts">
-                    <h5 className="sidebar-title">You like</h5>
+                    <h5 className="sidebar-title">For You</h5>
                     <TransactionsListSmall transactions={transactions_recent} />
                 </div>
 

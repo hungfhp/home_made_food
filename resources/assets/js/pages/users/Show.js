@@ -121,7 +121,7 @@ class Show extends Component {
                     })    
                 } else {
                     this.setState({
-                        renderRightSide: <FormShow user={this.props.user} />
+                        renderRightSide: <FormShow title="info" user={this.props.user} />
                     })
                 }
                 return;
