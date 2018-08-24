@@ -13,19 +13,19 @@ class Category_imagesTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
         $images = [
-            "http://girlbeta.com/wp-content/uploads/2013/07/foods.jpg",
-            "https://static1.squarespace.com/static/59bf5431e45a7c495cccc43e/t/5aa84318419202c43912e772/1520976707826/bigstock--157004327.jpg",
-            "http://ichef.bbci.co.uk/wwfeatures/wm/live/1280_640/images/live/p0/4t/x3/p04tx3m6.jpg",
+            "https://anh.24h.com.vn/upload/3-2017/images/2017-08-05/1501893262-150000133490672-1.jpg",
+            "http://www.allwomens.ru/uploads/posts/2014-10/1412227970_govjazhyj-stejk.jpg",
             "https://thumbs.dreamstime.com/b/category-foods-hot-pot-food-electric-stove-thai-hot-pot-stly-includes-shrimp-fish-beef-vegetables-corn-meatballs-many-107224753.jpg",
-            "http://www.supermarketnews.com/sites/supermarketnews.com/files/2017FreshIntroPromo_5.jpg",
-            "https://cdn-a.william-reed.com/var/wrbm_gb_food_pharma/storage/images/6/1/2/9/3419216-1-eng-GB/Everything-is-a-snack-the-foods-and-formats-shaping-the-category.jpg",
-            "https://www.marketingmag.com.au/wp-content/uploads/2015/09/george-weston-foods-540.jpg",
-            "https://futurethinking.com/wp-content/uploads/2018/02/plant-based-produce.jpg"
+            "http://sohanews.sohacdn.com/thumb_w/660/2016/4-thuc-pham-gay-ung-thu-da-day-ma-ban-an-thuong-xuyen-hinh-2-1482827575171-28-0-499-759-crop-1482827579721.jpg",
+            "https://nau.vn/wp-content/uploads/2014/04/luoc-ga-ngon.jpg",
+            "http://nemchuaotdo.com/wp-content/uploads/2015/03/pho-ha-noi1.jpg",
+            "https://i.ytimg.com/vi/8anWh3nXROM/maxresdefault.jpg",
+            "https://wiki-travel.com.vn/uploads/post/Thaophuongnguyen-174720044737-kem-4.jpg"
         ];
 
         for ($i=0; $i < 8; $i++) { 
             $data[$i] = [
-                'category_id' => $i,
+                'category_id' => $i+1,
                 'link' => $images[$i],
                 'created_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null),
                 'updated_at' => $faker->dateTimeBetween($startDate = '-45 days', $endDate = 'now', $timezone = null)
