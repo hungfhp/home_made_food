@@ -11,9 +11,6 @@
 */
 Route::get('test', 'UserController@getUser');
 
-// Auth
-// Auth::routes();
-
 Route::get('/{any}', function () {
     return view('index');
 })->where('any', '.*');

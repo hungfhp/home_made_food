@@ -10,7 +10,7 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-.env
+# .env
 .package-lock.json
 /resources/assets/html/resources/assets/html
 /public/js/app.js
