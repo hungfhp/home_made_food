@@ -43,12 +43,22 @@ class Food extends Model
         return $this->hasMany('App\Model\Food_image');
     }
 
+    public function images()
+    {
+        return $this->hasMany('App\Model\Food_image');
+    }
+
     public function feature_image()
     {
         return $this->hasOne('App\Model\Food_image')->oldest();
     }
 
     public function user()
+    {
+        return $this->belongsTo('App\Model\User', 'cooker_id');
+    }
+
+    public function cooker()
     {
         return $this->belongsTo('App\Model\User', 'cooker_id');
     }

@@ -17,14 +17,14 @@ export function getTransaction(id) {
 
 export function getTransactionSuccess(data) {
     return {
-        type: types.GET_FOOD_SUCCESS,
+        type: types.GET_TRANSACTION_SUCCESS,
         data
     };
 }
 
 export function getTransactionError(err) {
     return {
-        type: types.GET_FOOD_ERROR,
+        type: types.GET_TRANSACTION_ERROR,
         err
     };
 }
@@ -47,14 +47,14 @@ export function createTransaction(food) {
 
 export function createTransactionSuccess(data) {
     return {
-        type: types.CREATE_FOOD_SUCCESS,
+        type: types.CREATE_TRANSACTION_SUCCESS,
         data
     };
 }
 
 export function createTransactionError(err) {
     return {
-        type: types.CREATE_FOOD_ERROR,
+        type: types.CREATE_TRANSACTION_ERROR,
         err
     };
 }
@@ -104,14 +104,14 @@ export function deleteTransaction(id) {
 
 export function deleteTransactionSuccess(data) {
     return {
-        type: types.DELETE_FOOD_SUCCESS,
+        type: types.DELETE_TRANSACTION_SUCCESS,
         data
     };
 }
 
 export function deleteTransactionError(err) {
     return {
-        type: types.DELETE_FOOD_ERROR,
+        type: types.DELETE_TRANSACTION_ERROR,
         err
     };
 }

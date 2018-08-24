@@ -30,9 +30,13 @@ class HomeController extends Controller
         Log::info('get feature');
         $categories = Category::inRandomOrder()->limit(3)->get();
         foreach ($categories as $category) {
-            $foods = Food::where('category_id',$category->id)->take(6)->get();
+            $foods = Food::where('category_id',$category->id)
+                    ->with('user')
+                    ->take(6)
+                    ->get();
             foreach ($foods as $food) {
                 $food['images'] = Food::find($food['id'])->food_images->all();
+                $food['favorites'] = $food->favorites->count();
             }
             $category['foods'] = $foods;
         }

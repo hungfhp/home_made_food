@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Model\Transaction;
+use App\Model\Deal;
 use App\Model\Food;
 use App\Model\Food_image;
 use Illuminate\Support\Facades\Auth;
@@ -61,18 +62,7 @@ class TransactionController extends Controller
         Log::info("transaction history");
         $user = Auth::user();
         $userId = $user->id;
-        $transactions = Transaction::myTransactions($userId)
-            ->withCount('deals')
-            ->with('food.feature_image')
-            ->with('requirer')
-            ->with('cooker')
-            ->with('shipper')
-            ->orderBy('updated_at', 'desc')
-            ->paginate(10);
-
-        Log::info($transactions);
-
-        return response()->json(['data' => $transactions], 200);
+        
         switch ($request->status) {
             case 'required':
                 $transactions = Transaction::historyRequired($userId);
@@ -115,34 +105,7 @@ class TransactionController extends Controller
         Log::info("transaction history total");
         $user = Auth::user();
         $userId = $user->id;
-
-        // $required = Transaction::required()->where('requirer_id', '=', $userId);
-        // $cooked = Transaction::cooked()->where('cooker_id', '=', $userId);
-
-        // $dealed = Transaction::dealed()->where(function ($query) use ($userId) {
-        //     $query
-        //         ->where('requirer_id', $userId)
-        //         ->orwhere('cooker_id', $userId);
-        // });
-        // $shipping = Transaction::shipping()->where(function ($query) use ($userId) {
-        //     $query
-        //         ->where('requirer_id', $userId)
-        //         ->orwhere('cooker_id', $userId)
-        //         ->orwhere('shipper_id', $userId);
-        // });
-        // $done = Transaction::done()->where(function ($query) use ($userId) {
-        //     $query
-        //         ->where('requirer_id', $userId)
-        //         ->orwhere('cooker_id', $userId)
-        //         ->orwhere('shipper_id', $userId);
-        // });
-        // $cancel = Transaction::cancel()->where(function ($query) use ($userId) {
-        //     $query
-        //         ->where('requirer_id', $userId)
-        //         ->orwhere('cooker_id', $userId)
-        //         ->orwhere('shipper_id', $userId);
-        // });
-
+        
         $data = [
             'required' => [
                 'total_price' => Transaction::historyRequired($userId)->sum('price'),
@@ -226,8 +189,18 @@ class TransactionController extends Controller
     public function show($id)
     {
         Log::info('show a transaction');
-        $transaction = Transaction::where('id', $id)->get();
-        return response()->json(['data' => $transaction], 200);
+        $transaction = Transaction::where('id', $id)
+        ->with('food.images')
+        ->with('food.user')
+        ->with('creator')
+        ->with('requirer')
+        ->with('cooker')
+        ->with('shipper')
+        ->withCount('deals')
+        ->get();
+
+        $transaction[0]->deals = Deal::where("transaction_id",$id)->with('user')->get();
+        return response()->json(['data' => $transaction[0]], 200);
     }
 
     /**
